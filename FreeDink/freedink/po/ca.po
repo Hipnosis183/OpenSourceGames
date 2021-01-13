@@ -1,0 +1,215 @@
+# Catalan translations for GNU FreeDink package.
+# Copyright (2012)
+# This file is distributed under the same license as the FreeDink package.
+# Àngel Mompó <mecatxis@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 1.08.20120427\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2012-10-13 16:37+0100\n"
+"Last-Translator: Àngel Mompó <mecatxis@gmail.com>\n"
+"Language-Team: Catalan <ca@dodds.net>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Sintaxi: %s [OPCIONS]...\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Mostra aquesta pantalla d'ajuda\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         Mostra la versió\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <dir>      Especifica el directori d'un D-Mod\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <dir>    Especifica la carpeta base del dink/gràfics, D-Mods, etc.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Explica el que s'està fent\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           No prova d'escriure al dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           No prova de fer servir cap palanca de control\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         Desactiva el so\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       Permet més colors (per a gràfics de D-Mod recents)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Fes servir el mode de finestra en comptes de la pantalla completa\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           Habilita la compatibilitat amb la V1.07\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Informeu de les fallades a %s.\n"
+"Informeu dels errors de traducció a <ca@dodds.net>\n"
+
+#: src/app.cpp:312
+#, fuzzy, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Nota: -nomovie s'accepta per compatibilitat, però no fa res.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Inicia el joc Dink Smallwood o un dels seus D-Mods."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$No veig res aquí."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$Com?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Estic força segur que no pot parlar-hi ni fer-ho servir."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$Què?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$M'estic avorrint."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$Aquí no hi passa gaire res."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$No en sé res de màgia."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$No sóc cap mag!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Necessito aprendre màgia abans de provar de fer això."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Estic fent gestos com un ximple per res!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$No ha passat res."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$Hocus pocus!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Ataca"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Parla/Examina"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Màgia"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Inventari"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Mapa"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "No es fa servir"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Avall"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Esquerra"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Dreta"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Amunt"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Error: no està mapat"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Ranura %d - %d:%02d - %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "Ranura %d - Buida"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Edita el joc Dink Smallwood o un dels seus D-Mods."

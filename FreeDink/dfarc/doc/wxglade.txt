@@ -1,0 +1,71 @@
+Embedded code can be generated using two different techniques:
+
+- wxGlade C++ code generation (-g C++) (+ optional subclassing)
+
+- wxGlade XRC (XML) generation (-g XRC) + wxrc embedded XML C++ code
+  generation with header generation (-ce)
+
+
+There are a few differences:
+
+- wxFrame "name" is used as:
+
+  - C++: ignored
+
+  - XRC&C++: class name 
+
+- wxFrame "class" is used as:
+
+  - C++: class name
+
+  - XRC&C++: ignored (attribute "subclass" in the XRC)
+
+- wxButton "name" is used as:
+
+  - C++: class member name
+
+  - XRC&C++: class member _and_ XRCID("name") in event handlers (note:
+    XRCID includes a special predefined mapping to support
+    e.g. "wxID_OK"->wxID_OK). Using standard wxID_OK for class members
+    compiles (it's an enum, not a #define) but looks weird. Also this
+    will probably make it harder when several buttons send the same
+    signal (e.g. wxID_NEW).
+
+- wxButton "id" is used as:
+
+  - C++: non-string constant in event handlers (must be defined in the
+    source code somewhere else; no XRCID)
+
+  - XRC&C++: unused
+
+- gettext support:
+
+  - C++: tick "Enable gettext support" in the wxGlade Application
+    object, then have gettext scan the generated C++ code. You still
+    can use the XRC&C++ method if you want.
+
+  - XRC&C++: output all strings using wxrc -g and have gettext scan
+    the file as a C file.
+
+- Loading is as fast as manual code with C++ generation. With XRC&C++
+  however, loading the first resource takes around 2 complete seconds
+  (subsequent resource loads are much faster). Some heavy
+  initialization must take place (in-memory fake file system, XML
+  parser, etc.). For a small application, the load time is hence
+  surprisingly slow.
+
+- wxrc v2.6 produce header files that fail to compile with g++-4
+  (prefix functions by the Class:: in the class definition). You might
+  work-this around using a bit of 'sed' in your build system.
+
+
+Conclusion
+==========
+
+There's apparently no way to use wxGlade so that both methods produce
+compatible code.
+
+I don't see much point in loading external XRC/XRS at run time, the
+XRC format only allows interoperability with proprietary IDE builders
+nowadays, and the load time is much slower, so I think using wxGlade
+direct C++ code generation is better.

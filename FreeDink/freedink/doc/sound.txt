@@ -1,0 +1,102 @@
+Here is what was needed to implement something close to DX sound
+functions using SDL.
+
+- Implement setFrequency
+
+keywords:
+"PCM", "DSP" and "pitch-shift" (possibly in combination with "C++")
+http://www.devolution.com/pipermail/sdl/2004-October/065449.html
+
+Note: http://www.dspdimension.com/index.html?timepitch.html#intro
+suggests that "pitch shift" actually means something different, and
+that what we're trying to achieve is just "sample rate conversion".
+
+
+SDL_mixer is not especially meant for this, but this can be
+worked-around. The problem is that SDL_mixer assumes the sound length
+doesn't change, even when there are effects callbacks. When you change
+the sound rate, the sound length does change.
+
+Combining audio libraries is generally not a good thing, especially if
+you intend to make your game portable, so I implemented setFrequency
+by feeding SDL_mixer with an empty sound of the right length, and
+actually generating the sound output in a channel filter.
+
+More precisely: the sound is loaded and converted to the hardware
+format (so that conversion is done only once: at load time). Sample
+rate is left unchanged though, because SDL_ConvertAudio() only
+supports rate*(2*n) or rate/(2*n). The callback filter supports
+several hardware format (8/16bit, mono/stereo), and uses
+endian-independent coding to support LSB and MSB endianness. The
+filter does the sample rate conversion each time the sound is
+played. This requires creating a new SDL_mixer chunk each time.
+
+The naive implementation gives a special tone to the sound. I
+implemented linear interpolation (as Allegro and probably DX does)
+which attempt to get a more faithful result while using a fast
+algorithm. Secret Rabbit Code (a.k.a. libsamplerate) provides finer
+and more CPU-intensive algorithms, in addition to linear
+interpolation, but I didn't find it easy to easy in a game engine with
+real-time conversion, and I wanted to avoid extra dependencies.
+
+
+- Function to convert volume and panning from DX's hundreds of dB to
+  the unit we'll use:
+
+(DinkC's sound_set_vol(), update_sound() in the code)
+
+sound_set_vol(): "The volume should be negative or zero. 0 is no
+change, -1000 is about half-volume, and -10000 is extremely quiet."
+
+Base formula (keywords: dsp decibel dB volume):
+
+ 20*log10 (x/max_vol) ~> y (dB)
+ ex: 20*log10 (80/128) ~> -4dB
+ 128: max value for a sound; SDL uses 128
+ 80: sound value in the WAV file
+ -4dB: attenuation in decibel
+
+In SDL, the volume is just a linear scaling (80 means something like
+"multiply all sound values by 80/128)
+
+So we need the opposite formula to get 80 from -4dB:
+ x = max_vol.10^(y/20)
+
+Ex: -1000 (hundredths of dB) => x = 128.10^(-10/20) =~ 40.
+
+Note: -10dB should be half volume, so why isn't it 128/2 + 64? It's
+because the human-ear-perceived volume is the _square_ of the sound
+value.
+
+A good place to test volume is the initial screen from the original
+game (Dink's mother's house): try moving around the fireplace - volume
+is somewhat proportional to the distance.
+
+
+Panning: according to the DX documentation, SetPan(x) uses a dB
+attenuation; left channel attenuation when positive, right channel
+attenuation when negative. x ranges from -10000 to 10000.
+
+So at first glance:
+SetPan(-1000) => Mix_SetPanning(n, 255, 255.10^(-10/20))
+SetPan(3000) => Mix_SetPanning(n, 255.10^(-30/20), 255)
+
+A good place to test panning is the savegame east of the pigs in
+StoneBrooks: the savegame is located left in the screen, to it should
+sound louder in the left speaker (or technically, less loud in the
+right speaker). Note that panning is not updated when Dink moves, it
+is based on the initial location of the sprite in the screen.
+
+
+TODO:
+
+- separate initsound from sfx - it's sfx+bgm
+
+- If 100X is played, and if there's no CD, and if 100X.mid doesn't
+  exist, I think the original game will play X.mid. Take that into
+  account.
+
+Note:
+
+- soundplayeffect returns a non-0 bank number; it's used by DinkC's
+  playsound(). Beware!

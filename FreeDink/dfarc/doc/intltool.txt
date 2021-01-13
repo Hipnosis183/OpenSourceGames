@@ -1,0 +1,19 @@
+Although intltool forks gettext's build system, it behaves quite
+differently:
+
+ * .po files need to be updated manually, either with
+
+  * 'make update-po' in a configured directory where srcdir==buildir
+
+  * either with::
+
+   'intltool-update --pot && for i in *.po; do intltool-update ${i%.po}; done'
+
+ * The .pot file isn't included on 'make dist'
+
+
+More info at:
+
+ * http://bugzilla.gnome.org/show_bug.cgi?id=531892
+
+ * http://bugzilla.gnome.org/show_bug.cgi?id=531893

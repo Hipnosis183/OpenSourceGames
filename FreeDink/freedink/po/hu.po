@@ -1,0 +1,216 @@
+# Hungarian translation of freedink.
+# Copyright (C) 2014 Contributor
+# This file is distributed under the same license as the freedink package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 108.2\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2014-05-30 21:13+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Használat: %s [KAPCSOLÓK]…\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Ezen súgóképernyő megjelenítése\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         A verzió megjelenítése\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <dir>      Egy DMod könyvtár megadása\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <dir>    Alapkönyvtár megadása a dinkhez/grafikákhoz, D-Modokhoz, stb.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Annak magyarázata, hogy mi történik\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           Ne próbálja meg a dinksmallwood.ini fájlt írni\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           Ne próbálja meg a joystick használatát\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         Ne játsszon le hangot\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       Több szín engedélyezése (az újabb D-Mod grafikákhoz)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Ablakos mód használata a képernyőmód helyett\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           A v1.07 kompatibilitási mód engedélyezése\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Hibák jelentése ide: %s.\n"
+"Fordítási hibák jelentése: Úr Balázs <urbalazs@gmail.com>\n"
+
+#: src/app.cpp:312
+#, fuzzy, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Megjegyzés: a -nomovie elfogadott a kompatibilitáshoz, de nincs hatása.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Elindítja a Dink Smallwood játékot vagy a D-Modok egyikét."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$Semmit sem látok itt."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$Huh?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Egészen biztos vagyok, hogy nem tudok beszélni vele, vagy használni azt."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$Tessék?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$Unatkozom."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$Nem sok minden történik itt."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$Nem ismerek semmilyen varázslatot."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$Nem vagyok varázsló!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Meg kell tanulnom varázsolni, mielőtt ezt megpróbálom."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Vadul integetek, de hiába!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$Semmi sem történt."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$Hókusz-pókusz!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Támadás"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Beszélgetés/Megvizsgálás"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Varázslat"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Elem képernyő"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Főmenü"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Térkép"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "Nem használt"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Le"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Balra"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Jobbra"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Fel"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Hiba: nincs leképezve"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "%d. hely - %d:%02d - %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "%d. hely - Üres"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "A Dink Smallwood játék vagy a D-Modok egyikének szerkesztése."

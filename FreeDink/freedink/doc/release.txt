@@ -1,0 +1,167 @@
+How to make a release     -*- shell-script -*-
+
+Version scheme
+--------------
+
+- Release = x.y  (y is even)
+- Snapshot = x.$((y+1)).$(date +%Y%m%d)
+
+The release number follows the Gnits standard (only 2 numbers to avoid
+complex versions). If a quick fix is necessary to the latest release,
+while the development version is unstable, we may branch and use
+x.y.z.
+
+Why not simply rely on $(date) being greater than any released .z?
+- The snapshots separate branch (x.y+1) clearly distinguish them from
+  stable releases.
+- Auto-builders also can follow the stable branch and build
+  x.y.$(date) without version conflict.
+
+The next release has a version number higher than the latest snapshot,
+so that people tracking the snapshots also upgrade when there is a new
+release.
+
+
+Bootstrapping
+-------------
+
+Cf. doc/bootstrap.txt
+
+
+On the developer computer:
+--------------------------
+
+VERSION=109.x
+cd freedink/
+git checkout -b $VERSION
+# Edit NEWS
+# Edit configure.ac (AC_INIT)
+# Sync debian/
+# Sync freedink.spec
+# Edit freedink.spec (Version/Release + %changelog)
+# Edit doc/gnulib.txt with the version used
+rsync -Lrtvz  translationproject.org::tp/latest/freedink/  po
+# Update po/LINGUAS and po/POTFILES.in
+# (Note: po/freedink.pot is updated automatically)
+
+cd native/
+make  # otherwise *** No rule to make target `../gnulib/lib/libgnu.a'
+make distcheck
+git checkout ../po/  # canonical .po's are from TP
+git commit -am "Start branch $VERSION"
+git push origin $VERSION master
+# Here you can test the release in the autobuilder
+
+# When everything is tested:
+cd ..
+git2cl > ChangeLog
+git commit -m "Update ChangeLog" ChangeLog
+git tag -s v$VERSION -m v$VERSION -u ...
+git push --tags
+
+# Cleanly merge stable branch back to trunk
+git checkout master
+git merge $VERSION --no-commit --no-ff
+# Edit configure.ac (AC_INIT) and NEWS
+git add configure.ac NEWS
+git commit -m "Merge $VERSION"
+
+
+On the autobuilder:
+-------------------
+
+./freedink-snapshot.sh release $VERSION
+./freedink-exe.sh $VERSION
+./freedink-debs.sh $VERSION # as root
+./freedink-rpms.sh $VERSION # in a Fedora vserver
+
+
+On the maintainer computer:
+---------------------------
+
+# http://www.gnu.org/prep/maintain/html_node/FTP-Upload-Directive-File-_002d-v1_002e1.html
+gpg --sign -b freedink-$VERSION.tar.gz
+cat <<EOF | gpg --clearsign -a > freedink-$VERSION.tar.gz.directive.asc
+version: 1.1
+directory: freedink
+filename: freedink-$VERSION.tar.gz
+EOF
+lftp -e "mput freedink-$VERSION.tar.gz*; exit" -u anonymous, ftp-upload.gnu.org/incoming/ftp/
+# Check https://ftp.gnu.org/gnu/freedink/
+
+# Pristine TAR - efficienty storing the release in the Git repository
+gpg --enarmor freedink-$VERSION.tar.gz.sig  # pristine-tar stores a .asc whatever the format
+sed 's/ ARMORED FILE/ SIGNATURE/' freedink-$VERSION.tar.gz.sig.asc > freedink-$VERSION.tar.gz.asc
+cd ..
+pristine-tar commit -s native/freedink-$VERSION.tar.gz.asc native/freedink-$VERSION.tar.gz v$VERSION
+# pristine-tar checkout -s freedink-$VERSION.tar.gz.asc freedink-$VERSION.tar.gz
+# gpg --verify freedink-$VERSION.tar.gz.asc
+git push origin pristine-tar
+
+# Upload sigs to freedink.org
+
+
+Submit the release to:
+----------------------
+
+- GNU
+  info-gnu@gnu.org
+- Savannah / GNU Planet
+  http://savannah.gnu.org/p/freedink
+- FreeCode
+  https://freecode.com/projects/freedink
+- Translation Project
+  http://translationproject.org/html/maintainers.html
+- Dink Network (.zip releases)
+  http://www.dinknetwork.com/contribute/version/new/gnu_freedink/
+  http://www.dinknetwork.com/contribute/version/new/gnu_freedink_source_code/
+- Debian GNU/Linux
+  http://wiki.debian.org/Games/Sponsors/Queue
+- Fedora GNU/Linux
+  http://fedoraproject.org/wiki/PackageMaintainers/UpdatingPackageHowTo
+- OpenSUSE GNU/Linux
+  tell Stefan about the latest official srpm
+- ArchLinux GNU/Linux
+  contact Petteri
+- FreeBSD
+  contact Stephen
+- Ubuntu GNU/Linux (Debian merge request)
+  contact shirish
+- JeuxLibres
+  http://jeuxlibres.net/postgame/299.html
+- Press...
+
+
+Debian notes:
+-------------
+
+Check this for updates:
+- https://tracker.debian.org/pkg/freedink
+- /usr/share/doc/debian-policy/upgrading-checklist.txt.gz
+
+sudo pbuilder create
+sudo pbuilder update
+ln -nfs freedink-$VERSION.tar.gz freedink-$VERSION.orig.tar.gz
+ln -nfs freedink-$VERSION.tar.gz.sig freedink_$VERSION.orig.tar.gz.sig
+rm -rf freedink-$VERSION/ && tar xf freedink_$VERSION.orig.tar.gz
+cd freedink-data-$VERSION/ && rm -rf debian/ && \cp -a ../debian .
+pdebuild --buildresult ..
+lintian -i
+debsign -k ...
+debrelease --dput
+
+For backports:
+https://wiki.debian.org/BuildingFormalBackports#Self-contained_example_for_Fossil_2
+
+
+Fedora notes:
+-------------
+
+Check:
+https://fedoraproject.org/wiki/Package_maintenance_guide#Typical_fedpkg_session
+
+See also:
+https://src.fedoraproject.org/cgit/rpms/freedink.git/
+https://apps.fedoraproject.org/packages/freedink
+https://taskotron.fedoraproject.org/resultsdb/results?item:like=freedink*
+https://dl.fedoraproject.org/pub/alt/screenshots/f30/

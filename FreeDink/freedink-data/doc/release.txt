@@ -1,0 +1,111 @@
+How to make a release     -*- shell-script -*-
+
+
+On the developer computer:
+--------------------------
+
+VERSION=1.08.`date +%Y%m%d`
+git2cl > ChangeLog
+# Edit NEWS (content + _version number_)
+# Sync debian/
+# Sync freedink-data.spec
+# Edit freedink-data.spec (Version/Release + %changelog w/ C-c C-e)
+# Edit dink/l10n/dink.pot (Project-Id-Version and PO-Revision-Date, use gettext-el)
+rsync -Lrtvz  translationproject.org::tp/latest/dink/  dink/l10n/
+
+make reprotest
+make dist
+# Test freedink-data-$version.tar.gz...
+
+# Commit the current state
+git commit -am "Release $VERSION"
+
+# Tag it
+git tag -s v$VERSION -m "v$VERSION"
+
+git push origin master
+git push --tags
+
+
+On the maintainer computer:
+---------------------------
+
+# Upload it at ftp.gnu.org
+# http://www.gnu.org/prep/maintain/html_node/Automated-FTP-Uploads.html
+gpg --sign -b freedink-data-$VERSION.tar.gz
+cat <<EOF | gpg --clearsign -a > freedink-data-$VERSION.tar.gz.directive.asc
+version: 1.1
+directory: freedink
+filename: freedink-data-$VERSION.tar.gz
+EOF
+
+# Send all 3 files to ftp://anonymous@ftp-upload.gnu.org/incoming/ftp/
+# freedink-data-$VERSION.tar.gz
+# freedink-data-$VERSION.tar.gz.sig
+# freedink-data-$VERSION.tar.gz.directive.asc
+lftp -e "mput freedink-data-$VERSION.tar.gz*; exit" -u anonymous, ftp-upload.gnu.org/incoming/ftp/
+
+# Make a pristine-tar copy of the release. Beware, this requires 500MB
+# of free space! (but only a few kBs in the .git repository)
+pristine-tar commit freedink-data-$VERSION.tar.gz v$VERSION
+git push origin pristine-tar
+
+
+Submit the release to:
+----------------------
+
+- GNU
+  info-gnu@gnu.org
+- Savannah / GNU Planet
+  http://savannah.gnu.org/p/freedink
+- Translation Project
+  http://translationproject.org/html/maintainers.html
+- Dink Network
+  http://www.dinknetwork.com/contribute/version/new/freedink_data/
+  http://www.dinknetwork.com/contribute/version/new/freedink_data_source_code/
+- Debian GNU/Linux
+  See below
+- Fedora GNU/Linux
+  See below
+- OpenSUSE GNU/Linux
+  tell Stefan about the latest official srpm
+- ArchLinux GNU/Linux
+  contact Petteri
+- FreeBSD
+  contact Stephen
+- Ubuntu GNU/Linux (Debian merge request)
+  contact shirish
+- Press...
+
+
+Debian notes:
+-------------
+
+Check this for updates:
+- /usr/share/doc/debian-policy/upgrading-checklist.txt.gz
+- http://lintian.debian.org/full/pkg-games-devel@lists.alioth.debian.org.html#freedink-data
+
+sudo pbuilder create
+sudo pbuilder update
+ln -nfs freedink-data-$VERSION.tar.gz freedink-data_$VERSION.orig.tar.gz
+rm -rf freedink-data-$VERSION/ && tar xf freedink-data-$VERSION.tar.gz
+cd freedink-data-$VERSION/ && rm -rf debian/ && \cp -a ../debian .
+pdebuild --buildresult ..
+lintian
+debsign
+debrelease --dput
+
+For backports:
+https://wiki.debian.org/BuildingFormalBackports#Self-contained_example_for_Apache_2.4
+
+
+Fedora notes:
+-------------
+
+Check:
+https://fedoraproject.org/wiki/Package_maintenance_guide#Typical_fedpkg_session
+
+See also:
+https://admin.fedoraproject.org/pkgdb/package/freedink-data/
+http://pkgs.fedoraproject.org/cgit/freedink-data.git/
+https://apps.fedoraproject.org/packages/freedink-data

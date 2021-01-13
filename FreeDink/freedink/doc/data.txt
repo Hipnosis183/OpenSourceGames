@@ -1,0 +1,511 @@
+Data from the original game commonly needed by D-Mods
+=====================================================
+
+Now that we have a working portable game engine, it would make sense
+to distribute it along with all data necessary to run D-Mods.
+
+Currently the most straightforward solution is to run the official
+installer through Wine and grab the data::
+
+  wget http://files.dinknetwork.com/dinksmallwood108.exe
+  wine dinksmallwood108.exe
+  mv ~/.wine/drive_c/Program\ Files/Dink\ Smallwood \
+    /usr/local/share/dink/
+
+It's also possible to extract the data using the '7z' extraction tool
+from http://files.dinknetwork.com/dinksmallwood108.exe (see
+contrib/dextract for an automated extraction script - though some
+files are skipped for unknown reason by 7-Zip)
+
+
+Last, there's a repackaging of v1.06 made by Dan Walma and approved by
+Seth A. Robinson::
+
+  wget http://files.dinknetwork.com/dinksmallwood106.zip
+  mkdir -p /usr/local/share
+  unzip -d /usr/local/share -L dinksmallwood106.zip
+
+
+However, it's not free (as in freedom), thus it cannot be included in
+GNU/Linux distributions. Seth is open to releasing most data files
+under a zlib-like license, except for sound which he doesn't own, and
+data which was never released such as the 3D models.
+
+The graphics pack was released under a pretty lax license (free for
+D-Mods and freeware games). In the worst case we could extend this to
+a subset of the Dink Smallwood original story. This subset would not
+cover the original Dink Smallwood story, but would cover files
+commonly required by D-Mods.
+
+This way, FreeDink would ship with a free base data pack that could be
+included in distros and could run any D-Mod out of the box.
+
+We could also imagine creating a very small pack containing the
+missing non-free story files, so that people could easily play the
+original game after installing FreeDink.
+
+
+Graphics differences
+--------------------
+
+(between dinkgraphics.zip and an extraction of all dir.ff files)
+
+dinkgraphics.zip is free for everybody to use in "FREEWARE"
+games. This is a good candidate for the base data pack. However, it is
+not complete because it has a few differences with the original Dink
+graphics.
+
+
+Method for the comparison:
+
+- extraction of dir.ff files using utils/ffrextract.c
+
+- all filenames to lowercase using lc_dmod.sh (from old SDL port)
+
+- diff -r dinkgraphics/ 106/dink/graphics/
+
+
+Results:
+
+- graphics/effects/magic: the original game's end boss animation
+  (poseXX.bmp and sethXwXX.bmp) are not present in dinkgraphics. These
+  graphics are used in some D-Mods such as End of Time v2.
+
+- item-w22.bmp and item-w23.bmp (herb boots graphics) are missing in
+  dinkgraphics.
+
+- graphics/items/food/food-31.bmp (King Daniel!) is missing in
+  dinkgraphics.
+
+- lands/trees/treefire/tree-f17.bmp is somewhat corrupted in
+  dinkgraphics (about 4 rows of pixels are postponed 2 pixels to the
+  right, which looks ugly). Same for struct/castle/castl-03.bmp,
+  struct/castle/castl-08.bmp, struct/castle/castl-09.bmp,
+  struct/home/home-06.bmp, struct/home/home-09.bmp
+
+- inter/text-box/main-01.bmp is different (there's an additional white
+  area in dinkgraphics, which was probably removed later on to make
+  the text easier to read)
+
+
+Other differences that do not matter:
+
+- dink/morph: dinkgraphics is not properly numbered so it can't be
+  used directly as a sequence), but all the animation frames are the
+  same. dinkgraphics also has an extra frame (dinkm17.bmp)! Mystery
+  Island did copy this animation in their graphics/ directory rather
+  reuse it from the original graphics anyway.
+
+- there's a top-level dir.ff that contains a copy of
+  inter\text-box\main-
+
+
+Note: there was no change to graphics/ in v1.07 and v1.08, so this
+comparison is valid for those versions too.
+
+
+Tiles
+-----
+
+All tiles from the original games were reused in various D-Mods. It
+would be good to be able to redistribute them all.
+
+Tiles also depend on HARD.DAT for the default tile hardness, so this
+file is also necessary.
+
+
+Scripts
+-------
+
+At first glance, here is the list of all DinkC files that may be used
+in D-Mods (as opposed to: "related to the original Dink Smallwood
+story itself").
+
+Those are good candidates for the base data pack.
+
+1gold.c
+apotion.c
+bar-dp.c
+bar-e.c
+bar-f1.c
+bar-gh.c
+bar-m.c
+bar-sh.c
+bar-sp.c
+box1-e.c
+box2-e.c
+box2-sp.c
+bpotion.c
+button6.c
+ch1-ap.c
+ch1-g.c
+ch1-gh.c
+ch1-mp.c
+ch1-pap.c
+ch1-sp.c
+ch2-500.c
+ch2-ap.c
+ch2-gh.c
+ch2-sfb.c
+ch3-ap.c
+ch3-h.c
+dam-a1.c
+dam-bom2.c
+dam-bom.c
+dam-bomn.c
+dam-fire.c
+dam-ice.c
+dam-icee.c
+dam-sfb.c
+ddie5.c
+die5.c
+die.c
+dinfo.c
+duck.c
+emake.c
+en-bonc1.c
+en-bonc.c
+en-boncd.c
+en-bong.c
+en-drag.c
+en-gh.c
+en-gmog.c
+en-gs.c
+en-pbon.c
+en-pill1.c
+en-pill2.c
+en-pill.c
+en-pillf.c
+en-slay.c
+en-slimb.c
+en-slim.c
+en-slimg.c
+en-stg.c
+escape.c
+fire.c
+fish1.c
+get-fb.c
+get-sfb.c
+gheart.c
+gold200.c
+gold500.c
+heart.c
+item-axe.c
+item-b1.c
+item-b2.c
+item-b3.c
+item-bom.c
+item-bt.c
+item-eli.c
+item-fb.c
+item-fst.c
+item-ice.c
+item-nut.c
+item-p1.c
+item-pig.c
+item-sfb.c
+item-sw1.c
+item-sw2.c
+item-sw3.c
+lgold.c
+lraise.c
+mag-star.c
+main.c
+make.c
+mgold.c
+papgold.c
+ppotion.c
+rpotion.c
+s1-fount.c
+s1-ntree.c
+s1-nut.c
+s1-sack.c
+s1-slim.c
+s3-ch1.c
+savebot.c
+savetop.c
+sc-drag.c
+sc-lock.c
+sc-pill.c
+sc-slay.c
+sfood.c
+sgold.c
+sheart.c
+shrink.c
+sparkle.c
+start-2.c
+start-4.c
+start.c
+thorn.c
+xlgold.c
+
+
+Sounds
+------
+
+All sounds and music from the original games (except for the
+commercial CD audio tracks) were reused in various D-Mods.
+
+In addition, freedinkedit.exe (from version 1.06) contains 2 embedded
+sounds that were extracted and shipped with FreeDink - they need legal
+clarification.
+
+
+Unfortunately, most of the sounds effects are not redistributable.
+From the game's credits.txt:
+
+  Most were licensed from Hollywood Edge (tm). (www.hollywoodedge.com)
+  Many were created by us as well, most using a Korg T3 & X3 keyboard.
+  (level up wave, choir noise when you pickup a strength potion, etc)
+  Sound Forge was also used.
+
+We need to replace the hollywood version, which mostly include all war
+and atmosphere sounds (fighting, fire, beasts, etc.).
+
+
+Some MIDIs were made by Seth. Other midis have unclear legal status
+and should not be redistributed - or we need to find their original
+source again.
+
+From the game's credits.txt:
+
+  þ CD Music þ (CD version only, third burn version)
+  Track 2 - "Michief" by Seth A. Robinson ('95)
+  Track 3 - "Intro" by Joel Baker
+  Track 4 - "Egyption Theme" by Joel Baker
+  Track 5 - "Bar room theme" by Joel Baker (yes, inspired by an Ultima midi)
+  Track 6 - "Bravery theme" by Joel Baker
+  Track 7 - "Heartbeat Dungeon" by Joel Baker.  Chris Baker and Seth helped
+  Track 8 - "Heroin" by Joel Baker
+  Track 9 - "Battle March" by Joel Baker
+  Track 10 - "Haunted Stone" by Seth A. Robinson
+  Track 11 - "Dana" by Seth A. Robinson
+  Track 12 - "Memories" by Seth A. Robinson
+  Track 13 - "Church Theme" by Seth A. Robinson ('92)
+  Track 14 - "Somber" by Greg Smith
+  Track 15 - "The Funk-o-matic" by Greg Smith
+  Track 16 - "Island" by Seth A. Robinson ('91)
+  Track 17 - "Clubdance" by Greg Smith (original music by Seth A. Robinson)
+  Track 18 - "Generic Adventure" by Greg Smith
+  Track 19 - "Pantastic" by Seth A. Robinson ('91)
+  
+  þ Midi Music þ
+  tavern theme - Mitch Brink
+  cave theme   - Mitch Brink
+  story.mid    - Joel Baker
+  insper.mid   - Joel Baker
+  lively.mid   - Joel Baker
+  love.mid     - Joel Baker
+  wanderer.mid - Matt S. Smith
+  battle.mid   - Matt S. Smith
+  sleep.mid    - Matt S. Smith
+  thebully.mid - Matt S. Smith
+  dance.mid    - Seth A. Robinson
+  
+  All new midi's for freeware version - Nobuo Kuge (thanks!!)
+  
+  His page: http://www.threeweb.ad.jp/~kuge/indexe.html
+  
+  Special thanks to Mitch Brink for doing additional midi music for the
+  demo.  His webpage is at http://www.geocities.com/~mitchb2/
+  
+  The rest are favorite classical pieces of mine taken from the
+  public domain.
+  
+Two MIDIs are MIDI versions of original CD sound tracks, available at
+http://www.dinknetwork.com/file/dink_smallwood_cd_audio/ (announcement
+at http://www.dinknetwork.com/forum.cgi?MID=67456):
+
+2.mid -> #2
+1003.mid -> #3
+
+(at least that's the two I recognised)
+
+Track #6 in that pack sounds like a classical piece rather than
+'Bravery theme'.
+
+
+Some Mitch Brink's MIDIs are still available at
+http://www.mbsoundworks.com/demos.html#GM
+
+Unfortunately this is only those from Mystery Island:
+- Cave (island cave)
+- Deserted Town (island town)
+- Main Theme (splash screen)
+- Mandibles (sea event, e.g. sharks)
+- Map Screen (new game intro)
+- Pirate Theme (on ship)
+- Rescued (end)
+- Robot Lab (end boss)
+- Tavern (?)
+
+
+The name "Noke Kuge" gives some results in search engines, but not
+many.
+
+
+Duplicates:
+- 4.mid, Battle.mid [battle with soldiers]
+- 6.mid, 18.mid [end boss theme]
+- 10.mid, 107.mid, Caveexpl.mid [cave]
+
+Summary of internal MIDI comments (obtained using TiMidity++):
+
+1003.mid
+Copyright: Copyright © 1997 by Seth A. Robinson
+Text: Seth A. Robinson
+
+100.mid
+Sequence: Wanderjam
+
+101.mid
+Sequence: Wander 3
+Track name: Memorymoog 4
+
+102.mid
+Sequence: Tavern2
+Track name: Big PWM
+
+103.mid
+Sequence: Neighbor
+
+104.mid
+Text: Serenade
+Text: Composer:  Franz Schubert
+Text: Sequence:  Faren Raborn (June, 1995)
+Text: Email:  raborn@mail.dtx-bbs.com
+# domain name stolen ^^^^^^^^^^^^^^^^
+
+105.mid
+Playing 105.mid
+MIDI file: 105.mid
+Track name: Rêverie by
+Track name: Claude Debussy
+Track name: Sequence by
+Track name: Faren Raborn
+Track name: June, 1995
+Source (not exactly the same instruments though):
+http://www.classicalmidiconnection.com/cmc/impress.html
+http://www.classicalmidiconnection.com/cgibin/x.cgi/mid/debussy/deb_rev.mid
+No mail information in http://www.midiworld.com/contributors.htm
+No author entry for the other "Rêverie" MIDI's author (Gary D. Lloyd)
+
+106.mid
+Track name: Mendelssohn 
+Track name: Concerto for Violin
+Track name: Opus64- a - Allegro mol. apass.
+Track name: Midi by:
+Track name: B.Fisher
+Source (not exactly the same instruments though):
+"Violin Concerto in E-, Op.64 - 1.Allegro molto appassionato"
+http://www.classicalarchives.com/mendelssohn.html
+http://www.classicalarchives.com/m/8/menop64a.mid
+No mail from http://www.classicalarchives.com/c.html
+
+10.mid
+Sequence: Cave Exploring
+
+11.mid
+Sequence: In my dream
+Sequence: In my dream
+Copyright: The Honest LoveThe Honest LoveThe Honest LoveThe Honest Love
+
+12.mid
+Sequence: winter...from?
+Text: - System Mode Setg
+
+13.mid
+Sequence: untitled
+Text: Sanae Oda
+
+16.mid
+Sequence: Favorite
+
+18.mid
+Sequence: tukiyo.mid
+Copyright: Composed by Y-Asano
+
+1.mid
+Sequence: AVE MARIA    
+Copyright: (C)1994 Roland Corporation
+(Bach/Gounod version)
+Possible replacement:
+http://arsouyes.org/divers/finies/Bach/Prelude/Piano/prelude.mid - Art Libre
+http://arsouyes.org/divers/finies/gounod/Ave_Maria/Ave_Maria.mid - Art Libre
+
+2.mid
+Sequence: untitled
+Copyright: Copyright © 1997 by Seth A. Robinson
+Text: Seth A. Robinson
+
+4.mid
+Sequence: battle
+
+5.mid
+Format: 0  Tracks: 1  Divisions: 480
+Text: Oda Sanae
+
+6.mid
+Sequence: tukiyo.mid
+Copyright: Composed by Y-Asano
+
+7.mid
+
+9.mid
+Sequence: Mixed
+
+Bullythe.mid
+Playing Bullythe.mid
+MIDI file: Bullythe.mid
+Sequence: Bully Theme
+Track name: Dreamers
+
+dance.mid
+Sequence: untitled
+Copyright: Copyright © 1997 by Seth A. Robinson
+Text: Seth A. Robinson
+
+denube.mid
+The Blue Danube / On the Beautiful Blue Danube
+An der schönen blauen Donau op. 314
+
+insper.mid
+Sequence: untitled
+Copyright: Copyright © 1997 by Seth A. Robinson
+Text: Seth A. Robinson
+
+lively.mid
+Sequence: Lively
+Copyright: Copyright © 1997 by Seth A. Robinson
+Text: Seth A. Robinson
+
+love.mid
+Sequence: untitled
+Copyright: Copyright © 1997 by Seth A. Robinson
+Text: Seth A. Robinson
+
+lovin.mid (Kernsin parade)
+Sequence: Lovin' / GACHOPIN
+Copyright: Copyright(c)1997,GACHOPIN All Rights Reserved.
+http://sound.jp/gachopin/en/
+http://sound.jp/gachopin/music/lovin-e.html
+http://sound.jp/gachopin/midi/midplug/lovin_mp.mid
+gachos@gmail.com ICQ:21807998
+
+neighbor.mid (unused)
+Sequence: Neighbor
+
+Wanderer.mid
+Sequence: wanderer
+
+
+See also http://www.rtsoft.com/forums/showthread.php?t=1165 for some clues.
+
+
+splash.wav
+Comment: 'Cool Edit v.1.05 by David Johnston'
+
+
+I also started a page at:
+http://www.freedink.org/doc/sounds/
+

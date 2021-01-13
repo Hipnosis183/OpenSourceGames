@@ -1,0 +1,40 @@
+Eclipse provides a few refactoring tools, such as rename and extract
+method. To try it out:
+
+- cd freedink/
+  mkdir native/ && cd native/
+  ../configure ...
+
+- Install Eclipse CDT:
+  apt-get install eclipse eclipse-cdt-autotools
+
+- Workspace: in a separate place (i.e. *not* your Git working directory)
+
+- File > New > Project... > C++ Project
+  - Project name: FreeDink
+  - Existing code location: your Git working directory
+  - Languages: C, C++
+  - Toolchain for Indexer Settings: GNU Autotools Toolchain
+
+- File > New > Convert to a C/C++ Autotools Project
+
+- Project > Properties
+  - Autotools
+    - Configure Settings
+      - autogen > command: bootstrap
+      - configure > Advanced > Debug (-g)
+  - C/C++ Build
+    - Behavior > Build (Incremental build): checks
+    - Build command: make -j4
+    - Build directory: ${workspace_loc:/FreeDink}/native
+  - C/C++ General
+    - Paths and Symbols
+      - Includes > GNU C++
+        - Include directories: /usr/local/include/SDL2
+      - Symbols > GNU C++
+        - HAVE_CONFIG_H
+        - LOCALEDIR "/usr/local/share/locale"
+
+- Project > Clean...
+
+- Project > Build all

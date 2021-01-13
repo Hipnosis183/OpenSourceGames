@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="sel1_data" version="1.3.0" audacityversion="2.1.2" sel0="0.0066757202" sel1="0.0066757202" vpos="0" h="0.0000000000" zoom="1048.5760000000" rate="44100.0" snapto="off" selectionformat="samples" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="ARTIST" value="Bark K., Sylvain Beucler"/>
+		<tag name="YEAR" value="2009, 2016"/>
+		<tag name="TITLE" value="Spell 4 (fire)"/>
+		<tag name="COMMENTS" value="License: CC BY-SA 3.0"/>
+	</tags>
+	<wavetrack name="sel1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.14972687">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="38904">
+				<waveblock start="0">
+					<simpleblockfile filename="e00006fd.au" len="38904" min="-0.268817" max="0.319889" rms="0.052335"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="sel1" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.14972687">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="38904">
+				<waveblock start="0">
+					<simpleblockfile filename="e00005d7.au" len="38904" min="-0.268817" max="0.319889" rms="0.052335"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="sel1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="176400" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="140418">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000b94.au" len="140418" min="-0.675199" max="0.709535" rms="0.058756"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="sel1" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="176400" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="140418">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000dca.au" len="140418" min="-0.672498" max="0.709408" rms="0.058702"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

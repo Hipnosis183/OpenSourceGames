@@ -1,0 +1,148 @@
+Statically compiling for GNU/Linux
+==================================
+
+Compiling with a custom SDL2
+----------------------------
+
+Distros compile libSDL with a number of backends (such as X11 and
+AAlib for graphics, ALSA and OSS for sounds, etc.) which will trigger
+a lot of dependencies.
+
+Instead we can recompile SDL, rely on its ability to dlopen auxiliary
+libs (libX11, libGL, libpng, libvorbis... but not libfreetype) at
+runtime, and assume the user has these base libs installed already.
+
+(alternatively we can statically build *some* of them, e.g. libvorbis,
+ and disable the matching dynamic loading)
+
+Compiling from Debian stable (a.k.a. an "old" distro) will avoid using
+too recent symbols from glibc.
+
+Compilation instructions:
+--disable-shared == don't build .so libs (for simplicity when linking)
+
+cd SDL2/
+./configure --disable-shared
+make -j$(nproc)
+sudo make install
+
+cd SDL2_image/
+./configure --disable-shared
+make -j$(nproc)
+sudo make install
+
+cd SDL2_mixer/
+aptitude install libmodplug-dev
+EXTRA_CFLAGS='-I/usr/include/libmodplug' \
+  ./configure --disable-shared --disable-music-mp3
+make -j$(nproc)
+sudo make install
+
+cd SDL2_ttf/
+./configure --disable-shared
+make -j$(nproc)
+sudo make install
+
+cd SDL2_gfx/
+./configure --disable-shared
+make -j$(nproc)
+sudo make install
+
+# In --enable-static, manually added -lm (SDL2_gfx) and -ldl (SDL),
+# the linker doesn't find them when using .a static libs.
+
+cd freedink/
+../configure --enable-static --disable-embedded-resources
+
+# Result:
+$ objdump -x src/freedink | grep NEEDED
+  NEEDED               libpthread.so.0
+  NEEDED               libfontconfig.so.1
+  NEEDED               libfreetype.so.6
+  NEEDED               libm.so.6
+  NEEDED               libdl.so.2
+  NEEDED               libc.so.6
+$ ls -lh src/freedink
+-rwxrwxr-x 1 me me 7,8M juin  16 21:57 src/freedink
+$ strip src/freedink
+$ ls -lh src/freedink
+-rwxrwxr-x 1 me me 1,6M juin  16 22:02 src/freedink
+
+
+Issues with static builds
+-------------------------
+
+Purely static builds tend to cause issues:
+- glibc has version requirements to load modules (dns, nss...)
+- X11 causes weird issues
+
+Example (with SDLv1):
+$ cd SDL-1.2.12
+# not sure if both options are mandatory:
+$ ./configure --disable-x11-shared --disable-shared
+$ make && make install
+...
+
+$ gcc -static -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT \
+  joytest.c -L/usr/local/lib -L/usr/lib -lSDL -laudio -lvga -ldirectfb \
+  -ldirect -lfusion -lm -lXrandr -lXrender -lX11 -lXau -lXdmcp \
+  -lXext -ldl -lpthread -o joytest
+/usr/local/lib/libSDL.a(SDL_alsa_audio.o): In function `LoadALSALibrary':
+./src/audio/alsa/SDL_alsa_audio.c:139: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linki
+/usr/lib/libdirect.a(stream.o): In function `tcp_open':
+(.text+0x891): warning: Using 'getaddrinfo' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+/usr/lib/libaudio.a(ConnSvr.o): In function `MakeTCPConnection':
+/home/steve/debian/nas/nas-1.8/lib/audio/ConnSvr.c:981: warning: Using 'gethostbyname' in statically linked applications requires at runtime the shared libraries from the glib
+/usr/lib/libX11.a(x11_trans.o): In function `_X11TransSocketINETConnect':
+(.text+0x1da4): warning: Using 'getservbyname' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+$ ls -lh joytest
+-rwxr-xr-x 1 me me 4,4M 2007-09-26 23:52 joytest
+$ strip joytest
+$ ls -lh joytest
+-rwxr-xr-x 1 me me 2,3M 2007-09-26 23:52 joytest
+$ ldd joytest
+        not a dynamic executable
+$ ./joytest
+# Runs fine until I exit the app:
+*** glibc detected *** double free or corruption (out): 0xb7ba4230 ***
+Abandon
+
+The resulting binary also crashes with a floating point exception
+under Fedora 7 :/
+
+
+As a work-around, it is possible to specify explicitly which libraries
+to link statically, and keep a base dynamic executable:
+
+$ gcc -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT joytest.c \
+  -L/usr/local/lib -L/usr/lib -Wl,-Bstatic -lSDL -laudio -lvga \
+  -ldirectfb -ldirect -lfusion -lm -lXrandr -lXrender -lX11 -lXau \
+  -lXdmcp -lXext -o joytest -Wl,-Bdynamic -ldl -lpthread
+$ ls -lh joytest
+-rwxr-xr-x 1 me me 3,6M 2007-09-26 23:50 joytest
+$ strip joytest
+$ ls -lh joytest
+-rwxr-xr-x 1 me me 1,8M 2007-09-26 23:50 joytest
+$ ldd joytest
+        linux-gate.so.1 =>  (0xffffe000)
+        libdl.so.2 => /lib/tls/i686/cmov/libdl.so.2 (0xb7f5a000)
+        libpthread.so.0 => /lib/tls/i686/cmov/libpthread.so.0 (0xb7f48000)
+        libc.so.6 => /lib/tls/i686/cmov/libc.so.6 (0xb7e17000)
+        /lib/ld-linux.so.2 (0xb7f78000)
+
+
+Using the distro's libsdl.a
+---------------------------
+
+Distros enable all backends and disable dlopen support.  So we need to
+statically link all backends to use their libsdl.a.  This is
+cumbersome enough to justify using our own SDL build.
+
+
+Use Statifier?
+--------------
+
+http://statifier.sourceforge.net/
+
+I haven't looked at it much but apparently it makes a big
+distro-neutral executable out of dynamic libraries.

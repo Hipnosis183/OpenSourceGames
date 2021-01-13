@@ -1,0 +1,12 @@
+wxglade
+=======
+
+The .wxg GUI files are pre-processsed to .cpp files by the build
+system when generating upstream release tarballs.  It may use a
+version of wxglade that is more recent that your target Debian
+release, so it's better not to reprocess them, otherwise bugs may be
+introduced (last time that happened, OK/Cancel buttons didn't work
+anymore).  This is similar to keeping upstream './configure' scripts
+instead autoreconf-ing.
+
+ -- Sylvain Beucler <beuc@beuc.net>, Sun, 23 May 2010 22:30:02 +0200

@@ -1,0 +1,27 @@
+- Changes:
+
+  http://www.rtsoft.com/wiki/doku.php?id=dink:hd_author_guide
+
+  I don't think it's worth attempting to support these changes in GNU
+  FreeDink.
+
+
+- Incompatibilities:
+
+  http://www.dinknetwork.com/file/malachi_the_jerk/version/1_3_semicolon_special/
+
+    - lack of semicolons at the end of goto statments causes them not to work
+
+    - won't display choice menu text while faded down.
+
+    - doesn't erase corpses and blood when draw_background is used
+
+    - uses different keycodes for certain letters
+
+  http://www.dinknetwork.com/forum.cgi?MID=190064#190437
+
+    - Doesn't support load_tiles()
+
+  http://www.rtsoft.com/wiki/doku.php?id=dink:hd_author_guide
+
+    - No palette mode (and no load_palette())

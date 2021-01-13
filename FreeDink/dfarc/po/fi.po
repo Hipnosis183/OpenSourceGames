@@ -1,0 +1,646 @@
+# Finnish translation for dfarc.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the dfarc package.
+# Petteri Tolonen <petteri.tolonen@gmail.com>, 2009, 2010
+msgid ""
+msgstr ""
+"Project-Id-Version: dfarc 3.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-28 20:47+0000\n"
+"PO-Revision-Date: 2010-11-27 12:23+0100\n"
+"Last-Translator: Petteri Tolonen <petteri.tolonen@gmail.com>\n"
+"Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: finnish\n"
+"X-Poedit-Country: FINLAND\n"
+
+#: ../src/BZip.cpp:300
+#, c-format
+msgid "Error: Could not open input file '%s' for bzip decompression."
+msgstr "Virhe: Tiedostoa %s ei voitu avata purettavaksi bzip-muodossa."
+
+#: ../src/BZip.cpp:315
+msgid "Error: Invalid .dmod file selected!"
+msgstr "Virhe: Epäkelpo D-Mod-tiedosto."
+
+#: ../src/BZip.cpp:325
+#, c-format
+msgid "Error: Could not write to '%s'."
+msgstr "Virhe: Tiedostoon %s ei voitu kirjoittaa."
+
+#: ../src/BZip.cpp:357
+msgid "Invalid .dmod file specified."
+msgstr "Virheellinen D-Mod-tiedosto."
+
+#: ../src/BZip.cpp:361
+msgid "Critical program function error: opened for write."
+msgstr "Ohjelman vakava toimintahäiriö. Tiedosto avattiin kirjoitustilassa."
+
+#: ../src/BZip.cpp:365
+msgid "Could not read .dmod file."
+msgstr "D-Mod-tiedoston lukeminen epäonnistui."
+
+#: ../src/BZip.cpp:369
+msgid "Incomplete .dmod file. Please download it again."
+msgstr "D-Mod-tiedosto on keskeneräinen. Lataa se uudelleen."
+
+#: ../src/BZip.cpp:373
+msgid "The .dmod file is corrupted.  Please download it again."
+msgstr "D-Mod-tiedosto on korruptoitunut. Lataa se uudelleen."
+
+#: ../src/BZip.cpp:377
+msgid "The file is not a valid .dmod file."
+msgstr "Tiedosto ei ole kelvollinen D-Mod-tiedosto."
+
+#: ../src/BZip.cpp:381
+msgid "Out of memory error."
+msgstr "Virhe: Muisti lopussa."
+
+#: ../src/BZip.cpp:385
+msgid "An unhandled error occured."
+msgstr "Käsittelemätön virhe."
+
+#: ../src/Config.cpp:216
+msgid "Error: dinksmallwood.ini not found. Please run the main game and try running this program again."
+msgstr "Virhe: tiedostoa dinksmallwood.ini ei löytynyt. Aja peli ja yritä käynnistää tämä ohjelma uudestaan."
+
+#: ../src/Config.cpp:224
+msgid "Error opening dinksmallwood.ini"
+msgstr "Virhe avattaessa tiedostoa dinksmallwood.ini"
+
+#: ../src/DFArcFrame.cpp:168
+#, c-format
+msgid ""
+"DFArc version %s\n"
+"Copyright (C) 2004  Andrew Reading (merlin)\n"
+"Copyright (C) 2005, 2006  Dan Walma (redink1)\n"
+"Copyright (C) 2008, 2009, 2010  Sylvain Beucler (Beuc)\n"
+"Build Date: %s\n"
+"Powered by bzip2 (http://www.bzip.org) and wxWidgets (http://www.wxwidgets.org)"
+msgstr ""
+"DFArc versio %s\n"
+"Copyright © 2004  Andrew Reading (merlin)\n"
+"Copyright © 2005, 2006  Dan Walma (redink1)\n"
+"Copyright (C) 2008, 2009, 2010  Sylvain Beucler (Beuc)\n"
+"Käännetty %s\n"
+"Käyttää kirjastoja bzip2 (http://www.bzip.org) ja wxWidgets (http://www.wxwidgets.org)"
+
+#: ../src/DFArcFrame.cpp:175
+msgid "About DFArc v3"
+msgstr "Tietoja DFArc v3:sta"
+
+#. Default logo (currently all black with a question mark)
+#. TRANSLATORS: please make this SHORT, possibly rephrasing as "<
+#. Choose!". This is included in the 160x120px logo box in the main
+#. window and it doesn't word-wrap.
+#: ../src/DFArcFrame.cpp:246
+msgid "< Pick a D-Mod"
+msgstr "< Valitse D-Mod"
+
+#: ../src/DFArcFrame.cpp:312
+msgid "No translations"
+msgstr "Ei käännöksiä"
+
+#. Not displaying the default language explicitely, because it
+#. makes the user think that a translation is always available.
+#. mGameLocaleList->Insert(wxString(_("Default language")) + wxT(" (") + cur_locale_name + wxT(")"), 0);
+#: ../src/DFArcFrame.cpp:319 ../src/Options.cpp:120
+msgid "Don't translate"
+msgstr "Alkuperäinen kieli"
+
+#: ../src/DFArcFrame.cpp:338
+msgid "D-Mod files (*.dmod)"
+msgstr "D-Mod-tiedostot (*.dmod)"
+
+#: ../src/DFArcFrame.cpp:339
+msgid "Select a .dmod file"
+msgstr "Valitse D-Mod-tiedosto"
+
+#: ../src/DFArcFrame.cpp:534
+#, c-format
+msgid "The '%s' locale is not installed on your computer (locales tells the computer how to manage a language). You need to install it - check your system documentation."
+msgstr "Lokaalia %s ei löytynyt järjestelmästä. Asenna lokaali ja yritä uudelleen. Ohjeita löydät järjestelmäsi dokumentaatiosta."
+
+#: ../src/DFArcFrame.cpp:537 ../src/DFArcFrame.cpp:615
+msgid "Warning"
+msgstr "Varoitus"
+
+#: ../src/DFArcFrame.cpp:577
+#, c-format
+msgid "Dink Smallwood failed! Error code %d."
+msgstr "Pelin käynnistäminen epäonnistui. Virhekoodi %d."
+
+#: ../src/DFArcFrame.cpp:579 ../src/DFArcFrame.cpp:584
+#: ../src/DFArcFrame.cpp:645 ../src/DFArcFrame.cpp:647
+#: ../src/DFArcFrame.cpp:690 ../src/DFArcFrame.cpp:699
+msgid "Error"
+msgstr "Virhe"
+
+#: ../src/DFArcFrame.cpp:581
+#, c-format
+msgid "Dink Smallwood ('%s') was not found on your computer. Please configure the Dink program name in the Options menu."
+msgstr "Dink Smallwood -peliä (%s) ei löytynyt koneeltasi. Voit asettaa Dink-sovelluksen nimen Asetukset-valikon kautta."
+
+#: ../src/DFArcFrame.cpp:612
+msgid "Dinkedit saves all changes automatically. Altering maps can ruin the game. Are you sure you want to continue?"
+msgstr "Dinkedit tallentaa kaikki muutokset automaattisesti. Karttojen muuttaminen voi turmella pelin. Haluatko varmasti jatkaa?"
+
+#: ../src/DFArcFrame.cpp:642
+#, c-format
+msgid "The editor ('%s') was not found on your computer. Please configure the editor program name in the Options menu."
+msgstr "Muokkainta (%s) ei löytynyt koneeltasi. Voit vaihtaa muokkaimen Asetukset-valikon kautta."
+
+#: ../src/DFArcFrame.cpp:647
+msgid "Error while running the editor"
+msgstr "Virhe muokkaimen käynnistyksessä"
+
+#. FreeDesktop
+#. Gnome
+#. KDE
+#. Xfce
+#: ../src/DFArcFrame.cpp:688
+msgid "Could not find a file manager (tried 'xdg-open', 'nautilus', 'konqueror' and 'thunar')"
+msgstr "Tiedostoselainta ei löytynyt (yritettiin käynnistää xdg-open, nautilus, konqueror ja thunar)."
+
+#: ../src/DFArcFrame.cpp:696
+#, c-format
+msgid "Cannot start '%s', please check your configuration in the Options window."
+msgstr "Ohjelmaa %s ei voida käynnistää, tarkista asetukset."
+
+#: ../src/DFArcFrame.cpp:706
+msgid ""
+"Welcome to DFArc, the Dink Smallwood front end!\n"
+"\n"
+"You can choose to play the original game (Dink Smallwood) or Dink-Modules (D-Mods) which contain new adventures.\n"
+"\n"
+"After completing the main game, give some D-Mods a try.\n"
+"There are hundreds of them, just click File-Download D-Mods."
+msgstr ""
+"Tämä on DFArc, Dink Smallwood -pelin hallintaohjelma.\n"
+"\n"
+"Voit pelata alkuperäistä Dink Smallwood -peliä tai Dink-moduuleita (D-Mod), jotka sisältävät uusia seikkailuja.\n"
+"\n"
+"Kun on pelannut alkuperäisen pelin läpi, kannattaa kokeilla D-Modeja.\n"
+"Niitä on saatavilla satoja - napsauta: Tiedosto - Lataa D-Modeja."
+
+#: ../src/DFArcFrame.cpp:713
+msgid "Introduction"
+msgstr "Esittely"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:856
+msgid "Cannot use the overriden Dink Smallwood directory - ignoring it. (permission problem?)"
+msgstr "Haluamaasi Dink Smallwood -hakemistoa ei voida käyttää. (Oikeutesi eivät ehkä riitä kansion käyttämiseen.)"
+
+#: ../src/DFArcFrame.cpp:858 ../src/DFArcFrame.cpp:866
+msgid "Configuration error"
+msgstr "Asetusvirhe"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:865
+msgid "The Dink Smallwood directory you entered does not exist - ignoring it."
+msgstr "Antamaasi Dink Smallwood -hakemistoa ei ole olemassa - jätetään huomiotta."
+
+#: ../src/DFArcFrame.cpp:880
+msgid "You must select the uninstall option from the start menu to uninstall the main game."
+msgstr "Valitse \"poista asennus\" Käynnistä-valikosta poistaaksesi pelin."
+
+#: ../src/DFArcFrame.cpp:881
+msgid "Uninstall - Error"
+msgstr "Virhe asennuksen poistamisessa"
+
+#: ../src/DFArcFrame.cpp:886
+msgid "Do you want to remove all save game files?"
+msgstr "Haluatko poistaa kaikki tallennetut pelitilanteet?"
+
+#: ../src/DFArcFrame.cpp:887
+msgid "Uninstall - Save Game Files"
+msgstr "Poistetaan tallennetut pelitilanteet"
+
+#: ../src/DFArcFrame.cpp:909
+msgid "Unable to remove D-Mod directory. All other files were removed."
+msgstr "D-Mod-hakemiston poistaminen epäonnistui. Kaikki muut tiedostot poistettiin."
+
+#: ../src/DFArcFrame.cpp:915
+msgid "D-Mod successfully uninstalled"
+msgstr "D-Mod poistettiin onnistuneesti"
+
+#: ../src/DFArcFrame.cpp:916
+msgid "Uninstall - Success"
+msgstr "Asennuksen poistaminen onnistui"
+
+#: ../src/InstallVerifyFrame.cpp:56
+msgid "Preparing"
+msgstr "Valmistellaan"
+
+#: ../src/InstallVerifyFrame.cpp:57
+msgid "The D-Mod archive is being decompressed in a temporary file."
+msgstr "D-Mod-arkisto puretaan väliaikaiseen tiedostoon."
+
+#: ../src/InstallVerifyFrame.cpp:81
+#, c-format
+msgid ""
+"No Description Available.\n"
+"\n"
+"The D-Mod will be installed in subdirectory '%s'."
+msgstr ""
+"Kuvausta ei ole. \n"
+"\n"
+"D-Mod asennetaan alihakemistoon %s."
+
+#: ../src/InstallVerifyFrame.cpp:94
+msgid "DFArc - Install D-Mod - "
+msgstr "DFArc - Asenna D-Mod"
+
+#: ../src/InstallVerifyFrame.cpp:143
+msgid "DFArc - Installing"
+msgstr "DFArc - Asennetaan"
+
+#: ../src/InstallVerifyFrame.cpp:157
+msgid "The D-Mod you selected"
+msgstr "Valitsemasi D-Mod"
+
+#: ../src/InstallVerifyFrame.cpp:159
+msgid " was successfully installed."
+msgstr " asennettiin onnistuneesti."
+
+#: ../src/InstallVerifyFrame.cpp:160 ../src/Package.cpp:167
+msgid "Success"
+msgstr "Onnistui"
+
+#: ../src/InstallVerifyFrame.cpp:169
+msgid "An error occured while extracting the .dmod file."
+msgstr "D-Mod-tiedoston purkamisessa tapahtui virhe."
+
+#: ../src/Options.cpp:115
+msgid "System language"
+msgstr "Järjestelmän kieli"
+
+#: ../src/Options.cpp:138
+msgid "Custom"
+msgstr "Muu kieli"
+
+#: ../src/Options.cpp:177
+msgid "Choose the Dink Smallwood install directory"
+msgstr "Valitse Dink Smallwood -asennushakemisto"
+
+#: ../src/Options.cpp:185
+msgid "Choose a folder containing D-Mods"
+msgstr "Valitse hakemisto, jossa D-Modit sijaitsevat"
+
+#: ../src/Package.cpp:123
+msgid "You must provide an identifier filename."
+msgstr "Anna tunnisteen tiedostonimi."
+
+#: ../src/Package.cpp:139
+msgid "Packaging"
+msgstr "Paketointi"
+
+#: ../src/Package.cpp:139
+msgid "The D-Mod is being packaged."
+msgstr "D-Mod-pelimoduulia paketoidaan."
+
+#. Success dialog
+#: ../src/Package.cpp:165
+#, c-format
+msgid "%s was successfully packaged (compression ratio %2.1f : 1)."
+msgstr "%s paketoitiin onnistuneesti (pakkaussuhde %2.1f : 1)."
+
+#: ../src/Package.cpp:172
+msgid "Packaging aborted - removing partial .dmod file."
+msgstr "Paketointi keskeytettiin - poistetaan keskeneräinen D-Mod-tiedosto."
+
+#: ../src/Package.cpp:173
+msgid "Abort"
+msgstr "Peruuta"
+
+#: ../src/RecursiveDelete.cpp:55 ../src/RecursiveDelete.cpp:73
+#, c-format
+msgid "Could not remove %s"
+msgstr "Kohteen %s poistaminen epäonnistui"
+
+#: ../src/Tar.cpp:91
+msgid "Listing files..."
+msgstr "Luetteloidaan tiedostoja..."
+
+#: ../src/Tar.cpp:125
+msgid "Initializing..."
+msgstr "Alustetaan..."
+
+#: ../src/Tar.cpp:129
+#, c-format
+msgid "Error: Could not open tar file '%s' for bzip compression."
+msgstr "Virhe: Tar-tiedostoa %s ei voitu avata pakattavaksi bzip-muotoon."
+
+#: ../src/Tar.cpp:130
+msgid "ERROR"
+msgstr "VIRHE"
+
+#: ../src/Tar.cpp:151
+msgid "Error: Could not initialize compression method!  Will not generate a correct .dmod file.  Quitting."
+msgstr "Virhe: Pakkausmenetelmää ei voitu määrittää. Kelvollisen D-Mod-tiedoston luominen ei onnistu. Lopetetaan."
+
+#: ../src/Tar.cpp:184
+#, c-format
+msgid "Error: File '%s' not found!  Cannot archive file."
+msgstr "Virhe: Tiedostoa %s ei löytynyt! Tiedostoa ei voida arkistoida."
+
+#. Close the output file.
+#: ../src/Tar.cpp:234
+msgid "Closing..."
+msgstr "Suljetaan..."
+
+#: ../src/Tar.cpp:354
+#, c-format
+msgid "Error: File '%s' not found!  Cannot read data."
+msgstr "Virhe: Tiedostoa %s ei löytynyt! Tietoja ei voida lukea."
+
+#. Nope.  Exit.
+#: ../src/Tar.cpp:391
+msgid "Error: This .dmod file has an invalid checksum!  Cannot read file."
+msgstr "Virhe: Tällä dmod-tiedostolla on virheellinen tarkistussumma! Tiedostoa ei voida lukea."
+
+#: ../src/Tar.cpp:476
+#, c-format
+msgid "Error: File '%s' not found!  Cannot extract data."
+msgstr "Virhe: Tiedostoa %s ei löydy."
+
+#: ../src/Tar.cpp:486
+#, c-format
+msgid "Error: Cannot create directory '%s'.  Cannot extract data."
+msgstr "Virhe: Hakemiston %s luominen ei onnistu."
+
+#: ../src/Tar.cpp:544
+#, c-format
+msgid "Got bad file %d/%d.  Skipping."
+msgstr "Huono tiedosto %d%d. Ohitetaan."
+
+#: ../src/Tar.cpp:568
+#, c-format
+msgid "Error: Improperly archived file '%s'.  Skipping."
+msgstr "Virhe: Väärin paketoitu tiedosto %s. Ohitetaan."
+
+#: ../src/Tar.cpp:599
+msgid "Done."
+msgstr "Valmis."
+
+#: ../src/DFArcFrame_Base.cpp:18
+msgid "&Open D-Mod to Install"
+msgstr "&Avaa asennettava D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:18
+msgid "Select a D-Mod to install"
+msgstr "Valitse asennettava D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:19
+msgid "&Download D-Mods"
+msgstr "&Lataa D-Modeja (internetistä)"
+
+#: ../src/DFArcFrame_Base.cpp:19
+msgid "Go to The Dink Network to download some D-Mods!"
+msgstr "Lisää D-Modeja löydät internetistä, The Dink Networkista!"
+
+#: ../src/DFArcFrame_Base.cpp:21
+msgid "E&xit"
+msgstr "&Sulje"
+
+#: ../src/DFArcFrame_Base.cpp:21
+msgid "Exit DFArc"
+msgstr "Sulje DFArc"
+
+#: ../src/DFArcFrame_Base.cpp:22
+msgid "&File"
+msgstr "&Tiedosto"
+
+#: ../src/DFArcFrame_Base.cpp:24
+msgid "&Refresh D-Mod List"
+msgstr "&Päivitä D-Mod-luettelo"
+
+#: ../src/DFArcFrame_Base.cpp:24
+msgid "Refreshes the D-Mod list for any new additions"
+msgstr "Päivittää listan D-Modeista lisäysten varalta."
+
+#: ../src/DFArcFrame_Base.cpp:25
+msgid "&Browse Selected D-Mod Directory"
+msgstr "&Selaa D-Mod-hakemistoa"
+
+#: ../src/DFArcFrame_Base.cpp:25
+msgid "Browse to the directory containing the current D-Mod"
+msgstr "Selaa hakemistoa, jossa nykyinen D-Mod sijaitsee."
+
+#: ../src/DFArcFrame_Base.cpp:26
+msgid "&Uninstall Selected D-Mod"
+msgstr "P&oista valittu D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:26
+msgid "Uninstalls the selected D-Mod"
+msgstr "Poistaa valitun D-Modin"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "&Options"
+msgstr "&Asetukset"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "View or modify DFArc options"
+msgstr "Tarkastele tai muuta DFArcin asetuksia"
+
+#: ../src/DFArcFrame_Base.cpp:29
+msgid "&Edit"
+msgstr "&Muokkaa"
+
+#: ../src/DFArcFrame_Base.cpp:31
+msgid "&Introduction"
+msgstr "&Esittely"
+
+#: ../src/DFArcFrame_Base.cpp:31
+msgid "A quick introduction to Dinking and D-Mods"
+msgstr "Dink Smallwood -pelin ja D-Modien pikaesittely."
+
+#: ../src/DFArcFrame_Base.cpp:32
+msgid "&Walkthroughs and Guides"
+msgstr "&Läpipeluuohjeita ja oppaita"
+
+#: ../src/DFArcFrame_Base.cpp:32
+msgid "Stuck in a D-Mod? Check out The Dink Smallwood Solutions."
+msgstr "Etkö pääse pelissä eteenpäin? Katso apua internetistä: The Dink Smallwood Solutions."
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "&Forums"
+msgstr "&Keskustelualueet"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "Ask a question on the forums, or see if someone had the same problem."
+msgstr "Kysy apua keskustelualueilta tai katso onko joku muu törmännyt samaan ongelmaan."
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "&About"
+msgstr "&Tietoja"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "About DFArc"
+msgstr "Tietoja DFArcista"
+
+#: ../src/DFArcFrame_Base.cpp:36
+msgid "&Help"
+msgstr "&Apua"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "Play"
+msgstr "Pelaa"
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "True Color"
+msgstr "Täysväritila"
+
+#: ../src/DFArcFrame_Base.cpp:43
+msgid "Windowed"
+msgstr "Ikkunoitu"
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "Sound"
+msgstr "Ääni"
+
+#: ../src/DFArcFrame_Base.cpp:45
+msgid "Joystick"
+msgstr "Sauvaohjain"
+
+#: ../src/DFArcFrame_Base.cpp:46
+msgid "Debug"
+msgstr "Vianetsintä"
+
+#: ../src/DFArcFrame_Base.cpp:47
+msgid "v1.07 mode"
+msgstr "v1.07 -tila"
+
+#: ../src/DFArcFrame_Base.cpp:48
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: ../src/DFArcFrame_Base.cpp:49 ../src/Package_Base.cpp:18
+msgid "Package"
+msgstr "Paketoi"
+
+#. begin wxGlade: DFArcFrame_Base::set_properties
+#: ../src/DFArcFrame_Base.cpp:64
+msgid "DFArc v3"
+msgstr "DFArc v3"
+
+#: ../src/DFArcFrame_Base.cpp:74
+msgid "v1.07 compatibility mode, for D-Mods released before 2006"
+msgstr "v1.07 yhteensopivuustila ennen vuotta 2006 julkaistuille D-Modeille."
+
+#. begin wxGlade: InstallVerifyFrame_Base::InstallVerifyFrame_Base
+#: ../src/InstallVerifyFrame_Base.cpp:14
+msgid "Preparing..."
+msgstr "Valmistellaan..."
+
+#: ../src/InstallVerifyFrame_Base.cpp:16
+msgid "Main Dink directory"
+msgstr "Dink-päähakemisto"
+
+#: ../src/InstallVerifyFrame_Base.cpp:17 ../src/Options_Base.cpp:20
+msgid "Additional D-Mods directory"
+msgstr "D-Mod-hakemisto"
+
+#: ../src/InstallVerifyFrame_Base.cpp:19
+msgid "Where do you want to install this D-Mod?"
+msgstr "Minne haluat asentaa tämän D-Modin?"
+
+#: ../src/InstallVerifyFrame_Base.cpp:20
+msgid "Install"
+msgstr "Asenna"
+
+#. begin wxGlade: InstallVerifyFrame_Base::set_properties
+#: ../src/InstallVerifyFrame_Base.cpp:32
+msgid "DFArc - Install D-Mod"
+msgstr "DFArc - Asenna D-Mod"
+
+#. begin wxGlade: Options_Base::Options_Base
+#: ../src/Options_Base.cpp:14
+msgid "Close DFArc on play"
+msgstr "Sulje DFArc pelattaessa"
+
+#: ../src/Options_Base.cpp:15
+msgid "Show developer buttons"
+msgstr "Näytä kehittäjän painikkeet."
+
+#: ../src/Options_Base.cpp:16
+msgid "The engine updates dinksmallwood.ini on run (deprecated)"
+msgstr "Päivitä dinksmallwood.ini-tiedosto pelin käynnistyksen yhteydessä (käytöstä poistuva) "
+
+#: ../src/Options_Base.cpp:17
+msgid "Override the Dink Smallwood directory"
+msgstr "Käytä muuta Dink Smallwood -hakemistoa"
+
+#: ../src/Options_Base.cpp:19 ../src/Options_Base.cpp:22
+msgid "Browse"
+msgstr "Selaa"
+
+#: ../src/Options_Base.cpp:23
+msgid "Game program name"
+msgstr "Pelisovellus"
+
+#: ../src/Options_Base.cpp:26
+msgid "Editor program name"
+msgstr "Muokkainsovellus"
+
+#: ../src/Options_Base.cpp:29
+msgid "Preferred file browser"
+msgstr "Ensisijainen tiedostoselain"
+
+#: ../src/Options_Base.cpp:31
+msgid ""
+"DFArc language\n"
+"(restart DFArc to apply)"
+msgstr ""
+"DFArcin kieli\n"
+"(otetaan käyttöön uudelleenkäynnistyksen yhteydessä)"
+
+#. begin wxGlade: Options_Base::set_properties
+#: ../src/Options_Base.cpp:47
+msgid "DFArc - Options"
+msgstr "DFArc - Asetukset"
+
+#. begin wxGlade: Package_Base::Package_Base
+#: ../src/Package_Base.cpp:14
+msgid "Identifier"
+msgstr "Tunniste"
+
+#: ../src/Package_Base.cpp:15
+#, c-format
+msgid ""
+"Note: Unless you're making a D-Mod, you shouldn't be around here.\n"
+"This is for creating a .dmod file for a D-Mod you made.\n"
+"\n"
+"Will package '%s' located at\n"
+"%s"
+msgstr ""
+"Huomio: Jos et ole tekemässä D-Modia sinun ei pitäisi olla täällä.\n"
+"Tämä on tarkoitettu dmod-päätteisen tiedoston luomiseen tekemästäsi D-Modista.\n"
+"\n"
+"Paketoidaan %s hakemistossa\n"
+"%s"
+
+#: ../src/Package_Base.cpp:16
+msgid "D-Mod filename (8 letters/numbers)"
+msgstr "D-Mod-tiedoston nimi (8 kirjainta/numeroa)"
+
+#. begin wxGlade: Package_Base::set_properties
+#: ../src/Package_Base.cpp:30
+msgid "DFArc - Package"
+msgstr "DFArc - Paketoi"
+
+#: ../share/freedink-dfarc.desktop.in.h:1
+msgid "DFArc - Dink frontend"
+msgstr "DFArc - Dink Smallwood -pelin hallintaohjelma"
+
+#: ../share/freedink-dfarc.desktop.in.h:2
+msgid "Run, edit, install, remove and package D-Mods (Dink Modules)"
+msgstr "Pelaa, muokkaa, asenna, poista ja paketoi D-Modeja (Dink-pelimoduuleita)"
+
+#: ../share/freedink-mime.xml.in.h:1
+msgid "Packaged D-Mod"
+msgstr "Paketoitu D-Mod"

@@ -1,0 +1,34 @@
+Packaging
+=========
+
+Installation prefix
+-------------------
+
+The Makefile should install the files in the right location.  It
+supports DESTDIR.
+
+
+dir.ff
+------
+
+Those are 'fast-files', a very basic non-compressed archive with an
+offsets index and then the files contents.
+
+Do not attempt to extract the data - cf. dirff.txt for explanations.
+
+
+Story/*.c
+---------
+
+The .c files are 'DinkC' scripts and are only vaguely related to the C
+programming language.  They can be compressed to '.d' files (using
+byte-pair-encoding) but this was only historicaly used as cheap
+obfuscation, and makes patches uneasy , so just leave them as '.c'.
+
+
+Sounds
+------
+
+The original game contained sounds that were not owned by RTsoft and
+hence could not be released under a free license.  We're looking for
+free replacements!  See README.txt and README-REPLACEMENTS.txt.

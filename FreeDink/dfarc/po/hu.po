@@ -1,0 +1,647 @@
+# Hungarian translation for dfarc.
+# Copyright (C) 2014 Free Software Foundation, Inc.
+# This file is distributed under the same license as the dfarc package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: dfarc 3.11-pre1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-01 20:58+0200\n"
+"PO-Revision-Date: 2014-09-22 20:43+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"Language: hu\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../src/BZip.cpp:303
+#, c-format
+msgid "Error: Could not open input file '%s' for bzip decompression."
+msgstr "Hiba: Nem sikerült megnyitni a(z) „%s” bemeneti fájlt bzip kibontáshoz."
+
+#: ../src/BZip.cpp:318
+msgid "Error: Invalid .dmod file selected!"
+msgstr "Hiba: A kijelölt .dmod fájl érvénytelen!"
+
+#: ../src/BZip.cpp:328
+#, c-format
+msgid "Error: Could not write to '%s'."
+msgstr "Hiba: Nem sikerült írni ide: „%s”."
+
+#: ../src/BZip.cpp:360
+msgid "Invalid .dmod file specified."
+msgstr "A megadott .dmod fájl érvénytelen."
+
+#: ../src/BZip.cpp:364
+msgid "Critical program function error: opened for write."
+msgstr "Kritikus programfüggvény hiba: megnyitva íráshoz."
+
+#: ../src/BZip.cpp:368
+msgid "Could not read .dmod file."
+msgstr "Nem sikerült olvasni a .dmod fájlt."
+
+#: ../src/BZip.cpp:372
+msgid "Incomplete .dmod file. Please download it again."
+msgstr "Nem teljes .dmod fájl. Kérjük töltse le újra."
+
+#: ../src/BZip.cpp:376
+msgid "The .dmod file is corrupted.  Please download it again."
+msgstr "A .dmod fájl sérült. Kérjük töltse le újra."
+
+#: ../src/BZip.cpp:380
+msgid "The file is not a valid .dmod file."
+msgstr "A fájl nem érvényes .dmod fájl."
+
+#: ../src/BZip.cpp:384
+msgid "Out of memory error."
+msgstr "Hiba, nincs elég memória."
+
+#: ../src/BZip.cpp:388
+msgid "An unhandled error occured."
+msgstr "Egy kezeletlen hiba történt."
+
+#: ../src/Config.cpp:202
+msgid "Error: dinksmallwood.ini not found. Please run the main game and try running this program again."
+msgstr "Hiba: A dinksmallwood.ini fájl nem található. Kérjük futtassa a fő játékot, és próbálja újra futtatni ezt a programot."
+
+#: ../src/Config.cpp:210
+msgid "Error opening dinksmallwood.ini"
+msgstr "Hiba a dinksmallwood.ini megnyitásakor."
+
+#: ../src/DFArcFrame.cpp:174
+#, c-format
+msgid ""
+"DFArc version %s\n"
+"Copyright (C) 2004  Andrew Reading (merlin)\n"
+"Copyright (C) 2005, 2006  Dan Walma (redink1)\n"
+"Copyright (C) 2008-2014  Sylvain Beucler (Beuc)\n"
+"Build Date: %s\n"
+"Powered by bzip2 (bzip.org) and wxWidgets (wxwidgets.org)"
+msgstr ""
+"DFArc verzió: %s\n"
+"Copyright © 2004  Andrew Reading (merlin)\n"
+"Copyright © 2005, 2006  Dan Walma (redink1)\n"
+"Copyright © 2008-2014  Sylvain Beucler (Beuc)\n"
+"Fordítás dátuma: %s\n"
+"A bzip2 (bzip.org) és a wxWidgets (wxwidgets.org) által meghajtva."
+
+#: ../src/DFArcFrame.cpp:181
+msgid "About DFArc v3"
+msgstr "A DFArc v3 névjegye"
+
+#. Default logo (currently all black with a question mark)
+#. TRANSLATORS: please make this SHORT, possibly rephrasing as "<
+#. Choose!". This is included in the 160x120px logo box in the main
+#. window and it doesn't word-wrap.
+#: ../src/DFArcFrame.cpp:253
+msgid "< Pick a D-Mod"
+msgstr "< Válasszon D-Modot"
+
+#: ../src/DFArcFrame.cpp:318
+msgid "No translations"
+msgstr "Nincsenek fordítások"
+
+#. Not displaying the default language explicitely, because it
+#. makes the user think that a translation is always available.
+#. mGameLocaleList->Insert(wxString(_("Default language")) + wxT(" (") + cur_locale_name + wxT(")"), 0);
+#: ../src/DFArcFrame.cpp:325 ../src/Options.cpp:118
+msgid "Don't translate"
+msgstr "Ne fordítsa le"
+
+#: ../src/DFArcFrame.cpp:348
+msgid "D-Mod files (*.dmod)"
+msgstr "D-Mod fájlok (*.dmod)"
+
+#: ../src/DFArcFrame.cpp:349
+msgid "Select a .dmod file"
+msgstr "Válasszon egy .dmod fájlt"
+
+#: ../src/DFArcFrame.cpp:544
+#, c-format
+msgid "The '%s' locale is not installed on your computer (locales tells the computer how to manage a language). You need to install it - check your system documentation."
+msgstr "A(z) „%s” területi beállítás nincs telepítve a számítógépére (a területi beállítás mondja meg a számítógépnek, hogy hogyan kezeljen egy nyelvet). Telepítenie kell azt - nézze meg a rendszer dokumentációját."
+
+#: ../src/DFArcFrame.cpp:547 ../src/DFArcFrame.cpp:625
+msgid "Warning"
+msgstr "Figyelem"
+
+#: ../src/DFArcFrame.cpp:587
+#, c-format
+msgid "Dink Smallwood failed! Error code %d."
+msgstr "A Dink Smallwood meghiúsult! Hibakód: %d."
+
+#: ../src/DFArcFrame.cpp:589 ../src/DFArcFrame.cpp:594
+#: ../src/DFArcFrame.cpp:655 ../src/DFArcFrame.cpp:657
+#: ../src/DFArcFrame.cpp:700 ../src/DFArcFrame.cpp:709
+msgid "Error"
+msgstr "Hiba"
+
+#: ../src/DFArcFrame.cpp:591
+#, c-format
+msgid "Dink Smallwood ('%s') was not found on your computer. Please configure the Dink program name in the Options menu."
+msgstr "A Dink Smallwood („%s”) nem található a számítógépén. Kérjük állítsa be a Dink program nevét a Beállítások menüben."
+
+#: ../src/DFArcFrame.cpp:622
+msgid "Dinkedit saves all changes automatically. Altering maps can ruin the game. Are you sure you want to continue?"
+msgstr "A Dinkedit minden módosítást automatikusan elment. A térképek módosítása tönkreteheti a játékot. Biztos benne, hogy folytatni szeretné?"
+
+#: ../src/DFArcFrame.cpp:652
+#, c-format
+msgid "The editor ('%s') was not found on your computer. Please configure the editor program name in the Options menu."
+msgstr "A szerkesztő („%s”) nem található a számítógépén. Kérjük állítsa be a szerkesztőprogram nevét a Beállítások menüben."
+
+#: ../src/DFArcFrame.cpp:657
+msgid "Error while running the editor"
+msgstr "Hiba a szerkesztő futtatása közben"
+
+#. FreeDesktop
+#. Gnome
+#. KDE
+#. Xfce
+#: ../src/DFArcFrame.cpp:698
+msgid "Could not find a file manager (tried 'xdg-open', 'nautilus', 'konqueror' and 'thunar')"
+msgstr "Nem található a fájlkezelő (megpróbálva: „xdg-open”, „nautilus”, „konqueror” és „thunar”)"
+
+#: ../src/DFArcFrame.cpp:706
+#, c-format
+msgid "Cannot start '%s', please check your configuration in the Options window."
+msgstr "Nem sikerült elindítani: „%s”, kérjük ellenőrizze a beállításokat a Beállítások ablakban."
+
+#: ../src/DFArcFrame.cpp:716
+msgid ""
+"Welcome to DFArc, the Dink Smallwood front end!\n"
+"\n"
+"You can choose to play the original game (Dink Smallwood) or Dink-Modules (D-Mods) which contain new adventures.\n"
+"\n"
+"After completing the main game, give some D-Mods a try.\n"
+"There are hundreds of them, just click File-Download D-Mods."
+msgstr ""
+"Üdvözli a DFArc, a Dink Smallwood előtétprogram!\n"
+"\n"
+"Kiválaszthatja, hogy az eredeti játékkal szeretne játszani (Dink Smallwood) vagy a Dink-Modulokkal (D-Mods), amelyek új kalandokat tartalmaznak.\n"
+"\n"
+"A fő játék befejezése után próbáljon ki néhány D-Modot.\n"
+"Több száz létezik belőlük, csak kattintson a Fájl - D-Modok letöltése menüpontra."
+
+#: ../src/DFArcFrame.cpp:723
+msgid "Introduction"
+msgstr "Bevezetés"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:866
+msgid "Cannot use the overridden Dink Smallwood directory - ignoring it. (permission problem?)"
+msgstr "Nem lehet a felülbírált Dink Smallwood könyvtárat használni - mellőzés. (jogosultsági probléma?)"
+
+#: ../src/DFArcFrame.cpp:868 ../src/DFArcFrame.cpp:876
+msgid "Configuration error"
+msgstr "Beállítási hiba"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:875
+msgid "The Dink Smallwood directory you entered does not exist - ignoring it."
+msgstr "Nem létezik az a Dink Smallwood könyvtár, amelybe belépett - mellőzés."
+
+#: ../src/DFArcFrame.cpp:890
+msgid "You must select the uninstall option from the start menu to uninstall the main game."
+msgstr "Ki kell választania az eltávolítás opciót a start menüből a fő játék eltávolításához."
+
+#: ../src/DFArcFrame.cpp:891
+msgid "Uninstall - Error"
+msgstr "Eltávolítás - Hiba"
+
+#: ../src/DFArcFrame.cpp:896
+msgid "Do you want to remove all save game files?"
+msgstr "El szeretne távolítani minden elmentett játékfájlt?"
+
+#: ../src/DFArcFrame.cpp:897
+msgid "Uninstall - Save Game Files"
+msgstr "Eltávolítás - Elmentett játékfájlok"
+
+#: ../src/DFArcFrame.cpp:919
+msgid "Unable to remove D-Mod directory. All other files were removed."
+msgstr "Nem lehet eltávolítani a D-Mod könyvtárat. Minden egyéb fájl el lett távolítva."
+
+#: ../src/DFArcFrame.cpp:925
+msgid "D-Mod successfully uninstalled"
+msgstr "A D-Mod sikeresen eltávolítva"
+
+#: ../src/DFArcFrame.cpp:926
+msgid "Uninstall - Success"
+msgstr "Eltávolítás - Siker"
+
+#: ../src/InstallVerifyFrame.cpp:56
+msgid "Preparing"
+msgstr "Előkészítés"
+
+#: ../src/InstallVerifyFrame.cpp:57
+msgid "The D-Mod archive is being decompressed in a temporary file."
+msgstr "A D-Mod archívum kibontás alatt van egy átmeneti fájlba."
+
+#: ../src/InstallVerifyFrame.cpp:81
+#, c-format
+msgid ""
+"No Description Available.\n"
+"\n"
+"The D-Mod will be installed in subdirectory '%s'."
+msgstr ""
+"Nem érhető el leírás.\n"
+"\n"
+"A D-Mod a(z) „%s” alkönyvtárba lesz telepítve."
+
+#: ../src/InstallVerifyFrame.cpp:94
+msgid "DFArc - Install D-Mod - "
+msgstr "DFArc - D-Mod telepítése - "
+
+#: ../src/InstallVerifyFrame.cpp:143
+msgid "DFArc - Installing"
+msgstr "DFArc - Telepítés"
+
+#: ../src/InstallVerifyFrame.cpp:157
+msgid "The D-Mod you selected"
+msgstr "A kijelölt D-Mod"
+
+#: ../src/InstallVerifyFrame.cpp:159
+msgid " was successfully installed."
+msgstr " sikeresen telepítve."
+
+#: ../src/InstallVerifyFrame.cpp:160 ../src/Package.cpp:167
+msgid "Success"
+msgstr "Sikeres"
+
+#: ../src/InstallVerifyFrame.cpp:169
+msgid "An error occured while extracting the .dmod file."
+msgstr "Hiba történt a .dmod fájl kibontása során."
+
+#: ../src/Options.cpp:113
+msgid "System language"
+msgstr "Rendszernyelv"
+
+#: ../src/Options.cpp:136
+msgid "Custom"
+msgstr "Egyéni"
+
+#: ../src/Options.cpp:175
+msgid "Choose the Dink Smallwood install directory"
+msgstr "Válassza ki a Dink Smallwood telepítési könyvtárát"
+
+#: ../src/Options.cpp:183
+msgid "Choose a folder containing D-Mods"
+msgstr "Válasszon egy D-Modokat tartalmazó mappát"
+
+#: ../src/Package.cpp:123
+msgid "You must provide an identifier filename."
+msgstr "Meg kell adnia egy azonosító fájlnevet."
+
+#: ../src/Package.cpp:139
+msgid "Packaging"
+msgstr "Csomagolás"
+
+#: ../src/Package.cpp:139
+msgid "The D-Mod is being packaged."
+msgstr "A D-Mod csomagolás alatt van."
+
+#. Success dialog
+#: ../src/Package.cpp:165
+#, c-format
+msgid "%s was successfully packaged (compression ratio %2.1f : 1)."
+msgstr "%s sikeresen csomagolva lett (tömörítési arány %2.1f : 1)."
+
+#: ../src/Package.cpp:172
+msgid "Packaging aborted - removing partial .dmod file."
+msgstr "Csomagolás megszakítva - részleges .dmod fájl eltávolítása."
+
+#: ../src/Package.cpp:173
+msgid "Abort"
+msgstr "Megszakítás"
+
+#: ../src/RecursiveDelete.cpp:55 ../src/RecursiveDelete.cpp:73
+#, c-format
+msgid "Could not remove %s"
+msgstr "Nem sikerült eltávolítani: %s"
+
+#: ../src/Tar.cpp:95
+msgid "Listing files..."
+msgstr "Fájlok listázása…"
+
+#: ../src/Tar.cpp:134
+msgid "Initializing..."
+msgstr "Előkészítés…"
+
+#: ../src/Tar.cpp:138
+#, c-format
+msgid "Error: Could not open tar file '%s' for bzip compression."
+msgstr "Hiba: Nem sikerült megnyitni a(z) „%s” tar fájlt a bzip tömörítéshez."
+
+#: ../src/Tar.cpp:160
+msgid "Error: Could not initialize compression method!  Will not generate a correct .dmod file.  Quitting."
+msgstr "Hiba: Nem sikerült előkészíteni a tömörítési módot! Nem lesz helyes .dmod fájl előállítva. Kilépés."
+
+#: ../src/Tar.cpp:193
+#, c-format
+msgid "Error: File '%s' not found!  Cannot archive file."
+msgstr "Hiba: A(z) „%s” fájl nem található! Nem lehet archiválni a fájlt."
+
+#. Close the output file.
+#: ../src/Tar.cpp:243
+msgid "Closing..."
+msgstr "Bezárás…"
+
+#: ../src/Tar.cpp:363
+#, c-format
+msgid "Error: File '%s' not found!  Cannot read data."
+msgstr "Hiba: A(z) „%s” fájl nem található! Nem lehet olvasni az adatokat."
+
+#. Nope.  Exit.
+#: ../src/Tar.cpp:400
+msgid "Error: This .dmod file has an invalid checksum!  Cannot read file."
+msgstr "Hiba: Ennek a .dmod fájlnak érvénytelen az ellenőrzőösszege! Nem lehet olvasni a fájlt."
+
+#: ../src/Tar.cpp:484
+#, c-format
+msgid "Error: File '%s' not found!  Cannot extract data."
+msgstr "Hiba: A(z) „%s” fájl nem található! Nem lehet kibontani az adatokat."
+
+#: ../src/Tar.cpp:494
+#, c-format
+msgid "Error: Cannot create directory '%s'.  Cannot extract data."
+msgstr "Hiba: Nem lehet létrehozni a(z) „%s” könyvtárat. Nem lehet kibontani az adatokat."
+
+#: ../src/Tar.cpp:552
+#, c-format
+msgid "Got bad file %d/%d.  Skipping."
+msgstr "Rossz fájl kaptam: %d/%d. Kihagyás."
+
+#: ../src/Tar.cpp:574
+#, c-format
+msgid "Error: Improperly archived file '%s'.  Skipping."
+msgstr "Hiba: Helytelenül archivált fájl: „%s”. Kihagyás."
+
+#: ../src/Tar.cpp:607
+msgid "Done."
+msgstr "Kész."
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "&Open D-Mod to Install"
+msgstr "D-Mod &megnyitása telepítéshez"
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "Select a D-Mod to install"
+msgstr "Válasszon egy D-Modot a telepítéshez"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "&Download D-Mods"
+msgstr "D-Modok &letöltése"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "Go to The Dink Network to download some D-Mods!"
+msgstr "Ugrás a Dink hálózathoz néhány D-Mod letöltéséhez!"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "E&xit"
+msgstr "&Kilépés"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "Exit DFArc"
+msgstr "Kilépés a DFArc programból"
+
+#: ../src/DFArcFrame_Base.cpp:31
+msgid "&File"
+msgstr "&Fájl"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "&Refresh D-Mod List"
+msgstr "D-Mod lista &frissítése"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "Refreshes the D-Mod list for any new additions"
+msgstr "Frissíti a D-Mod listát bármilyen új kiegészítéshez"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "&Browse Selected D-Mod Directory"
+msgstr "A kijelölt D-Mod &könyvtár böngészése"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "Browse to the directory containing the current D-Mod"
+msgstr "Az aktuális D-Modot tartalmazó könyvtár böngészése"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "&Uninstall Selected D-Mod"
+msgstr "A kijelölt D-Mod &eltávolítása"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "Uninstalls the selected D-Mod"
+msgstr "Eltávolítja a kijelölt D-Modot"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "&Options"
+msgstr "&Beállítások"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "View or modify DFArc options"
+msgstr "DFArc beállítások megtekintése vagy módosítása"
+
+#: ../src/DFArcFrame_Base.cpp:38
+msgid "&Edit"
+msgstr "S&zerkesztés"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "&Introduction"
+msgstr "&Bevezetés"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "A quick introduction to Dinking and D-Mods"
+msgstr "Egy gyors bevezetés a Dinkelésbe és D-Modokba"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "&Walkthroughs and Guides"
+msgstr "&Végigjátszások és útmutatók"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "Stuck in a D-Mod? Check out The Dink Smallwood Solutions."
+msgstr "Elakadt a D-Modban? Nézze meg a Dink Smallwood megoldásokat."
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "&Forums"
+msgstr "&Fórumok"
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "Ask a question on the forums, or see if someone had the same problem."
+msgstr "Tegyen fel egy kérdést a fórumon, vagy nézze meg, másnak is volt-e hasonló problémája."
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "&About"
+msgstr "&Névjegy"
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "About DFArc"
+msgstr "A DFArc névjegye"
+
+#: ../src/DFArcFrame_Base.cpp:45
+msgid "&Help"
+msgstr "&Súgó"
+
+#: ../src/DFArcFrame_Base.cpp:50
+msgid "Play"
+msgstr "Indítás"
+
+#: ../src/DFArcFrame_Base.cpp:51
+msgid "True Color"
+msgstr "True Color"
+
+#: ../src/DFArcFrame_Base.cpp:52
+msgid "Windowed"
+msgstr "Ablakos"
+
+#: ../src/DFArcFrame_Base.cpp:53
+msgid "Sound"
+msgstr "Hang"
+
+#: ../src/DFArcFrame_Base.cpp:54
+msgid "Joystick"
+msgstr "Botkormány"
+
+#: ../src/DFArcFrame_Base.cpp:55
+msgid "Debug"
+msgstr "Hibakeresés"
+
+#: ../src/DFArcFrame_Base.cpp:56
+msgid "v1.07 mode"
+msgstr "v1.07 mód"
+
+#: ../src/DFArcFrame_Base.cpp:57
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: ../src/DFArcFrame_Base.cpp:58 ../src/Package_Base.cpp:27
+msgid "Package"
+msgstr "Csomag"
+
+#. begin wxGlade: DFArcFrame_Base::set_properties
+#: ../src/DFArcFrame_Base.cpp:73
+msgid "DFArc v3"
+msgstr "DFArc v3"
+
+#: ../src/DFArcFrame_Base.cpp:83
+msgid "v1.07 compatibility mode, for D-Mods released before 2006"
+msgstr "v1.07 kompatibilitási mód a 2006 előtt kiadott D-Modokhoz"
+
+#. begin wxGlade: InstallVerifyFrame_Base::InstallVerifyFrame_Base
+#: ../src/InstallVerifyFrame_Base.cpp:23
+msgid "Preparing..."
+msgstr "Előkészítés…"
+
+#: ../src/InstallVerifyFrame_Base.cpp:25
+msgid "Main Dink directory"
+msgstr "Fő Dink könyvtár"
+
+#: ../src/InstallVerifyFrame_Base.cpp:26 ../src/Options_Base.cpp:29
+msgid "Additional D-Mods directory"
+msgstr "További D-Modok könyvtár"
+
+#: ../src/InstallVerifyFrame_Base.cpp:28
+msgid "Where do you want to install this D-Mod?"
+msgstr "Hová szeretné telepíteni ezt a D-Modot?"
+
+#: ../src/InstallVerifyFrame_Base.cpp:29
+msgid "Install"
+msgstr "Telepítés"
+
+#. begin wxGlade: InstallVerifyFrame_Base::set_properties
+#: ../src/InstallVerifyFrame_Base.cpp:41
+msgid "DFArc - Install D-Mod"
+msgstr "DFArc - D-Mod telepítése"
+
+#. begin wxGlade: Options_Base::Options_Base
+#: ../src/Options_Base.cpp:23
+msgid "Close DFArc on play"
+msgstr "DFArc bezárása indításkor"
+
+#: ../src/Options_Base.cpp:24
+msgid "Show developer buttons"
+msgstr "Fejlesztői gombok megjelenítése"
+
+#: ../src/Options_Base.cpp:25
+msgid "The engine updates dinksmallwood.ini on run (deprecated)"
+msgstr "A motor frissíti a dinksmallwood.ini fájlt futtatáskor (elavult)"
+
+#: ../src/Options_Base.cpp:26
+msgid "Override the Dink Smallwood directory"
+msgstr "A Dink Smallwood könyvtár felülbírálása"
+
+#: ../src/Options_Base.cpp:28 ../src/Options_Base.cpp:31
+msgid "Browse"
+msgstr "Tallózás"
+
+#: ../src/Options_Base.cpp:32
+msgid "Game program name"
+msgstr "Játékprogram neve"
+
+#: ../src/Options_Base.cpp:35
+msgid "Editor program name"
+msgstr "Szerkesztőprogram neve"
+
+#: ../src/Options_Base.cpp:38
+msgid "Preferred file browser"
+msgstr "Elsődleges fájlböngésző"
+
+#: ../src/Options_Base.cpp:40
+msgid ""
+"DFArc language\n"
+"(restart DFArc to apply)"
+msgstr ""
+"DFArc nyelv\n"
+"(a DFArc újraindítása az alkalmazáshoz)"
+
+#. begin wxGlade: Options_Base::set_properties
+#: ../src/Options_Base.cpp:56
+msgid "DFArc - Options"
+msgstr "DFArc - Beállítások"
+
+#. begin wxGlade: Package_Base::Package_Base
+#: ../src/Package_Base.cpp:23
+msgid "Identifier"
+msgstr "Azonosító"
+
+#: ../src/Package_Base.cpp:24
+#, c-format
+msgid ""
+"Note: Unless you're making a D-Mod, you shouldn't be around here.\n"
+"This is for creating a .dmod file for a D-Mod you made.\n"
+"\n"
+"Will package '%s' located at\n"
+"%s"
+msgstr ""
+"Megjegyzés: Hacsak nem egy D-Modot készít, nem kellene itt lennie.\n"
+"Ez egy .dmod fájl létrehozásáról szól ahhoz a D-Modhoz, amit készít.\n"
+"\n"
+"A(z) „%s” csomag itt lesz elhelyezve:\n"
+"%s"
+
+#: ../src/Package_Base.cpp:25
+msgid "D-Mod filename (8 letters/numbers)"
+msgstr "D-Mod fájlnév (8 betű/szám)"
+
+#. begin wxGlade: Package_Base::set_properties
+#: ../src/Package_Base.cpp:39
+msgid "DFArc - Package"
+msgstr "DFArc - Csomag"
+
+#: ../share/freedink-dfarc.desktop.in.h:1
+msgid "DFArc - Dink frontend"
+msgstr "DFArc - Dink előtétprogram"
+
+#: ../share/freedink-dfarc.desktop.in.h:2
+msgid "Run, edit, install, remove and package D-Mods (Dink Modules)"
+msgstr "D-Modok (Dink modulok) futtatása, szerkesztése, telepítése, eltávolítása és csomagolása"
+
+#: ../share/freedink-mime.xml.in.h:1
+msgid "Packaged D-Mod"
+msgstr "Csomagolt D-Mod"
+
+#~ msgid "ERROR"
+#~ msgstr "HIBA"

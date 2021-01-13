@@ -1,0 +1,216 @@
+# Finnish messages for freedink.
+# This file is put in the public domain.
+# Copyright © 2009, 2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the freedink package.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2009, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 1.08.20120427\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2012-11-08 16:29+0200\n"
+"Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
+"Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Käyttö: %s [VALITSIMET]...\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Näytä tämä opastenäyttö\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         Näytä versio\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <kansio>   Määritä DMod-kansio\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <kansio> Määritä peruskansio dink/graphics, D-Mods-moduuleille, jne.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Selitä mitä ollaan tehty\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           Älä yritä kirjoittaa tiedostoa dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           Älä yritä käyttää ohjainsauvaaa\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         Älä käytä ääniä\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       Salli lisää väreäjä (äskeiselle D-Mod-grafiikalle)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Käytä ikkunoitua tilaa kokoruutunäytön sijasta\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           Ota käyttöön v1.07-yhteensopivuustila\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Ilmoita virheistä osoitteeseen %s.\n"
+"Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists.sourceforge.net>\n"
+
+#: src/app.cpp:312
+#, fuzzy, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Huomatus: -nomovie on hyväksytty yhteensopivuussyistä, mutta sillä ei ole mitään vaikutusta.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Käynnistää Dink Smallwood-pelin tai yhden sen Dink- eli D-Mods-moduulin."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$En näe täällä mitään."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$Huh?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Olen täysin varma, että en voi puhua kohteelle tai käyttää sitä."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$Mitä?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$Minulla on tylsää."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$Täällä ei paljoa tapahdu."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$En osaa mitään taikuutta."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$En ole velho!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Minun täytyy oppia taikuutta ennen tämän yrittämistä."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Elehdin villisti ilman että siitä on hyötyä!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$Mitään ei tapahdu."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$Hokkuspokkus!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Hyökkäys"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Puhu/Tutki"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Taika"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Esinenäyttö"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Kartta"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "Käyttämätön"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Alas"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Vasemmalle"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Oikealle"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Ylös"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Virhe: ei kartoitettu"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Tallennuspaikka %d - %d:%02d - %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "Tallennuspaikka %d - Tyhjä"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Muokkaa Dink Smallwood-peliä tai yhtä sen D-Mods-moduulia."

@@ -1,0 +1,23 @@
+# List of source files which contain translatable strings.
+
+src/BZip.cpp
+src/Config.cpp
+src/DFArcApp.cpp
+src/DFArcFrame.cpp
+src/DFile.cpp
+src/DMod.cpp
+src/icon_xpm.cpp
+src/InstallVerifyFrame.cpp
+src/IOUtils.cpp
+src/Options.cpp
+src/Package.cpp
+src/RecursiveDelete.cpp
+src/Tar.cpp
+
+src/DFArcFrame_Base.cpp
+src/InstallVerifyFrame_Base.cpp
+src/Options_Base.cpp
+src/Package_Base.cpp
+
+share/freedink-dfarc.desktop.in
+share/freedink-mime.xml.in

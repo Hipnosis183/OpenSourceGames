@@ -1,0 +1,37 @@
+- When a locale is not installed in GNU/Linux (e.g. dpkg-reconfigure
+  locales), the messages catalog for that locale cannot be used at all
+  :/
+
+  Locales must be exact: fr_FR.UTF-8 is not the same as
+  fr_FR.ISO-8859-1 - the exactly matching locale need to be installed.
+
+  I tried setting setlocale(LC_MESSAGES, "") instead of
+  setlocale(LC_ALL, "") - doesn't change a thing, still requires
+  matching locale to be installed system-wide.
+
+  Gettext under ms woe does not have this limitation: LC_ALL=fr is
+  enough (you can still add the country code and encoding information
+  if you want), and no system configuration is needed.  Shame..
+
+- Setting LC_ALL environment variable from MSys is enough to tell
+  FreeDink which language to use.  I didn't try to do that from DFArc.
+
+- Setting LC_ALL environment variable under GNU/Linux is enough to
+  tell FreeDink which language to use, but you need to get rid of
+  other conflicting variables that have precedence, such as LANGUAGE.
+  Implementing a FreeDink option to explicitely select language could
+  help - but we still need to fix the need for locale pre-generation
+  (see above).
+
+- When wxWidgets cannot set a locale, it displays a warning box.
+
+- wxWidgets uses its own set of language codes.  It can detect the
+  language through environment variables under GNU/Linux, but not
+  under ms woe.
+
+- Setting LC_ALL before calling wxLocale::Init permits to change the
+  locale dynamically - but wxWidgets' strings (such as "Cancel") are
+  apparently already
+
+As a result this makes it difficult to offer language selection from
+DFArc.

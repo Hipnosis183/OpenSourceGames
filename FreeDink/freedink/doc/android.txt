@@ -1,0 +1,236 @@
+== Generic SDL2 setup ==
+
+See https://wiki.libsdl.org/Android (local copy in android-libsdlwiki.txt).
+
+== Paths ==
+
+The initial process is '/system/bin/app_process'.
+This means path detection doesn't work.
+
+The application is stored in /data/app/xxx.apk.
+AFAICT it's not extracted anywhere, so we need to open it with libzip to extract files.
+
+The application data is in:
+- /data/data/org.freedink/{lib,files,cache}/ (internal storage)
+- /storage/sdcard0/Android/data/org.freedink/files/ (external storage)
+It can be used to stored additional files.
+
+Last we can use the external storage.
+
+
+----------
+
+
+== FreeDink ==
+
+=== iconv ===
+
+# gettext works without - as long as .mo's and FreeDink use UTF-8 I think
+#VERSION=1.14
+#wget -c http://ftp.gnu.org/pub/gnu/libiconv/libiconv-$VERSION.tar.gz
+#tar xf libiconv-$VERSION.tar.gz
+#cd libiconv-$VERSION/
+#mkdir cross-android/ && cd cross-android/
+#\cp -a /usr/share/misc/config.{guess,sub} ../build-aux/
+#\cp -a /usr/share/misc/config.{guess,sub} ../libcharset/build-aux/
+#../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+#  --disable-shared
+#make -j$(nproc) && make install
+
+
+=== gettext ===
+
+VERSION=0.19.5
+wget -c http://ftp.gnu.org/pub/gnu/gettext/gettext-$VERSION.tar.gz
+tar xf gettext-$VERSION.tar.gz
+cd gettext-$VERSION/
+cd gettext-runtime/
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=$NDK_STANDALONE/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+
+
+=== glm ===
+
+VERSION=0.9.8.4
+wget -c https://github.com/g-truc/glm/archive/$VERSION.tar.gz -O glm-$VERSION.tar.gz
+tar xf glm-$VERSION.tar.gz
+cd glm-$VERSION/
+cp -a glm $NDK_STANDALONE/sysroot/usr/include/
+
+
+=== cxxtest ===
+
+VERSION=4.4
+wget https://sourceforge.net/projects/cxxtest/files/cxxtest/4.4/cxxtest-$VERSION.tar.gz/download -O cxxtest-$VERSION.tar.gz
+tar xf cxxtest-$VERSION.tar.gz
+cd cxxtest-$VERSION/
+cp -a cxxtest $NDK_STANDALONE/sysroot/usr/include/
+
+
+=== FreeDink engine ===
+
+PATH=/usr/src/ndk-standalone-14-arm/bin:$PATH
+mkdir cross-android/
+cd cross-android/
+../configure --host=arm-linux-androideabi \
+  --prefix=/android-aint-posix
+make -j$(nproc)
+make install DESTDIR=$(pwd)/destdir  # for locales
+
+# Initial install:
+cp -a /usr/src/SDL2/android-project ../android
+cd ../android/
+ant clean
+rm -rf libs/ bin/ gen/
+android update project --name freedink --path . --target android-22
+echo '<?xml version="1.0" encoding="utf-8"?><resources><string name="app_name">FreeDink</string></resources>' > res/values/strings.xml
+mkdir -p src/org/freedink/
+# create src/org/freedink/SDLActivity.java
+# ...
+
+# Install SDL libs
+mkdir -p libs/armeabi/
+cp -a /usr/src/SDL2/build/org.libsdl/libs/armeabi/* libs/armeabi/
+
+# If SDK changed:
+android update project --name freedink --path . --target android-22
+
+cp -a ../cross-android/src/freedink libs/armeabi/libmain.so
+ant debug
+ant installd
+
+adb push ../share/freedink /storage/sdcard0/Android/data/org.freedink/files/freedink
+adb push ../cross-android/destdir/android-aint-posix/share/locale /storage/sdcard0/Android/data/org.freedink/files/freedink/locale
+
+tar czf dink.tar.gz -C freedink-data-1.08.2015XXXX dink/
+adb push dink.tar.gz /storage/sdcard0/Android/data/org.freedink/files/
+adb shell
+  cd /storage/sdcard0/Android/data/org.freedink/files/
+  tar xf dink.tar.gz
+exit
+
+cp -a /usr/share/midi/freepats .
+cp -a /etc/timidity/freepats.cfg timidity.cfg
+sed -i -e 's,/usr/share/midi/,,' timidity.cfg
+tar czf timidity.tar.gz freepats/ timidity.cfg
+rm -rf freepats/ timidity.cfg
+adb push timidity.tar.gz /storage/sdcard0/Android/data/org.freedink/files/
+adb shell
+  cd /storage/sdcard0/Android/data/org.freedink/files/
+  tar xf timidity.tar.gz
+exit
+
+adb shell
+  mkdir /storage/sdcard0/Android/data/org.freedink/files/freedink/
+exit
+adb push share/freedink/LiberationSans-Regular.ttf /storage/sdcard0/Android/data/org.freedink/files/freedink/
+
+
+# To see dynamic symbols:
+arm-linux-androideabi-objdump -R src/freedink
+# To simulate 'ldd':
+arm-linux-androideabi-objdump -x libs/armeabi/libnative-activity.so | grep NEEDED
+arm-linux-androideabi-readelf -d libs/armeabi/libnative-activity.so | grep NEEDED  # alternatively
+
+
+Running the test-suite uses a number of tricks, including upload new files.
+Either run 'adb root', or prepare permissions:
+adb shell
+  chmod 775 /data/data/org.freedink/lib/
+  chgrp shell /data/data/org.freedink/lib/
+exit
+# => this seems to be causing issues on (re)install though
+
+To get stdout output from cxxtest:
+adb shell stop
+adb shell setprop log.redirect-stdio true
+adb shell start  # this may restart your Android session
+
+
+=== Guile ===
+
+# https://lists.gnu.org/archive/html/guile-user/2014-06/msg00011.html
+
+/usr/src/android-ndk-r9d/build/tools/make-standalone-toolchain.sh \
+  --platform=android-12 --install-dir=/usr/src/ndk-standalone-14-arm
+PATH=/usr/src/ndk-standalone-14-arm/bin:$PATH
+
+aptitude install lzip
+WGET=wget
+
+# - pkg-config (see above)
+
+# libtool
+VERSION=2.4.2
+$WGET http://ftp.gnu.org/pub/gnu/libtool/libtool-$VERSION.tar.xz
+tar xf libtool-$VERSION.tar.xz
+cd libtool-$VERSION/
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+
+# GMP
+VERSION=6.0.0a
+VERSIONDIR=6.0.0
+$WGET https://gmplib.org/download/gmp/gmp-$VERSION.tar.lz
+tar xf gmp-$VERSION.tar.lz
+cd gmp-$VERSIONDIR/
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+
+# - iconv (see above)
+
+# libunistring
+VERSION=0.9.3
+$WGET http://ftp.gnu.org/gnu/libunistring/libunistring-0.9.3.tar.gz
+tar xf libunistring-$VERSION.tar.gz
+mkdir cross-android/ && cd cross-android/
+\cp -a /usr/share/misc/config.{guess,sub} ../build-aux/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+
+# libFFI
+VERSION=3.1
+$WGET ftp://sourceware.org/pub/libffi/libffi-$VERSION.tar.gz
+tar xf libffi-$VERSION.tar.gz
+cd libffi-$VERSION/
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+
+# GC
+VERSION=7.4.2
+$WGET http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-$VERSION.tar.gz
+tar xf libatomic_ops-$VERSION.tar.gz
+cd libatomic_ops-$VERSION/
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+cd ../..
+$WGET http://www.hboehm.info/gc/gc_source/gc-$VERSION.tar.gz
+tar xf gc-$VERSION.tar.gz
+cd gc-$VERSION/
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc) && make install
+
+# Guile 2!
+cd guile/cross-android/
+git checkout stable-2.0
+mkdir cross-android/ && cd cross-android/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared
+make -j$(nproc)
+=> build failure due to Android's pthread_cancel
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-standalone-14-arm/sysroot/usr \
+  --disable-shared --without-threads
+=> OK but "unknown CPU endianness "arm" in ice-9/eval.go

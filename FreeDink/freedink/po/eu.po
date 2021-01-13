@@ -1,0 +1,237 @@
+# Basque translation of freedink-1.08.20120427.
+# Copyright (C) 2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the freedink package.
+# Gorka Azkarate Zubiaur <gorkaazkarate@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink-1.08.20120427\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2012-11-04 17:43+0200\n"
+"Last-Translator: Gorka Azkarate Zubiaur <gorkaazkarate@gmail.com>\n"
+"Language-Team: Basque <translation-team-eu@lists.sourceforge.net>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.0\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Erabilera: %s [OPTIONS]...\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Erakutsi laguntza-pantaila hau\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr " -v, --version         Erakutsi bertsioa\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <dir>      Zehaztu DMod direktorioa\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <dir>    Zehaztu oinarrizko direktorioa honako hauetarako: dink/graphics, D-Mods, etab.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Azaldu zer ari den gertatzen\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           Ez saiatu hau editatzen: dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           Ez erabili joystick-ik\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         Ez dadila soinurik entzun\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr " -t, --truecolor       Onartu kolore gehiago (azken D-Mod graphics bertsioetarako)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Erabili leihodun modua pantailadun modua erabili beharrean\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           Gaitu v1.07 bateratzeko modua\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr "Arazoen berri %s horri eman.\n"
+
+#: src/app.cpp:312
+#, fuzzy, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Oharra: -nomovie onartu egiten da bateratzeko, baina ez du ondoriorik.\n"
+
+#: src/AppFreeDink.cpp:136
+#, fuzzy
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Hasi Dink Smallwood jolasa edo bere D-Mods horietako bat.\n"
+
+#: src/brain_keyboard.cpp:284
+#, fuzzy
+msgid "`$I don't see anything here."
+msgstr "`$Nik ez dut hemen ezer ikusten.\n"
+
+#: src/brain_keyboard.cpp:285
+#, fuzzy
+msgid "`$Huh?"
+msgstr "`$Huh?\n"
+
+#: src/brain_keyboard.cpp:286
+#, fuzzy
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Nahiko ziur dakit mintza naitekeela horrekin edo erabil dezakedala hori.\n"
+
+#: src/brain_keyboard.cpp:287
+#, fuzzy
+msgid "`$What?"
+msgstr "`$Zer?\n"
+
+#: src/brain_keyboard.cpp:288
+#, fuzzy
+msgid "`$I'm bored."
+msgstr "`$Aspertuta nago.\n"
+
+#: src/brain_keyboard.cpp:289
+#, fuzzy
+msgid "`$Not much happening here."
+msgstr "`$Hemen ez da gauza handirik gertatzen ari.\n"
+
+#: src/brain_keyboard.cpp:409
+#, fuzzy
+msgid "`$I don't know any magic."
+msgstr "`$Nik ez dakit beste munduko trikimailu magikorik.\n"
+
+#: src/brain_keyboard.cpp:410
+#, fuzzy
+msgid "`$I'm no wizard!"
+msgstr "`$Ez nauzu sorgin!\n"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Horrekin saiatu baino lehenago magia ikasi beharko nuke."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Imintzioka eta keinuka ari natzaizu ez alferrik!"
+
+#: src/brain_keyboard.cpp:413
+#, fuzzy
+msgid "`$Nothing happened."
+msgstr "`$Ez da ezer gertatu.\n"
+
+#: src/brain_keyboard.cpp:414
+#, fuzzy
+msgid "`$Hocus pocus!"
+msgstr "`$Atzilla motzilla!\n"
+
+#: src/dinkc.cpp:748
+#, fuzzy
+msgid "Attack"
+msgstr "Ekin\n"
+
+#: src/dinkc.cpp:749
+#, fuzzy
+msgid "Talk/Examine"
+msgstr "Mintzatu/Aztertu\n"
+
+#: src/dinkc.cpp:750
+#, fuzzy
+msgid "Magic"
+msgstr "Magikoa\n"
+
+#: src/dinkc.cpp:751
+#, fuzzy
+msgid "Item Screen"
+msgstr "Pantaila bat\n"
+
+#: src/dinkc.cpp:752
+#, fuzzy
+msgid "Main Menu"
+msgstr "Menu nagusia\n"
+
+#: src/dinkc.cpp:753
+#, fuzzy
+msgid "Map"
+msgstr "Mapa\n"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+#, fuzzy
+msgid "Unused"
+msgstr "Erabili gabea\n"
+
+#: src/dinkc.cpp:758
+#, fuzzy
+msgid "Down"
+msgstr "Behean\n"
+
+#: src/dinkc.cpp:759
+#, fuzzy
+msgid "Left"
+msgstr "Ezkerretan\n"
+
+#: src/dinkc.cpp:760
+#, fuzzy
+msgid "Right"
+msgstr "Eskuinetan\n"
+
+#: src/dinkc.cpp:761
+#, fuzzy
+msgid "Up"
+msgstr "Goian\n"
+
+#: src/dinkc.cpp:762
+#, fuzzy
+msgid "Error: not mapped"
+msgstr "Errorea: mapan sartu gabea\n"
+
+#: src/dinkc.cpp:773
+#, fuzzy, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Slot %d - %d:%02d - %s\n"
+
+#: src/dinkc.cpp:776
+#, fuzzy, c-format
+msgid "Slot %d - Empty"
+msgstr "Slot %d - Hutsik\n"
+
+#: src/freedinkedit.cpp:4619
+#, fuzzy
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Editatu Dink Smallwood jolasa edo bere D-Mod horietako bat.\n"

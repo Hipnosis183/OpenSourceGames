@@ -1,0 +1,38 @@
+Source: freedink-dfarc
+Section: games
+Priority: extra
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Sylvain Beucler <beuc@debian.org>
+Build-Depends: debhelper (>= 9), autotools-dev, libbz2-dev, libwxgtk3.0-dev, intltool
+Standards-Version: 3.9.5
+Homepage: http://www.gnu.org/software/freedink/
+Vcs-Git: git://git.savannah.gnu.org/freedink/dfarc.git
+Vcs-Browser: http://git.savannah.gnu.org/cgit/freedink/dfarc.git
+
+Package: freedink-dfarc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: freedink, xdg-utils
+Description: frontend and .dmod installer for GNU FreeDink
+ Dink Smallwood is an adventure/role-playing game, similar to Zelda,
+ made by RTsoft. Besides twisted humor, it includes the actual game
+ editor, allowing players to create hundreds of new adventures called
+ Dink Modules or D-Mods for short.
+ .
+ DFArc2 makes it easy to play and manage the Dink Smallwood game and
+ its numerous D-Mods.
+
+Package: freedink-dfarc-dbg
+Section: debug
+Architecture: any
+Depends: ${misc:Depends}, freedink-dfarc (= ${binary:Version})
+Description: debugging symbols for dfarc
+ Dink Smallwood is an adventure/role-playing game, similar to Zelda,
+ made by RTsoft. Besides twisted humor, it includes the actual game
+ editor, allowing players to create hundreds of new adventures called
+ Dink Modules or D-Mods for short.
+ .
+ DFArc2 makes it easy to play and manage the Dink Smallwood game and
+ its numerous D-Mods.
+ .
+ This package contains the debugging symbols for dfarc.

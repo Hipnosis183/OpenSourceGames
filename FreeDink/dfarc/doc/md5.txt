@@ -1,0 +1,22 @@
+MD5 checksums for non-FreeDink executables:
+
+1.08:
+7240acff54317a7d9c70cec630d75d08  dink.exe
+16d2ea6ade7c2d05c6eb7812c5d2294f  dinkedit.exe
+
+1.07 b3 patch:
+04f40b73bf9e31bcd6fe72e2217c62eb  dink.exe
+e07a34a67291299d34b9627a3172caff  Dinkedit.exe
+
+1.06:
+f00c352c616a14fc4f5338b6e5c6f3ea  dink.exe
+d9b0f1fa8f1d7b72f57dbfaae3996243  dinkedit.exe
+
+Aural+:
+a586b261449592ec2606920dacfee5e0  dink_aural+.exe
+
+WinDinkedit 1.4 Beta 2
+3d51d1f2d22a2ddce4b8a04e81ca89d0  WinDinkedit.exe
+
+WinDinkeditPlus:
+2a87170bc9c8e57352a0ffc00c9f2d1e  WinDinkeditPlus.exe

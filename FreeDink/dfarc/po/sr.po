@@ -1,0 +1,645 @@
+# Serbian translation of dfarc.
+# Copyright (C) 2014 Free Software Foundation, Inc.
+# This file is distributed under the same license as the dfarc package.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012—2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: dfarc-3.11-pre1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-01 20:58+0200\n"
+"PO-Revision-Date: 2014-09-13 08:57+0200\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <(nothing)>\n"
+"Language: sr\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/BZip.cpp:303
+#, c-format
+msgid "Error: Could not open input file '%s' for bzip decompression."
+msgstr "Грешка: Не могу да отворим улазну датотеку „%s“ за бзип извлачење."
+
+#: ../src/BZip.cpp:318
+msgid "Error: Invalid .dmod file selected!"
+msgstr "Грешка: Изабрана је неисправна „.dmod“ датотека!"
+
+#: ../src/BZip.cpp:328
+#, c-format
+msgid "Error: Could not write to '%s'."
+msgstr "Грешка: Не могу да пишем у „%s“."
+
+#: ../src/BZip.cpp:360
+msgid "Invalid .dmod file specified."
+msgstr "Наведена је неисправна „.dmod“ датотека."
+
+#: ../src/BZip.cpp:364
+msgid "Critical program function error: opened for write."
+msgstr "Критична грешка програмске функције: отворено за упис."
+
+#: ../src/BZip.cpp:368
+msgid "Could not read .dmod file."
+msgstr "Не могу да прочитам „.dmod“ датотеку."
+
+#: ../src/BZip.cpp:372
+msgid "Incomplete .dmod file. Please download it again."
+msgstr "Непотпуна „.dmod“ датотека. Молим преузмите је опет."
+
+#: ../src/BZip.cpp:376
+msgid "The .dmod file is corrupted.  Please download it again."
+msgstr "„.dmod“ датотека је оштећена.  Молим поново је преузмите."
+
+#: ../src/BZip.cpp:380
+msgid "The file is not a valid .dmod file."
+msgstr "Датотека није исправна „.dmod“ датотека."
+
+#: ../src/BZip.cpp:384
+msgid "Out of memory error."
+msgstr "Грешка недостатка меморије."
+
+#: ../src/BZip.cpp:388
+msgid "An unhandled error occured."
+msgstr "Дошло је до нерешиве грешке."
+
+#: ../src/Config.cpp:202
+msgid "Error: dinksmallwood.ini not found. Please run the main game and try running this program again."
+msgstr "Грешка: нисам пронашао „dinksmallwood.ini“. Молим покрените главну игру и покушајте поново да покренете овај програм."
+
+#: ../src/Config.cpp:210
+msgid "Error opening dinksmallwood.ini"
+msgstr "Грешка отварања „dinksmallwood.ini“"
+
+#: ../src/DFArcFrame.cpp:174
+#, c-format
+msgid ""
+"DFArc version %s\n"
+"Copyright (C) 2004  Andrew Reading (merlin)\n"
+"Copyright (C) 2005, 2006  Dan Walma (redink1)\n"
+"Copyright (C) 2008-2014  Sylvain Beucler (Beuc)\n"
+"Build Date: %s\n"
+"Powered by bzip2 (bzip.org) and wxWidgets (wxwidgets.org)"
+msgstr ""
+"ДФАрц издање %s\n"
+"Ауторска права (C) 2004  Ендрју Ридин (merlin)\n"
+"Ауторска права (C) 2005, 2006  Дан Валма (redink1)\n"
+"Ауторска права (C) 2008-2014  Силвен Беклер (Beuc)\n"
+"Датум изградње: %s\n"
+"Покреће га бзип2 (bzip.org) и вхВиџети (wxwidgets.org)"
+
+#: ../src/DFArcFrame.cpp:181
+msgid "About DFArc v3"
+msgstr "О ДФАрц-у в3"
+
+#. Default logo (currently all black with a question mark)
+#. TRANSLATORS: please make this SHORT, possibly rephrasing as "<
+#. Choose!". This is included in the 160x120px logo box in the main
+#. window and it doesn't word-wrap.
+#: ../src/DFArcFrame.cpp:253
+msgid "< Pick a D-Mod"
+msgstr "< Изаберите Д-мод"
+
+#: ../src/DFArcFrame.cpp:318
+msgid "No translations"
+msgstr "Нема превода"
+
+#. Not displaying the default language explicitely, because it
+#. makes the user think that a translation is always available.
+#. mGameLocaleList->Insert(wxString(_("Default language")) + wxT(" (") + cur_locale_name + wxT(")"), 0);
+#: ../src/DFArcFrame.cpp:325 ../src/Options.cpp:118
+msgid "Don't translate"
+msgstr "Немој преводити"
+
+#: ../src/DFArcFrame.cpp:348
+msgid "D-Mod files (*.dmod)"
+msgstr "Датотеке Д-мода (*.dmod)"
+
+#: ../src/DFArcFrame.cpp:349
+msgid "Select a .dmod file"
+msgstr "Изаберите „.dmod“ датотеку"
+
+#: ../src/DFArcFrame.cpp:544
+#, c-format
+msgid "The '%s' locale is not installed on your computer (locales tells the computer how to manage a language). You need to install it - check your system documentation."
+msgstr "Локалитет „%s“ није инсталиран на вашем рачунару (локалитети говоре рачунару како да управља језиком). Морате да га инсталирате — проверите документацију вашег система."
+
+#: ../src/DFArcFrame.cpp:547 ../src/DFArcFrame.cpp:625
+msgid "Warning"
+msgstr "Упозорење"
+
+#: ../src/DFArcFrame.cpp:587
+#, c-format
+msgid "Dink Smallwood failed! Error code %d."
+msgstr "Динк шумарак се урушио! Код грешке је „%d“."
+
+#: ../src/DFArcFrame.cpp:589 ../src/DFArcFrame.cpp:594
+#: ../src/DFArcFrame.cpp:655 ../src/DFArcFrame.cpp:657
+#: ../src/DFArcFrame.cpp:700 ../src/DFArcFrame.cpp:709
+msgid "Error"
+msgstr "Грeшкa"
+
+#: ../src/DFArcFrame.cpp:591
+#, c-format
+msgid "Dink Smallwood ('%s') was not found on your computer. Please configure the Dink program name in the Options menu."
+msgstr "Динк шумарак („%s“) није пронађен на вашем рачунару. Молим подесите назив програма Динк у изборнику опција."
+
+#: ../src/DFArcFrame.cpp:622
+msgid "Dinkedit saves all changes automatically. Altering maps can ruin the game. Are you sure you want to continue?"
+msgstr "Динк уређивач сам чува све измене. Измена карти може да уруши игру. Да ли сте сигурни да желите да наставите?"
+
+#: ../src/DFArcFrame.cpp:652
+#, c-format
+msgid "The editor ('%s') was not found on your computer. Please configure the editor program name in the Options menu."
+msgstr "Уређивач („%s“) није пронађен на вашем рачунару. Молим подесите назив програма уређивача у изборнику опција."
+
+#: ../src/DFArcFrame.cpp:657
+msgid "Error while running the editor"
+msgstr "Грешка приликом покретања уређивача"
+
+#. FreeDesktop
+#. Gnome
+#. KDE
+#. Xfce
+#: ../src/DFArcFrame.cpp:698
+msgid "Could not find a file manager (tried 'xdg-open', 'nautilus', 'konqueror' and 'thunar')"
+msgstr "Не могу да пронађем управника датотека (покушао сам „xdg-open“, „nautilus“, „konqueror“ и „thunar“)"
+
+#: ../src/DFArcFrame.cpp:706
+#, c-format
+msgid "Cannot start '%s', please check your configuration in the Options window."
+msgstr "Не могу да покренем „%s“, молим погледајте ваша подешавања у прозору опција."
+
+#: ../src/DFArcFrame.cpp:716
+msgid ""
+"Welcome to DFArc, the Dink Smallwood front end!\n"
+"\n"
+"You can choose to play the original game (Dink Smallwood) or Dink-Modules (D-Mods) which contain new adventures.\n"
+"\n"
+"After completing the main game, give some D-Mods a try.\n"
+"There are hundreds of them, just click File-Download D-Mods."
+msgstr ""
+"Добродошли у ДФАрц, челника за Динк шумарак!\n"
+"\n"
+"Можете да изаберете да играте оригиналну игру (Динк шумарак) или Динк-модули (Д-модс) која садржи нове авантуре.\n"
+"\n"
+"Након извршавања главне игре, дајте прилику неком Д-модсу.\n"
+"Има их на стотине, само кликните на „Преузми датотеку Д-модса“."
+
+#: ../src/DFArcFrame.cpp:723
+msgid "Introduction"
+msgstr "Увод"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:866
+msgid "Cannot use the overridden Dink Smallwood directory - ignoring it. (permission problem?)"
+msgstr "Не могу да користим пребрисан директоријум Динк шумарка — занемарујем га. (проблем овлашћења?)"
+
+#: ../src/DFArcFrame.cpp:868 ../src/DFArcFrame.cpp:876
+msgid "Configuration error"
+msgstr "Грешка подешавања"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:875
+msgid "The Dink Smallwood directory you entered does not exist - ignoring it."
+msgstr "Директоријум Динка шумарка који сте унели не постоји — занемарујем га."
+
+#: ../src/DFArcFrame.cpp:890
+msgid "You must select the uninstall option from the start menu to uninstall the main game."
+msgstr "Морате да изаберете опцију за уклањање из изборника почетка да уклоните главну игру."
+
+#: ../src/DFArcFrame.cpp:891
+msgid "Uninstall - Error"
+msgstr "Уклони — Грешка"
+
+#: ../src/DFArcFrame.cpp:896
+msgid "Do you want to remove all save game files?"
+msgstr "Да ли желите да уклоните све датотеке чувања игре?"
+
+#: ../src/DFArcFrame.cpp:897
+msgid "Uninstall - Save Game Files"
+msgstr "Уклони — Датотеке чувања игре"
+
+#: ../src/DFArcFrame.cpp:919
+msgid "Unable to remove D-Mod directory. All other files were removed."
+msgstr "Не могу да уклоним Д-мод директоријум. Све друге датотеке су уклоњене."
+
+#: ../src/DFArcFrame.cpp:925
+msgid "D-Mod successfully uninstalled"
+msgstr "Д-мод је успешно уклоњен"
+
+#: ../src/DFArcFrame.cpp:926
+msgid "Uninstall - Success"
+msgstr "Уклони — Успешно"
+
+#: ../src/InstallVerifyFrame.cpp:56
+msgid "Preparing"
+msgstr "Припремам"
+
+#: ../src/InstallVerifyFrame.cpp:57
+msgid "The D-Mod archive is being decompressed in a temporary file."
+msgstr "Д-мод архива је распакована у привременој датотеци."
+
+#: ../src/InstallVerifyFrame.cpp:81
+#, c-format
+msgid ""
+"No Description Available.\n"
+"\n"
+"The D-Mod will be installed in subdirectory '%s'."
+msgstr ""
+"Опис није доступан.\n"
+"\n"
+"Д-мод ће бити инсталиран у поддиректоријуму „%s“."
+
+#: ../src/InstallVerifyFrame.cpp:94
+msgid "DFArc - Install D-Mod - "
+msgstr "ДФАрц — Инсталирај Д-мод — "
+
+#: ../src/InstallVerifyFrame.cpp:143
+msgid "DFArc - Installing"
+msgstr "ДФАрц — Инсталирам"
+
+#: ../src/InstallVerifyFrame.cpp:157
+msgid "The D-Mod you selected"
+msgstr "Д-мод који сте изабрали"
+
+#: ../src/InstallVerifyFrame.cpp:159
+msgid " was successfully installed."
+msgstr " је успешно инсталиран."
+
+#: ../src/InstallVerifyFrame.cpp:160 ../src/Package.cpp:167
+msgid "Success"
+msgstr "Успешно"
+
+#: ../src/InstallVerifyFrame.cpp:169
+msgid "An error occured while extracting the .dmod file."
+msgstr "Догодила се грешка приликом распакивања „.dmod“ датотеке."
+
+#: ../src/Options.cpp:113
+msgid "System language"
+msgstr "Језик система"
+
+#: ../src/Options.cpp:136
+msgid "Custom"
+msgstr "Произвољно"
+
+#: ../src/Options.cpp:175
+msgid "Choose the Dink Smallwood install directory"
+msgstr "Изаберите инсталациони директоријум за Динк шумарак"
+
+#: ../src/Options.cpp:183
+msgid "Choose a folder containing D-Mods"
+msgstr "Изаберите фасциклу која садржи Д-модове"
+
+#: ../src/Package.cpp:123
+msgid "You must provide an identifier filename."
+msgstr "Морате да обезбедите назив датотеке идентификатора."
+
+#: ../src/Package.cpp:139
+msgid "Packaging"
+msgstr "Паковање"
+
+#: ../src/Package.cpp:139
+msgid "The D-Mod is being packaged."
+msgstr "Д-мод је запакован."
+
+#. Success dialog
+#: ../src/Package.cpp:165
+#, c-format
+msgid "%s was successfully packaged (compression ratio %2.1f : 1)."
+msgstr "„%s“ је успешно запакован (однос сажимања је %2.1f : 1)."
+
+#: ../src/Package.cpp:172
+msgid "Packaging aborted - removing partial .dmod file."
+msgstr "Запакивање је прекинуто — уклањам делимичну „.dmod“ датотеку."
+
+#: ../src/Package.cpp:173
+msgid "Abort"
+msgstr "Прекини"
+
+#: ../src/RecursiveDelete.cpp:55 ../src/RecursiveDelete.cpp:73
+#, c-format
+msgid "Could not remove %s"
+msgstr "Не могу да уклоним „%s“"
+
+#: ../src/Tar.cpp:95
+msgid "Listing files..."
+msgstr "Исписујем датотеке..."
+
+#: ../src/Tar.cpp:134
+msgid "Initializing..."
+msgstr "Покрећем..."
+
+#: ../src/Tar.cpp:138
+#, c-format
+msgid "Error: Could not open tar file '%s' for bzip compression."
+msgstr "Грешка: Не могу да отворим тар датотеку „%s“ за бзип сажимање."
+
+#: ../src/Tar.cpp:160
+msgid "Error: Could not initialize compression method!  Will not generate a correct .dmod file.  Quitting."
+msgstr "Грешка: Не могу да покренем начин сажимања!  Нећу створити исправну „.dmod“ датотеку.  Излазим."
+
+#: ../src/Tar.cpp:193
+#, c-format
+msgid "Error: File '%s' not found!  Cannot archive file."
+msgstr "Грешка: Датотека „%s“ није пронађена!  Не могу да архивирам датотеку."
+
+#. Close the output file.
+#: ../src/Tar.cpp:243
+msgid "Closing..."
+msgstr "Затварам..."
+
+#: ../src/Tar.cpp:363
+#, c-format
+msgid "Error: File '%s' not found!  Cannot read data."
+msgstr "Грешка: Датотека „%s“ није пронађена!  Не могу да прочитам податке."
+
+#. Nope.  Exit.
+#: ../src/Tar.cpp:400
+msgid "Error: This .dmod file has an invalid checksum!  Cannot read file."
+msgstr "Грешка: Ова „.dmod“ датотека има неисправну суму провере!  Не могу да прочитам датотеку."
+
+#: ../src/Tar.cpp:484
+#, c-format
+msgid "Error: File '%s' not found!  Cannot extract data."
+msgstr "Грешка: Датотека „%s“ није пронађена!  Не могу да извучем податке."
+
+#: ../src/Tar.cpp:494
+#, c-format
+msgid "Error: Cannot create directory '%s'.  Cannot extract data."
+msgstr "Грешка: Не могу да направим директоријум „%s“.  Не могу да извучем податке."
+
+#: ../src/Tar.cpp:552
+#, c-format
+msgid "Got bad file %d/%d.  Skipping."
+msgstr "Добих лошу датотеку %d/%d.  Прескачем."
+
+#: ../src/Tar.cpp:574
+#, c-format
+msgid "Error: Improperly archived file '%s'.  Skipping."
+msgstr "Грешка: Неисправно архивирана датотека „%s“.  Прескачем."
+
+#: ../src/Tar.cpp:607
+msgid "Done."
+msgstr "Урађено."
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "&Open D-Mod to Install"
+msgstr "&Отвори Д-мод за инсталацију"
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "Select a D-Mod to install"
+msgstr "Изаберите Д-мод за инсталацију"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "&Download D-Mods"
+msgstr "&Преузми Д-модове"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "Go to The Dink Network to download some D-Mods!"
+msgstr "Идите на Динк мрежу да преузмете неке Д-модове!"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "E&xit"
+msgstr "&Изађи"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "Exit DFArc"
+msgstr "Изађите из ДФАрц-а"
+
+#: ../src/DFArcFrame_Base.cpp:31
+msgid "&File"
+msgstr "&Датотека"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "&Refresh D-Mod List"
+msgstr "&Освежи Д-мод списак"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "Refreshes the D-Mod list for any new additions"
+msgstr "Освежите Д-мод списак за новим додацима"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "&Browse Selected D-Mod Directory"
+msgstr "&Разгледај изабрани Д-мод директоријум"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "Browse to the directory containing the current D-Mod"
+msgstr "Разгледајте директоријум који садржи текући Д-мод"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "&Uninstall Selected D-Mod"
+msgstr "&Уклони изабрани Д-мод"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "Uninstalls the selected D-Mod"
+msgstr "Уклоните изабрани Д-мод"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "&Options"
+msgstr "&Опције"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "View or modify DFArc options"
+msgstr "Погледајте или измените опције ДФАрц-а"
+
+#: ../src/DFArcFrame_Base.cpp:38
+msgid "&Edit"
+msgstr "&Уређивање"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "&Introduction"
+msgstr "&Увод"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "A quick introduction to Dinking and D-Mods"
+msgstr "Брзи увод у Динкин и Д-модове"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "&Walkthroughs and Guides"
+msgstr "&Преглед рада и водичи"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "Stuck in a D-Mod? Check out The Dink Smallwood Solutions."
+msgstr "Запели сте у Д-моду? Проверите решења Динк шумарка."
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "&Forums"
+msgstr "&Форуми"
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "Ask a question on the forums, or see if someone had the same problem."
+msgstr "Поставите питање на форумима, или погледајте да ли још неко има исти проблем."
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "&About"
+msgstr "&О програму"
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "About DFArc"
+msgstr "О ДФАрц-у"
+
+#: ../src/DFArcFrame_Base.cpp:45
+msgid "&Help"
+msgstr "По&моћ"
+
+#: ../src/DFArcFrame_Base.cpp:50
+msgid "Play"
+msgstr "Играј"
+
+#: ../src/DFArcFrame_Base.cpp:51
+msgid "True Color"
+msgstr "Права боја"
+
+#: ../src/DFArcFrame_Base.cpp:52
+msgid "Windowed"
+msgstr "Прозор"
+
+#: ../src/DFArcFrame_Base.cpp:53
+msgid "Sound"
+msgstr "Звук"
+
+#: ../src/DFArcFrame_Base.cpp:54
+msgid "Joystick"
+msgstr "Џојстик"
+
+#: ../src/DFArcFrame_Base.cpp:55
+msgid "Debug"
+msgstr "Исправљање грешака"
+
+#: ../src/DFArcFrame_Base.cpp:56
+msgid "v1.07 mode"
+msgstr "в1.07 режим"
+
+#: ../src/DFArcFrame_Base.cpp:57
+msgid "Edit"
+msgstr "Измени"
+
+#: ../src/DFArcFrame_Base.cpp:58 ../src/Package_Base.cpp:27
+msgid "Package"
+msgstr "Пакет"
+
+#. begin wxGlade: DFArcFrame_Base::set_properties
+#: ../src/DFArcFrame_Base.cpp:73
+msgid "DFArc v3"
+msgstr "ДФАрц в3"
+
+#: ../src/DFArcFrame_Base.cpp:83
+msgid "v1.07 compatibility mode, for D-Mods released before 2006"
+msgstr "в1.07 режим сагласности, за Д-модове издате пре 2006"
+
+#. begin wxGlade: InstallVerifyFrame_Base::InstallVerifyFrame_Base
+#: ../src/InstallVerifyFrame_Base.cpp:23
+msgid "Preparing..."
+msgstr "Припремам..."
+
+#: ../src/InstallVerifyFrame_Base.cpp:25
+msgid "Main Dink directory"
+msgstr "Главни Динк директоријум"
+
+#: ../src/InstallVerifyFrame_Base.cpp:26 ../src/Options_Base.cpp:29
+msgid "Additional D-Mods directory"
+msgstr "Додатни директоријум Д-модова"
+
+#: ../src/InstallVerifyFrame_Base.cpp:28
+msgid "Where do you want to install this D-Mod?"
+msgstr "Где желите да инсталирате овај Д-мод?"
+
+#: ../src/InstallVerifyFrame_Base.cpp:29
+msgid "Install"
+msgstr "Инсталирај"
+
+#. begin wxGlade: InstallVerifyFrame_Base::set_properties
+#: ../src/InstallVerifyFrame_Base.cpp:41
+msgid "DFArc - Install D-Mod"
+msgstr "ДФАрц — Инсталирај Д-мод"
+
+#. begin wxGlade: Options_Base::Options_Base
+#: ../src/Options_Base.cpp:23
+msgid "Close DFArc on play"
+msgstr "Затвори ДФАрц при игри"
+
+#: ../src/Options_Base.cpp:24
+msgid "Show developer buttons"
+msgstr "Прикажи дугмад програмера"
+
+#: ../src/Options_Base.cpp:25
+msgid "The engine updates dinksmallwood.ini on run (deprecated)"
+msgstr "Мотор ажурира „dinksmallwood.ini“ при покретању (застарело)"
+
+#: ../src/Options_Base.cpp:26
+msgid "Override the Dink Smallwood directory"
+msgstr "Пребрисава директоријум Динк шумарка"
+
+#: ../src/Options_Base.cpp:28 ../src/Options_Base.cpp:31
+msgid "Browse"
+msgstr "Разгледај"
+
+#: ../src/Options_Base.cpp:32
+msgid "Game program name"
+msgstr "Назив програма игре"
+
+#: ../src/Options_Base.cpp:35
+msgid "Editor program name"
+msgstr "Назив програма уређивача"
+
+#: ../src/Options_Base.cpp:38
+msgid "Preferred file browser"
+msgstr "Омиљен прегледач датотека"
+
+#: ../src/Options_Base.cpp:40
+msgid ""
+"DFArc language\n"
+"(restart DFArc to apply)"
+msgstr ""
+"Језик ДФАрц-а\n"
+"(поново га покрените да примените)"
+
+#. begin wxGlade: Options_Base::set_properties
+#: ../src/Options_Base.cpp:56
+msgid "DFArc - Options"
+msgstr "ДФАрц — Опције"
+
+#. begin wxGlade: Package_Base::Package_Base
+#: ../src/Package_Base.cpp:23
+msgid "Identifier"
+msgstr "Идентификатор"
+
+#: ../src/Package_Base.cpp:24
+#, c-format
+msgid ""
+"Note: Unless you're making a D-Mod, you shouldn't be around here.\n"
+"This is for creating a .dmod file for a D-Mod you made.\n"
+"\n"
+"Will package '%s' located at\n"
+"%s"
+msgstr ""
+"Напомена: Осим ако не стварате Д-мод, не бисте требали да се мувате овуда.\n"
+"Ово је за стварање „.dmod“ датотеке за Д-мод који сте направили.\n"
+"\n"
+"Запаковаћу „%s“ пронађен на\n"
+"%s"
+
+#: ../src/Package_Base.cpp:25
+msgid "D-Mod filename (8 letters/numbers)"
+msgstr "Назив датотеке Д-мода (8 слова/бројева)"
+
+#. begin wxGlade: Package_Base::set_properties
+#: ../src/Package_Base.cpp:39
+msgid "DFArc - Package"
+msgstr "ДФАрц — Пакет"
+
+#: ../share/freedink-dfarc.desktop.in.h:1
+msgid "DFArc - Dink frontend"
+msgstr "ДФАрц — Динкв челник"
+
+#: ../share/freedink-dfarc.desktop.in.h:2
+msgid "Run, edit, install, remove and package D-Mods (Dink Modules)"
+msgstr "Покрените, уредите, инсталирајте, уклоните и запакујте Д-модове (Динкове модуле)"
+
+#: ../share/freedink-mime.xml.in.h:1
+msgid "Packaged D-Mod"
+msgstr "Запакован Д-мод"
+
+#~ msgid "ERROR"
+#~ msgstr "ГРЕШКА"

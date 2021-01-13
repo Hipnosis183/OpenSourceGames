@@ -1,0 +1,216 @@
+# Spanish messages for freedink 108.2
+# Copyright (C) 2018 Free Software Foundation, Inc.
+# This file is distributed under the same license as the freedink package.
+# Fernando Carmona <ferkiwi@gmail.com>, 2009.
+# Francisco Javier Serrador <fserrador@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 108.2\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2018-04-18 10:09+0200\n"
+"Last-Translator: Francisco Javier Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <es@tp.org.es>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Modo de empleo: %s [OPCIONES]...\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Muestra este mensaje de ayuda\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         Muestra la versión\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <dir>      Especifica el directorio del D-Mod\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <dir>     Especifica el directorio base de dink/gráficos, D-Mods, etc.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Detalla lo que se va haciendo\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           Desactiva la escritura de dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           No tratar utilizar joystick\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         No reproducir sonido\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       Permite más colores (para gráficos recientes D-Mod)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Emplea el modo ventana en lugar de pantalla completa\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           Activa la compatibilidad con la versión v1.07\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Comunicar defectos a %s.\n"
+"Comunique fallos de traducción a <translation-team-es@lists.sourceforge.net>\n"
+
+#: src/app.cpp:312
+#, fuzzy, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Nota: -nomovie es aceptado por compatibilidad pero no tiene ningún efecto.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Inicia el juego Dink Smallwood o uno de sus D-Mods."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$No veo nada aquí."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$¿Huh?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Te aseguro que no puedo hablar con eso ni usarlo."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$¿Qué?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$Me aburro."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$No pasa nada aquí."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$No se de ningún hechizo."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$¡No soy un mago!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Necesito aprender magia antes de intentar esto."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$¡Estoy gesticulando como loco sin ningún sentido!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$No pasó nada."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$¡Hocus pocus!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Atacar"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Hablar/Examinar"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Magia"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Inventario"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Menú Principal"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Mapa"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "Sin Uso"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Bajar"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Izquierda"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Derecha"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Subir"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Error: no mapeado"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Ranura %d - %d:%02d - %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "Ranura %d - Vacía"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Edita el juego Dink Smallwood o uno de sus D-Mods."

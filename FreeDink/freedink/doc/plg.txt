@@ -1,0 +1,156 @@
+Let's make a PortableLinuxGame app container:
+http://www.portablelinuxgames.org/
+
+lxc-create -n plg -t debian -- -r wheezy -a i386
+lxc-start -n plg -d
+lxc-attach -n plg
+
+echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/00Recommends
+rm /etc/dpkg/dpkg.cfg.d/lxc-multiarch
+apt-get install git mercurial subversion ca-certificates
+apt-get install g++ make autoconf automake pkg-config help2man gettext autopoint
+
+cd /usr/src
+
+git clone git://git.sv.gnu.org/gnulib.git
+hg clone http://hg.libsdl.org/SDL SDL2
+hg clone http://hg.libsdl.org/SDL_image SDL2_image
+hg clone http://hg.libsdl.org/SDL_mixer SDL2_mixer
+hg clone http://hg.libsdl.org/SDL_ttf SDL2_ttf
+svn checkout https://svn.code.sf.net/p/sdl2gfx/code/trunk SDL2_gfx/
+git clone git://git.sv.gnu.org/freedink.git
+
+# https://libsdl.org/release/SDL2-2.0.5.tar.gz
+# https://libsdl.org/release/SDL2-2.0.5.tar.gz.sig
+# https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.1.tar.gz
+# https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.1.tar.gz
+# https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.14.tar.gz
+# http://www.ferzkopp.net/Software/SDL2_gfx/SDL2_gfx-1.0.3.tar.gz
+
+apt-get install wget rsync
+(cd gnulib && git checkout 39cf9dff9bc7883e2a589b049fb11ee7beaadd4f)
+
+pushd SDL2/
+apt-get install libgl1-mesa-dev libpulse-dev libx11-dev \
+  libxcursor-dev libxext-dev libxi-dev libxinerama-dev libxrandr-dev \
+  libxss-dev libxt-dev libxv-dev libxxf86vm-dev
+./autogen.sh
+./configure
+make -j4
+make install
+popd
+
+push SDL2_image
+#apt-get install libjpeg-dev libpng-dev
+./autogen.sh
+./configure
+make -j4
+make install
+popd
+
+pushd SDL2_mixer
+apt-get install libvorbis-dev libfluidsynth-dev libmodplug-dev
+./autogen.sh
+./configure --disable-music-mp3
+make -j4
+make install
+popd
+
+pushd SDL2_ttf
+apt-get install libfreetype6-dev
+./autogen.sh
+./configure
+make -j4
+make install
+popd
+
+pushd SDL2_gfx
+./autogen.sh
+./configure
+make -j4
+make install
+popd
+
+pushd freedink/
+apt-get install libfontconfig-dev cxxtest
+sed -i -e 's/^Version: 2.0.[0-9]\+$/&.1/' /usr/local/lib/pkgconfig/SDL2_*
+mkdir -p autotools/m4/  # ???
+./bootstrap
+mkdir native/
+cd native/
+../configure
+make -j4
+make check  # FIXME: cxxtest too old on wheezy
+make install DESTDIR=$(pwd)/destdir/
+
+# PortableLinuxGames/
+apt-get install libglade2-0
+# TODO: recompile "AppImageAssistant" from sources
+
+# quick test
+pushd freedink/native/destdir/
+
+mkdir usr/lib
+cp -a /usr/lib/i386-linux-gnu/libfontconfig.so* usr/lib  # FreeDink
+cp -a /lib/i386-linux-gnu/libexpat.so* usr/lib  # libfontconfig
+cp -a /usr/local/lib/*.so* usr/lib/  # SDL2
+cp -a /usr/lib/i386-linux-gnu/libvorbis.so* usr/lib/   # SDL2_mixer
+cp -a /usr/lib/i386-linux-gnu/libvorbisfile.so* usr/lib/   # SDL2_mixer
+cp -a /usr/lib/i386-linux-gnu/libfluidsynth.so* usr/lib/   # SDL2_mixer
+cp -a /usr/lib/libmodplug.so* usr/lib/   # SDL2_mixer
+cp -a /usr/lib/i386-linux-gnu/libfreetype.so* usr/lib/   # SDL2_ttf
+
+/usr/src/PortableLinuxGames/quickAppDir usr/local/bin/freedink
+sed -i -e 's/Name=.*/Name=GNU FreeDink/' AppRun.desktop
+rm -f ../*.run && /usr/src/PortableLinuxGames/buildAppImage
+popd
+
+# Notes:
+# adding libpulse-simple.so -> error at run-time
+# Inconsistency detected by ld.so: dl-open.c: 689: _dl_open: Assertion `_dl_debug_initialize (0, args.nsid)->r_state == RT_CONSISTENT' failed!
+# Try with static pulse build, if available?
+
+# Can be bundled, but comes as a dependency of libfuse2:i386, and I'm
+# not confident about inter-distro compatibility:
+# cp -a /usr/lib/i386-linux-gnu/libX*.so* usr/lib  # fullscreen support
+# cp -a /usr/lib/i386-linux-gnu/libxcb.so* usr/lib/  # basic X11
+
+# Attempting to ship libGL fails (missing drivers?):
+# Note2: SuperTuxKart ships all this and works fine
+# cp -a /usr/lib/i386-linux-gnu/libGL.so* usr/lib
+# cp -a /usr/lib/i386-linux-gnu/libglapi.so* usr/lib
+# cp -a /usr/lib/i386-linux-gnu/libXdamage.so* usr/lib
+# cp -a /usr/lib/i386-linux-gnu/libXfixes.so* usr/lib
+# cp -a /usr/lib/i386-linux-gnu/libxcb-glx.so* usr/lib
+# cp -a /usr/lib/i386-linux-gnu/libXxf86vm.so* usr/lib
+# cp -a /usr/lib/i386-linux-gnu/libdrm.so* usr/lib
+# DEBUG: Could not create GL context: BadValue (integer parameter out of range for operation)
+# DEBUG: Could not make GL context current: GLXBadContext
+# X Error of failed request:  GLXBadContext
+#   Major opcode of failed request:  155 (GLX)
+#   Minor opcode of failed request:  4 (X_GLXDestroyContext)
+#   Serial number of failed request:  117
+#   Current serial number in output stream:  118
+
+# Embedding libstdc++.so.6 makes GL loading fail
+# cp -a /usr/lib/i386-linux-gnu/libstdc++.so.6* usr/lib/
+# libGL error: unable to load driver: nouveau_dri.so
+# libGL error: driver pointer missing
+# libGL error: failed to load driver: nouveau
+# libGL error: unable to load driver: swrast_dri.so
+# libGL error: failed to load driver: swrast
+# DEBUG: Could not create GL context: BadValue (integer parameter out of range for operation)
+# DEBUG: Could not make GL context current: GLXBadContext
+# DEBUG: Could not make GL context current: 0
+# DEBUG: Unable to make GL context current
+
+logout
+
+
+# https://github.com/RazZziel/PortableLinuxGames/wiki/Setup-a-64bit-system-to-run-32bit-appimages
+sudo apt-get install libc6-i386 libglib2.0-0:i386 libfuse2:i386 libpulse0:i386 # PLG
+# sudo aptitude install libstdc++6:i386  # required by FreeDink, but dependency of OpenGL stack
+sudo aptitude install libgl1-mesa-glx:i386 libgl1-mesa-dri:i386 # OpenGL renderer support
+# + libtxc-dxtn-s2tc0:i386 for texture compression?
+sudo aptitude install libxrandr2:i386  # fullscreen support
+./freedink\ r1-x86.run  # at last!

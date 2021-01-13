@@ -1,0 +1,18 @@
+2008-05-07  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* gettext.m4: Upgrade to gettext-0.17.
+	* iconv.m4: Upgrade to gettext-0.17.
+	* lib-link.m4: Upgrade to gettext-0.17.
+	* po.m4: Upgrade to gettext-0.17.
+
+2008-01-21  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* gettext.m4: New file, from gettext-0.16.1.
+	* iconv.m4: New file, from gettext-0.16.1.
+	* lib-ld.m4: New file, from gettext-0.16.1.
+	* lib-link.m4: New file, from gettext-0.16.1.
+	* lib-prefix.m4: New file, from gettext-0.16.1.
+	* nls.m4: New file, from gettext-0.16.1.
+	* po.m4: New file, from gettext-0.16.1.
+	* progtest.m4: New file, from gettext-0.16.1.
+

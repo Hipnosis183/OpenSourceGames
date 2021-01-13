@@ -1,0 +1,169 @@
+* v1.08.20190120                                           -*- outline -*-
+
+** New sound replacements
+
+   New burn.wav (thanks Iwan Gabovitch)
+
+   New nono.wav (thanks Iwan Gabovitch)
+
+   New save.wav (thanks Iwan Gabovitch)
+
+   New axe.wav (thanks Iwan Gabovitch)
+
+** Improved sound replacements
+
+   Improved stairs.wav (thanks Iwan Gabovitch)
+
+** New Turkish translation (thanks Mesutcan Kurt)
+
+** Updated Esperanto translation (thanks Felipe Castro)
+
+** Updated Spanish translation (thanks Francisco Javier Serrador)
+
+** Sound test mini-D-Mod can check more sounds
+
+* v1.08.20170409
+
+** Fix Swedish translation integration
+
+** Fix incomplete NEWS entry for previous v1.08.20170401 release
+
+* v1.08.20170401
+
+** New sound replacements
+
+   New sel1.wav (Bark K.) and stairs.wav (Bas Wijnen)
+
+** New Swedish translation (thanks Josef Andersson)
+
+** Updated Catalan translation (thanks Àngel Mompó Llovet)
+
+** Updated Spanish translation (thanks Benno Schulenberg)
+
+** Updated German translation (thanks Helmar Gerloni and Roland Illig)
+
+** -nosrc.zip release is now bit-for-bit reproducible from the source tarball
+
+* v1.08.20140901
+
+** New sound replacements
+
+   New open.wav (thanks Iwan Gabovitch)
+
+   New lovin.ogg by gachopin (thanks Digvijay for pointing the CC BY version)
+
+** Catalan translation (thanks Àngel Mompó Llovet)
+
+** Hungarian translation (thanks Úr Balázs)
+
+** Add 2 translatable strings and their translations
+
+   (conversation with Libby in Story/S1-H3-L.c)
+
+* v1.08.20121209
+
+** New sound replacements
+
+  New bhit.wav, grunt1.wav, grunt2.wav, punch.wav, swing.wav; improved
+  sword2.wav (thanks Petteri Tolonen)
+
+** Esperanto translation (thanks Felipe Castro)
+
+** Finnish translation (thanks Petteri Tolonen)
+
+** Partial Croatian translation (thanks Tomislav Krznar)
+
+** Improved Danish translation (thanks Joe Hansen)
+
+* v1.08.20111016
+
+** Improved Dutch translation (thanks Bas Wijnen)
+
+** New sound replacement: 7.mid: Darklands (thanks Joshua O'Leary)
+
+** New sound replacement: 12.mid: inside GoodHearth castle (thanks Joshua O'Leary)
+
+** New sound replacement: 18.mid: End Boss (thanks Joshua O'Leary)
+
+* v1.08.20110723
+
+** Improved Dutch translation (thanks Bas Wijnen)
+
+** Improved Spanish translation (thanks Juan Valencia Escalante)
+
+** Fix game freeze
+
+  When you didn't have a free inventory slot and tried to buy a bow in
+  Kernsin, the game froze.  This is now fixed.  Thanks to Bas Wijnen
+  for the report.
+
+** New sound replacement: 5.ogg: Tavern/bar in Terris (thanks Ofir Mo)
+
+** New sound replacement: 13.ogg: Church (thanks Ofir Mo)
+
+* v1.08.20100103
+
+** German translation (thanks Michael Skiba)
+
+** Danish translation (thanks Joe Hansen)
+
+** Partial Spanish translation (thanks Fernando Carmona Varo)
+
+** Mini D-Mod included in source release to test sound replacements
+
+** Fix a couple typos in translation template
+
+** New sound replacement: wscream.wav: Girl scream
+
+* v1.08.20090706
+
+** Remove SAVE10.DAT
+
+  Normally savegames are removed but this one was in uppercase.  I
+  also fixed the build system so that it doesn't happen again.
+
+* v1.08.20090705
+
+** New sounds
+
+  bird1.wav and high2.wav
+
+** Translations
+
+  Complete French and Dutch translations. Partial Macedonian
+  translation.
+
+** Fix game freeze
+
+  When you talk to 'darkland dink' twice too fast, the game
+  froze. This is fixed.
+
+** More documentation
+
+  How to generate MIDIs, packaging guidelines, dir.ff
+  overview... cf. doc/
+
+* v1.08.20081130
+
+** Fix installation
+
+  Preserve file permissions (requested by Fedora)
+
+  Don't chown on /usr/local/share, but on /usr/local/share/dink/dink
+  (reported by Stephen Hurd)
+
+  Don't remove files (savegames, *~, etc.) in the destination dir when
+  installing - only do that when preparing a release
+
+  More work on distro packaging (Debian, Fedora, Gentoo)
+
+* v1.08.20080920
+
+** Initial release
+
+** Incorporate dink-data
+
+** Add replacements
+
+  1.mid, 104.mid, 105.mid, 106.mid, denude.mid, fire.wav, gold.wav and
+  intro.wav

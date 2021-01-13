@@ -1,0 +1,3 @@
+?package(freedink-dfarc):needs="X11" section="Games/Adventure"\
+  title="DFArc - Dink frontend" command="/usr/games/dfarc"\
+  longtitle="Run, edit, install, remove and package Dink MODules"

@@ -1,0 +1,19 @@
+dink-data for Debian
+--------------------
+
+This contains the Dink Smallwood game data, released under the free
+zlib license by RTsoft in 2008!  They are meant to be used with the
+FreeDink portable version of the game engine.
+
+Some files are in packed (dir.ff) format.  The game engine behaves
+differently depending on the format, so for correctness, they are
+provided exactly in the way they were released in the original game
+(cf. doc/PACKAGING and doc/dirff.txt).  You can get the files in their
+editable format using the 'ffrextract' tool provided by FreeDink in
+the 'contrib/' directory.
+
+The original game contained sounds that were not owned by RTsoft and
+hence could not be released under a free license.  We're looking for
+free replacements!  Check http://www.freedink.org/doc/sounds/
+
+ -- Sylvain Beucler <beuc@beuc.net>, Sun, 23 May 2010 22:11:22 +0200

@@ -1,0 +1,36 @@
+Animation in wxWidgets is a bit tricky.  Let's sum up the basics.
+
+* The base pixels array is wxBitmap
+
+* wxImage is a separate class that can apply a few filters (such as
+  scaling) and act as a source for wxBitmap
+
+* Drawing operations does not apply on wxBitmap directly, but on a
+  Device Context (DC), which could be linked to other graphic devices
+  such as a printer or a widget.  Here we'll only use dc.Blit and the
+  shortcut dc.DrawBitmap.
+
+* The basic screen (visible, non-memory) surfaces is the wxWindow
+  widget.  It's painted in the wxWidget main loop/thread, when
+  necessary: because the containing wxFrame was hidden and then shown
+  again by the user, or because we explicitely requested a repaint
+  (using widget.Refresh()).  The main loop calls send a paint event to
+  the widget, usually handled in a OnPaint function.  To implement a
+  custom OnPaint procedure, you need to subclass the widget.
+
+* To integrate our animation widget with wxGlade, we insert a wxPanel
+  (the most basic widget available, short of wxWindow), and then
+  replace it at run time by our subclass.
+
+* We could also have used a wxStaticBitmap and replaced its wxBitmap
+  on a regular basis.  This would have been less efficient than
+  blitting from the source bitmap (mAllLogos), because of the
+  additional blit to wxStaticBitmap's buffer, but more simple to
+  implement.
+
+* The first implementation used a wxTimer to update the animation
+  parameters (the "camera" position), but sadly its resolution's
+  minimum was around 50ms (20FPS) under woe (wxWidget relies on woe's
+  SetTimer()), making the animation slower and sluggish.  So we use
+  idle events instead, along with a wxMilliSleep() call, which is more
+  precise.

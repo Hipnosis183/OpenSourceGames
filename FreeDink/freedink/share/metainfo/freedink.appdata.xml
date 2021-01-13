@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014, 2017, 2019 Sylvain Beucler <beuc@beuc.net> -->
+<component type="desktop-application">
+ <id>freedink.desktop</id>
+ <launchable type="desktop-id">freedink.desktop</launchable>
+ <metadata_license>CC0-1.0</metadata_license>
+ <project_license>GPL-3.0+</project_license>
+ <categories>
+  <category>Game</category>
+  <category>AdventureGame</category>
+  <category>RolePlaying</category>
+  <category>ActionGame</category>
+ </categories>
+ <content_rating type="oars-1.1">
+  <content_attribute id="violence-fantasy">moderate</content_attribute>
+  <content_attribute id="violence-bloodshed">mild</content_attribute>
+  <content_attribute id="violence-desecration">mild</content_attribute>
+  <content_attribute id="drugs-alcohol">mild</content_attribute>
+  <content_attribute id="sex-themes">mild</content_attribute>
+  <content_attribute id="language-profanity">mild</content_attribute>
+  <content_attribute id="language-humor">moderate</content_attribute>
+ </content_rating>
+ <name>GNU FreeDink</name>
+ <summary>Humorous top-down adventure &amp; role-playing game</summary>
+ <description>
+  <p>
+   Dink Smallwood is an adventure/role-playing game, similar to
+   classic Zelda, made by RTsoft. Besides twisted humour, it includes
+   the actual game editor, allowing players to create hundreds of new
+   adventures called Dink Modules or D-Mods for short.
+  </p>
+  <p>
+   GNU FreeDink is a new and portable version of the game engine, which
+   runs the original game as well as its D-Mods, with close
+   compatibility, under multiple platforms.
+  </p>
+ </description>
+ <screenshots>
+  <screenshot type="default" width="624" height="351">
+    <caption>Game screen</caption>
+    <image>https://www.gnu.org/software/freedink/screenshots/freedink-appdata1.png</image>
+  </screenshot>
+  <screenshot width="624" height="351">
+    <caption>Game title</caption>
+    <image>https://www.gnu.org/software/freedink/screenshots/freedink-appdata2.png</image>
+  </screenshot>
+  <screenshot width="624" height="351">
+    <caption>D-Mods manager (DFArc)</caption>
+    <image>https://www.gnu.org/software/freedink/screenshots/dfarc-appdata1.png</image>
+  </screenshot>
+  <screenshot width="640" height="360">
+    <caption>Game editor</caption>
+    <image>https://www.gnu.org/software/freedink/screenshots/freedinkedit-appdata1.png</image>
+  </screenshot>
+  <screenshot width="640" height="480">
+    <caption>Create your own adventures (Furball by MsDink)</caption>
+    <image>https://www.gnu.org/software/freedink/screenshots/freedink-appdata3.png</image>
+  </screenshot>
+ </screenshots>
+ <url type="homepage">https://www.gnu.org/software/freedink/</url>
+ <url type="translate">https://translationproject.org/domain/dink.html</url>
+ <url type="bugtracker">https://lists.gnu.org/mailman/listinfo/bug-freedink</url>
+ <translation type="gettext">freedink</translation>
+ <update_contact>bug-freedink@gnu.org</update_contact>
+ <project_group>GNU</project_group>
+</component>

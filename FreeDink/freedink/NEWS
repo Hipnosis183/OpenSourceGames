@@ -1,0 +1,533 @@
+109.6
+=====
+
+* Improve distro integration some more (Desktop and AppStream files)
+
+* Updated translations: Danish, German, Esperanto, French, Brazilian
+  Portuguese, Russian, Swedish
+
+* Web version: upgrade to Emscripten 1.38.27
+
+
+109.4
+=====
+
+* Fix missing strings in the translation template
+
+* Improve AppStream metadata for GNU/Linux software centers: mark as
+  localized, install proper meta-package, update screenshots
+  declaration, new SVG icon
+
+* Web version: support Emscripten 1.38.25
+
+* Windows version: update reproducible recipe
+
+
+109.2
+=====
+
+* User-visible changes:
+
+- Rewrite graphics/sounds/inputs against SDL2
+
+  - Enforce full-screen aspect ratio (no more 4:3 stretched to 16:9).
+
+  - Runs in current resolution so leave the screen clean if something
+    goes wrong (no more stuck in 640x480).
+
+    Also smoother full-screen / windowed toggle.
+
+  - FreeDink respect local keyboard layout for keys (ALT+... shortcuts
+    and custom D-Mod keys) on Windows.
+
+  - FreeDinkedit now uses layout-independent scancodes - no longer
+    searching where '[' or '`' was relocated.
+
+  - CD-ROM support dropped.
+
+- Default harware-accelerated (OpenGL) rendering
+
+- Web browser support (Emscripten)
+
+- Debug mode is toggled once when Alt+D is pressed (no more fighting
+  with continous toggling).
+
+- DinkC console is toggled when Alt-C is pressed (no more creating a
+  key-xx.c with just "show_console()" inside).
+
+- Game engine translations are loaded under Windows.
+
+- Fix game freeze in The Scourger (in DinkC: cancel concurrent
+  fade_up() and fade_down())
+
+- Never recreate an empty dink.dat in the game, even if there's a
+  problem opening it (avoids potential corruption when running both
+  the game and an editor at the same time).
+
+- Fix portability when saving a FreeDinkedit screen for the first time
+
+- Fix 'make_global_function' and 'load_map' DinkC functions
+
+- sp_custom returns 0 rather than -1 if the lookup key doesn't exist
+  (compatibility with 1.08)
+
+- sp_custom now works for sprite 1 instead of crashing the game
+  (unlike 1.08, that's an improvement :))
+
+- Can skip Mom's first dialog line when quickly starting a new game
+
+- Fix historical segfault in DinkC busy() (off-by-one array out of
+  bounds). Somehow the segfault wasn't triggered in the past.
+
+- Sprites colors are more stable after a palette change and a savegame
+  load to a different palette (compatibility with 1.08)
+
+- New translation for the engine strings in Friulian (thanks Fabio
+  Tomat); updated Spanish translation (thanks Francisco Javier
+  Serrador)
+
+* Developer notes:
+
+- Move from C to C++
+
+- Move from 'check' to 'cxxtest'
+
+- Start a comprehensive test suite
+
+
+108.4
+=====
+
+- Never recreate an empty hard.dat in the game, even if there's a
+  problem opening it (avoids corruption when running both the game and
+  an editor at the same time).
+  (thanks CocoMonkey for the report)
+
+- DinkC: load_palette() now searches for palette in the right place
+  (thanks scratcher for the report)
+
+- DinkC: Dink position is updated after a new screen is loaded
+  (thanks metatarasal for the report)
+
+- New translations for the engine strings in Russian (thanks Yuri
+  Kozlov) and Hungarian (thanks Balázs Úr).
+
+
+108.2
+=====
+
+* User-visible changes:
+
+- New, simple versioning scheme, without scary .20YYMMDD date.
+
+- Properly play Dink's intro screen music (see below).
+
+- FreeDinkedit plays sounds on Windows.
+
+- New translation for the engine strings in Brazilian Portuguese
+  (thanks Enrico Nicoletto)
+
+- Update translations of the engine strings
+  (thanks Translation Project)
+
+- 64-bit support for Windows.
+
+* Developer notes:
+
+- Properly play Dink's intro screen music: the original game actually
+  tries both 3.mid and 1003.mid for playmidi("1003.mid").
+
+- Improved build documentation.
+
+- Display SDL audio driver in debug mode.
+
+- Add AppStream/AppData file for GNU/Linux software centers.
+
+
+1.08.20121209
+=============
+
+* User-visible changes:
+
+- Fix game freeze when warping in some special situations, such as
+  when lots of sprites are created; this bug was present in the
+  original Dink (thanks Bas Wijnen)
+
+- New translation for the engine strings in Catalan (thanks Àngel
+  Mompó) and Basque (thanks Gorka Azkarate Zubiaur)
+
+- Update translations of the engine strings (thanks Translation
+  Project), including the Dutch translation which was never credited
+  in this file yet (thanks Koen Torfs)
+
+
+1.08.20120427
+=============
+
+* User-visible changes:
+
+- New translations for the engine strings: Esperanto (thanks Felipe
+  Castro), Slovenian (thanks Klemen Košir), Serbian (thanks Мирослав
+  Николић), Croatian (thanks Tomislav Krznar).
+
+- Fix a few bugs (see below).
+
+* Developer notes:
+
+- No palette conversion for dir.ff graphics in truecolor mode (bug in
+  The Blacksmith's Trail).
+
+- Play some MIDI files when the original CD is not present - this
+  behavior was partially broken a while ago.
+
+- Fix issue in some D-Mods related to DinkC's sp_seq(..., -1) command
+  (bug in Day of the Carcass).
+
+
+
+1.08.20101114
+=============
+
+* User-visible changes:
+
+- Turbo mode: maintain Tab pressed, and FreeDink will run at triple
+  speed.  Useful to accelerate cutscenes that you already saw.
+
+- Display "FreeDink" next to the engine version in the title screen,
+  so that people more easily identify whether they are using the
+  original engine or the FreeDink engine.  This will help when people
+  are asking for assistance on the Dink forum, for instance.
+
+- Update Danish and Spanish translations.  New Greek, Italian and
+  Czech translations.
+
+- Fix game crashes (experienced in "Agatha's Will", and "The River").
+
+- Improved ms woe installer: do not ask about deletion for each and
+  every savegame or D-Mod file; add an entry in Add/Remove Programs in
+  the Control Panel; new header pictures.
+
+* Developer notes:
+
+- Some code clean-ups, namely in FreeDinkedit.
+
+- Override transparency for 32bit BMPs.
+
+- The first game crash is related to DinkC variable assignments on a
+  line longer than 100 characters (caused by one fixed-length buffer
+  that wasn't fixed during the DinkC parser clean-up).  The second
+  game crash is when a D-Mod author uses an invalid sequence (number
+  >= 1000).
+
+- Document '-t'/'--truecolor' in the command-line output of '--help'.
+
+- Add 'contrib/search_script.c' to locate a DinkC script usage in the
+  world map.
+
+- Upgrade gettext infrastructure from 0.17 to 0.18.  Rely on external
+  gettext (and libiconv) under ms woe, rather than the previous
+  bundled 'intl/'.  In the process we gained .po charset conversion
+  for that platform.
+
+
+1.08.20100420
+=============
+
+* User-visible changes:
+
+- None - this release just fixes some compilation issues
+
+* Developer notes:
+
+- Include missing acsite.m4 file in releases
+
+- Update gnulib to fix calls to install-reloc on Debian-kfreebsd and
+  Hurd
+
+- Update cross-compilation instructions
+
+
+1.08.20100321
+=============
+
+* User-visible changes:
+
+- Fix a bug where the game would always close in some situations,
+  which was introduced in version 1.08.20090916 (related to the
+  'sp_custom' DinkC command).
+
+- Fix a crash in the developer console when trying to run a command
+  that doesn't exist; the bug was already present v1.08 where the code
+  originates, but Linux tend to be stricter when it comes to memory
+  errors ;)
+
+- New translations for the engine strings: Norwegian Bokmål (thanks
+  Alexander Krivács Schrøder), Finnish (thanks Jorma Karvonen),
+  Spanish (thanks Fernando Carmona Varo), Polish (thanks Michał
+  Trzebiatowski), Danish (thanks Joe Hansen), Vietnamese (thanks
+  Clytie Siddall), Indonesian (thanks Erwid M Jadied), German (thanks
+  Sarah Evans) and French (thanks me).
+
+* Developer notes:
+
+- Fix mikmod build support under ms woe for newer versions of
+  SDL_mixer (version >= 1.2.9)
+
+
+1.08.20090918
+=============
+
+* User-visible changes:
+
+- Correctly locates engine translations under Debian
+
+- Fix crash when quitting under ms woe
+
+* Developer notes:
+
+- Fixed slight memory leak in font lookup
+
+- Updated bundled DLLs
+
+
+1.08.20090916
+=============
+
+* User-visible changes:
+
+- NSIS (NullSoft Install System) script to generate a complete ms woe
+  installer (with FreeDink, DFArc and freedink-data)
+
+- Toggle fullscreen works on more platforms (not just X11)
+
+- New architecture: PSP (playstation portable)
+
+- New logging system, enabled with '-d' (instead of writing debug
+  information on standard output by default), with different
+  priorities (debug/info/warn/error/fatal). You also can easily check
+  for DinkC errors in your scripts by searching for "[DinkC]" in
+  DEBUG.TXT. In addition DinkC errors often carry the line number
+  (rather than the binary offset).
+
+- Dink doesn't crash on very long lines in dink.ini or DinkC scripts
+
+- DinkC: map_tile(...) can modify the first tile square (tile_index=0)
+
+- Lower startup RAM requirements (-7MB so far, and less memory
+  bandwidth for sounds); this is mostly useful for small devices.
+
+- Add support for contextual translations: when there are several
+  lines of dialog that are identical in a few scripts, but need to be
+  translated differently, you can add a context in your PO file such
+  as 'msgctxt "s3-chick:57"' (name of the script in lowercase without
+  extension + the line number).
+
+* Developer notes:
+
+- Dropped libffi dependency to support more architectures
+
+- Fixed SDL_ttf version check (it failed for macport's 2.1.0)
+
+- Code clean-ups, namely in the input subsystem (joystick) and
+  shutdown process.
+
+- Fixed numerous buffer overflows in the DinkC interpreter, and a
+  potential infinite loop during search/replace (when the replacement
+  countained search term).
+
+
+1.08.20090120
+=============
+
+* User-visible changes:
+
+- Fix game freeze in Pilgrim Quest (return value for DinkC functions
+  'get_sprite_with_this_brain', 'get_rand_sprite_with_this_brain',
+  'get_next_sprite_with_this_brain' and 'sp')
+
+* Developer notes:
+
+- Added scripts to rebuild snapshots, .deb, .rpm and .exe unattended
+
+
+1.08.20090109
+=============
+
+* User-visible changes:
+
+- i18n ("internationalization") - or support for translating D-Mods.
+
+- Fix some crashes due to improper D-Mod scripts (e.g. attempt to
+  modify sprite #1000): DinkC scripts are now better validated to
+  avoid this.
+
+* Developer notes:
+
+- DinkC functions are now called dynamically using libffi, for cleaner
+  bindings to the C engine core.  The DinkC parser code was also
+  clarified and a few string functions were optimized.
+
+
+1.08.20080920
+=============
+
+* User-visible changes:
+
+- Supports playing Ogg Vorbis for background music (will look for .ogg
+  extension before .mid extension)
+
+* Developer notes:
+
+- Supports /usr/share/games alternate prefix for game data.
+
+- Can search and use system fonts under FreeDesktop-compliant systems
+  (using fontconfig)
+
+
+1.08.20080828: first official release
+=====================================
+
+FreeDink is based on version 1.07 of the original engine and also
+incorporates v1.08 improvements.
+
+The main change is that FreeDink is portable, so it can work under
+operating systems (e.g. GNU/Linux) and architectures (e.g. PowerPC).
+
+The following describe some differences with the original game engine.
+
+* User-visible changes:
+
+- Backward-incompatible changes in v1.08 can be disabled using a
+  'v1.07 mode' (--v1.07 option -- more information in doc/v1.08.txt).
+  This allows playing D-Mods that weren't upgraded to v1.08 yet.
+
+- Game graphics
+
+  - Better windowed mode: supports non-truecolor mode, and can switch
+    between windowed and full-screen using Alt + Enter (X11 only).
+
+  - Avoid color/palette temporary glitch after quitting show_bmp()
+    mode.
+
+  - Smoother truecolor fades, and avoid some glitches in palette mode.
+
+  - Use a different but metric-compatible fonts (alignment and
+    wrapping are conserved), due to copyright issues (see
+    doc/fonts.txt).
+
+  - Widen debug-mode line to avoid some unwanted line wrapping.
+
+- Gamepad: the threshold for joystick axis is slightly greater - with
+  the same threshold than the original game (~10%) Dink is going diags
+  too easily.  Feedback welcome :)
+
+- Game speed: set maximum framerate to 50 FPS, which is compatible
+  with v1.08 (see doc/framerate.txt)
+
+- Installation: supports separate directories for original data and
+  additional D-Mods.  This permits installing the game as
+  administrator in a write-protected directory, while allowing normal
+  users to install D-Mods in their personal directory.
+
+- Memory usage
+
+  - Requires less memory in truecolor mode (by not converting paletted
+    graphics to truecolor)
+
+  - Fixes memory leaks, in particular when loading a savegame
+    (reloaded graphics were duplicated in memory)
+
+- Editor fixes:
+
+  - To avoid issues with non-US keyboards in the editor, F1->F10-F11
+    and NumPad 0->9-. are used in addition to 1->0-` for tiles
+    selection.
+
+  - When vision is changed from the minimap mode in the editor, don't
+    display the current screen's sprites over the minimap.
+
+  - When text or number is asked in the editor, user now can press
+    'escape' to discard changes.
+
+  - In editor "Alternative Tile Hardness Selector", when going
+    completely to the right or to the bottom of the screen, avoid a
+    postponement for the square selector. Reported at
+    http://www.dinknetwork.com/forum.cgi?MID=57829
+
+  - When editing hardness, print the hardness index actually being
+    edited, instead of the one associated by the current background
+    tile.
+
+  - Display real-time information about hardness in hardness mode.
+
+* Developer notes:
+
+- Compressed BMP support: afaics in some situations, the original Dink
+  engines does not support compressed (RLE?) BMPs. Such BMPs are
+  notably used in "Prophecy of the Ancients" (like the 3 alternate
+  colored orbs) - when support is lacking, graphics are simply not
+  displayed which much complaining in DEBUG.TXT. I believe this
+  support depends on which DX version is used. More surprisingly:
+  there's a screen, still in PotA, where you can pass above and under
+  and bridge (you need to pass under the bridge to blow up a rock in
+  the above screen and thus reach the secret island). There's no way
+  to pass under the bridge when there's no compressed BMP support - I
+  haven't investigated much, but I guess either a missing sprite does
+  not clear the hardness for Dink to pass, either the missing sprite
+  is causing a DinkC script to stop.  So, vanilla SDL does not support
+  compressed BMPs, so I used SDL_image everywhere to do so. This means
+  that FreeDink always support compressed BMPs.
+
+- Fix several array-out-of-bounds issues while reproducing the
+  original de-facto engine behavior.
+
+  - For example, in 'init_scripts', the script may check the active
+    status of sprite 1000, while the sprite array has 300
+    elements. This caused bugs after the port and is now
+    fixed. Curiously it didn't seem to cause bugs before. Such bug did
+    'appear' in v1.08 too.
+
+  - Sometimes, a init() or dink.ini line would be more than 80 chars,
+    which is its allocated length in the 'sequence' structure. This
+    would overwrite parts of the next sequence. Possibly this never
+    was an issue, because sequences were initialized incrementally,
+    but an init() line was more likely to cause breakage. This is
+    fixed anyway.
+
+  - When reloading a sequence through init() with a longer sequence,
+    v1.07 will overwrite bits of the next sequence, for dir.ff loading
+    only. v1.08 overwrites for both BMPs and dir.ff sequences to avoid
+    to a bug with mixed dir.ff and BMPs sequences. This bug is
+    documented in dink.ini and loads the sword (longer) hit sequence
+    before the first (shorter) sequence to work-around it. See
+    http://www.dinknetwork.com/forum.cgi?MID=92733 for details. In
+    FreeDink, sequences are never overwritten.
+
+  - Some D-Mods have sequences with more than 50 frames. This triggers
+    a buffer overflow in the original game BUT the overwritten data is
+    the animation metadata ('delay' and 'special' fields), which is
+    not critical for non-animated sprite sequences. Example: "The
+    Green Voice in my Head - Part 1 - Hangover & Agony", first save
+    game then east then house on the right: it shows a shelf with
+    broken vases with is seq 66 frame 65 (> 50). FreeDink reproduces
+    this behavior by allowing up to 1000 frames in a sequence but
+    without the buffer overflow part.
+
+- Command line: fails on invalid options.  Supports undocumented
+  '-nomovie' for compatibility with DFArc2.  Supports short aliases
+  (e.g. -window -> -w) and double-dash options (e.g. -window ->
+  --window).
+
+- Search path: Dink search data in additional places to support
+  separating reference data and user D-Mods. Check
+  doc/directory_layout.txt for information.
+
+- Dinkedit
+
+  - Dinkedit creates a custom sequence #1 but mark the 4th frame as
+    '-1'.  This made FreeDinkEdit crash, so it's set to 0, which means
+    "end of sequence".
+
+  - The editor palette is now Ts01.bmp instead of esplash.bmp - just
+    like the game. This is simpler that way, and nobody changed the
+    editor palette anyway.

@@ -1,0 +1,57 @@
+To compose or edit MIDIs:
+
+- Rosegarden: to edit music scores
+
+- Fluidsynth: to generate sounds from the scores; we could use TiMidity++ too:
+  http://www.rosegardenmusic.com/wiki/Frequently_Asked_Questions#how_do_i_use_an_alsa_soft_synth_such_as_fluidsynth_or_timidity
+
+- Jack: sound daemon requested by Rosegarden
+
+- fluid-soundfont-gs fluid-soundfont-gm musescore-soundfont-gm: sound
+  fonts, used by Fluidsynth to reproduce different instruments (150MB)
+
+
+# To install under Debian GNU/Linux:
+
+aptitude install rosegarden jackd fluidsynth \
+  fluid-soundfont-gs fluid-soundfont-gm musescore-soundfont-gm
+
+# You can also use graphical interfaces to start Fluidsynth and Jackd:
+
+aptitude install qsynth qjackctl
+
+
+# To run:
+
+sudo modprobe snd_seq
+jackd -d alsa  # optional? Rosegarden complains but still plays
+fluidsynth -m alsa_seq /usr/share/sounds/sf2/FluidR3_GM.sf2
+rosegarden myscore.rg
+
+# Notes:
+- If you get "JackAudioDriver::ProcessAsync: read error, skip cycle", use -P:
+  jackd -d alsa -P
+- You may need to connect fluidsynth to the system playback in qjackctl
+- Fluidsynth may be off-pitch if it complains like:
+  fluidsynth: warning: Jack sample rate mismatch, expect tuning issues (synth.sample-rate=44100, jackd=48000)
+  In which case, you can run jackd with the recommended rate:
+  jackd -d alsa -P -r 44100
+- Alternative: use TiMIDity+freepats instead of Fluidsynth:
+  timidity -iA -B2,8 -Oj -EFreverb=0 -s 44100
+
+
+# To save the data as a .wav, run fluidsynth differently:
+
+fluidsynth -m alsa_seq /usr/share/sounds/sf2/FluidR3_GM.sf2 \
+  -a file -o audio.file.name=myfile.raw
+
+# Then you can import the .raw file in Audacity through:
+# "File > Import > Raw Data"
+# and using settings:
+# "Signed 16 bit PCM / Little-endian / Stereo / 44100Hz"
+# You may need to strip the silences, using:
+# "Effects > Truncate Silence..."
+
+
+# To test playing a MIDI file:
+fluidsynth -a alsa -l -i /usr/share/sounds/sf2/TimGM6mb.sf2 /usr/share/games/dink/dink/Sound/dance.mid

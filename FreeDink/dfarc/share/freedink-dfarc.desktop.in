@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+_Name=DFArc - Dink frontend
+_Comment=Run, edit, install, remove and package D-Mods (Dink Modules)
+Exec=dfarc %f
+Icon=dfarc
+Categories=Game;AdventureGame;
+MimeType=application/x-dmod;

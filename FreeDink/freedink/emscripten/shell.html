@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Play GNU FreeDink</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: none;
+        background-color: #4c653d;
+        background-image: url("background.jpg");
+        background-attachment: fixed;
+      }
+
+      .emscripten {
+        padding-right: 0; margin-left: auto; margin-right: auto; display: block;
+        width: 640px;
+        height: 480px;
+      }
+      div.emscripten { text-align: center; }
+      div.emscripten_border { border: 1px solid black; }
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      canvas.emscripten { border: 0px none; background-color: black; }
+
+      .spinner {
+        height: 30px;
+        width: 30px;
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 20px;
+        display: inline-block;
+        vertical-align: top;
+
+        -webkit-animation: rotation .8s linear infinite;
+        -moz-animation: rotation .8s linear infinite;
+        -o-animation: rotation .8s linear infinite;
+        animation: rotation 0.8s linear infinite;
+
+        border-left: 5px solid rgb(235, 235, 235);
+        border-right: 5px solid rgb(235, 235, 235);
+        border-bottom: 5px solid rgb(235, 235, 235);
+        border-top: 5px solid rgb(120, 120, 120);
+        
+        border-radius: 100%;
+        background-color: rgb(189, 215, 46);
+      }
+
+      @-webkit-keyframes rotation {
+        from {-webkit-transform: rotate(0deg);}
+        to {-webkit-transform: rotate(360deg);}
+      }
+      @-moz-keyframes rotation {
+        from {-moz-transform: rotate(0deg);}
+        to {-moz-transform: rotate(360deg);}
+      }
+      @-o-keyframes rotation {
+        from {-o-transform: rotate(0deg);}
+        to {-o-transform: rotate(360deg);}
+      }
+      @keyframes rotation {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+      }
+
+      #status {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 30px;
+        margin-left: 20px;
+        font-weight: bold;
+        color: rgb(255, 255, 2);
+        height: 30px;
+      }
+
+      #progress {
+        height: 20px;
+        width: 300px;
+      }
+
+      #controls {
+        display: inline-block;
+        float: right;
+        vertical-align: top;
+        margin-top: 30px;
+        margin-right: 20px;
+      }
+
+      #minidfarc {
+        display: inline-block;
+        float: left;
+        vertical-align: top;
+        margin-top: 90px;
+        margin-left: 20px;
+        background-color: seagreen;
+        padding: 5px;
+      }
+
+      #output {
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 10px;
+        border-left: 0px;
+        border-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        display: block;
+        background-color: black;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        outline: none;
+      }
+
+      a {
+        color: gold;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:active {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: absolute;">
+      <span id="minidfarc">
+        <input id="ID_TrueColor" type="checkbox" checked="checked">True Color</input><br />
+        <!--<input id="ID_Windowed" type="checkbox">Windowed</input><br />-->
+        <input id="ID_Sound" type="checkbox" checked="checked">Sound</input><br />
+        <input id="ID_Joystick" type="checkbox" checked="checked">Joystick</input><br />
+        <input id="ID_Debug" type="checkbox">Debug</input><br />
+        <input id="ID_V107" type="checkbox">v1.07 mode</input><br />
+        <!--<input id="ID_DinkGL" type="checkbox" checked="checked">OpenGL</input><br />-->
+
+        <input id="ID_DmodInstall" type="file" onchange="OnInstall(this)" accept=".dmod" style=display:none></input>
+        <button id="ID_DmodInstallDecoy" onclick="document.getElementById('ID_DmodInstall').click()" disabled="disabled">Open D-Mod</button>
+
+        <button id="ID_Play" onclick="OnPlay()" disabled="disabled">Play</button>
+	<!--
+	Not supported by SDL2:
+        <br />
+        <button id="Fullscreen" disabled="disabled" onclick="Module.requestFullscreen(document.getElementById('pointerLock').checked, document.getElementById('resize').checked)">Fullscreen</button>
+	-->
+
+        <br />
+        <br />
+	Language:<br />
+        <select id='language'>
+          <option value='ca'>Catalá (ca)</option>
+          <option value='da'>Dansk (da)</option>
+          <option value='de'>Deutsch (de)</option>
+          <option value='en' selected="selected">English (en)</option>
+          <option value='eo'>Esperanto (eo)</option>
+          <option value='es'>Español (es)</option>
+          <option value='fi'>Suomi (fi)</option>
+          <option value='fr'>Français (fr)</option>
+          <option value='hr'>Hrvatski (hr)</option>
+          <option value='hu'>Magyar (hu)</option>
+          <option value='mk'>Mакедонски (mk)</option>
+          <option value='nl'>Nederlands (nl)</option>
+          <option value='sv'>Svenska (sv)</option>
+          <option value='tr'>Türkçe (tr)</option>
+        </select>
+
+        <br />
+	Local files:<br />
+        <input id="ID_SavegamesImport" type="file" onchange="OnSavegamesImport(this)" accept="application/zip" style=display:none>
+        <button id="ID_SavegamesImportDecoy" onclick="document.getElementById('ID_SavegamesImport').click()" disabled="disabled">Import saved games</button><br />
+        <button id="ID_SavegamesExport" onclick="OnSavegamesExport()" disabled="disabled">Export saved games</button><br />
+        <input id="ID_ScriptInstall" type="file" onchange="OnScriptInstall()" style=display:none>
+        <button id="ID_ScriptInstallDecoy" disabled="disabled" onclick="document.getElementById('ID_ScriptInstall').click()">Install your key-67.c...</button>
+
+
+      </span>
+    </div>
+    <div style="position: absolute; display: none;">
+      <span id="controls">
+      <span><input type="checkbox" id="resize">Resize canvas</span>
+      <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
+      <span><input type="button" id="Fullscreen-dist" value="Fullscreen" onclick="Module.requestFullscreen(document.getElementById('pointerLock').checked, document.getElementById('resize').checked)"></span>
+    </div>
+
+    <div class="spinner" id="spinner"></div>
+    <div class="emscripten" id="status">Downloading...</div>
+
+    <div class="emscripten" style="height: 20px;">
+      <progress value="0" max="100" id="progress" hidden=1></progress>
+    </div>
+    
+    <div class="emscripten_border">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    </div>
+
+    <textarea id="output" rows="8"></textarea>
+
+    <div style="text-align: center;">
+      <a href="https://www.gnu.org/software/freedink/">GNU FreeDink</a>
+      - Get D-Mods at <a href="https://dinknetwork.com/">The Dink Network</a>
+      - Original game by <a href="https://www.codedojo.com/">RTSoft</a>
+      - Brought to the web with <a href="http://emscripten.org/">emscripten</a>
+      - <a href="/source/index.html" rel="jslicense" data-jslicense="1">Source Code</a>
+    </div>
+
+    <script type='text/javascript'>
+      /*    
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (c) 2010-2014 Emscripten authors
+        Copyright (C) 2018  Sylvain Beucler
+
+        This file is part of GNU FreeDink
+
+        GNU FreeDink is free software; you can redistribute it and/or
+        modify it under the terms of the GNU General Public License as
+        published by the Free Software Foundation; either version 3 of the
+        License, or (at your option) any later version.
+
+        GNU FreeDink is distributed in the hope that it will be useful, but
+        WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see
+        <http://www.gnu.org/licenses/>.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+      */
+
+      /* Redirect to asmjs version if no WebAssembly support */
+      if (typeof WebAssembly !== 'object' && location.href.search('asmjs/') == -1)
+        location.href = 'asmjs/' + location.search;
+
+      /* Enforce disabled state on reload (Firefox remembers the disabled state) */
+      function UISetState(can_launch, is_playing) {
+        if (can_launch) {
+          document.getElementById('ID_Play').disabled = 0;
+          document.getElementById('ID_DmodInstall').disabled = 0;
+          document.getElementById('ID_DmodInstallDecoy').disabled = 0;
+        } else {
+          document.getElementById('ID_Play').disabled = 1;
+          document.getElementById('ID_DmodInstall').disabled = 1;
+          document.getElementById('ID_DmodInstallDecoy').disabled = 1;
+        }
+      }
+      UISetState(false, false);
+      document.getElementById('ID_ScriptInstallDecoy').disabled = 1;
+      document.getElementById('ID_SavegamesImportDecoy').disabled = 1;
+      document.getElementById('ID_SavegamesExport').disabled = 1;
+
+      var dmodname = 'dink';
+      function OnPlay() {
+        var args = [];
+        ENV['LANG'] = document.getElementById('language').value;
+        //var args = ['freedink'];
+        if (document.getElementById('ID_TrueColor').checked) args.push('--truecolor');
+        //if (document.getElementById('ID_Sound').checked) args.push('--window');
+        args.push('--window');
+        if (!document.getElementById('ID_Sound').checked) args.push('--nosound');
+        if (!document.getElementById('ID_Joystick').checked) args.push('--nojoy');
+        if (document.getElementById('ID_Debug').checked) args.push('--debug');
+        if (document.getElementById('ID_V107').checked) args.push('--v1.07');
+        //if (!document.getElementById('ID_DinkGL').checked) args.push('--software-rendering');
+        args.push('--game');
+        args.push(dmodname);
+
+        document.getElementById('ID_Play').blur(); 
+        UISetState(false, true);
+
+        Module.setStatus('');
+        console.log("Running freedink " + args);
+        Module.print("Loading, please wait...");
+
+        //Module.run(args);
+        //Module.ccall('emMain', 'number', ['number', 'array'], [args.length, args]);
+        window.setTimeout(function() { Module.callMain(args); }, 10);
+      }
+
+      function OnInstall(input) {
+        UISetState(false, false);
+        Module.print("Extracting, please wait...");
+
+        window.setTimeout(function() {
+          reader = new FileReader();
+          reader.onload = function(e) {
+            FS.writeFile('mine.dmod', new Uint8Array(e.target.result));
+            DmodExtract();
+          }
+          reader.readAsArrayBuffer(input.files[0])
+        }, 10);
+      }
+
+      function DmodExtract() {
+        start = Date.now();
+        ptr_dmoddir = Module.ccall('malloc', 'number', ['number'], [8]);
+        Module.ccall('emDmodExtract', 'number',
+          ['string','string','number'],
+          ['mine.dmod', '/usr/local/share/dink', ptr_dmoddir]);
+        Module.print("Extracted in " + (Date.now()-start)/1000.0 + "s");
+        dmodname = UTF8ToString(getValue(ptr_dmoddir, 'i64'), 256);
+        Module.ccall('free', 'number', ['number'], [getValue(ptr_dmoddir, 'i64')]);
+        Module.ccall('free', 'number', ['number'], [ptr_dmoddir]);
+        UISetState(true, false);
+        document.getElementById('ID_Play').textContent = "Play " + dmodname;
+        try {
+          dmoddiz = new TextDecoder().decode(
+            FS.readFile('/usr/local/share/dink/'+dmodname+'/dmod.diz'),
+            {encoding:'ISO-8859-1'});
+	  // note: -s CASE_INSENSITIVE_FS=1
+          Module.print(dmoddiz);
+          Module.print("");
+        } catch(e) {
+          Module.print("Note: no D-Mod description file (dmod.diz)");
+        }
+        Module.print("D-Mod loaded - adjust options and click Play!");
+      }
+
+      function OnScriptInstall() {
+        document.getElementById('ID_ScriptInstallDecoy').disabled = 1;
+        input = document.getElementById('ID_ScriptInstall')
+        reader = new FileReader();
+        reader.onload = function(e) {
+          FS.writeFile('/usr/local/share/dink/dink/Story/key-67.c', new Uint8Array(e.target.result));
+          Module.print('key-67.c installed - enjoy!');
+          document.getElementById('ID_ScriptInstallDecoy').disabled = 0;
+          document.getElementById('ID_ScriptInstallDecoy').blur();
+        }
+        reader.readAsArrayBuffer(input.files[0])
+      }
+
+      function OnSavegamesImport(input) {
+        reader = new FileReader();
+        reader.onload = function(e) {
+          FS.writeFile('savegames.zip', new Uint8Array(e.target.result));
+          Module.ccall('emSavegamesImport', 'void', [], []);
+          FS.syncfs(false, function(err) {
+            if (err) { console.trace(); console.log(err); }
+          });
+          Module.print("Saved games imported.");
+        }
+        reader.readAsArrayBuffer(input.files[0])
+      }
+
+      function OnSavegamesExport() {
+        ret = Module.ccall('emSavegamesExport', 'number', [], []);
+        if (ret) {
+          savegames = FS.readFile('savegames.zip');
+          obj_url = window.URL.createObjectURL(new Blob([savegames]));
+          a = document.createElement('a');
+          a.download = 'savegames.zip';
+          a.href = obj_url;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(obj_url);
+        }
+      }
+    </script>
+
+    <script type='text/javascript'>
+      var statusElement = document.getElementById('status');
+      var progressElement = document.getElementById('progress');
+      var spinnerElement = document.getElementById('spinner');
+
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          var element = document.getElementById('output');
+          if (element) element.value = ''; // clear browser cache
+          return function(text) {
+            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+            // These replacements are necessary if you render to raw HTML
+            //text = text.replace(/&/g, "&amp;");
+            //text = text.replace(/</g, "&lt;");
+            //text = text.replace(/>/g, "&gt;");
+            //text = text.replace('\n', '<br>', 'g');
+            console.log(text);
+            if (element) {
+              element.value += text + "\n";
+              element.scrollTop = element.scrollHeight; // focus on bottom
+            }
+          };
+        })(),
+        printErr: function(text) {
+          if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+          if (0) { // XXX disabled for safety typeof dump == 'function') {
+            dump(text + '\n'); // fast, straight to the real console
+          } else {
+            console.error(text);
+          }
+        },
+        canvas: (function() {
+          var canvas = document.getElementById('canvas');
+
+          // As a default initial behavior, pop up an alert when webgl context is lost. To make your
+          // application robust, you may want to override this behavior before shipping!
+          // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+          canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+          return canvas;
+        })(),
+        setStatus: function(text) {
+          if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+          if (text === Module.setStatus.last.text) return;
+          var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+          var now = Date.now();
+          if (m && now - Module.setStatus.last.time < 30) return; // if this is a progress update, skip it if too soon
+          Module.setStatus.last.time = now;
+          Module.setStatus.last.text = text;
+          if (m) {
+            text = m[1];
+            progressElement.value = parseInt(m[2])*100;
+            progressElement.max = parseInt(m[4])*100;
+            progressElement.hidden = false;
+            spinnerElement.hidden = false;
+          } else {
+            progressElement.value = null;
+            progressElement.max = null;
+            progressElement.hidden = true;
+            if (!text) spinnerElement.style.display = 'none';
+          }
+          statusElement.innerHTML = text;
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+          Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+        }
+      };
+      Module.setStatus('Downloading...');
+      window.onerror = function(event) {
+        // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+        Module.setStatus('Exception thrown, see JavaScript console');
+        spinnerElement.style.display = 'none';
+        Module.setStatus = function(text) {
+          if (text) Module.printErr('[post-exception status] ' + text);
+        };
+      };
+    </script>
+    <script type='text/javascript''>
+    // Check parent directory if we're in asmjs/ fallback dir
+    // Used by xxx-data.js to locate xxx.data
+    Module['locateFile'] = function(url) {
+        if (location.href.search('asmjs/') >= 0) {
+            if (url.endsWith(".data")) {  // e.g. not index.html.mem
+                url = '../' + url;
+            }
+        }
+        return url;
+    }
+    </script>
+    <script type='text/javascript' src="/freedink-data-data.js"></script>
+    <script type='text/javascript' src="/soundfonts-data.js"></script>
+    {{{ SCRIPT }}}
+  </body>
+</html>

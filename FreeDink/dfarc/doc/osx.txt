@@ -1,0 +1,118 @@
+Some compilation tests with OSX
+===============================
+
+It is possible to install a VirtualBox VM with OS X pre-installed:
+https://techsviewer.com/how-to-install-mac-os-x-el-capitan-on-pc-on-virtualbox/
+You may need an Intel CPU.
+
+This is probably not enough to properly develop FreeDink (e.g. all the
+low-level OpenGL stuff) but this should be fine to debug DFArc.
+
+
+-----
+
+
+## Bootstrap
+# type 'make' and follow the XCode installation pop-up
+
+
+-----
+
+
+Using Homebrew
+
+# install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew install intltool gettext wxmac
+brew link gettext --force
+
+../configure && make -j2 && ./src/dfarc
+
+
+-----
+
+
+Using macports
+
+https://www.macports.org/install.php
+- download the .pkg
+- double-click on it in Mac OS X
+- go to System Preferences > Security & Privacy > General > Install anyway MacPorts...pkg
+
+sudo port install wxWidgets-3.0 intltool
+# or possibly wxWidgets-3.0-libcxx
+
+../configure --with-wx-config=/opt/local/Library/Frameworks/wxWidgets.framework/Versions/wxWidgets/3.0/bin/wx-config
+
+
+-----
+
+
+Using Fink
+
+https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool
+# requires manually installing JDK
+# lots of useless questions
+
+fink install wxwidgets300-osxcocoa
+../configure --with-wx-config=/sw/bin/wx-config && make -j2 && ./src/dfarc
+
+
+-----
+
+
+__gnu_cxx::stdio_filebuf tests:
+
+OSX uses clang&libc++, where this is not present anymore.
+
+It is possible to get it back through either gcc or libstdc++.
+
+However wxWidgets builds are made with clang&libc++, and are difficult
+to rebuild, in particular with GNU GCC.
+wxWidgets doesn't compile with a simple './configure && make' (tested
+with gcc-5/gcc-6/llvm), it requires a large set of configure options
+as well as several patches:
+https://github.com/Homebrew/homebrew-core/blob/master/Formula/wxmac.rb
+https://github.com/macports/macports-ports/blob/master/graphics/wxWidgets-3.0/Portfile
+https://github.com/macports/macports-ports/blob/master/graphics/wxWidgets-3.2/Portfile
+http://fink.cvs.sourceforge.net/fink/dists/10.9-libcxx/stable/main/finkinfo/libs/wxwidgets300.info?view=markup
+(segfault de gcc (!) avec brew install gcc@4.6)
+
+A priori all packaged version are compiled with C++ ABI 1002 via llvm.
+http://www.finkproject.org/doc/packaging/compilers.php?phpLang=en
+"the 10.7 through 10.9 distributions use clang and clang++ as the default compilers."
+wxWidgets detects this on start-up and immediately exits.
+
+  $ ../configure && make -j2 && ./src/dfarc
+  Fatal Error: Mismatch between the program and library build versions detected.
+  The library used 3.0 (wchar_t,compiler with C++ ABI 1002,wx containers,compatible with 2.8),
+  and your program used 3.0 (wchar_t,compiler with C++ ABI 1010,wx containers,compatible with 2.8).
+  Abort trap: 6
+
+If ABI or libstdc++ is forced, wxWidgets segfaults on start-up.
+
+  $ CXX=g++-6 CXXFLAGS='-fabi-version=2' ./configure && make -j2 && ./src/dfarc
+  => segfault
+
+  $ CXX=g++-5 CXXFLAGS='-fabi-version=2 -std=c++11' ./configure && make -j2 && ./src/dfarc
+  => segfault
+
+  $ CXXFLAGS='-stdlib=libstdc++' ../configure --with-wx-config=/opt/local/Library/Frameworks/wxWidgets.framework/Versions/wxWidgets/3.0/bin/wx-config && make -j2 && ./src/dfarc
+  /opt/local/Library/Frameworks/wxWidgets.framework/Versions/wxWidgets/3.0/include/wx-3.0/wx/strvararg.h:25:14: fatal error: 'type_traits' file not found
+       #include <type_traits>
+
+Not using __gnu_cxx::stdio_filebuf makes it possible to compile DFArc
+on a common OSX environment, but the situation annoys me.
+
+
+-----
+
+
+Know issues:
+
+- In InstallVerifyFrame, dmod.diz \r\n newlines are displayed as 2
+  lines.  There doesn't seem to be a function to convert newlines to
+  current system style, and to me this is a bug in wxWidgets.  No
+  wonder wxMac status is "Partial"...
+  https://wiki.wxwidgets.org/Supported_Platforms

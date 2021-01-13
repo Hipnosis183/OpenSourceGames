@@ -1,0 +1,50 @@
+woe unicode issues (made apparent with wxWidgets Unicode builds):
+
+- wxString.fn_str() returns a wide-character C string, not suitable
+  for fopen.  For GNU/Linux and OSX, we get a UTF-8-encoded char*
+  which the C and C++ stdlibs accept.  But since woe works with
+  UTF-16, our code needs to use a wrapper that will call
+  UTF-16-specific functions (such as _wfopen) whenever we need to work
+  outside of wxFile, e.g.:
+
+  #if defined _WIN32 || defined __WIN32__ || defined __CYGWIN__
+  #define fopen(file, mode) _wfopen(file, _T(mode))
+  #endif
+
+  Same for loads of other functions, such as chdir, stat, getenv, and
+  in particular sdt::iostream.
+
+  In C++, there is no standard way to open an *fstream with unicode
+  filename (!).
+  http://mingw-users.1079350.n2.nabble.com/Unicode-file-names-td3205731.html
+  
+  Solutions include:
+
+  - Stick with wxFile or Boost.Filesystem fs::*fstream
+    (not possible when calling generic 3rd-party libraries)
+
+  - For VC++, use the non-standard *fstream constructors with a w_char*
+
+  - For MinGW, open the file with _wfopen/_wopen and use the
+    ext/stdio_filebuf.h GNU extension:
+
+    FILE* f = _wfopen(wc_filename, wc_mode);
+    // or int f = _wopen(wc_filename, _O_...)
+    __gnu_cxx::stdio_filebuf<char> filebuf(f, std::ios::out);
+    std::ostream lStreamOut(&filebuf);
+    // cf. Tar.cpp or http://stackoverflow.com/questions/6524821/opening-stream-via-function
+
+    It is tempting to use __gnu_cxx::stdio_filebuf for all platforms
+    but it's not present in llvm, and it's difficult to mix gcc and
+    llvm C++ (e.g. to reuse a compiled wxWidgets), so better not for
+    *BSD and OSX.
+
+- There are issues with #include order.  One order that was used to
+  avoid a crash in ANSI is causing issues in Unicode (cf. BZip.hpp).
+
+- Notes: functions like _getcwd return a path with '?' instead of
+  non-latin characters, making the returned string unsuitable for
+  fopen() within unicode directories.
+
+  GNU Lilypond (as well as GNU Guile v2) is facing a similar issue:
+  https://lists.gnu.org/archive/html/lilypond-devel/2015-03/msg00080.html

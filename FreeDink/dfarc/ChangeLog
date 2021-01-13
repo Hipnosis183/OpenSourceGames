@@ -1,0 +1,1817 @@
+2018-06-05  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, autobuild/dfarc-w32-3.14/.dockerignore,
+	autobuild/dfarc-w32-3.14/Dockerfile,
+	autobuild/dfarc-w32-3.14/GNUmakefile,
+	autobuild/dfarc-w32-3.14/SUMS,
+	autobuild/dfarc-w32-3.14/build-mxe.sh,
+	autobuild/dfarc-w32-3.14/build.sh,
+	autobuild/dfarc-w32-3.14/packaged_deps-config.sh,
+	autobuild/dfarc-w32-3.14/packaged_deps-mxe.sh,
+	autobuild/dfarc-w32-3.14/packaged_deps.sh,
+	autobuild/dfarc-w32-snapshot/GNUmakefile, configure.ac,
+	doc/release.txt, freedink-dfarc.spec: Start branch 3.14
+
+2018-06-05  Sylvain Beucler <beuc@beuc.net>
+
+	* : Merge 3.12
+
+2018-06-02  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Update NEWS
+
+2018-05-31  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: rpm: sync
+
+2018-05-31  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-w32-snapshot/build-mxe.sh: build: reproducible:
+	clarify
+
+2018-05-31  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-w32-snapshot/GNUmakefile,
+	autobuild/dfarc-w32-snapshot/build-mxe.sh: build: reproducible:
+	dfarc.exe is really reproducible
+
+2018-05-30  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/.gitignore, autobuild/dfarc-w32-snapshot/.dockerignore,
+	autobuild/dfarc-w32-snapshot/Dockerfile,
+	autobuild/dfarc-w32-snapshot/GNUmakefile,
+	autobuild/dfarc-w32-snapshot/build-mxe.sh,
+	autobuild/dfarc-w32-snapshot/build.sh,
+	autobuild/dfarc-w32-snapshot/packaged_deps-config.sh,
+	autobuild/dfarc-w32-snapshot/{dependencies-mxe.sh =>
+	packaged_deps-mxe.sh},
+	autobuild/dfarc-w32-snapshot/{dependencies.sh => packaged_deps.sh}: 
+	build: reproducible: dfarc.exe is reproducible
+
+2018-05-30  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-w32-snapshot/Dockerfile,
+	autobuild/dfarc-w32-snapshot/GNUmakefile,
+	autobuild/dfarc-w32-snapshot/build.sh,
+	autobuild/dfarc-w32-snapshot/dependencies-mxe.sh,
+	autobuild/dfarc-w32-snapshot/dependencies.sh: build: reproducible:
+	update setup and merge some of FreeDink's improvements
+
+2018-05-28  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcFrame.cpp: Update NEWS
+
+2018-05-28  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, po/LINGUAS, po/es.po, po/fur.po, po/pt_BR.po: Sync
+	TranslationProject
+
+2018-05-28  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp: Clarify why we incorporate some bzip2 code
+
+2018-05-28  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Tar.cpp, src/Tar.hpp: Remove dead code
+
+2017-04-17  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: release: remember to update po/LINGUAS
+
+2017-04-09  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-w32-snapshot/build.sh: build: w32: more security
+	flags
+
+2017-04-08  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-w32-snapshot/build.sh: build: w32: add security
+	flags
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Formatize copyright date so as not to annoy
+	translators
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: build: remove build date in About box since
+	MXE's GCC doesn't have SOURCE_DATE_EPOCH support yet
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/.gitignore, autobuild/dfarc-w32-snapshot/.dockerignore,
+	autobuild/dfarc-w32-snapshot/Dockerfile,
+	autobuild/dfarc-w32-snapshot/GNUmakefile,
+	autobuild/dfarc-w32-snapshot/build.sh,
+	autobuild/dfarc-w32-snapshot/dependencies-mxe.sh,
+	autobuild/dfarc-w32-snapshot/dependencies.sh: build: reproducible
+	w32 build
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp, src/InstallVerifyFrame.cpp: Fix typo (thanks
+	Sebastian Rasmussen)
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, po/sv.po: Sync TranslationProject (forgot to add
+	Swedish translation)
+
+2017-03-28  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, po/ca.po, po/da.po, po/de.po, po/eo.po, po/es.po,
+	po/fi.po, po/fr.po, po/hr.po, po/hu.po, po/it.po, po/mk.po,
+	po/nl.po, po/pl.po, po/pt_BR.po, po/sr.po, po/vi.po: Sync
+	TranslationProject
+
+2017-01-30  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/osx.txt: Notes about OSX
+
+2017-01-29  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/unicode.txt, src/Tar.cpp, src/Tar.hpp: Only use
+	__gnu_cxx::stdio_filebuf when necessary OSX uses clang&libc++, where this is not present anymore.  It is
+	possible to get it back through either gcc or libstdc++.  However
+	wxWidgets builds are made with clang&libc++, and are difficult to
+	rebuild, in particular with GNU GCC.  Those builds use a different
+	C++ ABI, which wxWidgets detects on start-up and immediately exits.
+	If ABI is forced (-fabi-version=2), wxWidgets segfaults on start-up.
+	This change makes it possible to compile DFArc on a common OSX
+	environment, but the situation annoys me.
+
+2017-01-29  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD, autobuild/dfarc-exe-mxe.sh, configure.ac: Fix compilation
+	with upgraded build tools
+
+2017-01-29  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Fix crash when clicking on 'Package' when
+	there is no D-Mod present
+
+2017-01-29  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp: Display exception reason so we can debug
+
+2015-08-05  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, po/ca.po: Sync TranslationProject
+
+2014-12-29  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, po/ca.po: Sync TranslationProject
+
+2014-12-29  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: rpm: clarify desktop files handling
+
+2014-10-17  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Remember to add modified version files when
+	merging a release to the master branch
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac: Prepare next development release
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* : Merge 3.12
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog: Update ChangeLog
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: rpm: minor rpmlint'ing
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, doc/release.txt: Start branch 3.12
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp: Fix 'make distcheck'
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: rpm: upgrade to wxWidgets3 + clean-up
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD: Update build documentation
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, share/freedink-dfarc.desktop.in: Add %f in
+	.desktop file (fixes lintian desktop-mime-but-no-exec-code)
+
+2014-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Update NEWS
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp, src/Tar.cpp: Use decent I/O buffers everywhere
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp: Sync code from bzip2 just in case (no changes)
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Tar.cpp: Indent
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-exe-mxe.sh: autobuild: minor tweaks
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Package.cpp: Re-enable elapsed time for the packaging dialog
+	on woe
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* THANKS: THANKS scratcher for beta-testing
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-exe-mxe.sh: autobuild: dfarc-exe-mxe.sh is now
+	automated and tested
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp, src/DFArcFrame.cpp, src/InstallVerifyFrame.cpp,
+	src/InstallVerifyFrame.hpp, src/Tar.cpp: Have wxWidgets properly
+	quit by allocating dialogs in the heap + simplify InstallVerifyFrame
+
+2014-10-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp, src/BZip.hpp, src/DFile.cpp, src/DFile.hpp: Work on
+	const filenames
+
+2014-10-13  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, autobuild/dfarc-exe-mxe.sh: build: document
+	compilation with mxe
+
+2014-10-13  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcFrame.cpp: Fix off-by-1-pixel in logo animation,
+	with rounding
+
+2014-10-13  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Launch Dinkedit asynchronously
+
+2014-10-12  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcFrame.cpp: Launch Dink asynchronously
+
+2014-10-08  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Prepared modified environment for Dink rather
+	than modifying DFArc's
+
+2014-10-08  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Remove redundant warning when wxExecute fails
+	on woe
+
+2014-10-08  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Remove wxExecute Unix-specific work-around:
+	return code is consistent now
+
+2014-10-08  Sylvain Beucler <beuc@beuc.net>
+
+	* DEB: doc: debian/ is included in releases now
+
+2014-10-07  Sylvain Beucler <beuc@beuc.net>
+
+	* po/hu.po, po/sr.po: Sync translations
+
+2014-10-07  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: rpm: update doc URL
+
+2014-10-05  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: rpm: attempt to tidy post-install scriptlets
+
+2014-10-05  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: rpm: sync with Fedora
+
+2014-09-06  Sylvain Beucler <beuc@beuc.net>
+
+	* po/nl.po: Sync TP
+
+2014-09-05  Sylvain Beucler <beuc@beuc.net>
+
+	* po/pl.po: Sync TP
+
+2014-09-02  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: release: update doc
+
+2014-09-02  Sylvain Beucler <beuc@beuc.net>
+
+	* po/da.po, po/de.po, po/eo.po, po/fr.po, po/vi.po: Sync TP
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, po/.gitignore, src/.gitignore: Update .gitignore
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: doc: update release process
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Fix typo
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/watch: debian: simplify watch file
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/rules: debian: disable silent rules
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/control: debian: fix
+	extended-description-is-probably-too-short
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, debian/.gitignore, debian/README.source,
+	debian/dfarc.xpm, debian/freedink-dfarc.lintian-overrides,
+	debian/gbp.conf, debian/install, debian/menu,
+	debian/update-autotools-config.sh, share/Makefile.am: packaging:
+	drop obsolete stuff
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, debian/changelog, debian/control, debian/copyright,
+	doc/release.txt: Prepare snapshot release for Debian
+
+2014-08-31  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD, configure.ac, debian/control, src/BZip.cpp,
+	src/Config.cpp, src/DFArcFrame.cpp, src/DFArcFrame_Base.wxg,
+	src/InstallVerifyFrame.cpp, src/InstallVerifyFrame_Base.wxg,
+	src/Makefile.am, src/Options.cpp, src/Options_Base.wxg,
+	src/Package.cpp, src/Package_Base.wxg, src/RecursiveDelete.cpp,
+	src/Tar.cpp, src/Tar.hpp: Upgrade to wxWidgets 3.0 Unicode
+
+2014-06-30  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, debian/copyright, po/LINGUAS, po/hu.po: New
+	Hungarian translation
+
+2014-06-30  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD: More doc on wxGlade
+
+2014-06-26  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: fedora: update URL
+
+2014-06-26  Sylvain Beucler <beuc@beuc.net>
+
+	* bootstrap: intltool: remove work-around for v0.40
+
+2014-05-29  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/compat, debian/control, debian/rules: 
+	debian: update packaging with DH9
+
+2014-05-29  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/git2cl.txt: git2cl is now packaged and easier to use - drop
+	documentation
+
+2014-05-27  Sylvain Beucler <beuc@beuc.net>
+
+	* po/LINGUAS: translations: enable new translations
+
+2014-05-27  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Clarify versioning rationale
+
+2014-05-24  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD: Document build issue with newer wxGlade
+
+2014-05-24  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, doc/release.txt, po/eo.po, po/fr.po, po/pt_BR.po: 
+	Sync translations with TP
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Use pbuilder when building a Debian package to
+	upload officially
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Update Fedora Git URL
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* po/hr.po: Update Croatian translation
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS: This is DFArc, not FreeDink, so remove references to
+	'engine strings'
+
+2012-10-14  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, debian/copyright, po/LINGUAS, po/ca.po, po/tr.po: 
+	New Catalan and Turkish translations
+
+2012-05-19  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, debian/copyright, po/LINGUAS, po/sr.po: Add Serbian
+	translation
+
+2012-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac: Merge v3.10
+
+2012-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, configure.ac, doc/release.txt, freedink-dfarc.spec: 
+	Release 3.10
+
+2012-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/compat, debian/control,
+	debian/copyright, debian/rules, debian/source.lintian-overrides,
+	debian/source/format: Update Debian packaging
+
+2012-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, NEWS, po/LINGUAS, po/hr.po, po/vi.po: Update translations
+
+2011-07-25  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Fix Fedora package URL
+
+2010-12-26  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, po/fi.po, po/nl.po: Updated Dutch and Finnish translations.
+
+2010-11-14  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac: Merged 3.8.1
+
+2010-11-14  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, configure.ac, debian/changelog,
+	freedink-dfarc.spec: Release 3.8.1
+
+2010-11-14  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Update NEWS
+
+2010-11-14  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt, src/Makefile.am: Sync doc fixes from FreeDink
+
+2010-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/md5.txt: Document MD5 checksums for non-FreeDink dink.exe
+
+2010-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Options.cpp: Search for dink* executable case-INsensitively
+
+2010-11-06  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Remove old rectangle drawing test
+
+2010-11-01  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: Remove old reference to v2 in the .spec file
+
+2010-10-31  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Update NEWS
+
+2010-10-31  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, debian/copyright, po/LINGUAS, po/nl.po: Add updated Dutch
+	translation - I forgot to include the first one I had gotten in
+	February :/
+
+2010-10-31  Sylvain Beucler <beuc@beuc.net>
+
+	* po/pl.po: Update Polish translation
+
+2010-10-30  Sylvain Beucler <beuc@beuc.net>
+
+	* po/it.po: Sync Italian translation
+
+2010-10-30  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-debs.sh, autobuild/dfarc-exe.sh,
+	autobuild/dfarc-snapshot.sh, debian/changelog, debian/control,
+	doc/release.txt: Release doc + sync autobuild scripts
+
+2010-10-28  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, doc/release.txt: Start v3.9
+
+2010-10-28  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, configure.ac, debian/changelog, debian/control,
+	doc/release.txt, freedink-dfarc.spec: Release 3.8
+
+2010-10-28  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Update release doc
+
+2010-10-28  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Don't fallback to system language on error
+
+2010-10-28  Sylvain Beucler <beuc@beuc.net>
+
+	* po/da.po: Update Danish translation (again)
+
+2010-10-26  Sylvain Beucler <beuc@beuc.net>
+
+	* po/da.po: Update Danish translation
+
+2010-10-25  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, po/de.po, po/es.po, po/it.po: Update translations from
+	the TP
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: Update French translation
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/README.source, debian/changelog, debian/control,
+	debian/copyright, debian/watch: Debian sync
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: install_locales -> installed_locales
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Try to find a working locale by different
+	means under Unix
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt, src/DFArcFrame.cpp: Make sure the 'l10n' dir exists
+	before searching it (warnings under woe)
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Only search 'l10n' for .mo files, not the
+	whole D-Mod (bugfix)
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po, src/Options.cpp: Update French translation
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/mingw-cross-env.txt, doc/unicode.txt, src/DFArcFrame.cpp: More
+	notes on mingw-cross-env
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/Config.cpp, src/DFArcFrame.cpp, src/Options_Base.wxg: 
+	Simplify translation selection; fix editor warning
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, src/Makefile.am: distcheck: declare new source
+	file ClientData.hpp
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/ClientData.hpp, src/DFArcApp.cpp, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp, src/DFArcFrame_Base.wxg, src/Options.cpp,
+	src/Options_Base.wxg: D-Mod language selection
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/DFArcFrame_Base.wxg: Add
+	non-functional-yet translation selection button
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt, src/DFArcApp.cpp, src/Options.cpp: Fix language
+	setting
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Makefile.am: Don't use --best with upx, too slow and not much
+	more efficient
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/Config.cpp, src/DFArcApp.cpp, src/Options.cpp,
+	src/Options.hpp, src/Options_Base.wxg: Improve DFArc language
+	selection presentation + make it work under woe + show dev buttons
+	by default
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, doc/animation.txt, src/DFArcFrame.cpp: Document
+	animation method
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Fix animation speed under woe
+
+2010-10-23  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt, doc/mingw-cross-env.txt: Update build instructions
+	and test mingw-cross-env
+
+2010-10-22  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.hpp, src/Options.cpp: Update code copyright notices
+
+2010-10-22  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, debian/copyright: Update copyright notices for
+	translations
+
+2010-10-22  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, po/it.po: Updated Italian translation
+
+2010-10-21  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Document bug in wx text sizing
+
+2010-10-21  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcFrame.cpp: Use easing to smooth logo animation
+
+2010-10-21  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/DFArcFrame.hpp, src/DFArcFrame_Base.wxg: 
+	Basic for new D-Mod logo animation
+
+2010-10-12  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Options.cpp: Add Greek to the choice of available languages
+	(there's a new Greek translation for the game engine)
+
+2010-10-10  Sylvain Beucler <beuc@beuc.net>
+
+	* po/es.po: Update Spanish translation
+
+2010-07-29  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD: Bumb wxwidgets version in BUILD instructions
+
+2010-05-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Typo
+
+2010-05-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, debian/copyright, src/DFArcFrame.cpp: Remove
+	wxWidgets 2.6 compatibility code
+
+2010-04-28  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, NEWS, doc/locales.txt, exp/.gitignore,
+	exp/exec/.gitignore, exp/lang/test.c, po/fr.po, src/Config.cpp,
+	src/Config.hpp, src/DFArcApp.cpp, src/Options.cpp,
+	src/Options_Base.wxg: Language selection
+
+2010-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, exp/exec/.gitignore, exp/exec/compile.sh,
+	exp/exec/exectest.cpp, exp/exec/exit_failure.c, exp/exec/false.c,
+	exp/exec/results.txt, exp/exec/segfault.c, exp/exec/sleep.c,
+	src/DFArcFrame.cpp: Handle Dink segfault
+
+2010-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* po/da.po: Update da.po
+
+2010-03-22  Sylvain Beucler <beuc@beuc.net>
+
+	* po/it.po, po/mk.po: Sync TP .po files
+
+2010-03-21  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: .zip are preferrable over .tar.gz at the DN
+
+2010-03-06  Sylvain Beucler <beuc@beuc.net>
+
+	* po/vi.po: Sync Vietnamese translation (version dump, no string
+	update)
+
+2010-03-06  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, debian/copyright, po/pl.po: Update Polish translation
+
+2010-03-02  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, debian/copyright, po/fi.po: Update Finnish translation
+
+2010-02-21  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, autobuild/dfarc-debs.sh, autobuild/dfarc-exe.sh,
+	autobuild/dfarc-snapshot.sh, configure.ac, debian/copyright,
+	doc/release.txt, freedink-dfarc.spec: Release 3.6
+
+2010-02-21  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/{BUILD => README.source}, debian/changelog,
+	debian/copyright, debian/gbp.conf, debian/rules: Sync debian/
+
+2010-02-21  Sylvain Beucler <beuc@beuc.net>
+
+	* TRANSLATIONS.txt: Mention the TP in instructions for translators
+
+2010-02-21  Sylvain Beucler <beuc@beuc.net>
+
+	* po/de.po, po/vi.po: Update German and Vietnamese translations
+
+2010-01-10  Sylvain Beucler <beuc@beuc.net>
+
+	* po/da.po: Update Danish translation
+
+2010-01-07  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: Import fr.po from TP
+
+2010-01-07  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac: Prepare configure.ac/NEWS file for snapshots
+
+2010-01-06  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Prepare NEWS file for snapshots
+
+2010-01-06  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, debian/copyright, po/LINGUAS, po/da.po, po/de.po,
+	po/es.po, po/fi.po, po/fr.po, po/it.po, po/mk.po, po/pl.po,
+	po/vi.po, src/DFArcFrame.cpp: Add new translations; remove
+	misleading reference to 'included D-Mod'
+
+2009-09-30  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Add more contact URLs for releases
+
+2009-09-19  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Fix release symlinking
+
+2009-09-18  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-debs.sh, autobuild/dfarc-exe.sh,
+	autobuild/dfarc-rpms.sh, autobuild/dfarc-snapshot.sh: Sync autobuild
+	scripts
+
+2009-09-18  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp, src/DFArcFrame.cpp: Update copyright notices
+
+2009-09-18  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, configure.ac, freedink-dfarc.spec: Release 3.4
+
+2009-09-17  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt: Update cross-compilation instructions: stripping
+
+2009-09-17  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Document version scheme
+
+2009-09-17  Sylvain Beucler <beuc@beuc.net>
+
+	* share/Makefile.am: Add a man page link for 'freedink-dfarc'
+
+2009-09-17  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/control, share/man/man1/freedink-dfarc.1: Bump Debian
+	Standards-Version
+
+2009-09-16  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, configure.ac, debian/changelog,
+	freedink-dfarc.spec: Release 3.2.4
+
+2009-09-16  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Fix copy/paste from freedink-data in the release
+	instructions
+
+2009-08-30  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, doc/cross.txt, src/Config.cpp: look for dink in the .exe dir
+	rather than the registry or dinksmallwood.ini
+
+2009-07-17  me <me@debian.(none)>
+
+	* BUILD, README, configure.ac, src/Makefile.am: Add 'freedink-dfarc'
+	symlink for command-line users to know about dfarc
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: More release instructions precisions
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, THANKS, doc/release.txt: Release 3.2.3 (fix
+	AUTHORS/THANKS)
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, configure.ac, doc/release.txt,
+	freedink-dfarc.spec: Release 3.2.3
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* po/LINGUAS, po/de.po: New German translation from Michael Skiba
+
+2009-07-06  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Improve release instructions
+
+2009-07-02  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fi.po: Import fixes for the Finnish translation
+
+2009-07-02  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Import debian from this repo before working on
+	packaging a new release
+
+2009-06-23  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/control, debian/copyright,
+	debian/freedink-dfarc.lintian-overrides, debian/rules,
+	debian/source.lintian-overrides, doc/release.txt: Sync debian/
+
+2009-06-21  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt, freedink-dfarc.spec: Fedora sync
+
+2009-06-21  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Update release instructions
+
+2009-06-21  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac: Proper validation of ./configure's  variable
+
+2009-06-03  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, Makefile.am, NEWS, configure.ac, doc/release.txt,
+	freedink-dfarc.spec: Release 3.2.2
+
+2009-06-03  Sylvain Beucler <beuc@beuc.net>
+
+	* share/Makefile.am: s/datadir/datarootdir/ for .desktop and pixmap
+	files, so it's installed properly in /usr/share even when compiled
+	with Debian's --datadir=/usr/share/games
+
+2009-03-15  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fi.po: Update DFArc Finnish translation from the TP
+
+2009-02-09  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: Adapt fr.po declared package name to domain name (lint)
+
+2009-02-09  Sylvain Beucler <beuc@beuc.net>
+
+	* src/woeres.rc.in: Bundle more precise version information in
+	.exe's
+
+2009-01-25  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: A couple changes in fr.po to please the Translation
+	Project robot
+
+2009-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/dfarc-debs.sh, autobuild/dfarc-exe.sh,
+	autobuild/dfarc-rpms.sh, autobuild/dfarc-snapshot.sh: Include some
+	scripts used to build snapshots and binary packages unattended
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* : commit 50606a440ffa64e736c67f4b82c6d478c6e92201 Author: Sylvain
+	Beucler <beuc@beuc.net> Date:   Sun Dec 28 22:30:03 2008 +0100
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: Fix accelerators in French translation
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: French translation fixes
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* : commit b0ec1af7d9fd64efed0c832e94a54ce90d1ec8c6 Author: Sylvain
+	Beucler <beuc@beuc.net> Date:   Sun Dec 28 14:57:00 2008 +0100
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* po/LINGUAS, po/it.po, po/mk.po: Add Italian and Macedonian
+	translations
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: French translation fixes
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po: French translation fixes
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt: Tidy and update cross-compilation instructions
+
+2008-12-02  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD: FreeBSD install instructions in BUILD
+
+2008-11-29  Sylvain Beucler <beuc@beuc.net>
+
+	* TODO: Note that we could implement SDL_VIDEODRIVER and
+	SDL_AUDIODRIVER support
+
+2008-10-06  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright: Some licensing clarification
+
+2008-10-06  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright, share/README, src/icon_xpm.cpp: Some licensing
+	clarification
+
+2008-09-24  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: .spec fixes
+
+2008-09-24  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: .spec fixes
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Fix typo s/Finn/Finnish/
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: Precise how .spec finds languages + don't
+	mention './configure' in comments to avoid a mistaken rpmlint
+	warning
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, THANKS, configure.ac, debian/changelog,
+	freedink-dfarc.spec,
+	gentoo/games-utils/freedink-dfarc/{freedink-dfarc-3.2.ebuild =>
+	freedink-dfarc-3.2.1.ebuild}: Release 3.2.1
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* po/LINGUAS, po/fi.po: Add Finn translation by Petteri Tolonen
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac,
+	gentoo/games-utils/freedink-dfarc/freedink-dfarc-3.2.ebuild: Fix
+	issue xdg-utils detection at ./configure time
+
+2008-09-22  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, freedink-dfarc.spec, share/README: Some fixes in the
+	spec file + clarify wxGlade warning to make it even clearer that it
+	only applies to developers
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, debian/changelog, freedink-dfarc.spec,
+	gentoo/games-utils/freedink-dfarc/{freedink-dfarc-3.1.20080914.ebui
+	ld => freedink-dfarc-3.2.ebuild}: Release
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore,
+	gentoo/games-utils/freedink-dfarc/freedink-dfarc-3.1.20080914.ebuil
+	d, gentoo/games-utils/freedink-dfarc/metadata.xml: Gentoo ebuild
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD, debian/control, freedink-dfarc.spec: Gentoo build
+	instructions
+
+2008-09-16  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-dfarc.spec: Fix opensuse build
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, freedink-dfarc.spec: Snapshot mode
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, debian/changelog: Snapshot mode; update NEWS
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/control: Mention Debian Games Team in debian/control
+
+2008-09-11  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, debian/copyright: Mention bzip2- and wxwidgets-originated
+	code in copyright aggregation files AUTHORS and debian/copyright
+	(reported by Gonéri Le Bouder)
+
+2008-09-05  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, debian/BUILD, debian/menu, debian/rules,
+	freedink-dfarc.spec: Rename 'dfarc' package to 'freedink-dfarc'
+
+2008-09-05  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp, src/Makefile.am: Support /usr/share/games prefix;
+	add source .wxg files in dist tarballs
+
+2008-08-30  Sylvain Beucler <beuc@beuc.net>
+
+	* dfarc.spec => freedink-dfarc.spec: Also rename specfile
+	dfarc->freedink-dfarc
+
+2008-08-30  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/control, debian/rules, debian/watch,
+	dfarc.spec: Packaging   * Rename dfarc -> freedink-dfarc   * Watch official ftp.gnu.org release location   * Point Vcs-* to the (upcoming) Debian packaging rather     than the development repository
+
+2008-08-30  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright, debian/rules: debian/copyright precisions +
+	s/install-strip/install (suggestions by Ansgar Burchardt)
+
+2008-08-28  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog: Bump debian/changelog
+
+2008-08-28  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, debian/watch, dfarc.spec: Release 3.0
+
+2008-08-26  Sylvain Beucler <beuc@beuc.net>
+
+	* dfarc.spec: Add opensuse-specific .desktop files installation
+
+2008-08-26  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Options.cpp: Avoid a wx warning if PATH contains a directory
+	that doesn't exist
+
+2008-08-26  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am: Don't mess with debian/ in Makefile.am, it's not
+	included in tarballs anymore.
+
+2008-08-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dfarc.spec: Add opensuse dependency list in the .spec (patch by
+	Stefan Dirsch)
+
+2008-08-25  Sylvain Beucler <beuc@beuc.net>
+
+	* src/InstallVerifyFrame.cpp: Avoid crash on exit when trying to
+	install a non-existant D-Mod
+
+2008-08-25  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp: Return a proper value OnExit() (reported by
+	Stefan Dirsch)
+
+2008-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/BUILD, dfarc.spec: rpmlint
+
+2008-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* DEB, Makefile.am: Exclude debian/ from the release tarballs, this
+	is preferred by Debian devs
+
+2008-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright, debian/docs: Add more documentation files in the
+	Debian package + precise earlier copyright
+
+2008-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, dfarc.spec: Add initial Fedora spec file
+
+2008-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po, src/DFArcFrame.cpp: Fix some Fedora GCC warnings
+
+2008-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD, bootstrap, debian/control: Precise intltool <= 0.40 issue
+	and version requirements
+
+2008-08-21  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/rules: Remove commented dh_* that don't belong to the
+	Debian package type (suggested by Miriam Ruiz)
+
+2008-08-21  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Don't use store-int-as-pointer trick; instead
+	use a proper wxClientData
+
+2008-08-19  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/control: Debian fixes
+
+2008-08-17  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po, po/pl.po: Update translation catalogs (2 missing
+	strings)
+
+2008-08-17  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Tar.cpp: Mark 2 forgotten strings for translation
+
+2008-08-17  Sylvain Beucler <beuc@beuc.net>
+
+	* THANKS, po/LINGUAS, po/pl.po: Add Polish translation by GOKUSSJ6
+
+2008-08-16  Sylvain Beucler <beuc@beuc.net>
+
+	* THANKS: Thank testers
+
+2008-08-16  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Fix path escaping (spaces) when opening the
+	current dmod folder with an external file browser
+
+2008-08-14  Sylvain Beucler <beuc@beuc.net>
+
+	* src/InstallVerifyFrame_Base.wxg: Focus the 'install' button when
+	installing a D-Mod - already worked with gtk, needed on woe
+
+2008-08-14  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.hpp: Fix weird header conflict that causes crash when
+	installing D-Mods under woe
+
+2008-08-14  Sylvain Beucler <beuc@beuc.net>
+
+	* src/InstallVerifyFrame.cpp: Minor header fix
+
+2008-08-14  Sylvain Beucler <beuc@beuc.net>
+
+	* src/InstallVerifyFrame.cpp, src/InstallVerifyFrame.hpp: Fix memory
+	leak: free Tar object after install is done
+
+2008-08-13  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, po/fr.po, src/BZip.cpp, src/BZip.hpp, src/Tar.cpp: Remove
+	old unused code from BZip.cpp (error prone)
+
+2008-08-13  Sylvain Beucler <beuc@beuc.net>
+
+	* src/IOUtils.cpp, src/Package.cpp: Fix: 1) renaming previously
+	created .dmod file; 2) packaging under woe (incomplete path)
+
+2008-08-13  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp: Use lowercase name for the config file (more
+	common for Unix dot/hidden files)
+
+2008-08-13  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp, src/DFArcFrame.cpp, src/InstallVerifyFrame.cpp,
+	src/Options.cpp, src/Options_Base.wxg: Add completion for game and
+	editor executable (using a combobox)
+
+2008-08-12  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, doc/cross.txt: configure.ac clean-up
+
+2008-08-11  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/control, debian/rules, doc/cross.txt: Fix Debian lintian
+	errors/warnings (except ITP)
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, po/fr.po, src/Config.cpp, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp, src/InstallVerifyFrame.cpp: - Support refdir that contain spaces - Select newly installed D-Mod after install - Select the "dink" game on first run - Don't use \n in default logo message, doesn't work under woe - Fix French translation typo - Clean-up - Back to default bitmap after a D-Mod uninstall
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, debian/BUILD, src/Makefile.am: Check wxglade
+	presence before attempting to recompile UI files. Warn that Debian
+	builds shouldn't rebuild them if not using a recent enough version.
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac: Set wxWidgets' cflags appropriately when both static
+	and shared versions are available
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* README, TRANSLATIONS.txt: More doc fixes
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am: Add missing doc files in EXTRA_DIST
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/BUILD, debian/control, debian/install, debian/rules: Update
+	Debian packaging
+
+2008-08-10  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, BUILD, Makefile.am, NEWS, README, configure.ac,
+	debian/changelog, debian/control, debian/{dfarc2.xpm => dfarc.xpm},
+	debian/menu, doc/cross.txt, doc/debug.txt, doc/dfarc.txt,
+	po/POTFILES.in, po/fr.po, share/Makefile.am, share/README,
+	share/{freedink-dfarc2.desktop.in => freedink-dfarc.desktop.in},
+	share/man/man1/{dfarc2.1 => dfarc.1}, src/.gitignore,
+	src/Config.cpp, src/DFArcApp.cpp, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp, src/DFArcFrame_Base.wxg,
+	src/InstallVerifyFrame.cpp, src/Makefile.am, src/Options_Base.wxg,
+	src/Package_Base.wxg: Rename DFArc2 to DFArc v3 for clarity. Bump
+	version to 2.99.date
+
+2008-08-09  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am: Force inclusion of the translation template in dist
+	tarballs
+
+2008-08-09  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp: Look for translations in
+	<exedir>/po/XX/dfarc2.mo under woe
+
+2008-08-09  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt: Cross-compilation: work on shared/dll support
+
+2008-08-08  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp: Add missing includes
+
+2008-08-08  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt, src/Config.cpp: Add missing includes
+
+2008-08-07  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po, src/DFArcFrame.cpp: Change default text from '?' to
+	'Pick a D-Mod'
+
+2008-08-07  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt: Tested and improved the cross-building instructions
+	while recreating my build environment from scratch
+
+2008-08-05  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/BUILD, debian/control, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp: ::wxLaunchDefaultBrowser fix/work-around for
+	wxWdgets < 2.6.4
+
+2008-08-04  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp: default editor in dfarc is "dink" (reported by
+	Paul Jewsbury)
+
+2008-08-04  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, debian/changelog: DFArc2 is still evolving
+	(i.e. bugs to fix) and I need to make new Debian packages, to let's
+	switch from 'b' (beta) to '.2008MMDD' version scheme
+
+2008-08-04  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/BUILD, debian/control, debian/rules: Enable 'dh_icons'
+	again and rely on recently backported debhelper 5.0.60
+
+2008-07-31  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/control: Recommend 'freedink' in the Debian package
+
+2008-07-28  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Actually take 'v1.07' option into account when
+	running the game
+
+2008-07-18  Sylvain Beucler <beuc@beuc.net>
+
+	* TRANSLATIONS.txt, po/fr.po, src/DFArcFrame_Base.wxg: Improve
+	tooltip for v1.07 mode
+
+2008-07-07  Sylvain Beucler <beuc@beuc.net>
+
+	* src/InstallVerifyFrame_Base.wxg, src/Package_Base.wxg: Force
+	widget IDs in wxGlade 'stock items', so buttons still work with
+	Etch's wxglade (2)
+
+2008-07-07  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Options_Base.wxg: Force widget IDs in wxGlade 'stock items',
+	so buttons still work with Etch's wxglade
+
+2008-06-23  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame_Base.wxg: Disable splitter window's 3D borders,
+	which doesn't look nice under woe (no visible change for Gtk+)
+
+2008-06-23  Sylvain Beucler <beuc@beuc.net>
+
+	* TRANSLATIONS.txt: Precisions/changes due to 'intltool' not
+	including the .pot
+
+2008-06-23  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po, src/Config.cpp, src/Config.hpp, src/DFArcFrame.cpp,
+	src/DFArcFrame_Base.wxg: Introduce v1.07 mode
+
+2008-06-22  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD, debian/control, debian/rules, share/Makefile.am: Ignore
+	dh_icons errors so that package can be compiled under Debian Etch
+
+2008-06-22  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac: Fix error when libbzip2 isn't installed
+
+2008-06-22  Sylvain Beucler <beuc@beuc.net>
+
+	* BUILD, Makefile.am, bootstrap, debian/control, doc/intltool.txt,
+	po/.gitignore, po/Makefile.in.in, po/POTFILES.in, po/fr.po,
+	share/Makefile.am, share/freedink-dfarc2.desktop.in.h,
+	share/freedink-mime.xml.in.h: Upgrade to intltool 0.40
+
+2008-05-08  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, po/fr.po: Set debian packaging as non-native
+	again (fix typo)
+
+2008-05-08  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, debian/control, po/fr.po: Fix debian builddeps (add
+	intltool dep, don't fail if wxglade is not present since _Base.cpp
+	files are pre-built in the tarball)
+
+2008-05-08  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp: Try using FreeDesktop's xdg-open to browse a
+	D-Mod folder (unless a browser is specified in the Options)
+
+2008-05-08  Sylvain Beucler <beuc@beuc.net>
+
+	* po/fr.po, src/InstallVerifyFrame.cpp,
+	src/InstallVerifyFrame_Base.wxg: Remove old reference to DFArc 2.0
+	(using DFArc2 instead)
+
+2008-05-08  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, debian/rules, po/POTFILES.in, po/fr.po,
+	share/Makefile.am, share/{dfarc2.desktop.in =>
+	freedink-dfarc2.desktop.in}, share/{dfarc2.desktop.in.h =>
+	freedink-dfarc2.desktop.in.h}, share/{dfarc2.xml.in =>
+	freedink-mime.xml.in}, share/{dfarc2.xml.in.h =>
+	freedink-mime.xml.in.h}: Improve FreeDesktop integration in the
+	build-system to support packaging
+
+2008-05-08  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, NEWS, po/.gitignore, po/Makefile.in.in,
+	po/POTFILES.in, po/fr.po, share/Makefile.am, share/README,
+	share/dfarc2.desktop.in, share/dfarc2.xml.in, share/dfarc2.xml.in.h: 
+	Better FreeDesktop integration (file association, icon for .dmod
+	files)
+
+2008-05-07  Sylvain Beucler <beuc@beuc.net>
+
+	* ABOUT-NLS, m4/ChangeLog, m4/gettext.m4, m4/iconv.m4,
+	m4/lib-link.m4, m4/po.m4, po/ChangeLog, po/Makefile.in.in,
+	po/Makevars.template, po/fr.po: Upgrade gettext 0.16->0.17
+
+2008-05-07  Sylvain Beucler <beuc@beuc.net>
+
+	* po/Makefile.in.in, po/POTFILES.in, share/dfarc2.desktop.in.h: Use
+	gettext rather than buggy intltool for .po merges and .pot
+	generation
+
+2008-05-05  Sylvain Beucler <beuc@beuc.net>
+
+	* po/POTFILES.in, share/Makefile.am: Fix 'make distcheck'
+
+2008-05-04  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, configure.ac, po/Makefile.in.in, po/POTFILES.in,
+	po/dfarc2.pot, po/fr.po, share/.gitignore, share/Makefile.am,
+	share/{applications/dfarc2.desktop => dfarc2.desktop.in}: Attempt:
+	translate .desktop from .po with intltool (but this breaks 'make
+	distcheck')
+
+2008-05-04  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/rules, share/Makefile.am,
+	share/applications/dfarc2.desktop: Basic desktop (GNOME/KDE)
+	integration
+
+2008-05-04  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Bump version to 2.1b
+
+2008-05-04  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, debian/changelog, po/dfarc2.pot, po/fr.po,
+	src/Config.cpp, src/DFArcFrame.cpp, src/DFArcFrame.hpp,
+	src/InstallVerifyFrame.cpp, src/Package.cpp: Fix woe issues +
+	dink[edit] command line clean-up
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt: cross-compilation: how to get the release .exe
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog: Switch to non-native Debian packaging (so
+	packages can be based on an existing release tarball)
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, debian/control, po/dfarc2.pot, po/fr.po,
+	src/Config.cpp: Fix Debian packaging
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, debian/control, debian/manpages, debian/menu,
+	debian/rules, doc/git2cl.txt, share/Makefile.am, {debian =>
+	share/man/man1}/dfarc2.1: Fix Debian packaging
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcFrame.cpp, src/DFArcFrame_Base.wxg: Add a
+	horizontal splitter to the main window
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, TODO, po/dfarc2.pot, po/fr.po, src/Config.cpp,
+	src/Config.hpp, src/DFArcFrame.cpp, src/DFArcFrame.hpp,
+	src/InstallVerifyFrame.cpp, src/InstallVerifyFrame_Base.wxg,
+	src/Options.cpp, src/Options_Base.wxg: install dir choice; preferred
+	browser support; text default logo
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* TRANSLATIONS.txt: Translation HOWTO
+
+2008-05-03  Sylvain Beucler <beuc@beuc.net>
+
+	* TRANSLATIONS.txt, po/POTFILES.in, po/dfarc2.pot, po/fr.po,
+	src/DFArcFrame.cpp, src/Options.cpp: Update French translation
+
+2008-05-01  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp: Fix woe compilation
+
+2008-05-01  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, TODO, doc/dfs_split.txt, src/Config.cpp,
+	src/DFArcFrame.cpp, src/Tar.cpp: Split out DFilesystem.cpp (end):
+	polish + look executables in $PATH
+
+2008-05-01  Sylvain Beucler <beuc@beuc.net>
+
+	* COPYING.DFArc-2.0, doc/dfs_split.txt, src/IOUtils.cpp,
+	src/IOUtils.hpp, src/InstallVerifyFrame.cpp, src/Package.cpp,
+	src/Tar.cpp, src/Tar.hpp: Split out DFilesystem.cpp (continued): fix
+	bugs
+
+2008-05-01  Sylvain Beucler <beuc@beuc.net>
+
+	* COPYING.DFArc2-woe, doc/dfs_split.txt, src/Config.cpp,
+	src/Config.hpp, src/DFArcApp.cpp, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp, src/DFile.cpp, src/DFile.hpp,
+	src/DFilesystem.cpp, src/DFilesystem.hpp, src/DMod.cpp,
+	src/DMod.hpp, src/IOUtils.cpp, src/IOUtils.hpp,
+	src/InstallVerifyFrame.cpp, src/InstallVerifyFrame.hpp,
+	src/Makefile.am, src/Package.cpp, src/Package.hpp, src/Tar.cpp,
+	src/Tar.hpp: Split out DFilesystem.cpp (continued) + clean-ups
+
+2008-05-01  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/Config.cpp, src/Config.hpp, src/DFArcApp.cpp,
+	src/DFArcFrame.cpp, src/DFilesystem.cpp, src/DFilesystem.hpp,
+	src/DMod.cpp, src/IOUtils.cpp, src/Options.cpp,
+	src/Options_Base.wxg: Better DMod auto-detection (remove 'list all
+	dirs' configuration option)
+
+2008-05-01  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/dfs_split.txt, src/DFArcFrame.cpp, src/DFArcFrame.hpp,
+	src/DFArcFrame_Base.wxg, src/DFilesystem.cpp, src/DMod.cpp: Split
+	out DFilesystem.cpp (continued)
+
+2008-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/dfs_split.txt, src/DFArcFrame.cpp, src/DFilesystem.cpp,
+	src/DMod.cpp, src/DMod.hpp, src/Makefile.am, src/Package.cpp: Split
+	out DFilesystem.cpp (in progress)
+
+2008-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Config.cpp, src/Config.hpp, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp, src/DFilesystem.cpp, src/Makefile.am,
+	src/Options.cpp, src/Options.hpp: Factor configuration management
+
+2008-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/DFArcFrame.hpp, src/DFArcFrame_Base.wxg,
+	src/IOUtils.cpp, src/IOUtils.hpp, src/Makefile.am, src/Options.cpp,
+	src/Options.hpp: Fixup configuration; add FreeDink-style
+	case-insensitive filename converter
+
+2008-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Options.cpp, src/Options.hpp, src/Options_Base.wxg: 
+	Clarify/reorder options
+
+2008-04-27  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcApp.cpp, src/DFArcFrame.cpp, src/DFilesystem.cpp,
+	src/DFilesystem.hpp, src/InstallVerifyFrame.cpp, src/Options.cpp,
+	src/Options.hpp, src/Options_Base.wxg, src/Tar.cpp: Prepare paths
+	clean-up
+
+2008-03-09  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp: Show main window after a successful command-line
+	install
+
+2008-03-09  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/Makefile.am, src/Tar.cpp: Try to interpret filenames as
+	latin-1 during extraction, if not valid UTF-8
+
+2008-01-31  Sylvain Beucler <beuc@beuc.net>
+
+	* bootstrap, configure.ac, po/POTFILES.in, po/dfarc2.pot, po/fr.po,
+	src/BZip.cpp, src/BZip.hpp, src/DFArcFrame.cpp, src/DFArcFrame.hpp,
+	src/DFDIZWindow.cpp, src/DFDIZWindow.hpp, src/DFile.cpp,
+	src/DFile.hpp, src/DFilesystem.cpp, src/DFilesystem.hpp,
+	src/InstallVerifyFrame.cpp, src/InstallVerifyFrame.hpp,
+	src/Makefile.am, src/Options_Base.wxg, src/Package.hpp,
+	src/RecursiveDelete.hpp, src/Tar.cpp, src/Tar.hpp: Various clean-ups
+
+2008-01-27  Sylvain Beucler <beuc@beuc.net>
+
+	* po/dfarc2.pot, po/fr.po: refresh po
+
+2008-01-27  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac: Fail if wxglade is not present at ./configure time
+
+2008-01-27  Sylvain Beucler <beuc@beuc.net>
+
+	* po/dfarc2.pot, po/fr.po, src/Package.cpp: Update translations
+
+2008-01-27  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/dfarc.txt: Move dfarc documentation from FreeDink
+
+2008-01-27  Sylvain Beucler <beuc@beuc.net>
+
+	* TODO, configure.ac, doc/cross.txt, src/DFArcFrame.cpp,
+	src/DFilesystem.cpp, src/Package.cpp, src/Tar.cpp: Tar::ReadHeaders
+	can work on flux
+
+2008-01-27  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp, src/BZip.hpp, src/Tar.cpp, src/Tar.hpp: Accurate
+	progress bar for decompression
+
+2008-01-26  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Tar.cpp: Set dmod.diz as tar's first entry
+
+2008-01-26  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, doc/debug.txt, src/DFilesystem.cpp, src/Package.cpp,
+	src/Tar.cpp, src/Tar.hpp: Archive creation: more accurate progress
+	bar; remove savegames and cache/backup files; display compression
+	ratio; clean-up
+
+2008-01-26  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/Package.cpp, src/Tar.cpp, src/Tar.hpp: Archive creation:
+	Tar+BZip in a single step + clean-up and portability
+
+2008-01-26  Sylvain Beucler <beuc@beuc.net>
+
+	* src/BZip.cpp, src/BZip.hpp, src/InstallVerifyFrame.cpp,
+	src/Package.cpp, src/{README.wxg => README-wxg}: Rename Bzip->BZip
+
+2008-01-23  Sylvain Beucler <beuc@beuc.net>
+
+	* po/dfarc2.pot, po/fr.po, src/InstallVerifyFrame.cpp: Complete
+	French translation
+
+2008-01-23  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcApp.cpp: wxLocale object must be kept alive
+
+2008-01-22  Sylvain Beucler <beuc@beuc.net>
+
+	* ABOUT-NLS, ChangeLog, Makefile.am, configure.ac, m4/ChangeLog,
+	m4/gettext.m4, m4/iconv.m4, m4/lib-ld.m4, m4/lib-link.m4,
+	m4/lib-prefix.m4, m4/nls.m4, m4/po.m4, m4/progtest.m4,
+	po/.gitignore, po/ChangeLog, po/LINGUAS, po/Makefile.in.in,
+	po/Makevars, po/POTFILES.in, po/Rules-quot, po/boldquot.sed,
+	po/dfarc2.pot, po/en@boldquot.header, po/en@quot.header, po/fr.po,
+	po/insert-header.sin, po/quot.sed, po/remove-potcdate.sin,
+	src/DFArcApp.cpp, src/DFArcFrame.cpp, src/Makefile.am: Add i18n -
+	gettextize
+
+2008-01-21  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Package.cpp: Reset the progress bar between tar and bz2
+
+2008-01-21  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, src/BZip.cpp, src/Package.cpp: More precise bzip2
+	read buffer block size; improve bzip2 compression progress bar
+
+2008-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/DFArcApp.cpp, src/DFArcFrame.cpp,
+	src/InstallVerifyFrame.cpp, src/InstallVerifyFrame.hpp,
+	src/InstallVerifyFrame_Base.wxg, src/Makefile.am: wxgladify and
+	clean-up InstallVerifyFrame
+
+2008-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, src/Tar.cpp: Fix permissions when creating directories
+
+2008-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* src/Options.cpp, src/Package.cpp, src/Package_Base.wxg: Don't
+	implement close/cancel in dialogs, that's automatic
+
+2008-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, src/DFArcApp.cpp, src/DFArcFrame_Base.wxg,
+	src/Makefile.am, src/Options_Base.wxg, src/Package.cpp,
+	src/Package.hpp, src/Package_Base.wxg: wxgladified 'Package' window
+
+2008-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, configure.ac, src/DFArcApp.cpp, src/DFArcFrame.cpp,
+	src/Makefile.am, src/Options.cpp, src/Options.hpp,
+	src/Options_Base.wxg: Options is wxgladified; implement --help and
+	--version for 'make distcheck' compliance'
+
+2008-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile.am, configure.ac, debian/.gitignore, debian/BUILD,
+	debian/changelog, debian/compat, debian/control, debian/copyright,
+	debian/dfarc2.1, debian/dfarc2.xpm, debian/docs, debian/install,
+	debian/manpages, debian/menu, debian/rules,
+	debian/update-autotools-config.sh, debian/watch, share/Makefile.am,
+	share/README, share/applications/dfarc2.desktop, src/Makefile.am: 
+	Desktop icon, Debian package and other build system niceties
+
+2008-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, src/DFArcFrame.cpp, src/DFArcFrame.hpp,
+	src/DFArcFrame_Base.wxg, src/Makefile.am, src/tarmisc.cpp,
+	src/woeres.rc.in: Cross-compilation with mingw32 (2) + fixes
+
+2008-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* configure.ac, doc/cross.txt, src/DFArcFrame.cpp,
+	src/DFArcFrame.hpp, src/DFile.hpp, src/DFilesystem.cpp,
+	src/DFilesystem.hpp, src/Package.cpp: Cross-compilation with mingw32
+
+2008-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/Options.cpp: Actually EXEEXT includes the
+	leading dot already
+
+2008-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/Makefile.am, src/Options.cpp: Replace
+	hard-coded '.exe' extension by $EXTEXT
+
+2008-01-18  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/DFArcFrame_Base.wxg, src/DFilesystem.cpp,
+	src/DFilesystem.hpp: Fix show/hide dev. buttons; look for dmod.diz
+	case-insensitively; fix main frame minimal size
+
+2008-01-15  Sylvain Beucler <beuc@beuc.net>
+
+	* src/{bzip.cpp => BZip.cpp}, src/{bzip.hpp => BZip.hpp},
+	src/DFArcApp.cpp, src/DFArcFrame.cpp, src/DFArcFrame.hpp,
+	src/{dfdizwindow.cpp => DFDIZWindow.cpp}, src/{dfdizwindow.hpp =>
+	DFDIZWindow.hpp}, src/{dfile.cpp => DFile.cpp}, src/{dfile.hpp =>
+	DFile.hpp}, src/{dfilesystem.cpp => DFilesystem.cpp},
+	src/{dfilesystem.hpp => DFilesystem.hpp},
+	src/InstallVerifyFrame.cpp, src/InstallVerifyFrame.hpp,
+	src/Makefile.am, src/Package.cpp, src/Package.hpp, src/{tar.cpp =>
+	Tar.cpp}, src/{tar.hpp => Tar.hpp}, src/dfarc.hpp, src/includes.hpp: 
+	Reorganize header files
+
+2008-01-14  Sylvain Beucler <beuc@beuc.net>
+
+	* src/DFArcFrame.cpp, src/Package.cpp, src/RecursiveDelete.cpp: 
+	small fixes
+
+2008-01-14  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/cross.txt, src/Makefile.am: build system
+
+2008-01-14  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, ChangeLog, Makefile, Makefile.am, NEWS, README,
+	THANKS, bootstrap, configure.ac, wxglade.txt => doc/wxglade.txt,
+	src/.gitignore, DFArcApp.cpp => src/DFArcApp.cpp, DFArcFrame.cpp =>
+	src/DFArcFrame.cpp, DFArcFrame.hpp => src/DFArcFrame.hpp,
+	DFArcFrame_Base.wxg => src/DFArcFrame_Base.wxg,
+	InstallVerifyFrame.cpp => src/InstallVerifyFrame.cpp,
+	InstallVerifyFrame.hpp => src/InstallVerifyFrame.hpp,
+	src/Makefile.am, Options.cpp => src/Options.cpp, Options.hpp =>
+	src/Options.hpp, Package.cpp => src/Package.cpp, Package.hpp =>
+	src/Package.hpp, README.wxg => src/README.wxg, RecursiveDelete.cpp
+	=> src/RecursiveDelete.cpp, RecursiveDelete.hpp =>
+	src/RecursiveDelete.hpp, bzip.cpp => src/bzip.cpp, bzip.hpp =>
+	src/bzip.hpp, dfarc.hpp => src/dfarc.hpp, dfdizwindow.cpp =>
+	src/dfdizwindow.cpp, dfdizwindow.hpp => src/dfdizwindow.hpp,
+	dfile.cpp => src/dfile.cpp, dfile.hpp => src/dfile.hpp,
+	dfilesystem.cpp => src/dfilesystem.cpp, dfilesystem.hpp =>
+	src/dfilesystem.hpp, icon_xpm.c => src/icon_xpm.cpp, icon_xpm.h =>
+	src/icon_xpm.hpp, includes.hpp => src/includes.hpp, tar.cpp =>
+	src/tar.cpp, tar.hpp => src/tar.hpp, tarmisc.cpp => src/tarmisc.cpp: 
+	autoconfiscate
+
+2008-01-13  Sylvain Beucler <beuc@beuc.net>
+
+	* AUTHORS, DFArcApp.cpp, DFArcApp.hpp, DFArcFrame.cpp,
+	DFArcFrame.hpp, DFArcFrame_Base.wxg, Makefile, Options.cpp,
+	bzip.cpp, dfilesystem.cpp, icon_xpm.c, icon_xpm.h: Fixes: convert
+	dmod.diz from latin-1 charset; add an icon
+
+2008-01-13  Sylvain Beucler <beuc@beuc.net>
+
+	* DFArcApp.cpp, DFArcFrame.cpp, DFArcFrame.hpp,
+	DFArcFrame_Base.wxg, InstallVerifyFrame.cpp,
+	InstallVerifyFrame.hpp, Makefile, NEWS, Options.cpp, Options.hpp,
+	Package.cpp, Package.hpp, RecursiveDelete.cpp, RecursiveDelete.hpp,
+	bzip.cpp, bzip.hpp, dfdizwindow.cpp, dfdizwindow.hpp, dfile.cpp,
+	dfile.hpp, dfilesystem.cpp, dfilesystem.hpp, tar.cpp, tar.hpp,
+	tarmisc.cpp: Now compiles under GCC-4 and wxWidgets-2.6
+
+2008-01-13  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, AUTHORS, COPYING, COPYING.DFArc, license.txt =>
+	COPYING.DFArc2-woe, DFArc2.vcproj, DFArcApp.cpp, DFArcApp.hpp,
+	DFArcFrame.cpp, DFArcFrame.hpp, DFArcFrame_Base.wxg,
+	InstallVerifyFrame.hpp, Makefile, Options.cpp, Options.hpp,
+	Package.hpp, README.wxg, RecursiveDelete.hpp, bzip.hpp, dfarc2.rc,
+	dfdizwindow.hpp, dfile.hpp, dfilesystem.hpp, resource1.h, tar.hpp,
+	tarjunk.cpp, wxglade.txt: Clean-up + main frame converted to wxGlade
+
+2008-01-11  Sylvain Beucler <beuc@beuc.net>
+
+	* Import from Dink Smallwood v1.08 source tarball
+	(http://www.codedojo.com/)
+

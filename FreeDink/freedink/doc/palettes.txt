@@ -1,0 +1,197 @@
+Palette behavior with DX (this is somewhat tricky):
+
+- Images can be loaded: a) as sprites, b) as tiles or c) as bitmaps to
+  show on screen.
+
+- When a palette is applied to the screen: indexes 0 and 255 are
+  overwritten by black and white respectively; and palette is now used
+  by any new palette-less buffer (that is, all buffers in Dink)
+
+- When any image is loaded: it is dithered to the global palette at
+  load time; note that load_sprite temporarily sets the screen to the
+  reference palette, so dithering is explicitely always done using the
+  reference palette (i.e. Ts01.bmp), rather than the palette currently
+  in use (typically black after a fade_down() effect). For dir.ff,
+  it's bit different: the image is copied by hand into system memory,
+  replacing index 0 (white) by 30 (very light blue) and 255 (black) by
+  249 (slightly light dark) - that's a manual dithering that assumes
+  the official Dink palette is in use.
+
+- During a sprite blit, the original game uses no dithering (there's
+  no direct equivalent in SDL, which will always dither; a work-around
+  is to temporarily overwrite source and destination palettes with an
+  identical one).  Since .bmp/non-dir.ff sprites are dithered on load,
+  they already have the screen's logical palette applied anyway;
+  dir.ff sprite got no dithering, neither at load time neither at blit
+  time.  (Btw, sometimes you'll see DDBLTFAST_NOCOLORKEY: it just
+  means no transparency.)
+
+  The only situation where the absence of dithering is useful, is when
+  the screen palette was changed after a copy_bmp_to_screen() or
+  similar: later sprite blits are still no dithered; in SDL, if we
+  changed the logical screen palette similarly, all sprite blits would
+  be dithered.  Consequently we don't change the logical screen
+  palette, and perform some dithering tricks to get the loaded
+  fullscreen bmp converted to the physical (not logical) screen
+  palette, and then overwrite its palette indexes with the screen
+  logiciel palette.  A similar trick is used to get the texts colors,
+  which are dithered to the final physical palette (not to the
+  reference palette).  The alternative would be to change the screen
+  logical palette (and get proper DisplayFormat dithering) and use the
+  same palette-switching tricks than in DX when loading new sprites
+  (which might cause unwanted flips?).
+
+In SDL, palettes are used for: a) blits dithering (unlike DX) and b)
+DisplayFormat / on-load dithering (like DX).
+
+In FreeDink we tried to reproduce the palette behavior to ensure
+maximum compatibility; since Dink was used in crazy situations such as
+palette switch via copy_bmp_to_screen(), it's best to ensure the
+correctness of our code base, and that other improvements (eg. fixing
+fade_down()) won't easily affect it. In practice, though, it might be
+simpler to only overwrite the physical screen's palette entries 0 and
+255, and manually work-around the few cases where direct access to the
+buffer is performed (like fill_screen). Maybe such an alternative
+approach can be use for a later truecolor version.
+
+In practice, this means that all palettes are altered to reproduce
+that bug, both when directly manipulated (GFX_real_pal,
+CyclePalette(), etc.) and when applied to the screen
+(change_screen_palette). No original, non-overwritten palette
+currently exist in the game.
+
+Possible improvement: instead of setting the same palette to all
+surfaces, we could replace SDL_BlitSurface with a wrapper that sets
+identical palettes before the blits or more generally does not makes
+palette conversion during the blit.  But this wouldn't take care of
+on-load dithering, so we still need ConvertFormat and unified
+palettes.
+
+
+2 palette changing techniques replace the physical screen palette
+(phys_palette / GFX_lpDDSBack+SDL_PHYSPAL).
+
+- copy_bmp_to_screen(): this changes the physical palette, but it's
+  reverted to the reference palette by the next call to fade_up()
+  (also called internaly by player warping), which means
+  copy_bmp_to_screen() is called pretty regularly in the game.
+
+- load_palette() introduced by v1.08 changes both the physical palette
+  and the reference palette. Two notes of caution:
+
+  - sprites from non-dir.ff and loaded after a palette change are
+    dithered to that possibly-limited palette forever (dir.ff sprites
+    are loaded raw and not impacted)
+
+  - similarly, tiles look initially good, but on savegame load, they
+    are reloaded from disk and dithered, possibly losing definition
+
+
+When the SDL physical screen palette is changed (phys_palette applied
+to GFX_lpDDSBack+SDL_PHYSPAL), loading a sprite with
+SDL_DisplayFormat() will still dither it to the reference palette
+(GFX_real_pal applied to GFX_lpDDSBack+SDL_LOGPAL, only once at the
+engine initialization).  Thanks to this physical/logical separation,
+we don't need to temporarily modify the screen palette when loading a
+new sprite, as the original game did.
+
+The 'phys_palette' variable does not exists in the original game.  We
+need it for 2 reasons:
+
+  - temporarily store it until the screen is ready for flip: if we
+    apply it automatically, sometimes SDL triggers a flip, resulting
+    in a 1-frame nasty graphical glitch.
+
+  - query its content, since there's no getter for it in SDL (only for
+    the logical palette).
+
+-----
+
+White pixels during fade_down: due to the DX bug, color white is left
+untouched during fade_down() and fade_up().  This is actually a
+feature: text is mapped to white and is readable; a few background
+pixels stay white so moving sprites can be seen.  Truecolor mode
+reproduces this behavior.
+
+-----
+
+When do we actually need palette mode (aka when truecolor gives
+incorrect results)?
+
+- Games that use palette switches:
+
+  - Lyna's Story (copy_bmp_to_screen): after meeting the Dead Dragon
+    Carcass, you are sent to the Shadow World which is color-inverted
+    (except for pure white, pure black, and near-black)
+
+  - Cycles of Evil (copy_bmp_to_screen): palette changes with seasons
+    as the story progresses
+
+  - Dink Goes Boating (load_palette): a pillbug switches the screen
+    regularly between a handful of palettes as a feature
+    demonstration, late in the game after you get the best boat, find
+    the burning castle, run errands with the Dinkers to find BigTed
+    and get sent to another part of the map.
+
+  - After doing some mass-grep in the D-Mods I found 5 more of them
+    using full palette changes, most often by copying either of Lyna,
+    COE or BoatDink:
+
+    - Eternal Suicide (lyna): inversion in a few cut-scenes
+    - City of the Dead (lyna): flash inversion during a cut-scene
+    - Adventures with Jani (coe): same seasons
+    - Prelude (boatdink): greyscale when you die
+    - Dink's world (boatdink): not sure about this one, only a
+      "colorchange.c" file that could be a test
+
+    None of them mention it in the dmod.diz :/
+
+- Games that loads 24-bit graphics, color key transparency, and
+  incorrect pixel value for the color key (e.g. near white rather than
+  white): dithering to the palette unifies the whites and gives proper
+  transparency.  Truecolor mode obviously skips dithering and graphics
+  get a white background.
+
+  Example: in "Apex", the wizard in the intro cutscene
+  (graphics/fwil-01.bmp) is supposed to have a transparent background
+  in paletted mode, except for a thin white antialias artifact.  In
+  true-color only a small square part is transparent.  If something
+  goes wrong the full background will be white.
+
+Cf. http://www.dinknetwork.com/forum.cgi?MID=186076
+
+-----
+
+Palettes with OpenGL ES2
+
+Modern OpenGL doesn't support indexed (palette'd) formats.  A possible
+work-around is to:
+
+- upload a texture with one of RGB equal to the palette index
+  (eg. through GL_LUMINANCE format)
+
+- upload the palette as a 256x1 RGB texture
+
+- set color key as a 'uniform int'
+
+- use a shader to display the texture, something like (untested):
+
+  vec3 index = texture2D(mytexture, f_texcoord);
+  if (index.r*256 == colorKey)
+    discard;
+  else
+    gl_FragColor = texture2D(palette, vec2(index.r, 0));
+
+Limitations:
+
+- colors components are mapped to [0,1], and OpenGL's color precision
+  is unknown.  Maybe we're on a 16-bit display and index.r is
+  internally stored on 5 bits, so it will reference a nearby
+  (incorrect) palette index.  A work-around could be to assume 4-bit
+  precision from r and g, store as GL_RGB instead of GL_LUMINANCE, and
+  compute the index as (int)r/16<<4 + (int)g/16.
+
+- textures may take a lot of video memory if stored internally as
+  32-bit.  Just the background tilesets would take around
+  41*512*512*4/(1024*1024) = 41MB.  gfx_sprites.cpp references a +10MB
+  footprint when base Dink sprites (not tiles) are loaded as 24-bit.

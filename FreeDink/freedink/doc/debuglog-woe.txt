@@ -1,0 +1,163 @@
+[info ] Game directory is 'dink'.
+[info ] Truecolor mode: on
+[info ] Video driver: windows
+[info ] Video fall-back surface (unused): SDL_PIXELFORMAT_RGB888
+[info ] Renderer driver: direct3d
+[info ] Renderer texture formats: SDL_PIXELFORMAT_ARGB8888
+[info ] Renderer texture formats: SDL_PIXELFORMAT_YV12
+[info ] Renderer texture formats: SDL_PIXELFORMAT_IYUV
+[info ] Renderer max texture width: 16384
+[info ] Renderer max texture height: 16384
+[info ] Main buffer: SDL_PIXELFORMAT_RGB888 32-bit R=0x00ff0000 G=0x0000ff00 B=0x000000ff A=0x00000000
+[info ] Render texture: format: SDL_PIXELFORMAT_RGB888
+[info ] Render texture: access: SDL_TEXTUREACCESS_STREAMING
+[info ] Render texture: width : 640
+[info ] Render texture: height: 480
+[info ] The family name of the face in the font is: System
+[info ] The name of the face in the font is: Regular
+[info ] The font max height is: 16
+[info ] The font ascent is: 16
+[info ] The font descent is: 0
+[info ] The font line skip is: 1
+[info ] The font is not fixed width.
+[info ] The family name of the face in the font is: Liberation Sans
+[info ] The name of the face in the font is: Regular
+[info ] The font max height is: 19
+[info ] The font ascent is: 15
+[info ] The font descent is: -3
+[info ] The font line skip is: 19
+[info ] The font is not fixed width.
+[info ] loading tilescreens...
+[info ] Done with tilescreens...
+[info ] 0 joystick(s) were found.
+[info ] Initting sound
+[info ] initting sound
+[info ] Audio driver: directsound
+[info ] Audio hardware info: frequency=22050Hz	format=S16LSB	channels=2	opened=1 times
+[info ] Audio chunk decoder: WAVE
+[info ] Audio chunk decoder: AIFF
+[info ] Audio chunk decoder: VOC
+[info ] Audio chunk decoder: OGG
+[info ] Audio music decoder: WAVE
+[info ] Audio music decoder: NATIVEMIDI
+[info ] Audio music decoder: OGG
+[info ] Audio dynload: OGG: ok
+[info ] Loading batch...
+[info ] Loading dink.ini
+[info ]  done!
+[info ] Loading hard...
+[info ]  done!
+[info ] World data....
+[info ]  done!
+[info ] LOADING main
+[debug] Temp thingie is D
+[info ] Loading script STORY/MAIN.D.. (slot 0)
+[debug] Decompressing...
+[debug] Script main is entered at 3:12 (offset 49).
+[debug] Dink started. Time to fight for your right to party.
+[debug] Killed script main. (num 1)
+[debug] giving script the boot
+[info ] LOADING START
+[debug] Temp thingie is D
+[info ] Loading script STORY/START.D.. (slot 0)
+[debug] Decompressing...
+[debug] Script START is entered at 4:18 (offset 106).
+[debug] Loading sounds..
+[info ] getting QUACK.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=49852 bytes
+[info ] getting PIG1.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=6175 bytes
+[info ] getting PIG2.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=7057 bytes
+[info ] getting PIG3.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=3039 bytes
+[info ] getting PIG4.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=6273 bytes
+[info ] getting BURN.WAV..
+[info ] frequency=8000Hz	format=S16LSB	channels=1	length=41762 bytes
+[info ] getting OPEN.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=11573 bytes
+[info ] getting SWING.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=1462 bytes
+[info ] getting PUNCH.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=4360 bytes
+[info ] getting SWORD2.WAV..
+[info ] frequency=8000Hz	format=U8	channels=1	length=4668 bytes
+[info ] getting SELECT.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=25664 bytes
+[info ] getting WSCREAM.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=41914 bytes
+[info ] getting PICKER.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=9072 bytes
+[info ] getting GOLD.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=18758 bytes
+[info ] getting GRUNT1.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=9154 bytes
+[info ] getting GRUNT2.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=9778 bytes
+[info ] getting SEL1.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=43168 bytes
+[info ] getting ESCAPE.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=2	length=72860 bytes
+[info ] getting NONO.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=2	length=45428 bytes
+[info ] getting SEL2.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=2	length=38064 bytes
+[info ] getting SEL3.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=2	length=76608 bytes
+[info ] getting HIGH2.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=2	length=302808 bytes
+[info ] getting FIRE.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=157477 bytes
+[info ] getting SPELL1.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=34401 bytes
+[info ] getting CAVEENT.WAV..
+[info ] frequency=11025Hz	format=U8	channels=1	length=72990 bytes
+[info ] getting SNARL1.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=36260 bytes
+[info ] getting SNARL2.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=17233 bytes
+[info ] getting SNARL3.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=43414 bytes
+[info ] getting HURT1.WAV..
+[info ] frequency=11025Hz	format=U8	channels=1	length=26447 bytes
+[info ] getting HURT2.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=28449 bytes
+[info ] getting ATTACK1.WAV..
+[info ] frequency=11025Hz	format=U8	channels=1	length=14358 bytes
+[info ] getting CAVEENT.WAV..
+[info ] frequency=11025Hz	format=U8	channels=1	length=72990 bytes
+[info ] getting LEVEL.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=73528 bytes
+[info ] getting SAVE.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=58640 bytes
+[info ] getting SPLASH.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=58769 bytes
+[info ] getting SWORD1.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=16784 bytes
+[info ] getting BHIT.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=14414 bytes
+[info ] getting SQUISH.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=9240 bytes
+[info ] getting STAIRS.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=17748 bytes
+[info ] getting STEPS.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=39390 bytes
+[info ] getting ARROW.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=28760 bytes
+[info ] getting FLYBY.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=26644 bytes
+[info ] getting SECRET.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=2	length=124164 bytes
+[info ] getting BOW1.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=13618 bytes
+[info ] getting KNOCK.WAV..
+[info ] frequency=12500Hz	format=U8	channels=1	length=8447 bytes
+[info ] getting DRAG1.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=55752 bytes
+[info ] getting DRAG2.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=136802 bytes
+[info ] getting AXE.WAV..
+[info ] frequency=22050Hz	format=S16LSB	channels=1	length=11486 bytes
+[info ] getting BIRD1.WAV..
+[info ] frequency=22050Hz	format=U8	channels=1	length=34519 bytes

@@ -1,0 +1,214 @@
+# Slovenian translation for freedink.
+# This file is put in the public domain.
+# Klemen Košir <klemen913@gmail.com>, 2011 - 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 1.08.20120427\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2013-01-05 09:49+0100\n"
+"Last-Translator: Klemen Košir <klemen913@gmail.com>\n"
+"Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Uporaba: %s [MOŽNOSTI] ...\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Prikaže to pomoč\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         Prikaže različico programa\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <dir>      Navedite mapo DMod\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <mapa>   Navedite osnovno mapo za igro Dink Smallwood, grafiko, D-Mode, itd.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Prikaže podatke o razhroščevanju\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           Ne zapiše datoteke dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           Ne uporabi igralne palice\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         Ne predvajaj zvoka\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       Uporabi več barv (za grafiko D-Modov)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Uporabi okenski način namesto celozaslonskega\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           Omogoči združljivost z različico 1.07\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Napake v programu sporočite na: %s.\n"
+"Napake v prevodu sporočite na: <klemen.kosir@gmx.com>\n"
+
+#: src/app.cpp:312
+#, fuzzy, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Opomba: možnost -nomovie je uporabljena zaradi združljivosti, vendar nima učinka.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Zažene igro Dink Smallwood ali enega izmed D-Modov."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$Tukaj ničesar ne vidim."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$Huh?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$S tem se ne morem pogovarjati ali uporabiti."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$Kaj?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$Dolgočasim se."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$Tukaj se ne dogaja veliko."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$Ne znam čarati."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$Nisem čarovnik!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Najprej se moram naučiti čarati."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Zaman divje pomigujem z rokami!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$Nič se ni zgodilo."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$Čira čara!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Napad"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Govori/Preišči"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Čarovnija"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Seznam predmetov"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Glavni meni"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Zemljevid"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "Neuporabljeno"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Dol"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Levo"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Desno"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Gor"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Napaka: ni določeno"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Polje %d - %d:%02d - %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "Polje %d - Prazno"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Uredi igro Dink Smallwood ali enega izmed D-Modov."

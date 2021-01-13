@@ -1,0 +1,646 @@
+# Esperanto translation
+# Copyright (C) 2011, 2014 Free Software Foundation, Inc.
+# This file is distributed under the same license as the dfarc package.
+# Felipe Castro <fefcas@gmail.com>, 2011, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dfarc 3.11-pre1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-01 20:58+0200\n"
+"PO-Revision-Date: 2014-09-02 10:19-0300\n"
+"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
+"Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
+"Language: eo\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../src/BZip.cpp:303
+#, c-format
+msgid "Error: Could not open input file '%s' for bzip decompression."
+msgstr "Eraro: ne eblis malfermi la enig-dosieron '%s' por malkompaktigo bzip."
+
+#: ../src/BZip.cpp:318
+msgid "Error: Invalid .dmod file selected!"
+msgstr "Eraro: Malvalida dosiero .dmod elektite!"
+
+#: ../src/BZip.cpp:328
+#, c-format
+msgid "Error: Could not write to '%s'."
+msgstr "Eraro: ne eblis skribi al '%s'."
+
+#: ../src/BZip.cpp:360
+msgid "Invalid .dmod file specified."
+msgstr "Malvalida dosiero .dmod indikita."
+
+#: ../src/BZip.cpp:364
+msgid "Critical program function error: opened for write."
+msgstr "Serioza program-funkcia eraro: malfermite por skribo."
+
+#: ../src/BZip.cpp:368
+msgid "Could not read .dmod file."
+msgstr "Ne eblis legi dosieron .dmod."
+
+#: ../src/BZip.cpp:372
+msgid "Incomplete .dmod file. Please download it again."
+msgstr "Malkompleta dosiero .dmod. Bonvolu elŝuti ĝin refoje."
+
+#: ../src/BZip.cpp:376
+msgid "The .dmod file is corrupted.  Please download it again."
+msgstr "La dosiero .dmod estas rompita. Bonvolu elŝuti ĝin refoje."
+
+#: ../src/BZip.cpp:380
+msgid "The file is not a valid .dmod file."
+msgstr "La dosiero ne estas valida .dmod."
+
+#: ../src/BZip.cpp:384
+msgid "Out of memory error."
+msgstr "Eraro pri manko de memoro."
+
+#: ../src/BZip.cpp:388
+msgid "An unhandled error occured."
+msgstr "Netraktebla eraro okazis."
+
+#: ../src/Config.cpp:202
+msgid "Error: dinksmallwood.ini not found. Please run the main game and try running this program again."
+msgstr "Eraro: dinksmallwood.ini ne trovite. Bonvolu lanĉi la ĉefan ludon kaj provu lanĉi tiun ĉi programon refoje."
+
+#: ../src/Config.cpp:210
+msgid "Error opening dinksmallwood.ini"
+msgstr "Eraro dum malfermo de dinksmallwood.ini"
+
+#: ../src/DFArcFrame.cpp:174
+#, c-format
+msgid ""
+"DFArc version %s\n"
+"Copyright (C) 2004  Andrew Reading (merlin)\n"
+"Copyright (C) 2005, 2006  Dan Walma (redink1)\n"
+"Copyright (C) 2008-2014  Sylvain Beucler (Beuc)\n"
+"Build Date: %s\n"
+"Powered by bzip2 (bzip.org) and wxWidgets (wxwidgets.org)"
+msgstr ""
+"DFArc versio %s\n"
+"Kopirajto (C) 2004  Andrew Reading (merlin)\n"
+"Kopirajto (C) 2005, 2006  Dan Walma (redink1)\n"
+"Kopirajto (C) 2008-2014  Sylvain Beucler (Beuc)\n"
+"Kompila Dato: %s\n"
+"Povigita de bzip2 (bzip.org) kaj wxWidgets (wxwidgets.org)"
+
+#: ../src/DFArcFrame.cpp:181
+msgid "About DFArc v3"
+msgstr "Pri DFArc v3"
+
+#. Default logo (currently all black with a question mark)
+#. TRANSLATORS: please make this SHORT, possibly rephrasing as "<
+#. Choose!". This is included in the 160x120px logo box in the main
+#. window and it doesn't word-wrap.
+#: ../src/DFArcFrame.cpp:253
+msgid "< Pick a D-Mod"
+msgstr "< Elektu D-Mod"
+
+#: ../src/DFArcFrame.cpp:318
+msgid "No translations"
+msgstr "Neniu traduko"
+
+#. Not displaying the default language explicitely, because it
+#. makes the user think that a translation is always available.
+#. mGameLocaleList->Insert(wxString(_("Default language")) + wxT(" (") + cur_locale_name + wxT(")"), 0);
+#: ../src/DFArcFrame.cpp:325 ../src/Options.cpp:118
+msgid "Don't translate"
+msgstr "Ne traduki"
+
+#: ../src/DFArcFrame.cpp:348
+msgid "D-Mod files (*.dmod)"
+msgstr "Dosieroj D-Mod (*.dmod)"
+
+#: ../src/DFArcFrame.cpp:349
+msgid "Select a .dmod file"
+msgstr "Elektu dosieron .dmod"
+
+#: ../src/DFArcFrame.cpp:544
+#, c-format
+msgid "The '%s' locale is not installed on your computer (locales tells the computer how to manage a language). You need to install it - check your system documentation."
+msgstr "La lokaĵaro '%s' ne estas instalita en via komputilo (lokaĵaroj diras al la komputilo kiel trakti lingvojn). Vi bezonas instali ĝin - kontrolu vian sistem-dokumentadon."
+
+#: ../src/DFArcFrame.cpp:547 ../src/DFArcFrame.cpp:625
+msgid "Warning"
+msgstr "Averto"
+
+#: ../src/DFArcFrame.cpp:587
+#, c-format
+msgid "Dink Smallwood failed! Error code %d."
+msgstr "Dink Smallwood malsukcesis! Erar-kodo %d."
+
+#: ../src/DFArcFrame.cpp:589 ../src/DFArcFrame.cpp:594
+#: ../src/DFArcFrame.cpp:655 ../src/DFArcFrame.cpp:657
+#: ../src/DFArcFrame.cpp:700 ../src/DFArcFrame.cpp:709
+msgid "Error"
+msgstr "Eraro"
+
+#: ../src/DFArcFrame.cpp:591
+#, c-format
+msgid "Dink Smallwood ('%s') was not found on your computer. Please configure the Dink program name in the Options menu."
+msgstr "Dink Smallwood ('%s') ne estis trovata en via komputilo. Bonvolu agordi la program-nomon Dink en la menuo Elektebloj."
+
+#: ../src/DFArcFrame.cpp:622
+msgid "Dinkedit saves all changes automatically. Altering maps can ruin the game. Are you sure you want to continue?"
+msgstr "Dinkedit konservas ĉiujn modifojn aŭtomate. Modifo de mapoj povas pereigi la ludon. Ĉu vi certas ke vi volas daŭrigi?"
+
+#: ../src/DFArcFrame.cpp:652
+#, c-format
+msgid "The editor ('%s') was not found on your computer. Please configure the editor program name in the Options menu."
+msgstr "La redaktilo ('%s') ne estis trovata en via komputilo. Bonvolu agordi la redaktilan program-nomon en la menuo Elektebloj."
+
+#: ../src/DFArcFrame.cpp:657
+msgid "Error while running the editor"
+msgstr "Eraro dum lanĉado de la redaktilo"
+
+#. FreeDesktop
+#. Gnome
+#. KDE
+#. Xfce
+#: ../src/DFArcFrame.cpp:698
+msgid "Could not find a file manager (tried 'xdg-open', 'nautilus', 'konqueror' and 'thunar')"
+msgstr "Ni ne povis trovi dosier-administrilon (ni provis 'xdg-open', 'nautilus', 'konqueror'  kaj 'thunar')"
+
+#: ../src/DFArcFrame.cpp:706
+#, c-format
+msgid "Cannot start '%s', please check your configuration in the Options window."
+msgstr "Ni ne povas ekigi '%s', bonvolu kontroli vian agordon en la fenestro Elektebloj."
+
+#: ../src/DFArcFrame.cpp:716
+msgid ""
+"Welcome to DFArc, the Dink Smallwood front end!\n"
+"\n"
+"You can choose to play the original game (Dink Smallwood) or Dink-Modules (D-Mods) which contain new adventures.\n"
+"\n"
+"After completing the main game, give some D-Mods a try.\n"
+"There are hundreds of them, just click File-Download D-Mods."
+msgstr ""
+"Bonvenon al DFArc, la fasado de Dink Smallwood!\n"
+"\n"
+"Vi povas elekti ludi la originalan ludon (Dink Smallwood) aŭ Dink-Moduloj (D-Mod) kiuj enhavas novajn aventurojn.\n"
+"\n"
+"Post plenumigi la ĉefan ludon, provu kelkajn D-Mod.\n"
+"Ekzistas centojn da ili, simple musklaku Dosiero-Elŝuti D-Mod."
+
+#: ../src/DFArcFrame.cpp:723
+msgid "Introduction"
+msgstr "Enkonduko"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:866
+msgid "Cannot use the overridden Dink Smallwood directory - ignoring it. (permission problem?)"
+msgstr "Ne eblas uzi anstataŭigitan dosierujon Dink Smallwood - ni preterpasas ĝin. (ĉu problemo pri rajto?)"
+
+#: ../src/DFArcFrame.cpp:868 ../src/DFArcFrame.cpp:876
+msgid "Configuration error"
+msgstr "Agord-eraro"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:875
+msgid "The Dink Smallwood directory you entered does not exist - ignoring it."
+msgstr "La dosierujo Dink Smallwood kiun vi enmetis ne ekzistas - ni preterpasas ĝin."
+
+#: ../src/DFArcFrame.cpp:890
+msgid "You must select the uninstall option from the start menu to uninstall the main game."
+msgstr "Vi devas elekti la eron 'malinstali' el la sistem-ekmenuo por malinstali la  ĉefan ludon."
+
+#: ../src/DFArcFrame.cpp:891
+msgid "Uninstall - Error"
+msgstr "Malinstali - Eraro"
+
+#: ../src/DFArcFrame.cpp:896
+msgid "Do you want to remove all save game files?"
+msgstr "Ĉu vi volas forviŝi ĉiujn dosierojn de konservitaj ludoj?"
+
+#: ../src/DFArcFrame.cpp:897
+msgid "Uninstall - Save Game Files"
+msgstr "Malinstali - Konservi Ludo-Dosierojn"
+
+#: ../src/DFArcFrame.cpp:919
+msgid "Unable to remove D-Mod directory. All other files were removed."
+msgstr "Ne eblas forviŝi la dosierujon D-Mod. Ĉiuj aliaj dosieroj estis forviŝataj."
+
+#: ../src/DFArcFrame.cpp:925
+msgid "D-Mod successfully uninstalled"
+msgstr "D-Mod sukcese malinstalita"
+
+#: ../src/DFArcFrame.cpp:926
+msgid "Uninstall - Success"
+msgstr "Malinstali - Sukcese"
+
+#: ../src/InstallVerifyFrame.cpp:56
+msgid "Preparing"
+msgstr "Preparanta"
+
+#: ../src/InstallVerifyFrame.cpp:57
+msgid "The D-Mod archive is being decompressed in a temporary file."
+msgstr "La arkivo D-Mod estas malkompaktata en provizora dosiero."
+
+#: ../src/InstallVerifyFrame.cpp:81
+#, c-format
+msgid ""
+"No Description Available.\n"
+"\n"
+"The D-Mod will be installed in subdirectory '%s'."
+msgstr ""
+"Neniu Priskribo Disponeblas.\n"
+"\n"
+" La D-Mod estos instalata en subdosierujo '%s'."
+
+#: ../src/InstallVerifyFrame.cpp:94
+msgid "DFArc - Install D-Mod - "
+msgstr "DFArc - Instali D-Mod - "
+
+#: ../src/InstallVerifyFrame.cpp:143
+msgid "DFArc - Installing"
+msgstr "DFArc - Instalanta"
+
+#: ../src/InstallVerifyFrame.cpp:157
+msgid "The D-Mod you selected"
+msgstr "La D-Mod kiun vi elektis"
+
+#: ../src/InstallVerifyFrame.cpp:159
+msgid " was successfully installed."
+msgstr " estis plenplene instalata."
+
+#: ../src/InstallVerifyFrame.cpp:160 ../src/Package.cpp:167
+msgid "Success"
+msgstr "Sukcese"
+
+#: ../src/InstallVerifyFrame.cpp:169
+msgid "An error occured while extracting the .dmod file."
+msgstr "Eraro okzazis dum eltirado de dosiero .dmod."
+
+#: ../src/Options.cpp:113
+msgid "System language"
+msgstr "Sistem-lingvo"
+
+#: ../src/Options.cpp:136
+msgid "Custom"
+msgstr "Propre"
+
+#: ../src/Options.cpp:175
+msgid "Choose the Dink Smallwood install directory"
+msgstr "Elektu la instal-dosierujon Dink Smallwood"
+
+#: ../src/Options.cpp:183
+msgid "Choose a folder containing D-Mods"
+msgstr "Elektu dosieron enhavantan D-Mod"
+
+#: ../src/Package.cpp:123
+msgid "You must provide an identifier filename."
+msgstr "Vi devas provizi identigilan dosiernomon."
+
+#: ../src/Package.cpp:139
+msgid "Packaging"
+msgstr "Enpakiganta"
+
+#: ../src/Package.cpp:139
+msgid "The D-Mod is being packaged."
+msgstr "La D-Mod estas enpakigata."
+
+#. Success dialog
+#: ../src/Package.cpp:165
+#, c-format
+msgid "%s was successfully packaged (compression ratio %2.1f : 1)."
+msgstr "%s estis sukcese enpakigata (kompaktiga frakcio %2.1f : 1)."
+
+#: ../src/Package.cpp:172
+msgid "Packaging aborted - removing partial .dmod file."
+msgstr "Enpakigo ĉesigis - ni forviŝas malkompletan dosieron .dmod."
+
+#: ../src/Package.cpp:173
+msgid "Abort"
+msgstr "Ĉesigi"
+
+#: ../src/RecursiveDelete.cpp:55 ../src/RecursiveDelete.cpp:73
+#, c-format
+msgid "Could not remove %s"
+msgstr "Ni ne povis forviŝi %s"
+
+#: ../src/Tar.cpp:95
+msgid "Listing files..."
+msgstr "Listigo de dosieroj..."
+
+#: ../src/Tar.cpp:134
+msgid "Initializing..."
+msgstr "Ekiganta..."
+
+#: ../src/Tar.cpp:138
+#, c-format
+msgid "Error: Could not open tar file '%s' for bzip compression."
+msgstr "Eraro: Ni ne povis malfermi tar-dosieron '%s' por kompaktigo bzip."
+
+#: ../src/Tar.cpp:160
+msgid "Error: Could not initialize compression method!  Will not generate a correct .dmod file.  Quitting."
+msgstr "Eraro: Ni ne povis ekigi kompaktigan metodon! Ni ne generos korektan dosieron .dmod. Ni ĉesigas."
+
+#: ../src/Tar.cpp:193
+#, c-format
+msgid "Error: File '%s' not found!  Cannot archive file."
+msgstr "Eraro: Dosiero '%s' ne trovite! Ni ne povas arkivi la dosieron."
+
+#. Close the output file.
+#: ../src/Tar.cpp:243
+msgid "Closing..."
+msgstr "Fermanta..."
+
+#: ../src/Tar.cpp:363
+#, c-format
+msgid "Error: File '%s' not found!  Cannot read data."
+msgstr "Eraro: Dosiero '%s' ne trovite! Ni ne povas legi la datumaron."
+
+#. Nope.  Exit.
+#: ../src/Tar.cpp:400
+msgid "Error: This .dmod file has an invalid checksum!  Cannot read file."
+msgstr "Eraro: Tiu ĉi dosiero .dmod havas malvalidan kontrol-sumon! Ni ne povas legi la dosieron."
+
+#: ../src/Tar.cpp:484
+#, c-format
+msgid "Error: File '%s' not found!  Cannot extract data."
+msgstr "Eraro: Dosiero '%s' ne trovite! Ni ne povas eltiri la datumaron."
+
+#: ../src/Tar.cpp:494
+#, c-format
+msgid "Error: Cannot create directory '%s'.  Cannot extract data."
+msgstr "Eraro: Ni ne povas krei la dosierujon '%s'. Ni ne povas eltiri la datumaron."
+
+#: ../src/Tar.cpp:552
+#, c-format
+msgid "Got bad file %d/%d.  Skipping."
+msgstr "Ni prenis malĝustan dosieron %d/%d. Ni preterpasas."
+
+#: ../src/Tar.cpp:574
+#, c-format
+msgid "Error: Improperly archived file '%s'.  Skipping."
+msgstr "Eraro: Malkorekte arkivita dosiero '%s'. Ni preterpasas."
+
+#: ../src/Tar.cpp:607
+msgid "Done."
+msgstr "Farite."
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "&Open D-Mod to Install"
+msgstr "Malfermi D-Mod por &Instali"
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "Select a D-Mod to install"
+msgstr "Elekti D-Mod por instali"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "&Download D-Mods"
+msgstr "&Elŝuti D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "Go to The Dink Network to download some D-Mods!"
+msgstr "Iri al la Dink-Reto por elŝuti kelkajn D-Mod!"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "E&xit"
+msgstr "E&liri"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "Exit DFArc"
+msgstr "Eliri DFarc"
+
+#: ../src/DFArcFrame_Base.cpp:31
+msgid "&File"
+msgstr "&Dosiero"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "&Refresh D-Mod List"
+msgstr "Ĝisdati&gi Liston D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "Refreshes the D-Mod list for any new additions"
+msgstr "Ĝisdatigas la liston D-Mod kun iu ajn nova aldono"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "&Browse Selected D-Mod Directory"
+msgstr "E&splori Elektitan Dosierujon D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "Browse to the directory containing the current D-Mod"
+msgstr "Esplori la dosierujon, kiu enhavas la rulantan D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "&Uninstall Selected D-Mod"
+msgstr "&Malinstali Elektitan D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "Uninstalls the selected D-Mod"
+msgstr "Malinstalas la elektitan D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "&Options"
+msgstr "Elektebl&oj"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "View or modify DFArc options"
+msgstr "Rigardi kaj modifi elektebloj de DFarc"
+
+#: ../src/DFArcFrame_Base.cpp:38
+msgid "&Edit"
+msgstr "R&edakti"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "&Introduction"
+msgstr "En&konduko"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "A quick introduction to Dinking and D-Mods"
+msgstr "Rapida enkonduko al 'Dink-umado' kaj D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "&Walkthroughs and Guides"
+msgstr "Klarigadoj kaj &Gvidiloj"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "Stuck in a D-Mod? Check out The Dink Smallwood Solutions."
+msgstr "Ĉu senmova en D-Mod? Kontrolu 'The Dink Smallwood Solutions'."
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "&Forums"
+msgstr "&Forumoj"
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "Ask a question on the forums, or see if someone had the same problem."
+msgstr "Faru demandon en la forumoj, aŭ kontrolu ĉu iu alia alfrontis la saman problemon."
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "&About"
+msgstr "&Pri"
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "About DFArc"
+msgstr "Pri DFArc"
+
+#: ../src/DFArcFrame_Base.cpp:45
+msgid "&Help"
+msgstr "&Helpo"
+
+#: ../src/DFArcFrame_Base.cpp:50
+msgid "Play"
+msgstr "Ludi"
+
+#: ../src/DFArcFrame_Base.cpp:51
+msgid "True Color"
+msgstr "Reala Koloro"
+
+#: ../src/DFArcFrame_Base.cpp:52
+msgid "Windowed"
+msgstr "Fenestre"
+
+#: ../src/DFArcFrame_Base.cpp:53
+msgid "Sound"
+msgstr "Sono"
+
+#: ../src/DFArcFrame_Base.cpp:54
+msgid "Joystick"
+msgstr "Stirstango"
+
+#: ../src/DFArcFrame_Base.cpp:55
+msgid "Debug"
+msgstr "Rafinigo"
+
+#: ../src/DFArcFrame_Base.cpp:56
+msgid "v1.07 mode"
+msgstr "Reĝimo v1.07"
+
+#: ../src/DFArcFrame_Base.cpp:57
+msgid "Edit"
+msgstr "Redakti"
+
+#: ../src/DFArcFrame_Base.cpp:58 ../src/Package_Base.cpp:27
+msgid "Package"
+msgstr "Pako"
+
+#. begin wxGlade: DFArcFrame_Base::set_properties
+#: ../src/DFArcFrame_Base.cpp:73
+msgid "DFArc v3"
+msgstr "DFArc v3"
+
+#: ../src/DFArcFrame_Base.cpp:83
+msgid "v1.07 compatibility mode, for D-Mods released before 2006"
+msgstr "Kongrueca reĝimo v1.07, por D-Mod eldonitaj antaŭ ol 2006"
+
+#. begin wxGlade: InstallVerifyFrame_Base::InstallVerifyFrame_Base
+#: ../src/InstallVerifyFrame_Base.cpp:23
+msgid "Preparing..."
+msgstr "Preparanta..."
+
+#: ../src/InstallVerifyFrame_Base.cpp:25
+msgid "Main Dink directory"
+msgstr "Ĉefa dosierujo Dink"
+
+#: ../src/InstallVerifyFrame_Base.cpp:26 ../src/Options_Base.cpp:29
+msgid "Additional D-Mods directory"
+msgstr "Dosierujo por aldonaj D-Mod"
+
+#: ../src/InstallVerifyFrame_Base.cpp:28
+msgid "Where do you want to install this D-Mod?"
+msgstr "Kie vi volas instali tiun ĉi D-Mod?"
+
+#: ../src/InstallVerifyFrame_Base.cpp:29
+msgid "Install"
+msgstr "Instali"
+
+#. begin wxGlade: InstallVerifyFrame_Base::set_properties
+#: ../src/InstallVerifyFrame_Base.cpp:41
+msgid "DFArc - Install D-Mod"
+msgstr "DFArc - Instali D-Mod"
+
+#. begin wxGlade: Options_Base::Options_Base
+#: ../src/Options_Base.cpp:23
+msgid "Close DFArc on play"
+msgstr "Fermi DFarc dum ludado"
+
+#: ../src/Options_Base.cpp:24
+msgid "Show developer buttons"
+msgstr "Montri porprogramistajn butonojn"
+
+#: ../src/Options_Base.cpp:25
+msgid "The engine updates dinksmallwood.ini on run (deprecated)"
+msgstr "La maŝino ĝisdatigas dinksmallwood.ini dum funkciado (malkonsilinde)"
+
+#: ../src/Options_Base.cpp:26
+msgid "Override the Dink Smallwood directory"
+msgstr "Surskribi la dosierujon Dink Smallwood"
+
+#: ../src/Options_Base.cpp:28 ../src/Options_Base.cpp:31
+msgid "Browse"
+msgstr "Esplori"
+
+#: ../src/Options_Base.cpp:32
+msgid "Game program name"
+msgstr "Nomo de lud-programo"
+
+#: ../src/Options_Base.cpp:35
+msgid "Editor program name"
+msgstr "Nomo de redakto-programo"
+
+#: ../src/Options_Base.cpp:38
+msgid "Preferred file browser"
+msgstr "Prefrata dosier-esplorilo"
+
+#: ../src/Options_Base.cpp:40
+msgid ""
+"DFArc language\n"
+"(restart DFArc to apply)"
+msgstr ""
+"DFArc lingvo\n"
+"(rekomencigu DFArc por efiki)"
+
+#. begin wxGlade: Options_Base::set_properties
+#: ../src/Options_Base.cpp:56
+msgid "DFArc - Options"
+msgstr "DFArc - Elektebloj"
+
+#. begin wxGlade: Package_Base::Package_Base
+#: ../src/Package_Base.cpp:23
+msgid "Identifier"
+msgstr "Identigilo"
+
+#: ../src/Package_Base.cpp:24
+#, c-format
+msgid ""
+"Note: Unless you're making a D-Mod, you shouldn't be around here.\n"
+"This is for creating a .dmod file for a D-Mod you made.\n"
+"\n"
+"Will package '%s' located at\n"
+"%s"
+msgstr ""
+"Rimarko: malkondiĉe ke vi verkas D-Mod, vi ne devus esti ĉirkaŭe ĉi tie.\n"
+"Tio ĉi estas por krei dosieron .dmod, por iu D-Mod kiun vi faris.\n"
+"\n"
+"Pako '%s' estos lokata ĉe\n"
+"%s"
+
+#: ../src/Package_Base.cpp:25
+msgid "D-Mod filename (8 letters/numbers)"
+msgstr "Dosiernomo D-Mod (8 literoj/ciferoj)"
+
+#. begin wxGlade: Package_Base::set_properties
+#: ../src/Package_Base.cpp:39
+msgid "DFArc - Package"
+msgstr "DFArc - Pako"
+
+#: ../share/freedink-dfarc.desktop.in.h:1
+msgid "DFArc - Dink frontend"
+msgstr "DFArc - fasado de Dink"
+
+#: ../share/freedink-dfarc.desktop.in.h:2
+msgid "Run, edit, install, remove and package D-Mods (Dink Modules)"
+msgstr "Lanĉi, redakti, installi, forigi kaj enpakigi D-Mod (Modulojn Dink)"
+
+#: ../share/freedink-mime.xml.in.h:1
+msgid "Packaged D-Mod"
+msgstr "Enpakigita D-Mod"
+
+#~ msgid "ERROR"
+#~ msgstr "ERARO"

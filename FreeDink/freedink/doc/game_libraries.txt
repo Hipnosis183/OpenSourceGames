@@ -1,0 +1,217 @@
+From a game library point of view, the game has 3 parts:
+
+- sound
+  BGM = MIDI (+ less important: audio CD);
+  SFX = WAV with multiple channels/banks, pseudo-3D positionning
+  (per-channel volume and panning), real-time frequency change
+
+- graphics
+  - 2D, 640*480*256
+  - windowed or full-screen
+  - stretching/scaling
+  - fonts (TTF)
+
+- input
+  - keyboard
+  - joystick
+
+
+Choice:
+~~~~~~~
+
+If chose SDL because the previous port was made using SDL, so there is
+already a semi-working port that I can study during the initial port
+to the GNU OS.
+
+So there is no definite, justified choice to use SDL. It really was
+the easier way for me to perform an initial and clean cross-platform
+port.
+
+
+
+Alternatives:
+~~~~~~~~~~~~~
+
+General-purpose:
+
+- Allegro is another interesting alternative. I think it would be good
+  to eventually get FreeDink be able to compile with either library -
+  at least that would make the code more flexible if SDL ever get
+  replaced by something else (beware, though, that the engine needs to
+  behave exactly the same whichever way it is compiled, so better
+  avoid that for releases). Allegro tend to get everything included in
+  the main library, while SDL separates a core library from additional
+  ones (SDL_mixer, SDL_image, SDL_gfx, SDL_ttf...).
+
+- DX: that's what we come from, it's proprietary and not portable, so
+  of course we won't use it back.
+
+- SFML (Simple and Fast Multimedia Library): apparently this is
+  something still young (the SF project was imported 02/2007). Because
+  of this, I think it lacks support for several "old" features that
+  Dink needs, such as graphics palettes, MIDI playback, and the
+  ability to work without OpenGL (that is, get decent performances
+  without a 3D card). It does not have C bindings, only C++ ones.
+
+
+Some component-specific libraries are:
+
+- Graphics: Mesa (OpenGL), that apparently could take care of all the
+  2D graphical part. TODO: check if there's a version of Mesa for Woe.
+
+- SFX: OpenAL for a good SFX (no MIDI, no audio CD) mixer. Audiere
+  (1.9.4 - 2/2006 - no portable midi) might be good as well. SDL_Mixer
+  is not the only lib for SDL, check Audiality (0.1.1 - 1/2004 - dev).
+
+
+
+Comparison:
+~~~~~~~~~~~
+
+It would be good to make a spreadsheet and show the possible combinations.
+
+The conclusion is that no library does _everything_ we need, but the
+sum of all their features do.
+
+([TODO] means we need to actually test the libraries.)
+
+- Stretching:
+
+  [/] SDL_gfx does. Maybe the scaling algorithm is not exactly the
+  same, I've seen some ugly resized tree shades in POTA, I'm not sure
+  it was intentional. SDL_gfx has a small scaling bug which introduces
+  a 1-pixel postponement in FreeDinkedit's tile hardness editing.
+
+  [/] SDL_strech does, but only on surfaces with the same graphics
+  format. It hasn't been updated for 5 years and has troubles to
+  compile (check Debian packaging for fixes). It's packaged in less
+  distros than SDL_gfx. It doesn't have the SDL_gfx bug and scales
+  fine.
+
+  [?] [TODO] SGE http://www.etek.chalmers.se/~e8cal1/sge/ does.
+
+  [?] [TODO] Allegro does.
+
+  [?] [TODO] Mesa does.
+
+- Fonts (TTF):
+
+  [X] SDL_ttf does but lacks weight support but TTF_STYLE_BOLD does
+  the right thing for us (see fonts.txt).
+
+  [?] [TODO] Allegro plug-in such as AllegTTF, AllegroFont or Glyph
+  Keeper; or pre-convert the TTF in a bitmapped format directly usable
+  by Allegro (possibly at run time, the tool is TTF2PCX) - but bitmap
+  fonts are unlikely to do proper spacing.
+
+  [?] [TODO] OpenGL+SDL_ttf+an SDL surface rendered as a texture. Or
+  use FreeType2 directly.
+
+
+- Input (keyboard, joystick):
+
+  [/] SDL does good keyboard and joystick support, except that there's
+  no cross-platform consistent key identifiers. The work-around is to
+  run FreeDinkedit with a US keyboard layout (see keycodes.txt).
+
+  [?] [TODO] Allegro should do.
+
+  [?] [TODO] GLUT (Mesa, freeglut, OpenGlut) should do.
+
+
+- Sound Frequency:
+
+  [X] SDL_mixer does not provide an equivalent to DX'
+  DirectSoundBuffer::setFrequency(), but that can be worked around
+  (check sound.txt).
+ 
+  [X] Allegro does. play_sample() and adjust_sample have a frequency
+  argument. The sample is computed on the fly, i.e. it is not a
+  precomputed new sample with a different frequency which is then
+  played. The frequency is expressed in o/oo (eg 2000 = 2x as fast,
+  500 = 2x as slow), instead of DX's explicit final Hz frequency (eg
+  44100).
+
+  [?] [TODO] SDL_sound should do.
+
+  [?] [TODO] OpenAL does.
+
+  [?] [TODO] Audiere does.
+
+- MIDIs:
+
+  Generally: I never could use the hardware MIDI features of my sound
+  cards (when they still had support for it) under GNU/Linux. I always
+  had to resort to software emulation.
+
+  Sum up: SDL_mixer + its included timidity is the only viable
+  solution under GNU/Linux. Under Woe, most libraries can use the
+  low-level mci MIDI player, but the game stops for several seconds
+  when loading a new MIDI file (software emulation is not fully "on
+  the fly"). There seems to be a workaround using a DX new feature
+  (check the "Dink Aural" version from Dan Walma for details).
+
+  What we really need to test now is whether it is possible to use
+  multiple audio libraries at once.
+
+  [X] SDL_mixer does that perfectly, independently from SFX. If for
+  some reason MIDI playback is not satisfying, one could use an
+  external command to do it through Mix_SetMusicCMD
+  (http://lists.libsdl.org/pipermail/sdl-libsdl.org/2007-December/063639.html)
+
+  [/] Allegro's DIGMID driver seems suboptimal: under Debian, I can't
+  get it to output any sound, with the digmid.dat from
+  http://alleg.sourceforge.net/digmid.html or from TiMidity++
+  configs); under Fedora, I get no sound using digmid.dat and a
+  low-quality output using the TiMidity++ config.
+
+  [?] SDL_sound does through a stripped-down version of TiMidity++
+  only.
+
+  [ ] OpenAL doesn't.
+
+  [ ] [TODO] Check/test the Woe/mci lag issue (addressed in "Dink
+  Aural+" version for Woe).
+  
+- Audio CD:
+
+  [X] SDL does that perfectly, independently.
+
+  [ ] Allegro doesnt.
+
+  [ ] OpenAL doesn't.
+
+  [?] [TODO] Audiere does.
+
+- Quick audio repetition (eg when you get gold)
+
+  [X] What SDL_mixer does is OK - just remember to compile with DX
+  support under Woe.
+
+
+Wishes:
+~~~~~~~
+
+Features we plan to add afterwhile...
+
+- Fixed rate
+
+  [X] SDL_gfx does, with interpolation.
+
+- Additional sounds formats (at least Ogg Vorbis, Flac, MP3, possibly MOD)
+
+- 16/24/32 bits support
+
+  [X] SDL does.
+
+  [X] Allegro does.
+
+  [?] Mesa
+
+- Graphics rotation:
+
+  [?] [TODO] SDL_gfx does.
+
+  [?] [TODO] Allegro does.
+
+  [?] [TODO] Mesa does.

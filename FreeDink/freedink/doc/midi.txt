@@ -1,0 +1,176 @@
+I can't say if Dink player used Windows' early MIDI software emulation
+or relied on their Sound Blaster-compatible card MIDI synthetizer.
+https://en.wikipedia.org/wiki/MIDI#Game_music
+
+Anyway, the point isn't to perfectly emulate the MIDI of the late
+90's, especially since it varied among PCs.  The point is to get
+decent playing of all the MIDI files included in D-Mods.
+
+
+TiMidity++
+==========
+
+I never managed to use my sound card in MIDI mode with GNU/Linux -
+however there is a program called TiMidity++ that is a MIDI->WAV
+translator (software-based MIDI playing, rather than hardware-based).
+
+SDL can use an embedded TiMidity++ (and/or fluidsynth since 1.2.12,
+see below).
+
+TiMidity++ by itself cannot play MIDIs, he needs a set of "patches",
+which are data files defining how to reproduce the instrument
+specified by the MIDI file. Once you get the patches, you also need a
+configuration file, usually provided separately.
+
+Apparently there are 2 patches set worthy to mention:
+
+- freepats: free-as-in-freedom, included in Debian main (so compatible
+  with the DFSG, the Debian Free Software Guidelines).
+  http://freepats.zenvoid.org/SoundSets/general-midi.html
+
+- eawpatches: best quality but apparently non-free, and pretty hard to
+  find (TiMidity++ is surrounded by 404 pages :/). The free parts of
+  eawpatches are included in freepats (on freepats.opensrc.org, you
+  see in the news items that Eric A Welsh, who compiled the
+  eawpatches, worked himself on sorting out the legally distributable
+  files for freepats).
+
+  There is a copy in the NetBSD package:
+  ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/audio/eawpatches/README.html
+  ftp://ftp.netbsd.org/pub/pkgsrc/packages/SunOS/i386/5.11_head/All/eawpatches-12nb3.tgz
+
+  SDL_Mixer also has a copy: http://www.libsdl.org/projects/SDL_mixer/
+  http://www.libsdl.org/projects/SDL_mixer/timidity/timidity.tar.gz
+
+  Gentoo also has a copy:
+  http://distfiles.gentoo.org/distfiles/eawpats12_full.tar.gz
+  Install using 'emerge media-sound/timidity-eawpatches', and define
+  the current patchset using:
+    eselect timidity list
+    eselect timidity set freepats
+    eselect timidity set eawpatches
+
+  Apparently some of eawpats is used in the Fedora timidity++ package
+  (britepno.pat.bz2, pistol.pat.bz2 - added from now-defunct
+  http://www.stardate.bc.ca/eawpatches/eawpats/ following
+  http://bugzilla.redhat.com/50982 without much explanation), but the
+  other source tarball
+  (http://archive.cs.umbc.edu/pub/midia/instruments.tar.bz2) lack
+  legal notices, and the documented origins are dead links, so I don't
+  know what it's based on really. dance.mid plays fine so it's not
+  just plain freepats.
+
+
+Here is what I did to install the eawpatches from the NetBSD port to
+Debian GNU/Linux Etch. First I installed the patch in the
+FHS-compliant location (I checked where freepats was installed using
+dpkg -L freepats):
+
+  tar xzf eawpatches-12nb3.tgz
+  mv share/eawpatches/ /usr/share/midi/
+
+I then edited /etc/timidity/timidity.cfg:
+  source /usr/share/midi/eawpatches/timidity.cfg
+and /usr/share/midi/eawpatches/timidity.cfg:
+  dir /usr/share/midi/eawpatches
+
+Now you can play your favorite MIDIs decently :)
+  timidity dink/Sound/dance.mid
+
+
+With the Gentoo archive:
+  tar zf eawpats12_full.tar.gz
+  mv eawpats /usr/share/midi/
+I then edited /etc/timidity/timidity.cfg:
+  source /usr/share/midi/eawpats/linuxconfig/timidity.cfg
+then /usr/share/midi/eawpats/linuxconfig/timidity.cfg:
+  dir /usr/share/midi/eawpats/
+
+
+The NetBSD documentation (in file '+DISPLAY') mentions you can test
+patch files with command line options instead of messing with the
+site-wide default configuration file:
+
+  timidity -L /usr/pkg/share/eawpatches -c timidity.cfg file.mid
+
+
+Another sum-up page: http://alleg.sourceforge.net/digmid.html
+
+I tried to install the Gravis Pro patches along with the provided
+configuration file, but I didn't manage to get something playing.
+
+
+Fluidsynth
+==========
+
+Starting with SDL-Mixer 1.2.12, fluidsynth support is available.
+
+One can test the result with:
+  fluidsynth -a alsa -l -i /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/games/dink/dink/Sound/dance.mid
+  fluidsynth -a alsa -l -i /usr/share/sounds/sf2/TimGM6mb.sf2   /usr/share/games/dink/dink/Sound/dance.mid
+which timidity couldn't play with freepats before.
+
+However fluidsynth just exits with 104.mid (Stonebrook theme).
+
+fluidsynth is now used by default in the Debian version of SDL-Mixer. To disable it:
+  SDL_FORCE_SOUNDFONTS=1 SDL_SOUNDFONTS= freedink -w
+
+Note there's also a bug in the TiMidity backend for said Debian version:
+http://bugs.debian.org/726912
+
+
+ScummVM
+=======
+
+ScummVM implements a few MIDI backends, including two AdLib+OPL card
+emulators:
+
+http://wiki.scummvm.org/index.php/User_Manual/Appendix:_Music_and_sound
+http://forums.scummvm.org/viewtopic.php?t=11625
+
+Principle of operation: ScummVM offers an emulated sound card
+compatible with the AdLib brand.  The card included an hardware
+synthetizer called OPL which is emulated too and is the core of the
+sound output.
+
+The OPL emulator is based on either MAME or DOSBox. You can try it
+with e.g. DOSBox + MIDIer.
+
+http://www.dosbox.com/wiki/Sound#Sound_Blaster
+http://www.pldos.pl/windos/midier.htm
+
+The Chocolate Doom port has interesting background information on the
+sound card that produced the MIDI output of the early 90's:
+
+http://www.chocolate-doom.org/wiki/index.php/OPL_MIDI
+http://www.chocolate-doom.org/wiki/index.php/Opl-branch
+https://github.com/chocolate-doom/chocolate-doom/blob/master/README.Music
+
+After discussing with ScummVM contributors, it doesn't seem easy to
+setup, and provides only minimal sound fonts.
+
+In addition, this is a bit too early for us: Dink was released during
+the late 90's, and DOSBox tests sound even more old-school than Dink.
+
+
+AdPlug
+======
+
+AdPlug also has support for standalone MIDI playing.  Test with the
+'adplay' tool.  It stays silent on 104.mid and Bullythe.mid AFAICH.
+
+
+Duke Nukem 3D comparison
+========================
+
+Duke3D was released about the same time as Dink, and also relied on
+MIDI files, which makes it a good comparison.  Interestingly,
+retrogaming effort was focused on producing .ogg files compatible with
+the original rather than working on software synthesis.
+
+http://vision.gel.ulaval.ca/~klein/duke3d/
+http://vision.gel.ulaval.ca/~klein/duke3d/musicpack_sc55.zip
+
+However, these songs focus on how they should have been heard, that is
+using the composer's very synthesizer.  They don't sound at all like
+what you heard when playing on common PC.

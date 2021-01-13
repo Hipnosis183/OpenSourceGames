@@ -1,0 +1,23 @@
+Thanks to the (beta) testers:
+
+CocoMonkey
+cypry
+DaVince
+Phoenix
+shevek
+Someone
+scratcher
+yeoldetoast
+<your name here :)>
+
+
+See also:
+http://www.gnu.org/software/freedink/credits
+
+
+Previous contributions:
+
+- José María Pavón Núñez: tracked big memory leaks (sound and graphics
+  resources) on game reload and restart
+
+- Stefan Dirsch: OpenSUSE packaging fixes and x86_64 tests/fixes

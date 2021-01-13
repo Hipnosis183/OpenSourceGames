@@ -1,0 +1,187 @@
+freedink (109.6-1) unstable; urgency=medium
+
+  * New Upstream Version
+
+ -- Sylvain Beucler <beuc@debian.org>  Sun, 17 Feb 2019 00:20:00 +0100
+
+freedink (109.4-4) unstable; urgency=medium
+
+  * Update AppStream from upstream
+
+ -- Sylvain Beucler <beuc@debian.org>  Sat, 02 Feb 2019 13:22:42 +0100
+
+freedink (109.4-3) unstable; urgency=medium
+
+  * Revert AppStream to install 'freedink-engine' since splitting appdata
+    and desktop files is causing troubles
+
+ -- Sylvain Beucler <beuc@debian.org>  Tue, 29 Jan 2019 13:49:25 +0100
+
+freedink (109.4-2) unstable; urgency=medium
+
+  * Use Breaks&Replace to move Appstream file from freedink-engine to
+    freedink (Closes: #920733)
+
+ -- Sylvain Beucler <beuc@debian.org>  Mon, 28 Jan 2019 21:54:00 +0100
+
+freedink (109.4-1) unstable; urgency=medium
+
+  * Make AppStream install 'freedink' meta-package rather than
+    'freedink-engine'
+  * Fix dbgsym-migration version
+
+ -- Sylvain Beucler <beuc@debian.org>  Sun, 27 Jan 2019 22:37:02 +0100
+
+freedink (109.2-1) unstable; urgency=medium
+
+  * New Upstream Version
+  * Drop item and icon for obsolete debian menu system
+  * Add upstream GPG key
+  * Bump debhelper compat to 10
+  * Update obsolete 'extra' priority to 'optional'
+  * Use https for Homepage and Vcs-Browser fields, and for watch file
+  * Remove now-default options to 'dh' invocation
+
+ -- Sylvain Beucler <beuc@debian.org>  Sat, 19 Jan 2019 00:05:00 +0100
+
+freedink (108.4+dfsg-3) unstable; urgency=medium
+
+  * Properly implement /usr/share/doc/freedink symlink_to_dir - thanks anbe
+  (Closes: #860114)
+
+ -- Sylvain Beucler <beuc@debian.org>  Tue, 11 Apr 2017 19:35:07 +0200
+
+freedink (108.4+dfsg-2) unstable; urgency=medium
+
+  * Don't symlink /usr/share/doc/freedink to support binNMU
+  * Fix segfault when loading game and exiting editor.
+
+ -- Sylvain Beucler <beuc@debian.org>  Sun, 09 Apr 2017 23:10:58 +0200
+
+freedink (108.4+dfsg-1) unstable; urgency=medium
+
+  * Stub out share/freedink/LiberationSans-Regular.ttf (Closes: #851110)
+  * debian/watch: mangle '+dfsg'
+  * Bump Standards-Version to 3.9.8 (no changes)
+
+ -- Sylvain Beucler <beuc@debian.org>  Sun, 22 Jan 2017 21:06:51 +0100
+
+freedink (108.4-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Bump Standards-Version to 3.9.6 (no changes)
+
+ -- Sylvain Beucler <beuc@debian.org>  Wed, 22 Oct 2014 14:04:34 +0200
+
+freedink (108.2-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Depend on fonts-liberation rather than on renamed ttf-liberation
+    (Closes: #722357)
+  * Bump compat to 9 to address lintian 'hardening-no-relro'
+  * Bump Standards-Version to 3.9.5 (no changes)
+  * Use XPM icon from src/ rather than duplicating it in debian/
+  * Compile with -O1 on Raspbian to avoid weird segfault
+  * watch: add pgpsigurlmangle option (fixes Lintian
+    debian-watch-may-check-gpg-signature)
+
+ -- Sylvain Beucler <beuc@debian.org>  Thu, 29 May 2014 10:34:38 +0200
+
+freedink (1.08.20121209-1) experimental; urgency=low
+
+  * New Upstream Version (Closes: #688934)
+  * Remove patch for install-reloc (integrated upstream)
+
+ -- Sylvain Beucler <beuc@debian.org>  Sun, 09 Dec 2012 18:09:55 +0100
+
+freedink (1.08.20120427-2) unstable; urgency=low
+
+  * Update install-reloc (Closes: #671044)
+
+ -- Sylvain Beucler <beuc@debian.org>  Wed, 2 May 2012 14:00:00 +0200
+
+freedink (1.08.20120427-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Upgrade packaging to debhelper 7 and source format 3.0 (quilt)
+  * Update copyright file
+  * Bump Standards-Version to 3.9.3
+  * Update official webpage
+
+ -- Sylvain Beucler <beuc@debian.org>  Fri, 27 Apr 2012 19:00:00 +0200
+
+freedink (1.08.20101114-1) experimental; urgency=low
+
+  * Precise licenses versions in debian/copyright, fixes
+    copyright-refers-to-symlink-license lintian warning
+  * Update copyright about new translations
+  * Symlink 'freedink' documentation to 'freedink-engine' (requires
+    debhelper >= 7.4.2)
+  * Bump Standards-Version to 3.9.1
+  * Update my email address in Uploaders
+
+ -- Sylvain Beucler <beuc@debian.org>  Sun, 14 Nov 2010 00:59:28 +0100
+
+freedink (1.08.20100420-1) unstable; urgency=low
+
+  * New Upstream Version (Closes: #578444)
+  * Add debian/source/format to document we're using source format 1.0 (to
+    ease backports) and fix missing-debian-source-format lintian warning
+
+ -- Sylvain Beucler <beuc@beuc.net>  Tue, 20 Apr 2010 22:19:58 +0200
+
+freedink (1.08.20100321-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Update years in debian/copyright and add translations information
+  * Bump Standards-Version to 3.8.4
+  * Fix debhelper-but-no-misc-depends by adding ${misc:Depends} in binary
+    packages dependencies
+  * Add missing acsite.m4 which is necessary to autoreconf and was missing
+    for tarball; note that the packaging does not autoreconf, but my
+    sponsor asked for it ;)
+
+ -- Sylvain Beucler <beuc@beuc.net>  Tue, 13 Apr 2010 17:42:59 +0200
+
+freedink (1.08.20090918-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Fix/update packaging copyright notices
+  * Drop libffi dependency: not used upstream anymore
+  * Replace timidity dependency with freepats, thanks to recent fix in
+    sdl-mixer1.2 1.2.8-6
+  * Move -dbg package to the debug section
+  * Don't symlink LiberationSans-Regular.ttf since FreeDink uses
+    FontConfig to locate it
+  * Bump Standards-Version to 3.8.3
+  * Move update of config.sub/config.guess from clean to build target
+  * Add gbp.conf to ignore .gitignore files automatically
+  * Rename BUILD to README.source
+
+ -- Sylvain Beucler <beuc@beuc.net>  Fri, 18 Sep 2009 23:32:06 +0200
+
+freedink (1.08.20090120-1) unstable; urgency=low
+
+  [ Sylvain Beucler ]
+  * New Upstream Version
+  * update debian/BUILD
+  * add a build-dependency on libffi-dev
+
+  [ Gonéri Le Bouder ]
+  * use Debian version of LiberationSans-Regular.ttf
+   - freedink-engine depends on ttf-liberation
+   - update debian/rules to create a symlink
+  * update Sylvain's changelog entry to add some missing points
+  * add the year 2009 in debian/copyright for Sylvain Beucler
+
+ -- Sylvain Beucler <beuc@beuc.net>  Sat, 31 Jan 2009 23:15:04 +0100
+
+freedink (1.08.20080920.dfsg-1) unstable; urgency=low
+
+  * Initial package (Closes: #492760)
+  * Reflect dfarc -> freedink-dfarc rename
+  * Watch official ftp.gnu.org release location
+  * Point Vcs-* to the Debian packaging rather than the development
+    repository
+
+ -- Sylvain Beucler <beuc@beuc.net>  Sat, 20 Sep 2008 20:34:22 +0200

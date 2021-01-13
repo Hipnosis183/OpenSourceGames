@@ -1,0 +1,134 @@
+You can compile FreeDink for ms woe with two methods:
+- cross-compilation
+- native compilation on ms woe
+
+Dependencies
+============
+
+That's the delicate part.
+
+Currently we compile dependencies ourselves, but check
+mxe.txt for an alternative.
+
+In any case, keep this in mind:
+
+- SDL need to be compiled with DirectX support, otherwise there will
+  be a lag when playing a sound (e.g. Dink punches, but the sound is
+  heard after 1/2s).
+
+- FreeType need to have the "bytecode interpreter" feature enabled,
+  for hinting engine compatibility (its enabled by default but wasn't
+  before for fear of now-expired patent attacks from Apple).  If you
+  don't, fonts will have a different size than the original Dink, and
+  may not fit the dialog boxes.
+
+- SDL_mixer need to have support for Ogg Vorbis (used by
+  freedink-data) and libmikmod (people on the Dink forum mentioned
+  interest in audio trackers format - note that libmikmod is not
+  bundled in SDL_mixer since v1.2.9 and need to be compiled
+  separately).  It should not have support for MP3 since this format
+  is not available on all platforms due to patents threats.
+
+
+Cross-compilation
+=================
+
+Cross-compilation means you're compiling for ms woe, but from another
+operating system such as GNU/Linux.  It's faster than using GCC ports.
+
+This process is described in 'cross.txt', which can also be used as a
+script to automatically compile both FreeDink and its dependencies.
+
+
+Compilation on ms woe
+=====================
+
+You can compile FreeDink using a completely free compilation
+environment, even under MS Woe using MinGW.
+
+MinGW can be used from an IDE (such as Code::Blocks), or from a
+pseudo-Unix environment (MSys, Cygwin).
+
+(The maintainer of this package used that method initially before the
+game was ported on GNU/Linux, but not anymore.)
+
+
+Extract the MSys tarball (there used to be an installed, but no I just
+extracted msysCORE-1.0.X in C:\msys).
+
+In principle, MinGW is installed in /mingw (it's compiled with
+--prefix=/mingw). While it can work it installed in /usr or /, /mingw
+is the common setup that other people expect, so we'll use that
+(i.e. install MinGW in C:\msys\mingw). When selecting the components,
+choose at least g++, g77 (apparently and optionaly used by libSDL) and
+mingw-make.
+
+If you want to install it somewhere else (for example, if you use the
+one that comes with Code::Blocks so as to benefit of DevPaks), then
+run /postinstall/pi.sh so that msys will tweak /etc/fstab accordingly.
+
+
+TODO: describe Code::Blocks configuration. This is a cross-platform,
+free software editor.
+http://www.codeblocks.org/
+http://gpwiki.org/index.php/C:Development_Environments
+
+
+Get DX headers and libraries. There's an archive at:
+http://alleg.sourceforge.net/wip.html
+http://alleg.sourceforge.net/files/dx70_mgw.zip
+
+There's an archive for version 5 from libsdl:
+http://www.libsdl.org/extras/win32/common/directx-devel.tar.gz
+
+I also found dx7libhdr.exe and dx7docs.exe lying on my computer, as
+self-extracting zip files; there is nothing letting me think I can
+redistribute them, but if you have them, they work.
+
+
+If you compile libSDL manually, it is important to compile it with DX
+support to avoid delays when playing sounds. For libSDL to detect DX,
+you need to place its headers and libraries in /mingw, so let's
+install it there just in case.
+http://www.libsdl.org/extras/win32/mingw32/README.txt
+
+You can also compile or grab a binary of nasm
+(http://www.libsdl.org/extras/win32/mingw32/nasm.exe) to enable
+assembly support in libSDL. Install it in /mingw/bin/.
+
+
+Dependencies (SDL_*, zzip...):
+You can either:
+
+- use DevPaks (binary packages). They are original meant for Dev C++
+  but Code::Blocks has a plug-in to use them (install them in your
+  c:/msys/mingw path or wherever you install the MinGW ports).
+
+- download the SDL binary distribution from libsdl.org (such as
+  SDL-devel-1.2.12-mingw32.tar.gz )
+
+- use MinGW's "ports" to get a semi-automated build (similar to a
+  Gentoo Ebuild). Be sure to get the wget port first, and manually
+  install the included wget.exe to /bin. By default everything is
+  installed to /mingw, but you can install to /usr/local or wherever
+  you install the DevPaks.
+
+- compile them manually from MSys (./configure && make && make
+  install)
+
+- compile them from an IDE using the VC++ project file
+
+- http://wiki.codeblocks.org/index.php?title=Using_SDL_with_Code::Blocks
+
+
+
+GDB: I generally install Cygwin and use their GDB package. There's
+also a MSys binary in the "Snapshot" section of the MinGW download
+area (click "older releases" if you don't see it, the interface is
+confusing); that version does not have readline support (no commands
+history), which can be annoying.
+
+
+Last but not least, you are adviced to install a woe port of Emacs
+from ftp://ftp.gnu.org/gnu/emacs/windows/ (full install, not the
+-barebin one) :)

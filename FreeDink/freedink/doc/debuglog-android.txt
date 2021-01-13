@@ -1,0 +1,225 @@
+I/ActivityManager(  424): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=org.freedink/.FreeDink bnds=[1,148][160,259]} from pid 685
+D/AudioHardware(  147): AudioHardware pcm playback is exiting standby.
+V/AudioHardware(  147): open pcm_out driver
+D/AudioHardware(  147): openPcmOut_l() mPcmOpenCnt: 0
+D/dalvikvm( 3900): Late-enabling CheckJNI
+I/ActivityManager(  424): Start proc org.freedink for activity org.freedink/.FreeDink: pid=3900 uid=10067 gids={50067, 1015, 1028}
+V/AudioHardware(  147): openMixer_l() mMixerOpenCnt: 0
+V/AudioHardware(  147): open playback normal
+V/AudioHardware(  147): write() wakeup setting route SPK
+I/dalvikvm( 3900): Turning on JNI app bug workarounds for target SDK version 12...
+D/dalvikvm( 3900): Trying to load lib /data/app-lib/org.freedink-2/libSDL2.so 0x41c72138
+D/dalvikvm( 3900): Added shared lib /data/app-lib/org.freedink-2/libSDL2.so 0x41c72138
+D/dalvikvm( 3900): Trying to load lib /data/app-lib/org.freedink-2/libSDL2_image.so 0x41c72138
+D/dalvikvm( 3900): Added shared lib /data/app-lib/org.freedink-2/libSDL2_image.so 0x41c72138
+D/dalvikvm( 3900): No JNI_OnLoad found in /data/app-lib/org.freedink-2/libSDL2_image.so 0x41c72138, skipping init
+D/dalvikvm( 3900): Trying to load lib /data/app-lib/org.freedink-2/libSDL2_mixer.so 0x41c72138
+D/dalvikvm( 3900): Added shared lib /data/app-lib/org.freedink-2/libSDL2_mixer.so 0x41c72138
+D/dalvikvm( 3900): No JNI_OnLoad found in /data/app-lib/org.freedink-2/libSDL2_mixer.so 0x41c72138, skipping init
+D/dalvikvm( 3900): Trying to load lib /data/app-lib/org.freedink-2/libSDL2_ttf.so 0x41c72138
+D/dalvikvm( 3900): Added shared lib /data/app-lib/org.freedink-2/libSDL2_ttf.so 0x41c72138
+D/dalvikvm( 3900): No JNI_OnLoad found in /data/app-lib/org.freedink-2/libSDL2_ttf.so 0x41c72138, skipping init
+D/dalvikvm( 3900): Trying to load lib /data/app-lib/org.freedink-2/libmain.so 0x41c72138
+D/dalvikvm( 3900): Added shared lib /data/app-lib/org.freedink-2/libmain.so 0x41c72138
+D/dalvikvm( 3900): No JNI_OnLoad found in /data/app-lib/org.freedink-2/libmain.so 0x41c72138, skipping init
+V/SDL     ( 3900): onCreate():null
+V/SDL     ( 3900): onResume()
+V/PhoneStatusBar(  524): setLightsOn(true)
+D/libEGL  ( 3900): loaded /vendor/lib/egl/libEGL_POWERVR_SGX540_120.so
+D/libEGL  ( 3900): loaded /vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so
+D/libEGL  ( 3900): loaded /vendor/lib/egl/libGLESv2_POWERVR_SGX540_120.so
+D/OpenGLRenderer( 3900): Enabling debug mode 0
+V/SDL     ( 3900): surfaceCreated()
+V/SDL     ( 3900): surfaceChanged()
+V/SDL     ( 3900): pixel format RGB_565
+V/SDL     ( 3900): Window size:800x480
+D/Sensors (  424): Smb380Sensor::~setDelay(0, 66667000)
+D/Sensors (  424): Smb380Sensor::~setDelay(0, 20000000)
+I/SDL     ( 3900): SDL_Android_Init()
+I/SDL     ( 3900): SDL_Android_Init() finished!
+I/FreeDink( 3900): Hi, I'm '/system/bin/app_process'
+I/FreeDink( 3900): exedir = /system/bin
+I/FreeDink( 3900): datadir = /data/data/org.freedink/files/share
+I/FreeDink( 3900): pkgdatadir = /data/data/org.freedink/files/share/freedink
+I/FreeDink( 3900): defaultpkgdatadir = /data/data/org.freedink/files/share/freedink
+I/FreeDink( 3900): refdir = /data/data/org.freedink/files/share/dink
+I/FreeDink( 3900): dmoddir = /data/data/org.freedink/files/share/dink/dink
+I/FreeDink( 3900): dmodname = dink
+I/FreeDink( 3900): userappdir = /data/data/org.freedink/files/share/dink
+I/FreeDink( 3900): Game directory is '/data/data/org.freedink/files/share/dink/dink'.
+I/FreeDink( 3900): Truecolor mode: off
+I/FreeDink( 3900): Video driver: Android
+I/FreeDink( 3900): Video fall-back surface (unused): SDL_PIXELFORMAT_RGB565
+V/SDL     ( 3900): onWindowFocusChanged(): true
+I/ActivityManager(  424): Displayed org.freedink/.FreeDink: +547ms
+I/FreeDink( 3900): Renderer driver: opengles2
+I/FreeDink( 3900): Renderer texture formats: SDL_PIXELFORMAT_ABGR8888
+I/FreeDink( 3900): Renderer texture formats: SDL_PIXELFORMAT_ARGB8888
+I/FreeDink( 3900): Renderer texture formats: SDL_PIXELFORMAT_RGB888
+I/FreeDink( 3900): Renderer texture formats: SDL_PIXELFORMAT_BGR888
+I/FreeDink( 3900): Renderer max texture width: 2048
+I/FreeDink( 3900): Renderer max texture height: 2048
+I/FreeDink( 3900): Main buffer: SDL_PIXELFORMAT_INDEX8 8-bit R=0x00000000 G=0x00000000 B=0x00000000 A=0x00000000
+I/FreeDink( 3900): Render texture: format: SDL_PIXELFORMAT_RGB888
+I/FreeDink( 3900): Render texture: access: SDL_TEXTUREACCESS_STREAMING
+I/FreeDink( 3900): Render texture: width : 640
+I/FreeDink( 3900): Render texture: height: 480
+I/FreeDink( 3900): The family name of the face in the font is: System
+I/FreeDink( 3900): The name of the face in the font is: Regular
+I/FreeDink( 3900): The font max height is: 16
+I/FreeDink( 3900): The font ascent is: 16
+I/FreeDink( 3900): The font descent is: 0
+I/FreeDink( 3900): The font line skip is: 1
+I/FreeDink( 3900): The font is not fixed width.
+I/FreeDink( 3900): The family name of the face in the font is: Liberation Sans
+I/FreeDink( 3900): The name of the face in the font is: Regular
+I/FreeDink( 3900): The font max height is: 19
+I/FreeDink( 3900): The font ascent is: 15
+I/FreeDink( 3900): The font descent is: -3
+I/FreeDink( 3900): The font line skip is: 19
+I/FreeDink( 3900): The font is not fixed width.
+I/FreeDink( 3900): loading tilescreens...
+I/FreeDink( 3900): Done with tilescreens...
+I/SDL/APP ( 3900): Added joystick Android Accelerometer with device_id -2147483648
+I/FreeDink( 3900): 1 joystick(s) were found.
+I/FreeDink( 3900): The names of the joysticks are:
+I/FreeDink( 3900):     Android Accelerometer [guid=416e64726f696420416363656c65726f] [compat=0]
+I/FreeDink( 3900): Picking the first one...
+I/FreeDink( 3900): Name: Android Accelerometer
+I/FreeDink( 3900): Number of axes: 3
+I/FreeDink( 3900): Number of buttons: 0
+I/FreeDink( 3900): Number of balls: 0
+I/FreeDink( 3900): Number of hats: 0
+I/FreeDink( 3900): Initting sound
+I/FreeDink( 3900): initting sound
+V/SDL     ( 3900): SDL audio: opening device
+V/SDL     ( 3900): SDL audio: wanted stereo 16-bit 22.05kHz, 1024 frames buffer
+V/SDL     ( 3900): SDL audio: got stereo 16-bit 22.05kHz, 1584 frames buffer
+I/FreeDink( 3900): Audio driver: android
+I/FreeDink( 3900): Audio hardware info: frequency=22050Hz	format=S16LSB	channels=2	opened=1 times
+I/FreeDink( 3900): Audio chunk decoder: WAVE
+I/FreeDink( 3900): Audio chunk decoder: AIFF
+I/FreeDink( 3900): Audio chunk decoder: VOC
+I/FreeDink( 3900): Audio chunk decoder: OGG
+I/FreeDink( 3900): Audio music decoder: WAVE
+I/FreeDink( 3900): Audio music decoder: MODPLUG
+I/FreeDink( 3900): Audio music decoder: MIKMOD
+I/FreeDink( 3900): Audio music decoder: OGG
+I/FreeDink( 3900): Audio music decoder: MP3 (MP3 is patented, prefer Ogg Vorbis!)
+I/FreeDink( 3900): Audio dynload: OGG: ok
+I/FreeDink( 3900): Loading batch...
+I/FreeDink( 3900): Loading dink.ini
+I/FreeDink( 3900):  done!
+I/FreeDink( 3900): Loading hard...
+I/FreeDink( 3900):  done!
+I/FreeDink( 3900): World data....
+I/FreeDink( 3900):  done!
+I/FreeDink( 3900): LOADING main
+I/FreeDink( 3900): Temp thingie is C
+I/FreeDink( 3900): Loading script STORY/MAIN.C.. (slot 0)
+I/FreeDink( 3900): Reading from disk...
+I/FreeDink( 3900): Script main is entered at 3:12 (offset 49).
+I/FreeDink( 3900): Dink started. Time to fight for your right to party.
+I/FreeDink( 3900): Killed script main. (num 1)
+I/FreeDink( 3900): giving script the boot
+I/FreeDink( 3900): LOADING START
+I/FreeDink( 3900): Temp thingie is C
+I/FreeDink( 3900): Loading script STORY/START.C.. (slot 0)
+I/FreeDink( 3900): Reading from disk...
+I/FreeDink( 3900): Script START is entered at 4:18 (offset 106).
+I/FreeDink( 3900): Loading sounds..
+I/FreeDink( 3900): getting QUACK.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting PIG1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting PIG2.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting PIG3.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting PIG4.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting BURN.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting OPEN.WAV..
+I/FreeDink( 3900): frequency=8000Hz	format=S16LSB	channels=1	length=5246 bytes
+I/FreeDink( 3900): getting SWING.WAV..
+I/FreeDink( 3900): frequency=8000Hz	format=S16LSB	channels=1	length=2132 bytes
+I/FreeDink( 3900): getting PUNCH.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=8646 bytes
+I/FreeDink( 3900): getting SWORD2.WAV..
+I/FreeDink( 3900): frequency=8000Hz	format=S16LSB	channels=1	length=6136 bytes
+I/FreeDink( 3900): getting SELECT.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting WSCREAM.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=30424 bytes
+I/FreeDink( 3900): getting PICKER.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting GOLD.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=8146 bytes
+I/FreeDink( 3900): getting GRUNT1.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=16398 bytes
+I/FreeDink( 3900): getting GRUNT2.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=18492 bytes
+I/FreeDink( 3900): getting SEL1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting ESCAPE.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting NONO.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SEL2.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SEL3.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting HIGH2.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=2	length=359424 bytes
+I/FreeDink( 3900): getting FIRE.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=345042 bytes
+I/FreeDink( 3900): getting SPELL1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting CAVEENT.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SNARL1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SNARL2.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SNARL3.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting HURT1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting HURT2.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting ATTACK1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting CAVEENT.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting LEVEL.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SAVE.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SPLASH.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SWORD1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting BHIT.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=23776 bytes
+I/FreeDink( 3900): getting SQUISH.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting STAIRS.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting STEPS.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting ARROW.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=11594 bytes
+I/FreeDink( 3900): getting FLYBY.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting SECRET.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=2	length=124164 bytes
+I/FreeDink( 3900): getting BOW1.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=S16LSB	channels=1	length=15478 bytes
+I/FreeDink( 3900): getting KNOCK.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting DRAG1.WAV..
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): CreateBufferFromWaveFile: No such file or directory
+I/FreeDink( 3900): getting BIRD1.WAV..
+I/FreeDink( 3900): frequency=22050Hz	format=U8	channels=2	length=91220 bytes

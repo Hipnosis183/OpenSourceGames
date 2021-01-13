@@ -1,0 +1,226 @@
+* 3.14
+
+- Fix directory traversal in D-Mod extractor (CVE-2018-0496)
+
+- New Swedish translation.
+
+- New Friulian translation.
+
+- Updated Catalan translation.
+
+- Updated Brazilian Portuguese translation.
+
+- Updated Spanish translation.
+
+- Fix crash when clicking on 'Package' when there is no D-Mod present.
+
+- Compilation fixes for OS X.
+
+- Reproducible build process for Windows (as well as GNU/Linux
+  depending on your distro) - see https://reproducible-builds.org/
+
+* 3.12
+
+- DFArc now launches Dink and Dinkedit asynchronously, so you can run
+  the editor even when the game is running.
+
+- Improve extract & package performance.
+
+- Fix infrequent off-by-1-pixel bug in logo animation.
+
+- New Serbian, Catalan, Turkish, Esperanto, Brazilian Portuguese and
+  Hungarian translations, as well as translations updates.
+
+- Upgrade to wxWidgets 3.0.
+
+* 3.10
+
+- New Croatian translation.
+
+- Updated Dutch, Finnish and Vietnamese translations.
+
+* v3.8.1
+
+** User-visible changes:
+
+- Search for dink* executables case-INsensitively
+
+- New Dutch translation
+
+- Updated Polish translations.
+
+* v3.8
+
+** User-visible changes:
+
+- Logo animation when selecting a D-Mod.
+
+- Language selection: set DFArc's language in the Options (so you
+  don't have to modify your system language to test a translation).
+
+- Language selection: when translations are available for a D-Mod,
+  allow the user to choose one in a listbox.
+
+- Updated Danish, Finnish, Italian and Polish translations.
+
+- Developper buttons are shown by default - we can't let users miss
+  that they can makes their own games!
+
+- If Dink crashes, don't (mistakenly) report that it was not found,
+  but (correctly) report that it failed.
+
+- Enable editor warning again, it previously stopped working because
+  of a bug.
+
+** Developer notes:
+
+- Drop compatibility with wxWidgets 2.6, require wxWidgets 2.8.
+
+* v3.6
+
+- New translations: Danish (thanks Joe Hansen), German (thanks Roland
+  Illig), Spanish (thanks Fernando Carmona Varo), Vietnamese (thanks
+  Clytie Siddall), improved Polish (thanks Michał Trzebiatowski)
+
+* v3.4
+
+- Use only 2 numbers in versions (3.x)
+
+- Add a man page link for 'freedink-dfarc'
+
+* v3.2.4
+
+- Add 'freedink-dfarc' symlink so that command-line users have more
+  chances to notice dfarc
+
+- Under ms woe, to find where Dink is installed, look in the directory
+  where dfarc.exe is placed rather than in the registry or
+  dinksmallwood.ini.  The Dink directory can still be explicitely
+  specified in the options.
+
+* v3.2.3
+
+- Internationalization: new German translation and update to the
+  Finnish translation
+
+* v3.2.2
+
+- Internationalization: translated in Macedonian and Italian
+
+- Fix bug in Debian package that prevented the DFArc icons from
+  showing up in the Applications menu
+
+* v3.2.1
+
+- Internationalization: translated in Finnish
+
+* v3.2
+
+** User-visible changes:
+
+- Rename distro packages from dfarc to freedink-dfarc, for clarity,
+  and because this version supports FreeDink-specific features.
+
+** Developer notes:
+
+- Supports /usr/share/games and /usr/local/share/games in addition to
+  /usr/share and /usr/local/share by default.
+
+- Add source for wxglade UI files in release tarballs.
+
+* v3.0
+
+** User-visible changes:
+
+- Cross-platform: runs on Unix-style platforms (GNU/Linux, *BSD...).
+
+- Internationalization: translated in English, French and Polish.
+
+- FreeDesktop integration (menu entry, file association...).
+
+- Package creation:
+
+  - Create packages in a single step (tar+bz2 at once) instead of two.
+
+  - Remove savegames, thumbs.db and backup files (*~).
+
+  - Store real file modification time (not the .dmod creation time) in
+    .dmod files.
+
+  - Display compression ratio when the .dmod is created.
+
+- Package installation:
+
+  - More accurate progress bar
+
+  - After installation, open DFArc and select the new D-Mod
+
+- Options:
+
+  - Go to the specified Dink override directory when clicking on
+    "Browse" in the Options window (instead of a default location).
+
+  - Removed options "Play introduction movie" option anymore (only
+    useful for >10 years old CD version) and "List all directories"
+    (replaced with better DMod auto-detection)
+
+  - Added "Preferred file browser" option
+
+- D-Mods can be stored in a separate directory, useful when the main
+  dink directory is not writable (e.g. owned by the administrator
+  while running as non-admin user)
+
+- GUI:
+
+  - Options, Package and Install windows can be resized.
+
+  - The description textbox can be resized with a window splitter.
+
+  - When there's no D-Mod logo, display the name of the D-Mod instead
+    of whole black.
+
+  - Select "dink" on first run. Display "< Pick a D-Mod" if none is
+    selected.
+
+  - The main window is slightly bigger, due a new, cross-platform
+    method to compute the preferred window size.
+
+
+** Developer notes:
+
+- File permissions set to 644 instead of 666 in generated .tar files.
+
+- File names are now encoded to UTF-8 in .tar files instead of using
+  non-consistent wxString.c_str(). Apparently v1.08's DFArc2 was built
+  using an ASCII build of wxWidgets which converted filenames to ASCII
+  + current 8bit locale (e.g. latin1 for a French install)... and
+  crashed when conversion was not possible (e.g. Arabic
+  characters). For backward compatibility, during extracting, DFArc2
+  will still try to interpret filenames as latin-1 if not valid UTF-8.
+
+- File type in tar header is now '0'(48) instead of '\0'(0) - that's
+  what modern Tar implementations do.
+
+- DFArcFrame and Options windows are converted to wxGlade.
+
+- Autoconfiscation: the build system uses Autoconf and Automake.
+
+- Can be cross-compiled to Woe using mingw32, in shared and static (no
+  .dll needed) modes.
+
+- Compiles with Unicode and non-Unicode wxWidgets builds.
+
+- Can use UPX to compress executable.
+
+- Add --version and --help (GNU standards and 'make distcheck'
+  compliance).
+
+- Use octal mode to interpret permissions (755 -> 0755)
+
+- BZip2 "work factor" reset to default (normally 30) instead of an
+  arbitrary value of "90" (on a ]0, 250] range).
+
+- Debian packages (.deb) available.
+
+- Don't send '?src=DFArc2' when the user clicks on a URL. Privacy
+  first, especially since the user isn't told about it.

@@ -1,0 +1,216 @@
+# Russian translation for freedink.
+# Copyright (C) 2014 Yuri Kozlov
+# This file is distributed under the same license as the freedink package.
+#
+# Yuri Kozlov <yuray@komyakino.ru>, 2014, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 109.4\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2019-01-28 18:47+0300\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
+"Language-Team: Russian <gnu@d07.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Использование: %s [ПАРАМЕТРЫ]…\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            показать эту справку\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         показать версию\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <кат>      задать каталог DMod\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <кат>    задать базовый каталог dink/graphics, D-Mods и т. д.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           объяснять, что происходит\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           не пытаться записать dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           не пытаться использовать джойстик\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         выключить звук\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       использовать больше цветов (в новой графике D-Mod)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          запускать в окне, а не на весь экран\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           включить режим совместимости v1.07\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr ""
+"  -S, --software-rendering\n"
+"                        не использовать OpenGL\n"
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr "Сообщения об ошибках отправляйте по адресу %s.\n"
+
+#: src/app.cpp:312
+#, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Замечание: параметр -nomovie принимается только для совместимости и ничего не изменяет.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Запустить игру Dink Smallwood game или один из её D-Mod."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$Я ничего здесь не вижу."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$Ась?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Я абсолютно уверен, что не могу с этим поговорить или использовать его."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$Что?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$Мне надоедают."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$Тут ничего не происходит."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$Я не знаю никаких заклинаний."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$Я не волшебник!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Чтобы это попробовать, мне нужно выучить заклинание."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Я напрасно размахиваю руками!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$Ничего не произошло."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$Фокус покус!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Атаковать"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Поговорить/Исследовать"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Магия"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Предметы"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Карта"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "Не используется"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Вниз"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Влево"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Вправо"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Вверх"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Ошибка: действие не назначено"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Место %d — %d:%02d — %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "Место %d — Пусто"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Редактировать игру Dink Smallwood game или один из её D-Mod."

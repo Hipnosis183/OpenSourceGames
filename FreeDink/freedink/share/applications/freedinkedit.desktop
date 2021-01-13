@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=FreeDinkedit
+Comment=Editor for the Dink Smallwood adventure & role-playing game
+Exec=freedinkedit
+Icon=freedink
+Categories=Game;AdventureGame;ActionGame;RolePlaying;
+Keywords=smallwood;duck;pillbug;editor;

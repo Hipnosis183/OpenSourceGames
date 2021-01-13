@@ -1,0 +1,162 @@
+Dink search path
+================
+
+Question is: where should FreeDink look for files? (Where is the
+default font? Where are the DMods? Where are the base files / original
+game?)
+
+I want something:
+- that is compatible with the original game engine,
+- that works the same across platforms (eg. Woe and GNU/Linux)
+- allow to install base files in a read-only directory (/usr/share)
+  while allowing to run DMods from anywhere else (eg
+  ~/files/dmods/pota/). See "Use cases" below.
+
+
+Original game
+-------------
+
+Layout:
+Dink Smallwood/dink.exe
+Dink Smallwood/dink/
+Dink Smallwood/dink/Map.dat
+Dink Smallwood/dink/Graphics/
+Dink Smallwood/dink/Sound/
+Dink Smallwood/dink/Story/
+Dink Smallwood/dink/Tiles/
+Dink Smallwood/island/Story/
+Dink Smallwood/island/Tiles/
+
+1) chdir(GetModuleFileName())
+2) dir = -game|"dink"
+3) chdir(dir)
+
+Determined on startup:
+DMod => C:\Dink Smallwood\dmod\
+Dink => DMod\..\dink\
+Resources (window icon, Dinkedit sounds)
+  => embedded resource
+.ini
+  => [DFArc2: Registry]
+  => C:\GetWindowsDirectory()\dinksmallwood.ini
+Saved games => DMod
+
+Determined at runtime (search path):
+Font => DMod
+     => C:\GetWindowsDirectory()\Fonts
+
+It'd be the same, and more intuitive, to consider:
+pkgdatadir = C:\Dink Smallwood\
+DMod = $pkgdatadir/dmod/
+Dink = $pkgdatadir/dink/
+
+
+FreeDink (all platforms)
+------------------------
+
+Layout:
+/usr/bin/freedink
+/usr/share/freedink/LiberationSans-Regular.ttf
+/usr/share/locale/fr/LC_MESSAGES/freedink.mo
+/usr/share/dink/dink/Map.dat
+/usr/share/dink/dink/Graphics/
+/usr/share/dink/dink/Story/
+/usr/share/dink/dink/Sound/
+/usr/share/dink/dink/Tiles/
+/usr/share/dink/island/Story/
+/usr/share/dink/island/Tiles/
+/usr/share/dink/island/l10n/XX/LC_MESSAGES/island.mo
+/usr/share/dink/island/l10n/XX/Tiles/cave.bmp
+
+Woe: chdir to exedir (GetModuleFileName)
+Android: chdir to /storage/sdcard0/Android/data/org.freedink/files/
+
+Woe || Android: pkgdatadir = ./freedink
+else: pkgdatadir = /usr/share/freedink
+
+Determined once on startup:
+refdir = -refdir # error if !-d
+	|| ./
+	|| $datadir/dink
+	|| /usr/local/share/games/dink
+	|| /usr/local/share/dink
+	|| /usr/share/games/dink
+	|| /usr/share/dink
+	(test: -d $refdir/dink/Graphics -a -d $refdir/dink/Tiles)
+DMod = -game
+     || $refdir/$game/
+     || ERROR
+Dink = $refdir/dink/
+
+Checked each time (search path):
+Resources (LiberationSans-Regular.ttf, vgasys.fon, stop.wav, jump.wav)
+  =  embedded resource
+  || $pkgdatadir
+Font = DMod
+     || fontconfig
+.ini = C:\GetWindowsDirectory()\dinksmallwood.ini
+Write saved games => ~/.dink/basename($game)/savegame%d.dat # if -e
+      	    	  || DMod/savegame%d.dat
+      	    	  FALLBACK ~/.dink/basename($game)/save%d.dat
+Read saved games => ~/.dink/basename($game)/save%d.dat
+     	   	 => DMod
+
+
+Use cases:
+~$ freedink -game dmods/island
+DMod => ~/dmods/island/
+Dink => ~/dink/ # not ~/dmods/dink/
+Dink => /usr/share/dink/dink/
+Icon => <freedink>
+Icon => /usr/share/freedink/
+
+~$ freedink -refdir dmods/ -game dmods/island
+# or freedink -refdir dmods/ -game island
+DMod => ~/dmods/island/
+Dink => ~/dmods/dink/
+Icon => <freedink>
+Icon => /usr/share/freedink/
+
+~$ freedink -refdir /mnt/woe/Program\ Files/Dink\ Smallwood/ -game island
+DMod => ~/island/
+DMod => /mnt/woe/Program\ Files/Dink\ Smallwood/island/
+Dink => /mnt/woe/Program\ Files/Dink\ Smallwood/dink/ # no fallback
+Icon => <freedink> # with fallback
+Icon => /usr/share/freedink/
+
+/mnt/woe/Program\ Files/Dink\ Smallwood$ freedink -game island
+DMod => /mnt/woe/Program\ Files/Dink\ Smallwood/island/ # == ./island/
+DMod => /usr/share/dink/island/
+Dink => /mnt/woe/Program\ Files/Dink\ Smallwood/dink/ # == ./dink/
+Dink => /usr/share/dink/dink/
+Icon => <freedink>
+Icon => /usr/share/freedink/
+
+~$ freedink -refdir ~/myshare/freedink/ -game island
+DMod => ~/island/
+DMod => ~/myshare/dink/island/
+Dink => ~/myshare/dink/dink/
+Icon => <freedink>
+Icon => /usr/share/freedink/
+
+~/freedink$ ./configure && make
+~/freedink$ src/freedink -game island
+DMod => ~/freedink/island
+DMod => /usr/share/dink/island/
+Dink => ~/freedink/dink/
+Dink => /usr/share/dink/dink/
+Icon => <src/freedink>
+Icon => /usr/share/freedink/
+
+~/freedink$ mkdir native && cd native/
+~/freedink/native$ ../configure && make
+~/freedink/native$ src/freedink -game island
+DMod => ~/freedink/native/island
+DMod => /usr/share/dink/island/
+Dink => ~/freedink/native/dink/
+Dink => /usr/share/dink/dink/
+Icon => <src/freedink>
+Icon => /usr/share/freedink/
+
+
+Note: in the beginning 

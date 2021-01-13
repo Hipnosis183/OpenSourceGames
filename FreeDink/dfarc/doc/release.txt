@@ -1,0 +1,148 @@
+How to make a release     -*- shell-script -*-
+
+Version scheme
+--------------
+
+- Release = x.y  (y is even)
+- Snapshot = x.$((y+1)).$(date +%Y%m%d)
+
+The release number follows the Gnits standard (only 2 numbers to avoid
+complex versions). If a quick fix is necessary to the latest release,
+while the development version is unstable, we may branch and use
+x.y.z.
+
+Why not simply rely on $(date) being greater than any released .z?
+- The snapshots separate branch (x.y+1) clearly distinguish them from
+  stable releases.
+- We can build x.y.$(date) snapshots for the stable and build branches
+  without version conflict.
+
+The next release has a version number higher than the latest snapshot,
+so that people tracking the snapshots also upgrade when there is a new
+release.
+
+
+Bootstrapping
+-------------
+
+Cf. doc/bootstrap.txt in the FreeDink source code.
+
+
+On the developer computer:
+--------------------------
+
+VERSION=3.14
+cd dfarc/  # not in a build dir otherwise this messes dfarc.pot
+git checkout -b $VERSION
+# Edit NEWS
+# Edit configure.ac (AC_INIT)
+# Sync debian/
+# Sync freedink-dfarc.spec
+# Edit freedink-dfarc.spec (Version/Release + %changelog)
+# (Note: po/dfarc.pot is generated on 'dist' by toplevel Makefile.am)
+rsync -Lrtvz  translationproject.org::tp/latest/dfarc/  po
+# Update po/LINGUAS
+
+make distcheck
+git commit -am "Start branch $VERSION"
+git push origin $VERSION master
+# Here you can test the release in the autobuilder
+
+# When everything is tested:
+git2cl > ChangeLog
+git commit -m "Update ChangeLog" ChangeLog
+git tag -s v$VERSION -m v$VERSION -u ...
+git push --tags
+
+# Cleanly merge stable branch back to trunk
+git checkout master
+git merge $VERSION --no-commit --no-ff
+# Edit configure.ac (AC_INIT) and NEWS
+git add configure.ac NEWS
+git commit -m "Merge $VERSION"
+
+
+On the autobuilder:
+-------------------
+
+./dfarc-snapshot.sh release $VERSION
+./dfarc-exe.sh $VERSION
+./dfarc-debs.sh $VERSION # as root
+./dfarc-rpms.sh $VERSION # in a Fedora vserver
+
+
+On the maintainer computer:
+---------------------------
+
+# http://www.gnu.org/prep/maintain/html_node/FTP-Upload-Directive-File-_002d-v1_002e1.html
+gpg --sign -b dfarc-$VERSION.tar.gz
+cat <<EOF | gpg --clearsign -a > dfarc-$VERSION.tar.gz.directive.asc
+version: 1.1
+directory: freedink
+filename: dfarc-$VERSION.tar.gz
+EOF
+lftp -e "mput dfarc-$VERSION.tar.gz*; exit" -u anonymous, ftp-upload.gnu.org/incoming/ftp/
+# Check ftp://ftp.gnu.org/gnu/freedink/
+
+# Pristine TAR - efficienty storing the release in the Git repository
+pristine-tar commit dfarc-$VERSION.tar.gz v$VERSION
+git push origin pristine-tar
+
+# Upload sigs to freedink.org
+
+
+Submit the release to:
+----------------------
+
+- GNU
+  info-gnu@gnu.org
+- Savannah / GNU Planet
+  http://savannah.gnu.org/p/freedink
+- FreeCode
+  https://freecode.com/projects/freedink
+- Translation Project
+  http://translationproject.org/html/maintainers.html
+- Dink Network (.zip releases)
+  http://www.dinknetwork.com/contribute/version/new/dfarc_3/
+  http://www.dinknetwork.com/contribute/version/new/dfarc_3_source_code/
+- Debian GNU/Linux
+  http://wiki.debian.org/Games/Sponsors/Queue
+- Fedora GNU/Linux
+  http://fedoraproject.org/wiki/PackageMaintainers/UpdatingPackageHowTo
+- OpenSUSE GNU/Linux
+  tell Stefan about the latest official srpm
+- ArchLinux GNU/Linux
+  contact Petteri
+- FreeBSD
+  contact Stephen
+- Ubuntu GNU/Linux (Debian merge request)
+  contact shirish
+- JeuxLibres
+  http://jeuxlibres.net/postgame/299.html
+- Press...
+
+
+Debian notes:
+-------------
+
+Check this for updates:
+- /usr/share/doc/debian-policy/upgrading-checklist.txt.gz
+- http://lintian.debian.org/full/pkg-games-devel@lists.alioth.debian.org.html#freedink-dfarc
+
+pdebuild
+
+# http://mentors.debian.net/cgi-bin/maintainer-intro
+cd /var/cache/pbuilder/result/
+debsign freedink-dfarc_$VERSION-1_*.changes
+dput mentors freedink-dfarc_$VERSION-1_*.changes
+
+
+Fedora notes:
+-------------
+
+Check:
+https://fedoraproject.org/wiki/Package_maintenance_guide#Typical_fedpkg_session
+
+See also:
+https://admin.fedoraproject.org/pkgdb/package/freedink-dfarc/
+http://pkgs.fedoraproject.org/cgit/freedink-dfarc.git/

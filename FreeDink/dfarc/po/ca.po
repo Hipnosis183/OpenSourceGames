@@ -1,0 +1,647 @@
+# Catalan translation for dfarc.
+# Copyright (C) 2014 Àngel Mompó Llovet
+# This file is distributed under the same license as the dfarc package.
+# Àngel Mompó <mecatxis@mecatxis.cat>, 2012, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dfarc-3.11-pre1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-01 20:58+0200\n"
+"PO-Revision-Date: 2015-07-29 23:16+0100\n"
+"Last-Translator: Angel Mompo <mecatxis@mecatxis.cat>\n"
+"Language-Team: Catalan <ca@dodds.net>\n"
+"Language: ca\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#: ../src/BZip.cpp:303
+#, c-format
+msgid "Error: Could not open input file '%s' for bzip decompression."
+msgstr "Error: No s'ha pogut obrir el fitxer d'entrada «%s» per descomprimir-lo amb bzip."
+
+#: ../src/BZip.cpp:318
+msgid "Error: Invalid .dmod file selected!"
+msgstr "Error: El fitxer .dmod seleccionat no és vàlid!"
+
+#: ../src/BZip.cpp:328
+#, c-format
+msgid "Error: Could not write to '%s'."
+msgstr "Error: No s'ha pogut escriure a «%s»."
+
+#: ../src/BZip.cpp:360
+msgid "Invalid .dmod file specified."
+msgstr "El fitxer .dmod especificat no és vàlid."
+
+#: ../src/BZip.cpp:364
+msgid "Critical program function error: opened for write."
+msgstr "S'ha produït un error crític en una funció del programa: s'obre per escriure."
+
+#: ../src/BZip.cpp:368
+msgid "Could not read .dmod file."
+msgstr "No s'ha pogut llegir el fitxer .dmod."
+
+#: ../src/BZip.cpp:372
+msgid "Incomplete .dmod file. Please download it again."
+msgstr "El fitxer .dmod és incomplet. Torneu-lo a baixar."
+
+#: ../src/BZip.cpp:376
+msgid "The .dmod file is corrupted.  Please download it again."
+msgstr "El fitxer .dmod està malmès. Torneu-lo a baixar."
+
+#: ../src/BZip.cpp:380
+msgid "The file is not a valid .dmod file."
+msgstr "El fitxer no és un .dmod vàlid."
+
+#: ../src/BZip.cpp:384
+msgid "Out of memory error."
+msgstr "Error: Sense memòria."
+
+#: ../src/BZip.cpp:388
+msgid "An unhandled error occured."
+msgstr "S'ha produït un error no identificat"
+
+#: ../src/Config.cpp:202
+msgid "Error: dinksmallwood.ini not found. Please run the main game and try running this program again."
+msgstr "Error: no s'ha trobat el fitxer dinksmallwood.ini. Executeu el joc principal i torneu a executar aquest programa."
+
+#: ../src/Config.cpp:210
+msgid "Error opening dinksmallwood.ini"
+msgstr "S'ha produït un error en obrir dinksmallwood.ini"
+
+#: ../src/DFArcFrame.cpp:174
+#, c-format
+msgid ""
+"DFArc version %s\n"
+"Copyright (C) 2004  Andrew Reading (merlin)\n"
+"Copyright (C) 2005, 2006  Dan Walma (redink1)\n"
+"Copyright (C) 2008-2014  Sylvain Beucler (Beuc)\n"
+"Build Date: %s\n"
+"Powered by bzip2 (bzip.org) and wxWidgets (wxwidgets.org)"
+msgstr ""
+"Versió %s de DFArc\n"
+"Copyright © 2004  Andrew Reading (merlin)\n"
+"Copyright © 2005, 2006  Dan Walma (redink1)\n"
+"Copyright © 2008 - 2010  Sylvain Beucler (Beuc)\n"
+"Data de construcció: %s\n"
+"Funciona amb bzip2 (bzip.org) i wxWidgets (wxwidgets.org)"
+
+#: ../src/DFArcFrame.cpp:181
+msgid "About DFArc v3"
+msgstr "Quant al DFArc V3"
+
+#. Default logo (currently all black with a question mark)
+#. TRANSLATORS: please make this SHORT, possibly rephrasing as "<
+#. Choose!". This is included in the 160x120px logo box in the main
+#. window and it doesn't word-wrap.
+#: ../src/DFArcFrame.cpp:253
+msgid "< Pick a D-Mod"
+msgstr "< Trieu un D-Mod"
+
+#: ../src/DFArcFrame.cpp:318
+msgid "No translations"
+msgstr "Cap traducció"
+
+#. Not displaying the default language explicitely, because it
+#. makes the user think that a translation is always available.
+#. mGameLocaleList->Insert(wxString(_("Default language")) + wxT(" (") + cur_locale_name + wxT(")"), 0);
+#: ../src/DFArcFrame.cpp:325 ../src/Options.cpp:118
+msgid "Don't translate"
+msgstr "No ho traduiu"
+
+#: ../src/DFArcFrame.cpp:348
+msgid "D-Mod files (*.dmod)"
+msgstr "Fitxers D-Mod (*.dmod)"
+
+#: ../src/DFArcFrame.cpp:349
+msgid "Select a .dmod file"
+msgstr "Seleccioneu un fitxer .dmod"
+
+#: ../src/DFArcFrame.cpp:544
+#, c-format
+msgid "The '%s' locale is not installed on your computer (locales tells the computer how to manage a language). You need to install it - check your system documentation."
+msgstr "La configuració local «%s» no està instal·lada al vostre ordinador (Aquestes configuracions li diuen a l'ordinador com gestionar un idioma). Heu d'instal·lar-la - Consulteu la documentació del vostre sistema."
+
+#: ../src/DFArcFrame.cpp:547 ../src/DFArcFrame.cpp:625
+msgid "Warning"
+msgstr "Avís"
+
+#: ../src/DFArcFrame.cpp:587
+#, c-format
+msgid "Dink Smallwood failed! Error code %d."
+msgstr "El Dink Smallwood ha fallat! Codi d'error %d."
+
+#: ../src/DFArcFrame.cpp:589 ../src/DFArcFrame.cpp:594
+#: ../src/DFArcFrame.cpp:655 ../src/DFArcFrame.cpp:657
+#: ../src/DFArcFrame.cpp:700 ../src/DFArcFrame.cpp:709
+msgid "Error"
+msgstr "Error"
+
+#: ../src/DFArcFrame.cpp:591
+#, c-format
+msgid "Dink Smallwood ('%s') was not found on your computer. Please configure the Dink program name in the Options menu."
+msgstr "No s'ha trobat el Dink Smallwood («%s») al vostre ordinador. Configureu el nom del programa del Dink al menú d'opcions."
+
+#: ../src/DFArcFrame.cpp:622
+msgid "Dinkedit saves all changes automatically. Altering maps can ruin the game. Are you sure you want to continue?"
+msgstr "El Dinkedit desa els canvis de manera automàtica. Alterar els mapes pot espatllar el joc. Esteu segur que voleu continuar?"
+
+#: ../src/DFArcFrame.cpp:652
+#, c-format
+msgid "The editor ('%s') was not found on your computer. Please configure the editor program name in the Options menu."
+msgstr "No s'ha trobat l'editor («%s») al vostre ordinador. Configureu el nom del programa editor al menú d'opcions."
+
+#: ../src/DFArcFrame.cpp:657
+msgid "Error while running the editor"
+msgstr "S'ha produït un error en executar l'editor"
+
+#. FreeDesktop
+#. Gnome
+#. KDE
+#. Xfce
+#: ../src/DFArcFrame.cpp:698
+msgid "Could not find a file manager (tried 'xdg-open', 'nautilus', 'konqueror' and 'thunar')"
+msgstr "No s'ha pogut trobar un gestor de fitxers (s'ha provat «xdg-open», «nautilus», «konkeror» i «thunar»)"
+
+#: ../src/DFArcFrame.cpp:706
+#, c-format
+msgid "Cannot start '%s', please check your configuration in the Options window."
+msgstr "No es pot iniciar «%s», comproveu la configuració a la finestra d'opcions."
+
+#: ../src/DFArcFrame.cpp:716
+msgid ""
+"Welcome to DFArc, the Dink Smallwood front end!\n"
+"\n"
+"You can choose to play the original game (Dink Smallwood) or Dink-Modules (D-Mods) which contain new adventures.\n"
+"\n"
+"After completing the main game, give some D-Mods a try.\n"
+"There are hundreds of them, just click File-Download D-Mods."
+msgstr ""
+"Benvingut a DFArc, el frontal de Dink Smallwood!\n"
+"\n"
+"Podeu escollir entre el joc original (Dink Smallwood) o els moduls Dink (D-Mods) que contenen noves aventures.\n"
+"\n"
+"Quan acabeu el joc principal, proveu alguns D-Mods.\n"
+"N'hi ha centenars, només cal que feu clic a Fitxer-Baixeu D-Mods."
+
+#: ../src/DFArcFrame.cpp:723
+msgid "Introduction"
+msgstr "Introducció"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:866
+msgid "Cannot use the overridden Dink Smallwood directory - ignoring it. (permission problem?)"
+msgstr "No es pot fer servir al directori substituït de Dink Smallwood - s'ignora (problemes de permisos?)"
+
+#: ../src/DFArcFrame.cpp:868 ../src/DFArcFrame.cpp:876
+msgid "Configuration error"
+msgstr "Error de configuració"
+
+#. If there's no directory, let's not override
+#: ../src/DFArcFrame.cpp:875
+msgid "The Dink Smallwood directory you entered does not exist - ignoring it."
+msgstr "El directori de Dink Smallwood que heu indicat no existeix - s'ignora"
+
+#: ../src/DFArcFrame.cpp:890
+msgid "You must select the uninstall option from the start menu to uninstall the main game."
+msgstr "Heu de seleccionar l'opció de desinstal·lar del menú d'inici per desinstal·lar el joc principal."
+
+#: ../src/DFArcFrame.cpp:891
+msgid "Uninstall - Error"
+msgstr "Desinstal·lació - Error"
+
+#: ../src/DFArcFrame.cpp:896
+msgid "Do you want to remove all save game files?"
+msgstr "Voleu esborrar tots els fitxers de les partides desades?"
+
+#: ../src/DFArcFrame.cpp:897
+msgid "Uninstall - Save Game Files"
+msgstr "Desinstal·lació - Fitxers de partides desades"
+
+#: ../src/DFArcFrame.cpp:919
+msgid "Unable to remove D-Mod directory. All other files were removed."
+msgstr "No es pot esborrar el directori D-mod. S'han esborrat tots els altres fitxers."
+
+#: ../src/DFArcFrame.cpp:925
+msgid "D-Mod successfully uninstalled"
+msgstr "S'ha desinstal·lat D-Mod"
+
+#: ../src/DFArcFrame.cpp:926
+msgid "Uninstall - Success"
+msgstr "Desinstal·lació - Finalitzada"
+
+#: ../src/InstallVerifyFrame.cpp:56
+msgid "Preparing"
+msgstr "S'està preparant"
+
+#: ../src/InstallVerifyFrame.cpp:57
+msgid "The D-Mod archive is being decompressed in a temporary file."
+msgstr "L'arxiu D-Mod s'està descomprimint en un fitxer temporal."
+
+#: ../src/InstallVerifyFrame.cpp:81
+#, c-format
+msgid ""
+"No Description Available.\n"
+"\n"
+"The D-Mod will be installed in subdirectory '%s'."
+msgstr ""
+"No hi ha cap descripció disponible.\n"
+"\n"
+"El D-Mod s'instal·larà al subdirectori «%s»."
+
+#: ../src/InstallVerifyFrame.cpp:94
+msgid "DFArc - Install D-Mod - "
+msgstr "DFArc - Instal·lació d'un D-Mod - "
+
+#: ../src/InstallVerifyFrame.cpp:143
+msgid "DFArc - Installing"
+msgstr "DFArc - Està instal·lant"
+
+#: ../src/InstallVerifyFrame.cpp:157
+msgid "The D-Mod you selected"
+msgstr "El D-Mod que heu sel·leccionat"
+
+#: ../src/InstallVerifyFrame.cpp:159
+msgid " was successfully installed."
+msgstr " s'ha instal·lat correctament."
+
+#: ../src/InstallVerifyFrame.cpp:160 ../src/Package.cpp:167
+msgid "Success"
+msgstr "Finalitzat"
+
+#: ../src/InstallVerifyFrame.cpp:169
+msgid "An error occured while extracting the .dmod file."
+msgstr "S'ha produït un error mentre s'extreia el fitxer .dmod."
+
+#: ../src/Options.cpp:113
+msgid "System language"
+msgstr "Idioma del sistema"
+
+#: ../src/Options.cpp:136
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: ../src/Options.cpp:175
+msgid "Choose the Dink Smallwood install directory"
+msgstr "Escolliu el directori d'instal·lació del Dink Smallwood"
+
+#: ../src/Options.cpp:183
+msgid "Choose a folder containing D-Mods"
+msgstr "Escolliu una carpeta que contingui D-Mods"
+
+#: ../src/Package.cpp:123
+msgid "You must provide an identifier filename."
+msgstr "Heu de proporcionar un nom de fitxer com a identificador."
+
+#: ../src/Package.cpp:139
+msgid "Packaging"
+msgstr "Empaquement"
+
+#: ../src/Package.cpp:139
+msgid "The D-Mod is being packaged."
+msgstr "S'està empaquetant el D-Mod."
+
+#. Success dialog
+#: ../src/Package.cpp:165
+#, c-format
+msgid "%s was successfully packaged (compression ratio %2.1f : 1)."
+msgstr "S'ha empaquetat correctament %s (ràtio de compressió %2.1f : 1)."
+
+#: ../src/Package.cpp:172
+msgid "Packaging aborted - removing partial .dmod file."
+msgstr "S'ha interromput l'empaquetament - S'esborra el fitxer .dmod parcial."
+
+#: ../src/Package.cpp:173
+msgid "Abort"
+msgstr "Avorta"
+
+#: ../src/RecursiveDelete.cpp:55 ../src/RecursiveDelete.cpp:73
+#, c-format
+msgid "Could not remove %s"
+msgstr "No s'ha pogut esborrar %s"
+
+#: ../src/Tar.cpp:95
+msgid "Listing files..."
+msgstr "Es llisten els fitxers..."
+
+#: ../src/Tar.cpp:134
+msgid "Initializing..."
+msgstr "S'inicialitza..."
+
+#: ../src/Tar.cpp:138
+#, c-format
+msgid "Error: Could not open tar file '%s' for bzip compression."
+msgstr "Error: no es pot obrir el fitxer tar «%s» per descomprimir-lo amb bzip."
+
+#: ../src/Tar.cpp:160
+msgid "Error: Could not initialize compression method!  Will not generate a correct .dmod file.  Quitting."
+msgstr "Error: no s'ha pogut inicialitzar el mètode de descompressió! No es generarà cap fitxer .dmod correcte. Se surt."
+
+#: ../src/Tar.cpp:193
+#, c-format
+msgid "Error: File '%s' not found!  Cannot archive file."
+msgstr "Error: no s'ha trobat el fitxer «%s». No es pot arxivar."
+
+#. Close the output file.
+#: ../src/Tar.cpp:243
+msgid "Closing..."
+msgstr "S'està tancant..."
+
+#: ../src/Tar.cpp:363
+#, c-format
+msgid "Error: File '%s' not found!  Cannot read data."
+msgstr "Error: no s'ha trobat el fitxer «%s». No es poden llegir les dades."
+
+#. Nope.  Exit.
+#: ../src/Tar.cpp:400
+msgid "Error: This .dmod file has an invalid checksum!  Cannot read file."
+msgstr "Error: El checksum del fitxer .dmod no és vàlid! No es pot llegir el fitxer."
+
+#: ../src/Tar.cpp:484
+#, c-format
+msgid "Error: File '%s' not found!  Cannot extract data."
+msgstr "Error: No s'ha trobat el fitxer «%s». No es poden extreure les dades."
+
+#: ../src/Tar.cpp:494
+#, c-format
+msgid "Error: Cannot create directory '%s'.  Cannot extract data."
+msgstr "Error: No s'ha pogut crear el directori «%s». No es poden extreure les dades."
+
+#: ../src/Tar.cpp:552
+#, c-format
+msgid "Got bad file %d/%d.  Skipping."
+msgstr "El fitxer %d/%d no és correcte. S'omet."
+
+#: ../src/Tar.cpp:574
+#, c-format
+msgid "Error: Improperly archived file '%s'.  Skipping."
+msgstr "Error: El fitxer «%s» no està arxivat correctament. S'omet."
+
+#: ../src/Tar.cpp:607
+msgid "Done."
+msgstr "Fet."
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "&Open D-Mod to Install"
+msgstr "&Obre un D-mod per instal·lar-lo"
+
+#: ../src/DFArcFrame_Base.cpp:27
+msgid "Select a D-Mod to install"
+msgstr "Seleccioneu un D-mod per instal·lar-lo"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "&Download D-Mods"
+msgstr "&Baixeu D-Mods"
+
+#: ../src/DFArcFrame_Base.cpp:28
+msgid "Go to The Dink Network to download some D-Mods!"
+msgstr "Aneu a The Dink Network per baixar D-Mods"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "E&xit"
+msgstr "&Surt"
+
+#: ../src/DFArcFrame_Base.cpp:30
+msgid "Exit DFArc"
+msgstr "Surt de DFArc"
+
+#: ../src/DFArcFrame_Base.cpp:31
+msgid "&File"
+msgstr "&Fitxer"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "&Refresh D-Mod List"
+msgstr "&Refresca la llista de D-Mod"
+
+#: ../src/DFArcFrame_Base.cpp:33
+msgid "Refreshes the D-Mod list for any new additions"
+msgstr "Refresca la llista dels D-Mod per si n'hi ha de nous"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "&Browse Selected D-Mod Directory"
+msgstr "&Navega pel directori de D-Mod seleccionat"
+
+#: ../src/DFArcFrame_Base.cpp:34
+msgid "Browse to the directory containing the current D-Mod"
+msgstr "Navega al directori que conté el D-Mod actual"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "&Uninstall Selected D-Mod"
+msgstr "&Desinstal·la el D-Mod seleccionat"
+
+#: ../src/DFArcFrame_Base.cpp:35
+msgid "Uninstalls the selected D-Mod"
+msgstr "Desinstal·la el D-Mod seleccionat"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "&Options"
+msgstr "&Opcions"
+
+#: ../src/DFArcFrame_Base.cpp:37
+msgid "View or modify DFArc options"
+msgstr "Consulteu o modifiqueu les opcions del DFArc"
+
+#: ../src/DFArcFrame_Base.cpp:38
+msgid "&Edit"
+msgstr "&Edita"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "&Introduction"
+msgstr "&Introducció"
+
+#: ../src/DFArcFrame_Base.cpp:40
+msgid "A quick introduction to Dinking and D-Mods"
+msgstr "Una ràpida introducció a Dink i als D-Mods"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "&Walkthroughs and Guides"
+msgstr "&Solucions i guies"
+
+#: ../src/DFArcFrame_Base.cpp:41
+msgid "Stuck in a D-Mod? Check out The Dink Smallwood Solutions."
+msgstr "Esteu encallat en algun D-Mod? Visiteu DinkSolutions"
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "&Forums"
+msgstr "&Forums"
+
+#: ../src/DFArcFrame_Base.cpp:42
+msgid "Ask a question on the forums, or see if someone had the same problem."
+msgstr "Pregunteu als fòrums, o mireu si algú altre té el mateix problema."
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "&About"
+msgstr "&Quant a "
+
+#: ../src/DFArcFrame_Base.cpp:44
+msgid "About DFArc"
+msgstr "Quant al DFArc"
+
+#: ../src/DFArcFrame_Base.cpp:45
+msgid "&Help"
+msgstr "A&juda"
+
+#: ../src/DFArcFrame_Base.cpp:50
+msgid "Play"
+msgstr "Juga"
+
+#: ../src/DFArcFrame_Base.cpp:51
+msgid "True Color"
+msgstr "Color vertader"
+
+#: ../src/DFArcFrame_Base.cpp:52
+msgid "Windowed"
+msgstr "En finestra"
+
+#: ../src/DFArcFrame_Base.cpp:53
+msgid "Sound"
+msgstr "So"
+
+#: ../src/DFArcFrame_Base.cpp:54
+msgid "Joystick"
+msgstr "Palanca de control"
+
+#: ../src/DFArcFrame_Base.cpp:55
+msgid "Debug"
+msgstr "Depuració"
+
+#: ../src/DFArcFrame_Base.cpp:56
+msgid "v1.07 mode"
+msgstr "Mode V1.07"
+
+#: ../src/DFArcFrame_Base.cpp:57
+msgid "Edit"
+msgstr "Edita"
+
+#: ../src/DFArcFrame_Base.cpp:58 ../src/Package_Base.cpp:27
+msgid "Package"
+msgstr "Paquet"
+
+#. begin wxGlade: DFArcFrame_Base::set_properties
+#: ../src/DFArcFrame_Base.cpp:73
+msgid "DFArc v3"
+msgstr "DFArc v3"
+
+#: ../src/DFArcFrame_Base.cpp:83
+msgid "v1.07 compatibility mode, for D-Mods released before 2006"
+msgstr "Mode compatible amb la v1.07, per D-Mods anteriors al 2006"
+
+#. begin wxGlade: InstallVerifyFrame_Base::InstallVerifyFrame_Base
+#: ../src/InstallVerifyFrame_Base.cpp:23
+msgid "Preparing..."
+msgstr "S'està preparant..."
+
+#: ../src/InstallVerifyFrame_Base.cpp:25
+msgid "Main Dink directory"
+msgstr "Directori principal de Dink"
+
+#: ../src/InstallVerifyFrame_Base.cpp:26 ../src/Options_Base.cpp:29
+msgid "Additional D-Mods directory"
+msgstr "Directori addicional pels D-Mod"
+
+#: ../src/InstallVerifyFrame_Base.cpp:28
+msgid "Where do you want to install this D-Mod?"
+msgstr "On voleu instal·lar els D-Mod?"
+
+#: ../src/InstallVerifyFrame_Base.cpp:29
+msgid "Install"
+msgstr "Instal·la"
+
+#. begin wxGlade: InstallVerifyFrame_Base::set_properties
+#: ../src/InstallVerifyFrame_Base.cpp:41
+msgid "DFArc - Install D-Mod"
+msgstr "DFArc - Instal·la D-Mod"
+
+#. begin wxGlade: Options_Base::Options_Base
+#: ../src/Options_Base.cpp:23
+msgid "Close DFArc on play"
+msgstr "Tanca el DFArc quan jugueu"
+
+#: ../src/Options_Base.cpp:24
+msgid "Show developer buttons"
+msgstr "Mostra els botons de desenvolupament"
+
+#: ../src/Options_Base.cpp:25
+msgid "The engine updates dinksmallwood.ini on run (deprecated)"
+msgstr "El motor actualitza dinksmallwood.ini quan s'executa (desfassat)"
+
+#: ../src/Options_Base.cpp:26
+msgid "Override the Dink Smallwood directory"
+msgstr "Sobreescriu el directori del Dink Smallwood"
+
+#: ../src/Options_Base.cpp:28 ../src/Options_Base.cpp:31
+msgid "Browse"
+msgstr "Navega"
+
+#: ../src/Options_Base.cpp:32
+msgid "Game program name"
+msgstr "Nom del programa del joc"
+
+#: ../src/Options_Base.cpp:35
+msgid "Editor program name"
+msgstr "Nom del programa editor"
+
+#: ../src/Options_Base.cpp:38
+msgid "Preferred file browser"
+msgstr "Navegador de fitxers preferit"
+
+#: ../src/Options_Base.cpp:40
+msgid ""
+"DFArc language\n"
+"(restart DFArc to apply)"
+msgstr ""
+"Idioma del DFArc\n"
+"(cal reiniciar DFArc)"
+
+#. begin wxGlade: Options_Base::set_properties
+#: ../src/Options_Base.cpp:56
+msgid "DFArc - Options"
+msgstr "DFArc - Opcions"
+
+#. begin wxGlade: Package_Base::Package_Base
+#: ../src/Package_Base.cpp:23
+msgid "Identifier"
+msgstr "Identificador"
+
+#: ../src/Package_Base.cpp:24
+#, c-format
+msgid ""
+"Note: Unless you're making a D-Mod, you shouldn't be around here.\n"
+"This is for creating a .dmod file for a D-Mod you made.\n"
+"\n"
+"Will package '%s' located at\n"
+"%s"
+msgstr ""
+"NOTA: A no ser que estigueu creant un D-Mod, no hauríeu de ser aquí.\n"
+"Això és per crear un fitxer .dmod per a un D-Mod que hagueu fet.\n"
+"\n"
+"Empaquetarà «%s» ubicades a\n"
+"%s"
+
+#: ../src/Package_Base.cpp:25
+msgid "D-Mod filename (8 letters/numbers)"
+msgstr "Nom del fitxer D-Mod (8 lletres/números)"
+
+#. begin wxGlade: Package_Base::set_properties
+#: ../src/Package_Base.cpp:39
+msgid "DFArc - Package"
+msgstr "DFArc - Empaquetat"
+
+#: ../share/freedink-dfarc.desktop.in.h:1
+msgid "DFArc - Dink frontend"
+msgstr "DFArc - Frontal del Dink"
+
+#: ../share/freedink-dfarc.desktop.in.h:2
+msgid "Run, edit, install, remove and package D-Mods (Dink Modules)"
+msgstr "Executa, edita, instal·la, esborra i empaqueta D-Mods (mòduls del Dink)"
+
+#: ../share/freedink-mime.xml.in.h:1
+msgid "Packaged D-Mod"
+msgstr "D-Mod empaquetat"
+
+#~ msgid "ERROR"
+#~ msgstr "ERROR"

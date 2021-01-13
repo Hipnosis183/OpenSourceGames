@@ -1,0 +1,11 @@
+gdb is your friend!::
+
+ $ gdb src/dfarc
+
+If you have trouble with inlined functions or other C++
+idiosyncrasies, you need to avoid the "-O2" code to
+optimization.
+
+CXXFLAGS default to "-g -O2" with automake. To override it::
+
+ CXXFLAGS="-g" ../configure

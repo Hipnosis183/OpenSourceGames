@@ -1,0 +1,143 @@
+# -*- shell-script -*-
+# Cross-compilation instructions
+
+# Copyright (C) 2008  Sylvain Beucler
+
+# This file is part of GNU FreeDink
+
+# GNU FreeDink is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+
+# GNU FreeDink is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see
+# <http://www.gnu.org/licenses/>.
+
+
+# Default ./configure params
+HOST=i586-mingw32msvc
+PREFIX=/usr/local/$HOST
+# whenever you specify `--host', be sure to specify `--build' too;
+# this will be fixed in the future - (autoconf.info)Specifying Names
+BUILD=i686-pc-linux-gnu
+
+
+# Install a cross-compiler version of GCC
+aptitude install mingw32
+
+# To store cross-compiled libraries
+mkdir -p -m 775 /usr/local/$HOST
+# To store source tarballs that will be distributed along with static
+# binaries to comply with the GNU GPL and LGPL
+mkdir -m 755 /usr/src/depsources
+
+
+# wxWidgets
+# http://www.rocrail.net/wiki/rocrail/ccmingw-en.html
+# Note: the MSW archive is not meant for cross-compilation, we use the
+# full sources instead
+VERSION=2.8.11
+cd /usr/src/
+wget -P depsources/ http://downloads.sourceforge.net/project/wxwindows/2.8.11/wxWidgets-2.8.11.tar.bz2
+tar xjf depsources/wxWidgets-$VERSION.tar.bz2
+pushd wxWidgets-$VERSION
+# Let's use all the builtin libs: don't specify CPPFLAGS and LDFLAGS
+# Not enabling unicode: some parts (like BZip.cpp) use fopen(), which
+# only works in ascii under woe. Need to use some portability layer to
+# use '_wfopen' there (as glib does for 'g_fopen').
+# Static mode (apparently one cannot build both static and shared at
+# once) Note: reserve ~1GB on your hard disk for the whole
+# double-compilation
+./configure --host=$HOST --build=$BUILD \
+  --prefix=/usr/local/$HOST --disable-shared
+make
+make install
+# Shared mode
+./configure --host=$HOST --build=$BUILD \
+  --prefix=/usr/local/$HOST --enable-shared
+make
+make install
+# Doesn't work, references misnamed library
+#make install-strip
+$HOST-strip /usr/local/$HOST/lib/wx*.dll
+popd
+cd depsources/
+dget -d http://ftp.de.debian.org/debian/pool/main/m/mingw32-runtime/mingw32-runtime_3.13-1.dsc
+
+
+# libbzip2
+VERSION=1.0.6
+cd /usr/src/
+wget -P depsources/ http://www.bzip.org/$VERSION/bzip2-$VERSION.tar.gz
+tar xzf depsources/bzip2-$VERSION.tar.gz
+pushd bzip2-$VERSION
+# bzip2's build system is not suitable for woe cross-compiling, so
+# let's use some autotools skills :)
+cat <<EOF > configure.ac
+AC_PREREQ(2.61)
+AC_INIT([bzip2],[$VERSION])
+AM_INIT_AUTOMAKE([foreign])
+AC_PROG_CC
+AC_LIBTOOL_WIN32_DLL
+AC_PROG_LIBTOOL
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
+EOF
+# Files from original Makefile
+# Cf. '(libtool.info)Updating version info' for the versioning scheme
+cat <<'EOF' > Makefile.am
+lib_LTLIBRARIES = libbz2.la
+libbz2_la_SOURCES = blocksort.c huffman.c crctable.c randtable.c \
+	compress.c decompress.c bzlib.c
+libbz2_la_LDFLAGS = -no-undefined -version-info 1:5:0
+include_HEADERS = bzlib.h
+EOF
+autoreconf -fis
+./configure --host=$HOST --build=$BUILD \
+  --prefix=/usr/local/$HOST
+make
+make install-strip
+popd
+
+
+# Apparently automake's 'install-strip' doesn't necessarily work on
+# installed .dll's:
+$HOST-strip $PREFIX/bin/*.dll
+
+
+# DFArc itself
+cd ~/dfarc/
+mkdir woe/
+cd woe/
+CPPFLAGS="-I /usr/local/$HOST/include" \
+  LDFLAGS="-L /usr/local/$HOST/lib" \
+  ../configure --host=$HOST --build=$BUILD \
+  --with-wx-config=/usr/local/$HOST/bin/wx-config \
+  --enable-static --enable-upx
+# Avoid errors on make install:
+aptitude install xdg-tools
+make install-strip DESTDIR=`pwd`/destdir
+ls -lh destdir/usr/local/bin/dfarc.exe
+
+
+Misc
+====
+
+# wxWidgets dependency: expat
+# We use the builtin version above
+VERSION=2.0.1
+wget http://ovh.dl.sourceforge.net/sourceforge/expat/expat-$VERSION.tar.gz
+ln expat-$VERSION.tar.gz depsources/
+tar xzf expat-$VERSION.tar.gz
+pushd expat-$VERSION
+./configure --host=i586-mingw32msvc --build=i686-pc-linux-gnu \
+  --prefix=/usr/local/i586-mingw32msvc
+make
+make install
+popd

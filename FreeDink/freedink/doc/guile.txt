@@ -1,0 +1,89 @@
+Notes on cross-compiling guile for Android
+
+- why is libunistring not detected because of missing -lm ?
+  => ndk-shared
+
+- why is iconv not detected as missing / mandatory
+  => ndk-standalone-12-arm
+
+# https://lists.gnu.org/archive/html/guile-user/2014-06/msg00011.html
+
+/usr/src/android-ndk-r9d/build/tools/make-standalone-toolchain.sh \
+  --platform=android-12 --install-dir=/usr/src/ndk-shared
+PATH=/usr/src/ndk-shared/bin:$PATH
+
+aptitude install lzip
+WGET=wget
+
+# - pkg-config (see above)
+
+# libtool
+VERSION=2.4.2
+$WGET http://ftp.gnu.org/pub/gnu/libtool/libtool-$VERSION.tar.xz
+tar xf libtool-$VERSION.tar.xz
+cd libtool-$VERSION/
+mkdir cross-android-shared/ && cd cross-android-shared/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+make install
+
+# GMP
+VERSION=6.0.0a
+VERSIONDIR=6.0.0
+$WGET https://gmplib.org/download/gmp/gmp-$VERSION.tar.lz
+tar xf gmp-$VERSION.tar.lz
+cd gmp-$VERSIONDIR/
+mkdir cross-android-shared/ && cd cross-android-shared/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+make install
+
+# - iconv (see above)
+
+# libunistring
+VERSION=0.9.3
+$WGET http://ftp.gnu.org/gnu/libunistring/libunistring-0.9.3.tar.gz
+tar xf libunistring-$VERSION.tar.gz
+mkdir cross-android-shared/ && cd cross-android-shared/
+\cp -a /usr/share/misc/config.{guess,sub} ../build-aux/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+make install
+
+# libFFI
+VERSION=3.1
+$WGET ftp://sourceware.org/pub/libffi/libffi-$VERSION.tar.gz
+tar xf libffi-$VERSION.tar.gz
+cd libffi-$VERSION/
+mkdir cross-android-shared/ && cd cross-android-shared/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+make install
+
+# GC
+VERSION=7.4.2
+$WGET http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-$VERSION.tar.gz
+tar xf libatomic_ops-$VERSION.tar.gz
+cd libatomic_ops-$VERSION/
+mkdir cross-android-shared/ && cd cross-android-shared/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+make install
+cd ../..
+$WGET http://www.hboehm.info/gc/gc_source/gc-$VERSION.tar.gz
+tar xf gc-$VERSION.tar.gz
+cd gc-$VERSION/
+mkdir cross-android-shared/ && cd cross-android-shared/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+make install
+
+# Guile 2!
+cd guile/cross-android-shared/
+git checkout stable-2.0
+mkdir cross-android-shared/ && cd cross-android-shared/
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr
+make -j$(nproc)
+=> build failure due to Android's pthread_cancel
+../configure --host=arm-linux-androideabi --prefix=/usr/src/ndk-shared/sysroot/usr --without-threads
+=> OK but "unknown CPU endianness "arm" in ice-9/eval.go

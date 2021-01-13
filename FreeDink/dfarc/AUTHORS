@@ -1,0 +1,96 @@
+Records of which significant portions were written by whom (and when):
+
+
+Andrew Reading wrote DFArc up to version 1.5. It's a
+archiver/extractor for the .dmod file format, which is in fact a D-Mod
+directory compressed using the tar+bz2 method. The GUI is written
+using the FLTK toolkit.
+
+Version v1.5	December 11th, 2004
+(Andrew's copyright notice mistakenly mentions 2005)
+
+
+
+Dan Walma wrote DFArc2, a new Dink Smallwood front-end , which avoids
+using the command line. It includes parts of DFArc for D-Mod
+installation and packaging support. He switched from FLTK to
+wxWidgets. The rest of the code has little to do with the original
+DFArc.
+
+DFArc2 is included in the Dink Smallwood v1.08 packages, which include
+early beta in 2005 and the final version in 2006.
+
+
+
+Sylvain Beucler reworked on the code to make it portable (in
+particular, run under GNU/Linux), cleaned-up the code for Unicode and
+GCC compliance, converted manually coded GUI code to wxGlade (a
+graphical GUI designer), and translated to French.
+
+There was some work on DFArc1.5 in 2007 (comments and documentation),
+and real work on DFArc2 (now DFArc v3) started in January 2008.
+
+
+src/BZip.cpp contains a modified version of bzip2-1.0.4/bzlib.c for
+better progress status integration with low-level bzip2 code. Original
+code is Copyright (C) 1996-2006 Julian Seward <jseward@bzip.org>.
+
+
+Дамјан Димитриоски translated to Macedonian, Copyright (C) 2008 Free
+Software Foundation.
+
+Davide Prina translated to Italian, Copyright (C) 2008.
+
+Vincenzo Campanella contributed to the Italian translation, Copyright
+(C) 2010.
+
+GOKUSSJ6 translated to Polish, Copyright (C) 2008.
+
+Michał Trzebiatowski contributed to the Polish translation, Copyright
+(C) 2009, 2010.
+
+Roland Illig translated to German, Copyright (C) 2009, 2010.
+
+Peteri Tolonen translated to Finnish, Copyright (C) 2008, 2009, 2010
+Free Software Foundation.
+
+Fernando Carmona Varo translated to Spanish, Copyright (C) 2009, 2010.
+
+Joe Hansen translated to Danish, Copyright (C) 2009, 2010.
+
+Clytie Siddall and Trần Ngọc Quân translated to Vietnamese, Copyright
+(C) 2009, 2010 Free Software Foundation.
+
+Koen Torfs translated to Dutch, Copyright (C) 2009, 2010 Free Software
+Foundation.
+
+Tomislav Krznar translated to Croatian, Copyright (C) 2012.
+
+Мирослав Николић translated to Serbian, Copyright (C) 2012.
+
+Àngel Mompó translated to Catalan, Copyright (C) 2012, 2014, 2015.
+
+Ayşe Nur Akhan translated to Turkish, Copyright (C) 2012.
+
+Felipe Castro translated the engine strings in Esperanto, Copyright
+(C) 2011.
+
+Enrico Nicoletto translated to Brazilian Portuguese, Copyright (C)
+2013.
+
+Balázs Úr translated to Hungarian, Copyright (C) 2014.
+
+Sebastian Rasmussen translated to Swedish, Copyright (C) 2015.
+
+Rafael Fontenelle contributed to the Brazilian Portuguese translation,
+Copyright (C) 2017.
+
+Francisco Javier Serrador contributed to the Spanish translation,
+Copyright (C) 2018.
+
+Fabio Tomat translated to Friulian, Copyright (C) 2018.
+
+---
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.

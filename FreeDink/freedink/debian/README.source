@@ -1,0 +1,46 @@
+To build the Debian package
+===========================
+
+ tar xzf freedink-*.tar.gz
+ ln -s freedink-x.y.z.tar.gz freedink_x.y.z.orig.tar.gz
+ git clone git://git.sv.gnu.org/freedink freedinkgit
+ cp -a freedinkgit/debian freedink-*/
+ cd freedink-*/
+ debuild -us -uc
+
+
+MIDI support
+============
+
+Before Squeeze (i.e. if you backport), you needed to explicitely
+specify 'timidity' as a dependency, because its absence could cause
+troubles (see TROUBLESHOOTING in the source tarball and
+http://bugs.debian.org/369670).  An alternative would be to 'touch
+/etc/timidity/timidity.cfg' on install but this looks ugly.  Version
+1.2.8-6 of the sdl-mixer1.2 packages introduces a non-official patch
+(05_fallback_to_freepats.diff) that addresses this issue.
+
+You could specify it as a Recommend, but this isn't supported by
+Synaptic yet, so let's keep it as a dependency until then.
+
+Nonetheless, 'freepats' is still a dependency, because it's
+essentially the only way to get MIDI support for FreeDink in Debian
+main.
+
+
+Gnulib
+======
+
+While it may look like FreeDink is embedding a private copy of Gnulib,
+this isn't the case.
+
+This point was raised on the mailing list with a favorable response
+from the ftp-masters:
+http://lists.gnu.org/archive/html/bug-gnulib/2008-11/msg00269.html
+http://lists.gnu.org/archive/html/bug-gnulib/2008-12/msg00018.html
+
+Learn more about Gnulib at
+http://www.gnu.org/software/gnulib/manual/html_node/Introduction.html
+
+Bottom-line: don't attempt to relink FreeDink with Debian's gnulib
+package.

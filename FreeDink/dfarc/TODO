@@ -1,0 +1,7 @@
+- Warn about case-sensitive duplicates (e.g. MAP.DAT and map.dat) when
+  creating a .dmod
+
+- Offer to define SDL_VIDEODRIVER and SDL_AUDIODRIVER. This is
+  interesting under woe to use 'directx' instead of the default
+  'windib' video driver, and under GNU/Linux to try different audio
+  drivers when one isn't working well.

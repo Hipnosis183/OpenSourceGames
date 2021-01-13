@@ -1,0 +1,37 @@
+I experimented with mingw-cross-env:
+http://mingw-cross-env.nongnu.org/
+
+
+Compilation
+===========
+
+cd /usr/src/
+hg clone http://hg.savannah.nongnu.org/hgweb/mingw-cross-env mingw-cross-env
+cd mingw-cross-env
+make wxwidgets bzip2 JOBS=$(ncpus)
+
+cd ~/dfarc/
+mkdir woe/ && cd woe/
+export PATH=/usr/src/mingw-cross-env/usr/bin:$PATH
+../configure --host=i686-pc-mingw32 \
+  --with-wx-config=/usr/src/mingw-cross-env/usr/bin/i686-pc-mingw32-wx-config \
+  --enable-static --enable-upx
+
+?? CPPFLAGS="-I /usr/src/mingw-cross-env/usr/include"   LDFLAGS="-L /usr/src/mingw-cross-env/usr/lib"   ../configure --host=$HOST  --with-wx-config=/usr/src/mingw-cross-env/usr/bin/i686-pc-mingw32-wx-config-nounicode   --enable-static --enable-upx
+make
+
+# You need to specify 'wx-config' explicitely otherwise your host's
+# (native) wx-config will be used.
+
+
+Results
+=======
+
+When using Unicode support, the build currently fails (issues in
+non-wxWidgets parts of DFArc, see unicode.txt).
+
+When not using Unicode, it compiles (with some differences, maybe due
+to --enable-compatXX build options), but the resulting executable
+does not start (it runs, and quits immediately without error).
+
+Consequently we'll stick with our own build system for now.

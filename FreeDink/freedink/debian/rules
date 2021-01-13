@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	# Using '--bindir=/usr/games' by Debian policy
+	#   (e.g. not the case for Fedora)
+	dh_auto_configure -- --bindir=/usr/games --datadir=/usr/share/games \
+		--disable-silent-rules --disable-tests
+
+override_dh_strip:
+	# https://wiki.debian.org/AutomaticDebugPackages
+	dh_strip --dbgsym-migration='freedink-engine-dbg (<< 109.2-1~)'
+
+override_dh_auto_install:
+	# There's only one real package, let's not bother with
+	# debian/tmp + move files in dh_install - install straight in
+	# the appropriate directory
+	dh_auto_install --destdir=debian/freedink-engine
+	# Lintian complains with 'duplicate-font-file', let's have
+	# FreeDink rely on libfontconfig + depend on ttf-liberation
+	rm debian/freedink-engine/usr/share/games/freedink/LiberationSans-Regular.ttf

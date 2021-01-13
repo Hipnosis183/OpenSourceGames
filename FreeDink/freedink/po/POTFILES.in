@@ -1,0 +1,6 @@
+# List of source files which contain translatable strings.
+src/app.cpp
+src/AppFreeDink.cpp
+src/brain_keyboard.cpp
+src/dinkc.cpp
+src/freedinkedit.cpp

@@ -1,0 +1,216 @@
+# French translations for GNU FreeDink package
+# Traductions françaises du paquet GNU FreeDink.
+# This file is put in the public domain.
+# Sylvain Beucler <beuc@beuc.net>, 2008, 2009, 2012, 2015, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: freedink 109.4\n"
+"Report-Msgid-Bugs-To: bug-freedink@gnu.org\n"
+"POT-Creation-Date: 2019-02-16 23:40+0100\n"
+"PO-Revision-Date: 2019-01-28 14:52+0100\n"
+"Last-Translator: Sylvain Beucler <beuc@beuc.net>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.2.1\n"
+
+#: src/app.cpp:152
+#, c-format
+msgid "Usage: %s [OPTIONS]...\n"
+msgstr "Usage: %s [OPTIONS]...\n"
+
+#: src/app.cpp:156
+#, c-format
+msgid "  -h, --help            Display this help screen\n"
+msgstr "  -h, --help            Affiche cet écran d'aide\n"
+
+#: src/app.cpp:157
+#, c-format
+msgid "  -v, --version         Display the version\n"
+msgstr "  -v, --version         Affiche la version\n"
+
+#: src/app.cpp:159
+#, c-format
+msgid "  -g, --game <dir>      Specify a DMod directory\n"
+msgstr "  -g, --game <dir>      Specifie le dossier d'un D-Mod\n"
+
+#: src/app.cpp:160
+#, c-format
+msgid "  -r, --refdir <dir>    Specify base directory for dink/graphics, D-Mods, etc.\n"
+msgstr "  -r, --refdir <dir>    Spécifie le répertoire de base pour dink/graphics, les D-Mods, etc.\n"
+
+#: src/app.cpp:162
+#, c-format
+msgid "  -d, --debug           Explain what is being done\n"
+msgstr "  -d, --debug           Explique ce qui se passe\n"
+
+#: src/app.cpp:163
+#, c-format
+msgid "  -i, --noini           Do not attempt to write dinksmallwood.ini\n"
+msgstr "  -i, --noini           N'essaie pas d'écreire dinksmallwood.ini\n"
+
+#: src/app.cpp:164
+#, c-format
+msgid "  -j, --nojoy           Do not attempt to use joystick\n"
+msgstr "  -j, --nojoy           N'essaie pas d'utiliser la manette de jeu\n"
+
+#: src/app.cpp:165
+#, c-format
+msgid "  -s, --nosound         Do not play sound\n"
+msgstr "  -s, --nosound         Coupe le son\n"
+
+#: src/app.cpp:166
+#, c-format
+msgid "  -t, --truecolor       Allow more colours (for recent D-Mod graphics)\n"
+msgstr "  -t, --truecolor       Permet davantage de couleurs (pour les graphismes des D-Mod récents)\n"
+
+#: src/app.cpp:167
+#, c-format
+msgid "  -w, --window          Use windowed mode instead of screen mode\n"
+msgstr "  -w, --window          Utilise le mode fenêtré plutôt que le plein écran\n"
+
+#: src/app.cpp:168
+#, c-format
+msgid "  -7, --v1.07           Enable v1.07 compatibility mode\n"
+msgstr "  -7, --v1.07           Active le mode de compatibilité v1.07\n"
+
+#: src/app.cpp:169
+#, c-format
+msgid "  -S, --software-rendering  Don't use OpenGL\n"
+msgstr "  -S, --software-rendering  Ne pas utiliser OpenGL\n"
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying "Report
+#. translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email
+#. address).
+#: src/app.cpp:182
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Rapportez les anomalies à %s.\n"
+"Rapportez les erreurs de traduction à beuc@beuc.net\n"
+
+#: src/app.cpp:312
+#, c-format
+msgid "Note: -nomovie is accepted for compatibility, but has no effect.\n"
+msgstr "Note: -nomovie est accepté pour des raisons de compatibilité, mais n'a aucun effet.\n"
+
+#: src/AppFreeDink.cpp:136
+msgid "Starts the Dink Smallwood game or one of its D-Mods."
+msgstr "Lance le jeu Dink Smallwood ou un de ses D-Mods."
+
+#: src/brain_keyboard.cpp:284
+msgid "`$I don't see anything here."
+msgstr "`$Je ne vois rien par ici."
+
+#: src/brain_keyboard.cpp:285
+msgid "`$Huh?"
+msgstr "`$Hein?"
+
+#: src/brain_keyboard.cpp:286
+msgid "`$I'm fairly sure I can't talk to or use that."
+msgstr "`$Je ne pense pas pouvoir parler à ce truc-là, ou l'utiliser."
+
+#: src/brain_keyboard.cpp:287
+msgid "`$What?"
+msgstr "`$Quoi?"
+
+#: src/brain_keyboard.cpp:288
+msgid "`$I'm bored."
+msgstr "`$Je m'ennuie."
+
+#: src/brain_keyboard.cpp:289
+msgid "`$Not much happening here."
+msgstr "`$Pas grand chose par ici."
+
+#: src/brain_keyboard.cpp:409
+msgid "`$I don't know any magic."
+msgstr "`$Je ne connais aucun sort."
+
+#: src/brain_keyboard.cpp:410
+msgid "`$I'm no wizard!"
+msgstr "`$Je ne suis pas magicien!"
+
+#: src/brain_keyboard.cpp:411
+msgid "`$I need to learn magic before trying this."
+msgstr "`$Je dois apprendre un sort avant d'essayer ça."
+
+#: src/brain_keyboard.cpp:412
+msgid "`$I'm gesturing wildly to no avail!"
+msgstr "`$Je m'excite bêtement pour rien!"
+
+#: src/brain_keyboard.cpp:413
+msgid "`$Nothing happened."
+msgstr "`$Rien ne se passe."
+
+#: src/brain_keyboard.cpp:414
+msgid "`$Hocus pocus!"
+msgstr "`$Hocus pocus!"
+
+#: src/dinkc.cpp:748
+msgid "Attack"
+msgstr "Attaquer"
+
+#: src/dinkc.cpp:749
+msgid "Talk/Examine"
+msgstr "Parler/examiner"
+
+#: src/dinkc.cpp:750
+msgid "Magic"
+msgstr "Magie"
+
+#: src/dinkc.cpp:751
+msgid "Item Screen"
+msgstr "Inventaire"
+
+#: src/dinkc.cpp:752
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: src/dinkc.cpp:753
+msgid "Map"
+msgstr "Carte"
+
+#: src/dinkc.cpp:754 src/dinkc.cpp:755 src/dinkc.cpp:756 src/dinkc.cpp:757
+msgid "Unused"
+msgstr "Inutilisé"
+
+#: src/dinkc.cpp:758
+msgid "Down"
+msgstr "Bas"
+
+#: src/dinkc.cpp:759
+msgid "Left"
+msgstr "Gauche"
+
+#: src/dinkc.cpp:760
+msgid "Right"
+msgstr "Droite"
+
+#: src/dinkc.cpp:761
+msgid "Up"
+msgstr "Haut"
+
+#: src/dinkc.cpp:762
+msgid "Error: not mapped"
+msgstr "Erreur: non attribué"
+
+#: src/dinkc.cpp:773
+#, c-format
+msgid "Slot %d - %d:%02d - %s"
+msgstr "Emplacement %d - %d:%02d - %s"
+
+#: src/dinkc.cpp:776
+#, c-format
+msgid "Slot %d - Empty"
+msgstr "Emplacement %d - Vide"
+
+#: src/freedinkedit.cpp:4619
+msgid "Edit the Dink Smallwood game or one of its D-Mods."
+msgstr "Modifie le jeu Dink Smallwood ou un de ses D-Mods."

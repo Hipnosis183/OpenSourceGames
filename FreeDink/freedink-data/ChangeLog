@@ -1,0 +1,1096 @@
+2019-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/control, debian/watch: debian: lintian
+	fixes
+
+2019-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-data.spec: rpm: sync Fedora
+
+2019-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/eo.po, dink/l10n/es.po, dink/l10n/tr.po: Sync
+	Translation Project
+
+2018-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, src/axe.wav/axe.wav: New axe.wav
+	replacement
+
+2018-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* soundtest/story/reference.c: Add tests for sword1.wav and
+	steps.wav
+
+2018-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, src/save.wav/save.wav: New save.wav
+	replacement
+
+2018-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt: Improved stairs.wav
+
+2018-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt: README-REPLACEMENTS.txt: sort sounds by
+	filename
+
+2018-11-07  Sylvain Beucler <beuc@beuc.net>
+
+	* : Re-encode burn.wav to mono
+
+2018-10-11  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, src/burn.wav/burn.wav,
+	src/nono.wav/nono.wav: New burn.wav and nono.wav sound replacements
+
+2017-04-09  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, debian/changelog, debian/compat, debian/control,
+	debian/watch, doc/release.txt, doc/reproducible-builds.txt,
+	freedink-data.spec: Release 1.08.20170409
+
+2017-04-09  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: build: generate .mo for all .po files (so I don't forget
+	to register new translations next time)
+
+2017-04-08  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: build: more xz->gz
+
+2017-04-08  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, autobuild/freedink-data-woe.sh,
+	doc/reproducible-builds.txt: build: more reproducibility + switch
+	back to .gz Investigation in progress regarding .xz safety wrt error detection
+	http://www.nongnu.org/lzip/xz_inadequate.html not compatible with
+	pristine-tar
+	https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=859303 double
+	extension not properly at the DN
+
+	http://files.dinknetwork.com/freedink_data_source_code-1_08_20170401.xzcould be linked from the DN instead of hosted there:
+	http://www.dinknetwork.com/file/freedink_data_source_code/ plus
+	distros mostly point to the .gz URL
+
+2017-04-02  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Forgot to mention updated German translation
+
+2017-04-02  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, debian/changelog, doc/release.txt: build: tidy doc + prepare
+	next release
+
+2017-04-01  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, debian/changelog, dink/l10n/dink.pot,
+	doc/release.txt: Release 1.08.20170401
+
+2017-04-01  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt, freedink-data.spec: rpm: update for new release +
+	modernize a bit
+
+2017-04-01  Sylvain Beucler <beuc@beuc.net>
+
+	* licenses/wtfpl.txt: licenses: sync wtfpl
+
+2017-04-01  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, Makefile, autobuild/freedink-data-woe.sh,
+	debian/watch, doc/release.txt: build: use xz to say < 50MB + more
+	tidy
+
+2017-04-01  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, autobuild/freedink-data-debs.sh,
+	autobuild/freedink-data-rpms.sh,
+	autobuild/freedink-data-snapshot.sh,
+	autobuild/freedink-data-woe.sh, debian/changelog, debian/control,
+	doc/release.txt: build: tidy release process
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	src/stairs.wav/stairs.wav: New stairs.wav sound replacement
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/ca.po, dink/l10n/da.po, dink/l10n/de.po,
+	dink/l10n/eo.po, dink/l10n/es.po, dink/l10n/fi.po, dink/l10n/fr.po,
+	dink/l10n/hr.po, dink/l10n/hu.po, dink/l10n/mk.po, dink/l10n/nl.po,
+	dink/l10n/sv.po: Sync TranslationProject
+
+2017-03-31  Sylvain Beucler <beuc@beuc.net>
+
+	* DEB, Makefile: debian: update doc
+
+2017-01-30  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/dmod.diz: dmod.diz: replace 'Windows' by 'system' as it
+	confused a user History should forgive this slight alteration to the original game
+	data ;)
+
+2016-06-12  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	src/sel1.wav/sel1.aup, src/sel1.wav/sel1.wav: New sel1.wav sound
+	replacement
+
+2016-06-04  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/ca.po, dink/l10n/sv.po: Sync TranslationProject
+
+2015-08-01  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/es.po: Sync TranslationProject
+
+2014-12-29  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/ca.po: Sync TranslationProject
+
+2014-10-27  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/freedink-data-woe.sh: Add script to create the
+	-nosrc.zip release
+
+2014-09-02  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/control, freedink-data.spec: Improve package description
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, debian/control, doc/release.txt: release: document TP sync +
+	prepare next release
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, Makefile, NEWS, debian/changelog, dink/l10n/dink.pot,
+	doc/release.txt, freedink-data.spec: Release 1.08.20140901
+
+2014-09-01  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: Move -nosrc.tar.gz building to a post-release script
+
+2014-08-18  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/compat, debian/control: debian: prepare
+	new version; use compat 9
+
+2014-08-18  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore: .gitignore: ignore generated .mo files
+
+2014-08-18  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/gbp.conf: debian: not using git-build-package anymore
+
+2014-08-18  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: make dist: clarify output
+
+2014-07-21  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/da.po, dink/l10n/eo.po: Update translations (eo,
+	da)
+
+2014-07-13  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/es.po, dink/l10n/fr.po, dink/l10n/hu.po: Sync
+	translations
+
+2014-07-12  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	src/lovin.mid/lovin.ogg: New sound replacement: lovin.ogg
+
+2014-07-12  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/dink.pot, dink/l10n/fr.po: Add 2 translatable
+	strings
+
+2014-06-30  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, NEWS, dink/l10n/hu.po: New Hungarian translation
+
+2014-06-30  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/dmod.diz: Update game controls documentation
+
+2014-05-29  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/ca.po, dink/l10n/da.po, dink/l10n/de.po,
+	dink/l10n/eo.po, dink/l10n/es.po, dink/l10n/fi.po, dink/l10n/fr.po,
+	dink/l10n/hr.po, dink/l10n/mk.po, dink/l10n/nl.po: translations:
+	sync with TP
+
+2014-05-26  Sylvain Beucler <beuc@beuc.net>
+
+	*
+	gentoo/games-rpg/freedink-data/freedink-data-1.08.20080920.ebuild,
+	gentoo/games-rpg/freedink-data/metadata.xml: Remove obsolete gentoo
+	ebuild - get it from official Gentoo instead :)
+
+2014-05-26  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	src/open.wav/convert, src/open.wav/open.wav: Add open.wav from
+	qubodup
+
+2013-10-20  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/midi.txt: Mention musescore-soundfont-gm in MIDI doc
+
+2013-10-20  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, NEWS, debian/copyright: Add Catalan translation
+
+2013-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Re-import from TP
+
+2013-01-19  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Fix typo in French translation
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Use pbuilder when building a Debian package to
+	upload officially
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/control: Debian upload
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS, dink/l10n/dink.pot, doc/release.txt,
+	freedink-data.spec: Release 1.08.20121209
+
+2012-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fi.po: Update fi.po
+
+2012-12-02  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright: typo
+
+2012-12-02  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	soundtest/story/ouch.c: Add sound replacements from Petteri +
+	improve soundtest D-Mod
+
+2012-12-02  Sylvain Beucler <beuc@beuc.net>
+
+	* soundtest/story/sheart.c: Add test case for heart pick-up sound
+
+2012-12-02  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	dink/l10n/fi.po, soundtest/README: Add Finnish translation
+
+2012-11-15  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, debian/copyright, dink/l10n/da.po: Updated Danish
+	translation
+
+2012-11-02  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/midi.txt: Load snd_seq when doing MIDI
+
+2012-10-14  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, debian/freedink-data.lintian-overrides,
+	debian/rules, debian/source/format: Update Debian packaging
+
+2012-10-14  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, debian/copyright, dink/l10n/README, dink/l10n/hr.po: Partial
+	Croatian translation
+
+2012-01-08  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, NEWS, debian/copyright, dink/l10n/eo.po: New Esperanto
+	translation
+
+2011-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Prepare NEWS file for next version
+
+2011-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog: Fix typo in the Debian changelog
+
+2011-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, debian/changelog, dink/l10n/dink.pot,
+	freedink-data.spec: Release 1.08.20111016
+
+2011-10-16  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, README-REPLACEMENTS.txt, debian/copyright,
+	src/12.mid/dink-castle.mid, src/18.mid/mystery-game.mid,
+	src/7.mid/clockwork.mid: New sounds replacements: 7.mid, 12.mid,
+	18.mid
+
+2011-07-30  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright: Update dutch translation copyright
+
+2011-07-25  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/l10n/nl.po: Update Dutch translation
+
+2011-07-25  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Fix Fedora package URL
+
+2011-07-23  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/rules, doc/release.txt: Don't use autotools_dev in debian/
+	(bad copy/paste)
+
+2011-07-23  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, Makefile, NEWS, autobuild/freedink-data-snapshot.sh,
+	debian/changelog, debian/control,
+	debian/freedink-data.lintian-overrides, debian/gbp.conf,
+	debian/rules, dink/l10n/dink.pot, freedink-data.spec: Release
+	1.08.20110723
+
+2011-07-22  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, debian/copyright,
+	src/13.mid/CanonInD222.mid: New sound replacement : 13.mid (church)
+
+2011-07-22  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, debian/copyright, src/5.mid/5.ogg: New
+	sound replacement for 5.mid (tavern/bar)
+
+2011-07-22  Sylvain Beucler <beuc@beuc.net>
+
+	* : Remove 20M origin .ogg file for 106.ogg, to ease maintenance
+
+2011-03-13  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/midi.txt: More MIDI notes
+
+2011-01-23  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/midi.txt: MIDI troubleshooting
+
+2010-12-26  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, debian/copyright: Add 3 new sound effects
+	from Petteri
+
+2010-12-26  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/nl.po: Update Dutch translation
+
+2010-12-26  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, debian/copyright, dink/l10n/es.po: New updated Spanish
+	translation
+
+2010-11-14  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, doc/release.txt: Update NEWS
+
+2010-10-30  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/dmod.diz, doc/release.txt: Doc fixes
+
+2010-10-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/nl.po: More updates to the Dutch translation
+
+2010-10-25  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright, dink/l10n/nl.po: Update Dutch translation
+
+2010-10-24  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/README.Debian, debian/README.source, debian/changelog,
+	debian/control, debian/copyright, debian/watch: Sync Debian changes
+
+2010-09-19  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, dink/Story/S3-ST2P.c: Fix a game freeze in Kernsin
+
+2010-05-23  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/PACKAGING: More documentation for packagers
+
+2010-03-21  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: Include ChangeLog COPYING DEB NEWS in release tarballs
+
+2010-01-10  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/da.po, dink/l10n/de.po, dink/l10n/fr.po: Sync
+	translations from the TP
+
+2010-01-03  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, autobuild/freedink-data-debs.sh,
+	autobuild/freedink-data-rpms.sh,
+	autobuild/freedink-data-snapshot.sh, doc/release.txt: Sync
+	autobuild/
+
+2010-01-03  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, Makefile, NEWS, dink/l10n/dink.pot, doc/release.txt,
+	freedink-data.spec: Release 1.08.20100103
+
+2010-01-03  Sylvain Beucler <beuc@beuc.net>
+
+	* COPYING, NEWS, README.txt, debian/copyright, dink/l10n/de.po,
+	dink/l10n/es.po, dink/l10n/mk.po: New translations
+
+2009-11-12  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, dink/l10n/da.po, dink/l10n/de.po, dink/l10n/es.po: New
+	translations: da, de (would like a second reading), spanish
+
+2009-10-01  Sylvain Beucler <beuc@beuc.net>
+
+	* soundtest/Makefile: soundtest's default Makefile rule is now an
+	help text instead of 'clean'
+
+2009-10-01  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/dirff.txt: Typo
+
+2009-10-01  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, soundtest/Dink.ini, soundtest/Makefile,
+	soundtest/README, soundtest/story/barrel.c,
+	soundtest/story/fountain.c, soundtest/story/girl.c,
+	soundtest/story/lock.c, soundtest/story/main.c,
+	soundtest/story/start.c: Add a D-Mod for testing sound replacements
+
+2009-08-26  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt: Fix recording attribution due to
+	quiproquo on the mailing-list
+
+2009-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, debian/copyright: Fix copyright notice
+	due to quiproquo on the mailing-list
+
+2009-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, debian/copyright, licenses/URLS,
+	licenses/wtfpl.txt, src/wscream.wav/wscream.wav: New sound
+	replacement: wscream.wav
+
+2009-08-23  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot, dink/l10n/mk.po, dink/l10n/nl.po: Fix 'Quit to
+	system' context which was inconsistent since I modified that string
+
+2009-08-12  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot, dink/l10n/fr.po, dink/l10n/nl.po: Remove a
+	duplicate string and clean-up a source context
+
+2009-07-15  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Fix 2 typos in the French translation
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: More release instructions precisions
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/Story/POSTER.c, dink/Story/S1-H1-1C.c, dink/l10n/dink.pot,
+	dink/l10n/fr.po, dink/l10n/nl.po: Fix 2 typos (reported by Michael
+	Skiba)
+
+2009-07-10  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/dirff.txt: The splash loading stats are a bit weird, link to
+	ps2dev thread instead
+
+2009-07-06  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po, dink/l10n/nl.po: Import fr.po from the
+	translation project (tidy'd by the robot)
+
+2009-07-06  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot, doc/release.txt: Update dink.pot version;
+	improve release instructions
+
+2009-07-06  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, Makefile, debian/changelog, doc/release.txt,
+	freedink-data.spec: Release 1.08.20090706
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS, debian/changelog, doc/release.txt, freedink-data.spec: 
+	Update release instructions and sync Debian+Fedora
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: Remove savegames even if they are uppercase
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog: Release 1.08.20090705
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* NEWS: Update NEWS
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot, dink/l10n/fr.po: Contextual translation
+	example
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot, dink/l10n/fr.po, dink/l10n/nl.po: Add missing
+	string in the POT (Smilestein talk) - xpot.sh missed it
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, debian/control, debian/copyright,
+	src/bird1.wav/bird1.aup, src/bird1.wav/bird1.wav: Add 2 new sound
+	replacements: bird1.wav and high2.wav
+
+2009-07-05  Sylvain Beucler <beuc@beuc.net>
+
+	* DEB, dink/l10n/README, doc/PACKAGING, doc/dirff.txt: Improve
+	documentation, notably on dir.ff
+
+2009-04-13  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/midi.txt: More doc on using fluidsynth
+
+2009-04-12  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, dink/Story/S7-DINK.c: Fix freeze when 'darkland
+	dink' is talked to twice
+
+2009-02-09  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, dink/l10n/mk.po: Generate dink.mo files on dist
+
+2009-02-07  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/midi.txt: Add instructions to run Rosegarden
+
+2009-01-31  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Changes to make fr.po accepted by the Translation
+	Project robot
+
+2009-01-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot: Additional .pot clean-up for the TP
+
+2009-01-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot: Pre-fill 'Project-Id-Version' in the .pot
+	translation template
+
+2009-01-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/nl.po: Remove unused start-3.c strings from nl.po
+
+2009-01-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot: Remove unused start-3.c strings (old title
+	screen 'order' button)
+
+2009-01-25  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/nl.po: nl.po: manually fix some fuziness introduced
+	during automatic import
+
+2009-01-20  Sylvain Beucler <beuc@beuc.net>
+
+	* autobuild/freedink-data-debs.sh, autobuild/freedink-data-rpms.sh,
+	autobuild/freedink-data-snapshot.sh: Include some scripts used to
+	build snapshots and binary packages unattended
+
+2009-01-17  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Another set of spellchecks thanks to goofy @
+	bz.org
+
+2009-01-17  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Fix spelling mistakes, thanks to po-ispell and
+	goofy
+
+2009-01-14  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Another typo
+
+2009-01-14  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Another typo
+
+2009-01-14  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/Story/DINFO.c, dink/l10n/dink.pot, dink/l10n/fr.po: Fix
+	French translation with traduc@traduc.org comments; remove another
+	reference to woe; add comments for goblin talk and "The Cast"
+
+2009-01-13  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/nl.po: Add contact info for nl.po
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/nl.po: Import/convert Dutch translation from Nanette
+	(back in 2003)
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Completed first pass of French translation
+
+2008-12-28  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Translate update
+
+2008-12-24  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Translate update
+
+2008-12-23  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Translate update
+
+2008-12-22  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Translate update
+
+2008-12-21  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Translate update
+
+2008-12-17  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/fr.po: Progress in French translation
+
+2008-12-16  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/l10n/dink.pot, dink/l10n/fr.po: More complete .pot + progress
+	on French translation
+
+2008-12-12  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/{i18n => l10n}/dink.pot, dink/{i18n => l10n}/fr.po: Rename
+	i18n to l10n
+
+2008-12-09  Sylvain Beucler <beuc@beuc.net>
+
+	* doc/release.txt: Write down release instructions
+
+2008-12-08  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/i18n/dink.pot, dink/i18n/fr.po: Start French translation
+
+2008-11-30  Sylvain Beucler <beuc@beuc.net>
+
+	* ChangeLog, NEWS: Release v1.08.20081130
+
+2008-11-30  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: Better fix for overzealous clean-up
+
+2008-10-01  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: Don't run chown/rm/etc. on /usr/share, only on
+	/usr/share/dink -_-' (reported by Stephen Hurd)
+
+2008-09-26  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-data.spec: Tidy .spec ChangeLog
+
+2008-09-24  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/copyright: Incorporate non-common licenses in
+	debian/copyright, converted to plain text
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile: Document installation choices
+
+2008-09-23  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, freedink-data.spec: .spec fixes
+	(wrong-file-end-of-line-encoding, licenses, use RPM macros)
+
+2008-09-21  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/watch: Add watch file
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	* README.txt, debian/copyright: Update tarball URL
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog, freedink-data.spec,
+	gentoo/games-rpg/freedink-data/{freedink-data-1.08.20080914.ebuild
+	=> freedink-data-1.08.20080920.ebuild}: Release
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	*
+	gentoo/games-rpg/freedink-data/freedink-data-1.08.20080914.ebuild,
+	gentoo/games-rpg/freedink-data/metadata.xml: Gentoo ebuild
+
+2008-09-20  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, debian/docs, dink/Story/.gitignore, freedink-data.spec: 
+	Various packaging fixes; don't install copyright files on local
+	install, not useful for source install and conflicts with packaging
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, Makefile: Makefile rule to make a release tarball
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* debian/changelog: Proper Debian changelog
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* freedink-data.spec: Fedora packaging
+
+2008-09-14  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt, README.txt, debian/README.Debian,
+	debian/changelog, debian/compat, debian/control, debian/copyright,
+	debian/rules, dink/dmod.diz: Debian packaging
+
+2008-09-06  Sylvain Beucler <beuc@beuc.net>
+
+	* Makefile, dink/.gitignore: Add basic Makefile, suitable for
+	distros
+
+2008-09-06  Sylvain Beucler <beuc@beuc.net>
+
+	* README-REPLACEMENTS.txt: Convert README-REPLACEMENTS.txt to DOS
+	EOL
+
+2008-09-06  Sylvain Beucler <beuc@beuc.net>
+
+	* licenses/URLS, licenses/cc-by-3.0-unported.html,
+	licenses/gpl-2.0.txt, licenses/gpl-3.0.txt: Add licenses copies
+
+2008-09-06  Sylvain Beucler <beuc@beuc.net>
+
+	* .gitignore, README-REPLACEMENTS.txt, README.txt,
+	licenses/art_libre-1.3.html, licenses/cc-by-sa-3.0-unported.html,
+	licenses/free_art-1.3.html, licenses/oal-1-0-1.txt,
+	src/1.mid/JOHN_MICHEL_CELLO-BACH_AVE_MARIA.ogg,
+	src/104.mid/serenade-d957.mid, src/105.mid/reverie.mid,
+	src/106.mid/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_1._Allegro_m
+	olto_appassionato_0m_6s_0h__3m_18s_0h.ogg,
+	"src/denube.mid/An_der_sch\303\266nem_blauen_Donau.ogg",
+	src/fire.wav/fire.wav, src/gold.wav/gold.aup,
+	src/gold.wav/gold.wav, src/intro.wav/intro.aup,
+	src/intro.wav/intro.wav, src/intro.wav/intro_data/.keep: Add some
+	free sound replacements
+
+2008-09-03  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/README.txt => README.txt, doc/PACKAGING: Notes on repackaging
+	graphics
+
+2008-09-03  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/Story/ESCAPE.c: avoid mentioning the devil
+
+2008-09-03  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/.gitignore, dink/README.txt, dink/dmod.diz: Document
+	additions to original data pack
+
+2008-09-03  Sylvain Beucler <beuc@beuc.net>
+
+	* dink/Story/1GOLD.c, dink/Story/1GOLD.d, dink/Story/APOTION.c,
+	dink/Story/APOTION.d, dink/Story/BAR-DP.c, dink/Story/BAR-DP.d,
+	dink/Story/BAR-E.c, dink/Story/BAR-E.d, dink/Story/BAR-F1.c,
+	dink/Story/BAR-F1.d, dink/Story/BAR-GH.c, dink/Story/BAR-GH.d,
+	dink/Story/BAR-M.c, dink/Story/BAR-M.d, dink/Story/BAR-SH.c,
+	dink/Story/BAR-SH.d, dink/Story/BAR-SP.c, dink/Story/BAR-SP.d,
+	dink/Story/BOX1-E.c, dink/Story/BOX1-E.d, dink/Story/BOX2-E.c,
+	dink/Story/BOX2-E.d, dink/Story/BOX2-SP.c, dink/Story/BOX2-SP.d,
+	dink/Story/BPOTION.c, dink/Story/BPOTION.d, dink/Story/BUTTON6.c,
+	dink/Story/BUTTON6.d, dink/Story/CH1-AP.c, dink/Story/CH1-AP.d,
+	dink/Story/CH1-G.c, dink/Story/CH1-G.d, dink/Story/CH1-GH.c,
+	dink/Story/CH1-GH.d, dink/Story/CH1-MP.c, dink/Story/CH1-MP.d,
+	dink/Story/CH1-PAP.c, dink/Story/CH1-PAP.d, dink/Story/CH1-SP.c,
+	dink/Story/CH1-SP.d, dink/Story/CH2-500.c, dink/Story/CH2-500.d,
+	dink/Story/CH2-AP.c, dink/Story/CH2-AP.d, dink/Story/CH2-GH.c,
+	dink/Story/CH2-GH.d, dink/Story/CH2-SFB.c, dink/Story/CH2-SFB.d,
+	dink/Story/CH3-AP.c, dink/Story/CH3-AP.d, dink/Story/CH3-H.c,
+	dink/Story/CH3-H.d, dink/Story/DAM-A1.c, dink/Story/DAM-A1.d,
+	dink/Story/DAM-BOM.c, dink/Story/DAM-BOM.d, dink/Story/DAM-BOM2.c,
+	dink/Story/DAM-BOM2.d, dink/Story/DAM-BOMN.c,
+	dink/Story/DAM-BOMN.d, dink/Story/DAM-FIRE.c,
+	dink/Story/DAM-FIRE.d, dink/Story/DAM-ICE.c, dink/Story/DAM-ICE.d,
+	dink/Story/DAM-ICEE.c, dink/Story/DAM-ICEE.d, dink/Story/DAM-SFB.c,
+	dink/Story/DAM-SFB.d, dink/Story/DDIE5.c, dink/Story/DDIE5.d,
+	dink/Story/DIE.c, dink/Story/DIE.d, dink/Story/DIE5.c,
+	dink/Story/DIE5.d, dink/Story/DINFO.c, dink/Story/DINFO.d,
+	dink/Story/DUCK.c, dink/Story/DUCK.d, dink/Story/EMAKE.c,
+	dink/Story/EMAKE.d, dink/Story/EN-BONC.c, dink/Story/EN-BONC.d,
+	dink/Story/EN-BONC1.c, dink/Story/EN-BONC1.d,
+	dink/Story/EN-BONCD.c, dink/Story/EN-BONCD.d, dink/Story/EN-BONG.c,
+	dink/Story/EN-BONG.d, dink/Story/EN-DRAG.c, dink/Story/EN-DRAG.d,
+	dink/Story/EN-GH.c, dink/Story/EN-GH.d, dink/Story/EN-GS.c,
+	dink/Story/EN-GS.d, dink/Story/EN-PBON.c, dink/Story/EN-PBON.d,
+	dink/Story/EN-PILL.c, dink/Story/EN-PILL.d, dink/Story/EN-PILL1.c,
+	dink/Story/EN-PILL1.d, dink/Story/EN-PILL2.c,
+	dink/Story/EN-PILL2.d, dink/Story/EN-PILLF.c,
+	dink/Story/EN-PILLF.d, dink/Story/EN-SLAY.c, dink/Story/EN-SLAY.d,
+	dink/Story/EN-SLIM.c, dink/Story/EN-SLIM.d, dink/Story/EN-SLIMB.c,
+	dink/Story/EN-SLIMB.d, dink/Story/EN-SLIMG.c,
+	dink/Story/EN-SLIMG.d, dink/Story/EN-STG.c, dink/Story/EN-STG.d,
+	dink/Story/ESCAPE.c, dink/Story/ESCAPE.d, dink/Story/FINDDUCK.c,
+	dink/Story/FINDDUCK.d, dink/Story/FIRE.c, dink/Story/FIRE.d,
+	dink/Story/FISH1.c, dink/Story/FISH1.d, dink/Story/GET-FB.c,
+	dink/Story/GET-FB.d, dink/Story/GET-SFB.c, dink/Story/GET-SFB.d,
+	dink/Story/GHEART.c, dink/Story/GHEART.d, dink/Story/GOLD200.c,
+	dink/Story/GOLD200.d, dink/Story/GOLD500.c, dink/Story/GOLD500.d,
+	dink/Story/HEART.c, dink/Story/HEART.d, dink/Story/ITEM-AXE.c,
+	dink/Story/ITEM-AXE.d, dink/Story/ITEM-B1.c, dink/Story/ITEM-B1.d,
+	dink/Story/ITEM-B2.c, dink/Story/ITEM-B2.d, dink/Story/ITEM-B3.c,
+	dink/Story/ITEM-B3.d, dink/Story/ITEM-BOM.c, dink/Story/ITEM-BOM.d,
+	dink/Story/ITEM-ELI.c, dink/Story/ITEM-ELI.d, dink/Story/ITEM-FB.c,
+	dink/Story/ITEM-FB.d, dink/Story/ITEM-ICE.c, dink/Story/ITEM-ICE.d,
+	dink/Story/ITEM-NUT.c, dink/Story/ITEM-NUT.d, dink/Story/ITEM-P1.c,
+	dink/Story/ITEM-P1.d, dink/Story/ITEM-PIG.c, dink/Story/ITEM-PIG.d,
+	dink/Story/ITEM-SFB.c, dink/Story/ITEM-SFB.d,
+	dink/Story/ITEM-SW1.c, dink/Story/ITEM-SW1.d,
+	dink/Story/ITEM-SW2.c, dink/Story/ITEM-SW2.d,
+	dink/Story/ITEM-SW3.c, dink/Story/ITEM-SW3.d, dink/Story/KEY-80.c,
+	dink/Story/KEY-80.d, dink/Story/KING.c, dink/Story/KING.d,
+	dink/Story/LGOLD.c, dink/Story/LGOLD.d, dink/Story/LRAISE.c,
+	dink/Story/LRAISE.d, dink/Story/MAG-STAR.c, dink/Story/MAG-STAR.d,
+	dink/Story/MAIN.c, dink/Story/MAIN.d, dink/Story/MAKE.c,
+	dink/Story/MAKE.d, dink/Story/MGOLD.c, dink/Story/MGOLD.d,
+	dink/Story/PAPGOLD.c, dink/Story/PAPGOLD.d, dink/Story/PDIE.c,
+	dink/Story/PDIE.d, dink/Story/POSTER.c, dink/Story/POSTER.d,
+	dink/Story/PPOTION.c, dink/Story/PPOTION.d, dink/Story/RPOTION.c,
+	dink/Story/RPOTION.d, dink/Story/S1-BLOVE.c, dink/Story/S1-BLOVE.d,
+	dink/Story/S1-BLS.c, dink/Story/S1-BLS.d, dink/Story/S1-BOAT.c,
+	dink/Story/S1-BOAT.d, dink/Story/S1-BOOT.c, dink/Story/S1-BOOT.d,
+	dink/Story/S1-BOOTH.c, dink/Story/S1-BOOTH.d, dink/Story/S1-BRG.c,
+	dink/Story/S1-BRG.d, dink/Story/S1-BRG2.c, dink/Story/S1-BRG2.d,
+	dink/Story/S1-BUL.c, dink/Story/S1-BUL.d, dink/Story/S1-CAVE.c,
+	dink/Story/S1-CAVE.d, dink/Story/S1-CAVEM.c, dink/Story/S1-CAVEM.d,
+	dink/Story/S1-CAVES.c, dink/Story/S1-CAVES.d, dink/Story/S1-DUCK.c,
+	dink/Story/S1-DUCK.d, dink/Story/S1-ELTR.c, dink/Story/S1-ELTR.d,
+	dink/Story/S1-FARM.c, dink/Story/S1-FARM.d, dink/Story/S1-FARM2.c,
+	dink/Story/S1-FARM2.d, dink/Story/S1-FARMS.c,
+	dink/Story/S1-FARMS.d, dink/Story/S1-FMONS.c,
+	dink/Story/S1-FMONS.d, dink/Story/S1-FOUNT.c,
+	dink/Story/S1-FOUNT.d, dink/Story/S1-GATE.c, dink/Story/S1-GATE.d,
+	dink/Story/S1-GG.c, dink/Story/S1-GG.d, dink/Story/S1-H1-1.c,
+	dink/Story/S1-H1-1.d, dink/Story/S1-H1-1C.c, dink/Story/S1-H1-1C.d,
+	dink/Story/S1-H1-2.c, dink/Story/S1-H1-2.d, dink/Story/S1-H1-3.c,
+	dink/Story/S1-H1-3.d, dink/Story/S1-H1-4.c, dink/Story/S1-H1-4.d,
+	dink/Story/S1-H1-M.c, dink/Story/S1-H1-M.d, dink/Story/S1-H1-O.c,
+	dink/Story/S1-H1-O.d, dink/Story/S1-H1-S.c, dink/Story/S1-H1-S.d,
+	dink/Story/S1-H2-1.c, dink/Story/S1-H2-1.d, dink/Story/S1-H2-2.c,
+	dink/Story/S1-H2-2.d, dink/Story/S1-H2-3.c, dink/Story/S1-H2-3.d,
+	dink/Story/S1-H2-DK.c, dink/Story/S1-H2-DK.d, dink/Story/S1-H2-O.c,
+	dink/Story/S1-H2-O.d, dink/Story/S1-H2-S.c, dink/Story/S1-H2-S.d,
+	dink/Story/S1-H3-1.c, dink/Story/S1-H3-1.d, dink/Story/S1-H3-2.c,
+	dink/Story/S1-H3-2.d, dink/Story/S1-H3-3.c, dink/Story/S1-H3-3.d,
+	dink/Story/S1-H3-4.c, dink/Story/S1-H3-4.d, dink/Story/S1-H3-5.c,
+	dink/Story/S1-H3-5.d, dink/Story/S1-H3-6.c, dink/Story/S1-H3-6.d,
+	dink/Story/S1-H3-7.c, dink/Story/S1-H3-7.d, dink/Story/S1-H3-8.c,
+	dink/Story/S1-H3-8.d, dink/Story/S1-H3-9.c, dink/Story/S1-H3-9.d,
+	dink/Story/S1-H3-L.c, dink/Story/S1-H3-L.d, dink/Story/S1-H3-OF.c,
+	dink/Story/S1-H3-OF.d, dink/Story/S1-H3-S.c, dink/Story/S1-H3-S.d,
+	dink/Story/S1-HOLE.c, dink/Story/S1-HOLE.d, dink/Story/S1-HOLE3.c,
+	dink/Story/S1-HOLE3.d, dink/Story/S1-HSIGN.c,
+	dink/Story/S1-HSIGN.d, dink/Story/S1-LG.c, dink/Story/S1-LG.d,
+	dink/Story/S1-LTR.c, dink/Story/S1-LTR.d, dink/Story/S1-MAGIC.c,
+	dink/Story/S1-MAGIC.d, dink/Story/S1-MH-F.c, dink/Story/S1-MH-F.d,
+	dink/Story/S1-MH-M.c, dink/Story/S1-MH-M.d, dink/Story/S1-MH-O.c,
+	dink/Story/S1-MH-O.d, dink/Story/S1-MH-S.c, dink/Story/S1-MH-S.d,
+	dink/Story/S1-NOPAS.c, dink/Story/S1-NOPAS.d,
+	dink/Story/S1-NTREE.c, dink/Story/S1-NTREE.d, dink/Story/S1-NUT.c,
+	dink/Story/S1-NUT.d, dink/Story/S1-OLDD.c, dink/Story/S1-OLDD.d,
+	dink/Story/S1-RAND.c, dink/Story/S1-RAND.d, dink/Story/S1-ROB.c,
+	dink/Story/S1-ROB.d, dink/Story/S1-ROB2.c, dink/Story/S1-ROB2.d,
+	dink/Story/S1-ROC.c, dink/Story/S1-ROC.d, dink/Story/S1-SACK.c,
+	dink/Story/S1-SACK.d, dink/Story/S1-SIGN2.c, dink/Story/S1-SIGN2.d,
+	dink/Story/S1-SLIM.c, dink/Story/S1-SLIM.d, dink/Story/S1-SS2.c,
+	dink/Story/S1-SS2.d, dink/Story/S1-VIC.c, dink/Story/S1-VIC.d,
+	dink/Story/S1-VIL.c, dink/Story/S1-VIL.d, dink/Story/S1-VIL2.c,
+	dink/Story/S1-VIL2.d, dink/Story/S1-WAND.c, dink/Story/S1-WAND.d,
+	dink/Story/S1-WAND2.c, dink/Story/S1-WAND2.d, dink/Story/S1-WIZ.c,
+	dink/Story/S1-WIZ.d, dink/Story/S2-AUNT.c, dink/Story/S2-AUNT.d,
+	dink/Story/S2-AUNTP.c, dink/Story/S2-AUNTP.d, dink/Story/S2-BAR.c,
+	dink/Story/S2-BAR.d, dink/Story/S2-CA-G.c, dink/Story/S2-CA-G.d,
+	dink/Story/S2-CA-O.c, dink/Story/S2-CA-O.d, dink/Story/S2-CAVE.c,
+	dink/Story/S2-CAVE.d, dink/Story/S2-CAVE2.c, dink/Story/S2-CAVE2.d,
+	dink/Story/S2-CBON.c, dink/Story/S2-CBON.d, dink/Story/S2-CG1.c,
+	dink/Story/S2-CG1.d, dink/Story/S2-CG2.c, dink/Story/S2-CG2.d,
+	dink/Story/S2-CG3.c, dink/Story/S2-CG3.d, dink/Story/S2-CG4.c,
+	dink/Story/S2-CG4.d, dink/Story/S2-CG5.c, dink/Story/S2-CG5.d,
+	dink/Story/S2-CGIRL.c, dink/Story/S2-CGIRL.d, dink/Story/S2-CMAN.c,
+	dink/Story/S2-CMAN.d, dink/Story/S2-CRIME.c, dink/Story/S2-CRIME.d,
+	dink/Story/S2-CROCK.c, dink/Story/S2-CROCK.d,
+	dink/Story/S2-CSLAY.c, dink/Story/S2-CSLAY.d, dink/Story/S2-CULG.c,
+	dink/Story/S2-CULG.d, dink/Story/S2-CULT.c, dink/Story/S2-CULT.d,
+	dink/Story/S2-DAMS.c, dink/Story/S2-DAMS.d, dink/Story/S2-DS.c,
+	dink/Story/S2-DS.d, dink/Story/S2-FGATE.c, dink/Story/S2-FGATE.d,
+	dink/Story/S2-FIGHT.c, dink/Story/S2-FIGHT.d, dink/Story/S2-H1-S.c,
+	dink/Story/S2-H1-S.d, dink/Story/S2-H2-S.c, dink/Story/S2-H2-S.d,
+	dink/Story/S2-HEALP.c, dink/Story/S2-HEALP.d, dink/Story/S2-IDOL.c,
+	dink/Story/S2-IDOL.d, dink/Story/S2-JACK.c, dink/Story/S2-JACK.d,
+	dink/Story/S2-MAN1.c, dink/Story/S2-MAN1.d, dink/Story/S2-MAN2.c,
+	dink/Story/S2-MAN2.d, dink/Story/S2-MDOOR.c, dink/Story/S2-MDOOR.d,
+	dink/Story/S2-MH-M.c, dink/Story/S2-MH-M.d, dink/Story/S2-MYBED.c,
+	dink/Story/S2-MYBED.d, dink/Story/S2-NA1.c, dink/Story/S2-NA1.d,
+	dink/Story/S2-NA2.c, dink/Story/S2-NA2.d, dink/Story/S2-NAD.c,
+	dink/Story/S2-NAD.d, dink/Story/S2-NADP.c, dink/Story/S2-NADP.d,
+	dink/Story/S2-OUT.c, dink/Story/S2-OUT.d, dink/Story/S2-QGIRL.c,
+	dink/Story/S2-QGIRL.d, dink/Story/S2-RAND.c, dink/Story/S2-RAND.d,
+	dink/Story/S2-RYAN2.c, dink/Story/S2-RYAN2.d,
+	dink/Story/S2-RYAN3.c, dink/Story/S2-RYAN3.d,
+	dink/Story/S2-RYANT.c, dink/Story/S2-RYANT.d, dink/Story/S2-SALE.c,
+	dink/Story/S2-SALE.d, dink/Story/S2-SALE2.c, dink/Story/S2-SALE2.d,
+	dink/Story/S2-SEC1.c, dink/Story/S2-SEC1.d, dink/Story/S2-SEC2.c,
+	dink/Story/S2-SEC2.d, dink/Story/S2-SEC3.c, dink/Story/S2-SEC3.d,
+	dink/Story/S2-SIGN3.c, dink/Story/S2-SIGN3.d,
+	dink/Story/S2-SIGNE.c, dink/Story/S2-SIGNE.d, dink/Story/S2-SK.c,
+	dink/Story/S2-SK.d, dink/Story/S2-STAT.c, dink/Story/S2-STAT.d,
+	dink/Story/S2-T1S.c, dink/Story/S2-T1S.d, dink/Story/S2-T2S.c,
+	dink/Story/S2-T2S.d, dink/Story/S2-TABLE.c, dink/Story/S2-TABLE.d,
+	dink/Story/S2-TDOOR.c, dink/Story/S2-TDOOR.d, dink/Story/S2-TDS.c,
+	dink/Story/S2-TDS.d, dink/Story/S2-WAND.c, dink/Story/S2-WAND.d,
+	dink/Story/S2-WANT.c, dink/Story/S2-WANT.d, dink/Story/S2-WELL1.c,
+	dink/Story/S2-WELL1.d, dink/Story/S2-WENCH.c,
+	dink/Story/S2-WENCH.d, dink/Story/S3-1ST.c, dink/Story/S3-1ST.d,
+	dink/Story/S3-BH.c, dink/Story/S3-BH.d, dink/Story/S3-BLOCK.c,
+	dink/Story/S3-BLOCK.d, dink/Story/S3-BOWL.c, dink/Story/S3-BOWL.d,
+	dink/Story/S3-CAMP.c, dink/Story/S3-CAMP.d, dink/Story/S3-CAMPS.c,
+	dink/Story/S3-CAMPS.d, dink/Story/S3-CH1.c, dink/Story/S3-CH1.d,
+	dink/Story/S3-CHICK.c, dink/Story/S3-CHICK.d,
+	dink/Story/S3-DORKS.c, dink/Story/S3-DORKS.d,
+	dink/Story/S3-FOUNT.c, dink/Story/S3-FOUNT.d,
+	dink/Story/S3-FREAK.c, dink/Story/S3-FREAK.d, dink/Story/S3-GH.c,
+	dink/Story/S3-GH.d, dink/Story/S3-GOB.c, dink/Story/S3-GOB.d,
+	dink/Story/S3-GOB2.c, dink/Story/S3-GOB2.d, dink/Story/S3-GOBG.c,
+	dink/Story/S3-GOBG.d, dink/Story/S3-GOBS.c, dink/Story/S3-GOBS.d,
+	dink/Story/S3-GS.c, dink/Story/S3-GS.d, dink/Story/S3-GSIGN.c,
+	dink/Story/S3-GSIGN.d, dink/Story/S3-H1.c, dink/Story/S3-H1.d,
+	dink/Story/S3-LARRY.c, dink/Story/S3-LARRY.d,
+	dink/Story/S3-LOSER.c, dink/Story/S3-LOSER.d,
+	dink/Story/S3-MAYOR.c, dink/Story/S3-MAYOR.d,
+	dink/Story/S3-MDOOR.c, dink/Story/S3-MDOOR.d, dink/Story/S3-MOG.c,
+	dink/Story/S3-MOG.d, dink/Story/S3-PEEPS.c, dink/Story/S3-PEEPS.d,
+	dink/Story/S3-ROCK.c, dink/Story/S3-ROCK.d, dink/Story/S3-SEC1.c,
+	dink/Story/S3-SEC1.d, dink/Story/S3-SIGN1.c, dink/Story/S3-SIGN1.d,
+	dink/Story/S3-SIGN2.c, dink/Story/S3-SIGN2.d,
+	dink/Story/S3-SIGN3.c, dink/Story/S3-SIGN3.d,
+	dink/Story/S3-SIGN6.c, dink/Story/S3-SIGN6.d,
+	dink/Story/S3-SIGN7.c, dink/Story/S3-SIGN7.d, dink/Story/S3-ST1.c,
+	dink/Story/S3-ST1.d, dink/Story/S3-ST1O.c, dink/Story/S3-ST1O.d,
+	dink/Story/S3-ST1P.c, dink/Story/S3-ST1P.d, dink/Story/S3-ST2.c,
+	dink/Story/S3-ST2.d, dink/Story/S3-ST2P.c, dink/Story/S3-ST2P.d,
+	dink/Story/S3-ST3.c, dink/Story/S3-ST3.d, dink/Story/S3-TC.c,
+	dink/Story/S3-TC.d, dink/Story/S4-1ST.c, dink/Story/S4-1ST.d,
+	dink/Story/S4-DG.c, dink/Story/S4-DG.d, dink/Story/S4-DGS.c,
+	dink/Story/S4-DGS.d, dink/Story/S4-DSIGN.c, dink/Story/S4-DSIGN.d,
+	dink/Story/S4-DUCK.c, dink/Story/S4-DUCK.d, dink/Story/S4-DUCKS.c,
+	dink/Story/S4-DUCKS.d, dink/Story/S4-END.c, dink/Story/S4-END.d,
+	dink/Story/S4-GS.c, dink/Story/S4-GS.d, dink/Story/S4-H1.c,
+	dink/Story/S4-H1.d, dink/Story/S4-H1P.c, dink/Story/S4-H1P.d,
+	dink/Story/S4-H2.c, dink/Story/S4-H2.d, dink/Story/S4-H2P1.c,
+	dink/Story/S4-H2P1.d, dink/Story/S4-H2P2.c, dink/Story/S4-H2P2.d,
+	dink/Story/S4-H2P3.c, dink/Story/S4-H2P3.d, dink/Story/S4-HEALP.c,
+	dink/Story/S4-HEALP.d, dink/Story/S4-MD2.c, dink/Story/S4-MD2.d,
+	dink/Story/S4-MD3.c, dink/Story/S4-MD3.d, dink/Story/S4-MDOOR.c,
+	dink/Story/S4-MDOOR.d, dink/Story/S4-NOT.c, dink/Story/S4-NOT.d,
+	dink/Story/S4-ROCK.c, dink/Story/S4-ROCK.d, dink/Story/S4-SEC1.c,
+	dink/Story/S4-SEC1.d, dink/Story/S4-SIGN1.c, dink/Story/S4-SIGN1.d,
+	dink/Story/S4-SIGN2.c, dink/Story/S4-SIGN2.d,
+	dink/Story/S4-SIGN3.c, dink/Story/S4-SIGN3.d, dink/Story/S4-ST1.c,
+	dink/Story/S4-ST1.d, dink/Story/S4-ST1P.c, dink/Story/S4-ST1P.d,
+	dink/Story/S4-ST2.c, dink/Story/S4-ST2.d, dink/Story/S4-ST2P.c,
+	dink/Story/S4-ST2P.d, dink/Story/S4-ST3.c, dink/Story/S4-ST3.d,
+	dink/Story/S4-ST3P.c, dink/Story/S4-ST3P.d, dink/Story/S4-STAT.c,
+	dink/Story/S4-STAT.d, dink/Story/S4-TREE.c, dink/Story/S4-TREE.d,
+	dink/Story/S5-BASE.c, dink/Story/S5-BASE.d, dink/Story/S5-END.c,
+	dink/Story/S5-END.d, dink/Story/S5-FD.c, dink/Story/S5-FD.d,
+	dink/Story/S5-FGUY.c, dink/Story/S5-FGUY.d, dink/Story/S5-FMOM.c,
+	dink/Story/S5-FMOM.d, dink/Story/S5-GUY.c, dink/Story/S5-GUY.d,
+	dink/Story/S5-HEALS.c, dink/Story/S5-HEALS.d, dink/Story/S5-JOPS.c,
+	dink/Story/S5-JOPS.d, dink/Story/S5-MOM.c, dink/Story/S5-MOM.d,
+	dink/Story/S5-SEC1.c, dink/Story/S5-SEC1.d, dink/Story/S5-SIGN1.c,
+	dink/Story/S5-SIGN1.d, dink/Story/S5-ST1.c, dink/Story/S5-ST1.d,
+	dink/Story/S5-ST1P.c, dink/Story/S5-ST1P.d, dink/Story/S6-CHUR.c,
+	dink/Story/S6-CHUR.d, dink/Story/S6-FOUNT.c, dink/Story/S6-FOUNT.d,
+	dink/Story/S6-G1.c, dink/Story/S6-G1.d, dink/Story/S6-G2.c,
+	dink/Story/S6-G2.d, dink/Story/S6-HOLE.c, dink/Story/S6-HOLE.d,
+	dink/Story/S6-HOLE2.c, dink/Story/S6-HOLE2.d,
+	dink/Story/S6-HOLES.c, dink/Story/S6-HOLES.d,
+	dink/Story/S6-SIGN1.c, dink/Story/S6-SIGN1.d,
+	dink/Story/S6-SIGN5.c, dink/Story/S6-SIGN5.d, dink/Story/S6-ST1.c,
+	dink/Story/S6-ST1.d, dink/Story/S6-ST1P.c, dink/Story/S6-ST1P.d,
+	dink/Story/S6-VEND.c, dink/Story/S6-VEND.d, dink/Story/S6-WARP.c,
+	dink/Story/S6-WARP.d, dink/Story/S7-BOAT.c, dink/Story/S7-BOAT.d,
+	dink/Story/S7-BONG.c, dink/Story/S7-BONG.d, dink/Story/S7-DGIRL.c,
+	dink/Story/S7-DGIRL.d, dink/Story/S7-DINK.c, dink/Story/S7-DINK.d,
+	dink/Story/S7-DRAG.c, dink/Story/S7-DRAG.d, dink/Story/S7-DUCK.c,
+	dink/Story/S7-DUCK.d, dink/Story/S7-GIRL.c, dink/Story/S7-GIRL.d,
+	dink/Story/S7-HELL.c, dink/Story/S7-HELL.d, dink/Story/S7-MIL.c,
+	dink/Story/S7-MIL.d, dink/Story/S7-MOM.c, dink/Story/S7-MOM.d,
+	dink/Story/S7-PILL.c, dink/Story/S7-PILL.d, dink/Story/S7-SLAY.c,
+	dink/Story/S7-SLAY.d, dink/Story/S7-SLIMB.c, dink/Story/S7-SLIMB.d,
+	dink/Story/S7-WARP.c, dink/Story/S7-WARP.d, dink/Story/S8-DA.c,
+	dink/Story/S8-DA.d, dink/Story/S8-DISH.c, dink/Story/S8-DISH.d,
+	dink/Story/S8-DUCK.c, dink/Story/S8-DUCK.d, dink/Story/S8-DUCK2.c,
+	dink/Story/S8-DUCK2.d, dink/Story/S8-DUCK3.c,
+	dink/Story/S8-DUCK3.d, dink/Story/S8-DUCK4.c,
+	dink/Story/S8-DUCK4.d, dink/Story/S8-GUY.c, dink/Story/S8-GUY.d,
+	dink/Story/S8-SIGN.c, dink/Story/S8-SIGN.d, dink/Story/S8-WELL.c,
+	dink/Story/S8-WELL.d, dink/Story/SAVEBOT.c, dink/Story/SAVEBOT.d,
+	dink/Story/SAVETOP.c, dink/Story/SAVETOP.d, dink/Story/SC-DRAG.c,
+	dink/Story/SC-DRAG.d, dink/Story/SC-END.c, dink/Story/SC-END.d,
+	dink/Story/SC-ENT.c, dink/Story/SC-ENT.d, dink/Story/SC-LOCK.c,
+	dink/Story/SC-LOCK.d, dink/Story/SC-PILL.c, dink/Story/SC-PILL.d,
+	dink/Story/SC-SLAY.c, dink/Story/SC-SLAY.d, dink/Story/SC-WIZ.c,
+	dink/Story/SC-WIZ.d, dink/Story/SFOOD.c, dink/Story/SFOOD.d,
+	dink/Story/SGOLD.c, dink/Story/SGOLD.d, dink/Story/SHEART.c,
+	dink/Story/SHEART.d, dink/Story/SHRINK.c, dink/Story/SHRINK.d,
+	dink/Story/SOUNDOFF.c, dink/Story/SOUNDOFF.d, dink/Story/SPARKLE.c,
+	dink/Story/SPARKLE.d, dink/Story/SPICE.c, dink/Story/SPICE.d,
+	dink/Story/START-1.c, dink/Story/START-1.d, dink/Story/START-2.c,
+	dink/Story/START-2.d, dink/Story/START-3.c, dink/Story/START-3.d,
+	dink/Story/START-4.c, dink/Story/START-4.d, dink/Story/START.c,
+	dink/Story/START.d, dink/Story/THES.c, dink/Story/THES.d,
+	dink/Story/THORN.c, dink/Story/THORN.d, dink/Story/TREEDUCK.c,
+	dink/Story/TREEDUCK.d, dink/Story/WATER.c, dink/Story/WATER.d,
+	dink/Story/XLGOLD.c, dink/Story/XLGOLD.d, dink/Story/en-gmog.c,
+	dink/Story/en-gmog.d, dink/Story/item-bt.c, dink/Story/item-bt.d,
+	dink/Story/item-fst.c, dink/Story/item-fst.d, dink/Story/s7-boss.c,
+	dink/Story/s7-boss.d: Decompressed DinkC files
+
+2008-09-03  Sylvain Beucler <beuc@beuc.net>
+
+	* Initial import from official dink_108_game_data.zip
+
