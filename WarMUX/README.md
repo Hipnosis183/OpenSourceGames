@@ -29,7 +29,6 @@ sudo apt-get install build-essential g++ gettext libxml2-dev libsdl-ttf2.0-dev l
 cd warmux
 ./configure
 make
-
 ```
 
 After compiling, navigate to the '**src**' folder and copy the file '**warmux**' to the desired directory. Also you'll need to copy the '**data**' folder located in the root of '**warmux**' over the same directory in which the binary is located.
