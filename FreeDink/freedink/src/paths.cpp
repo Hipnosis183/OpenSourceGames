@@ -186,8 +186,8 @@ bool paths_init(char *argv0, char *refdir_opt, char *dmoddir_opt)
     /* "./freedink" */
     pkgdatadir = strdup("./" PACKAGE);
 #else
-    /* (e.g. "/usr/share/freedink") */
-    pkgdatadir = br_build_path(BUILD_DATA_DIR, PACKAGE);
+    // Force local data path
+    pkgdatadir = "./dink";
 #endif
   }
 
@@ -364,6 +364,9 @@ bool paths_init(char *argv0, char *refdir_opt, char *dmoddir_opt)
 	userappdir = strdup(refdir);
       }
   }
+
+  // Force local data path
+  userappdir = "./dink";
 
   log_info("datadir = %s", BUILD_DATA_DIR);
   log_info("pkgdatadir = %s", pkgdatadir);
