@@ -125,7 +125,7 @@ fi
 
 if test "${WIN32}" = "yes"; then DATADIR="data"
 elif test "${GEKKO}" = "yes"; then DATADIR="sd:/apps/warmux/data"
-else DATADIR="${prefix}/share/warmux"; fi
+else DATADIR="./data"; fi
 
 AC_ARG_WITH([datadir-name],
             [AS_HELP_STRING([--with-datadir-name=DIR],
@@ -138,7 +138,7 @@ DATADIR="${DATADIR}/"
 
 if test "${WIN32}" = "yes"; then LOCALEDIR="locale"
 elif test "${GEKKO}" = "yes"; then LOCALEDIR="sd:/apps/warmux/locale"
-else LOCALEDIR="${prefix}/share/locale"; fi
+else LOCALEDIR="./locale"; fi
 AC_ARG_WITH([localedir-name],
             [AS_HELP_STRING([--with-localedir-name=DIR],
                             [specify where locales are installed (default: ${prefix}/share/locale)])],

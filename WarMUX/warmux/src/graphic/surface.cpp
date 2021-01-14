@@ -613,7 +613,7 @@ bool Surface::ImgSave(const std::string& filename, bool bmp)
   png_set_IHDR(png_ptr, info_ptr, surface->w, surface->h, 8,
                PNG_COLOR_TYPE_RGB_ALPHA,      PNG_INTERLACE_NONE,
                PNG_COMPRESSION_TYPE_DEFAULT,  PNG_FILTER_TYPE_DEFAULT);
-  png_set_compression_level(png_ptr, Z_BEST_COMPRESSION);
+  png_set_compression_level(png_ptr, PNG_Z_DEFAULT_COMPRESSION);
 
   // Creating the png file
   png_write_info(png_ptr, info_ptr);

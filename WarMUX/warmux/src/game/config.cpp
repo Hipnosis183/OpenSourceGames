@@ -212,23 +212,21 @@ Config::Config()
   // To respect XDG Base Directory Specification from FreeDesktop
   // http://standards.freedesktop.org/basedir-spec/basedir-spec-0.6.html
 
-  const char * c_config_dir = std::getenv("XDG_CONFIG_HOME");
-  const char * c_data_dir = std::getenv("XDG_DATA_HOME");
+  // const char * c_config_dir = std::getenv("XDG_CONFIG_HOME");
+  // const char * c_data_dir = std::getenv("XDG_DATA_HOME");
+  const char * c_config_dir = NULL;
+  const char * c_data_dir = NULL;
 
   if (c_config_dir == NULL)
-    personal_config_dir = GetHome() + "/.config";
+    personal_config_dir = "./config/";
   else
     personal_config_dir = c_config_dir;
 
-  personal_config_dir += "/wormux/";
-
   if (c_data_dir == NULL) {
-    personal_data_dir = GetHome() + "/.local/share";
+    personal_data_dir = "./local/";
   }
   else
     personal_data_dir = c_data_dir;
-
-  personal_data_dir += "/wormux/";
 #endif
 
   std::string old_dir = GetOldPersonalDir();
