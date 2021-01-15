@@ -31,7 +31,6 @@ cd freedink
 sh bootstrap
 ./configure
 make
-
 ```
 
 Still, in modern distros like Focal (20.04), the available dependencies are needed to run the game:

@@ -9,6 +9,7 @@ Explore the different project folders on the repository to see information and i
 ## Software Available
 
 - [FreeDink](https://github.com/Hipnosis183/OpenSourceGames/tree/main/FreeDink) (109.6)
+- [OpenJazz](https://github.com/Hipnosis183/OpenSourceGames/tree/main/OpenJazz) (20190106)
 - [WarMUX](https://github.com/Hipnosis183/OpenSourceGames/tree/main/WarMUX) (11.04.1)
 
 ## Licensing

@@ -12,6 +12,7 @@ bin_PROGRAMS = OpenJazz
 OpenJazz_CPPFLAGS = \
 	-DUSE_SOCKETS \
 	-DSCALE \
+	-DUSE_MODPLUG \
 	-I${srcdir}/src
 OpenJazz_CXXFLAGS = \
 	${HOST_CFLAGS} \
