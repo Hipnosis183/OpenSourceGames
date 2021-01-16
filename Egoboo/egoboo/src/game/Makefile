@@ -34,7 +34,7 @@ SDLCONF_L := $(shell ${SDL_CONF} --libs)
 
 CC      := gcc
 INC     := -I. -I.. -I../enet/include ${SDLCONF_I} -I./extensions -I./file_formats -I./platform
-LDFLAGS := ${SDLCONF_L} -L../enet/lib -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image -lphysfs -lenet
+LDFLAGS := ${SDLCONF_L} -L../enet/lib -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image -lphysfs -lenet -lm
 
 # use different options if the environmental variable PREFIX is defined
 ifdef ($(PREFIX),"")

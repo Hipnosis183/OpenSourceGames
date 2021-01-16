@@ -64,25 +64,10 @@ void sys_fs_init()
 
     printf( "Initializing filesystem services...\n" );
 
-    // grab the user's home directory
-    userhome = getenv( "HOME" );
-    snprintf( linux_userdataPath, SDL_arraysize( linux_userdataPath ), "%s/.egoboo-2.x", userhome );
-
-#if defined(_NIX_PREFIX) && defined(PREFIX)
-    // the access to these directories is completely unknown
-    // The default setting from the Makefile is to set PREFIX = "/usr",
-    // so that the program will compile and install just like any other
-    // .rpm or .deb package.
-
-    strncpy( linux_configPath, PREFIX "/etc/egoboo-2.x",         SDL_arraysize( linux_configPath ) );
-    strncpy( linux_binaryPath, PREFIX "/games/",                  SDL_arraysize( linux_binaryPath ) );
-    strncpy( linux_dataPath,   PREFIX "/share/games/egoboo-2.x", SDL_arraysize( linux_dataPath ) );
-#else
-    // these are read-only directories
-    strncpy( linux_configPath, "/etc/egoboo-2.x/",         SDL_arraysize( linux_configPath ) );
-    strncpy( linux_binaryPath, "/games/",                  SDL_arraysize( linux_binaryPath ) );
-    strncpy( linux_dataPath,   "/share/games/egoboo-2.x/", SDL_arraysize( linux_dataPath ) );
-#endif
+    strncpy( linux_userdataPath, "./user/",     SDL_arraysize( linux_userdataPath ) );
+    strncpy( linux_configPath, "./config/",     SDL_arraysize( linux_configPath ) );
+    strncpy( linux_binaryPath, "./",            SDL_arraysize( linux_binaryPath ) );
+    strncpy( linux_dataPath,  "./",            SDL_arraysize( linux_dataPath ) );
 
     // the log file cannot be started until there is a user data path to dump the file into
     // so dump this debug info to stdout
@@ -92,6 +77,11 @@ void sys_fs_init()
     if ( !fs_fileIsDirectory( linux_userdataPath ) )
     {
         fs_createDirectory( linux_userdataPath );
+    }
+
+    if ( !fs_fileIsDirectory( linux_configPath ) )
+    {
+        fs_createDirectory( linux_configPath );
     }
 }
 

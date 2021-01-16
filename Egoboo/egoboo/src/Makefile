@@ -6,7 +6,7 @@
 
 ifndef ($(PREFIX),"")
 	# define a value for prefix assuming that the program will be installed in the root directory
-	PREFIX := /usr
+	# PREFIX := /usr
 endif
 
 
