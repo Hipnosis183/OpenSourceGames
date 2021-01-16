@@ -1,0 +1,18 @@
+Egoboo is set up to use the Linux make command to build and install Egoboo. Simply type
+
+    make all
+    sudo make install
+
+and the game will be built and installed. This method works essentially the same as downloading and installing the files using a package manager, and similarly requires super-user password.
+
+If you do not have a sudo password, you can install Egoboo to a local directory by defining a PREFIX environmental variable on the command-line. A common usage would be
+
+    make all PREFIX=$HOME/.local
+    make install PREFIX=$HOME/.local
+
+which will build and install the game into your own home folder. To start the game, execute the shell script called egoboo-2.x in the home folder.
+
+
+The program requires certain packages and other settings to build. A comprehensive list can be found in the DEPENDENCIES file.
+
+If you experience problems, please ask in the Egoboo Forums at http://egoboo.sourceforge.net/forum/. Thank you. 

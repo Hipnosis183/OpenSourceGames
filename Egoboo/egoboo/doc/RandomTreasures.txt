@@ -1,0 +1,60 @@
+So the idea is instead of static predefined treasure in Egoboo, we implement a random treasure reward system.
+You never know beforehand what you get out of a chest or from that big boss. I was thinking of having different
+treasure levels (TL) depending on that determines a reward category and the game picks a random object from that
+list of valid rewards. Maybe we could have special TL for only G'nomish items or a random Kursed item?
+
+A chest or boss could hold multiple random items that is defined in spawn.txt like:
+  : RANDOMTL1OBJECT   0   0   0   I   0   0   0   0   0   F   F
+  : RANDOMTL1OBJECT   0   0   0   I   0   0   0   0   0   F   F
+  : RANDOMTL2OBJECT   0   0   0   I   0   0   0   0   0   F   F
+which would spawn 2 random normal objects and 1 magic object (for example 1 torch, quiver and Book of Fireball)
+
+-----------------------------------------------------------------------------------------------------------------
+
+TL 1 (Normal)
+Beartrap
+Quiver
+All potions
+Medkit
+Ammobox
+Bomb
+Caltrop
+Torch
+Lamp
+Oil
+Fortune Cookie
+Mushroom
+Pick
+Shovel
+Silver Weapons
+Poisoned Weapons
+
+TL 2 (Rare)
+Pet
+All spellbooks
+All wands
+Magic items (boots, rings, amulets, etc.)
+All divine runes
+Magic Weapons
+G'nomish Tinkertoys (Gonne, Pistol, Toybox, Deathdevice, etc.)
+
+TL 3 (Unique)
+Orb of Wonders
+Artifacts (Vorpal Blade, Dragontail, etc.)
+Elixir
+
+-----------------------------------------------------------------------------------------------------------------
+Other ideas of TL's:
+
+TL X (G'nomish)
+Only gnomish stuff (gonne, pistol, ammo etc.)
+
+TL X (Kursed)
+Kursed weapon
+Kursed Scroll
+
+TL X (Potions)
+Healing potion
+Poisoned potion
+Oil potion
+Man potion
